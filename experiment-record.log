@@ -1,0 +1,43 @@
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 true false RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 true false RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 true false RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 false true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 false true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 false true RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 true true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 true true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/apache/empire-db.git a8b8ff0 true true RANDOM_VERBOSE 99999 5
+
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c true false RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c true false RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c true false RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c false true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c false true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c false true RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c true true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c true true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/apache/commons-codec.git ac7828c true true RANDOM_VERBOSE 99999 5
+
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true false RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true false RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true false RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 false true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 false true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 false true RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true true RANDOM_VERBOSE 99999 5
+
+./run_experiment.sh https://github.com/kagkarlsson/db-scheduler.git 43be703 true false RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true false RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true false RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 false true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 false true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 false true RANDOM_VERBOSE 99999 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true true RANDOM_VERBOSE 2024 5
+./run_experiment.sh https://github.com/javadelight/delight-nashorn-sandbox.git 3538e44 true true RANDOM_VERBOSE 99999 5
+---------------------------------------------------------------------------------------------------------------------------
+./run_experiment.sh https://github.com/apache/commons-net.git f12f0bc true false RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/commons-net.git f12f0bc false true RANDOM_VERBOSE 0 5
+./run_experiment.sh https://github.com/apache/commons-net.git f12f0bc true true RANDOM_VERBOSE 0 5

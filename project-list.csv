@@ -1,0 +1,9 @@
+project,commit-code
+commons-codec,ac7828c
+commons-net,f12f0bc
+db-scheduler,43be703
+delight-nashorn-sandbox,3538e44
+empire-db,67a97c9
+jimfs,8c64984
+jsoup,c778c3a
+togglz,ae4e0e2
