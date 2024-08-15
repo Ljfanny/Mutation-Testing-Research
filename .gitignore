@@ -1,4 +1,4 @@
-/pitest-projects/
-/pitest-logs/
-/__pycache__/
-/.idea/
+pitest-projects/
+pitest-logs/
+__pycache__/
+.idea/
