@@ -1,2 +1,3 @@
 /pitest-projects/
 /pitest-logs/
+/__pycache__/
