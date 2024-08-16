@@ -1,9 +1,0 @@
-stderr  : 1:58:39 AM PIT >> INFO : RANDOM LOG: start running 1 relevant test for MutationDetails [id=MutationIdentifier [location=Location [clazz=org.apache.empire.db.DBSQLBuilder, method=escapeAndAppendLiteral, methodDesc=(Ljava/lang/String;)V], indexes=[15], mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator], filename=DBSQLBuilder.java, block=[2], lineNumber=450, description=negated conditional, testsInOrder=[org.apache.empire.db.expr.set.DBSetExprTest.testAddSQL(org.apache.empire.db.expr.set.DBSetExprTest)]]
-stderr  : 1:58:39 AM PIT >> INFO : RANDOM LOG: replaced class with mutant in 28 ms
-stderr  : 1:58:42 AM PIT >> INFO : RANDOM LOG: Test Description [testClass=org.apache.empire.db.expr.set.DBSetExprTest, na1:58:42 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
-me=testAddSQL(org.apache.empire.db.expr.set.DBSetExprTest)] Running time: 3006 ms
-stderr  : 1:58:42 AM PIT >> INFO : RANDOM LOG: run all related tests in 3006 ms
-stderr  : 1:58:39 AM PIT >> INFO : RANDOM LOG: start running 1 relevant test for MutationDetails [id=MutationIdentifier [location=Location [clazz=org.apache.empire.db.DBSQLBuilder, method=escapeAndAppendLiteral, methodDesc=(Ljava/lang/String;)V], indexes=[15], mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator], filename=DBSQLBuilder.java, block=[2], lineNumber=450, description=changed conditional boundary, testsInOrder=[org.apache.empire.db.expr.set.DBSetExprTest.testAddSQL(org.apache.empire.db.expr.set.DBSetExprTest)]]
-stderr  : 1:58:39 AM PIT >> INFO : RANDOM LOG: replaced class with mutant in 20 ms
-stderr  : 1:58:39 AM PIT >> INFO : RANDOM LOG: Test Description [testClass=org.apache.empire.db.expr.set.DBSetExprTest, name=testAddSQL(org.apache.empire.db.expr.set.DBSetExprTest)] Running time: 0 ms
-stderr  : 1:58:39 AM PIT >> INFO : RANDOM LOG: run all related tests in 0 ms
