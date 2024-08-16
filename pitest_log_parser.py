@@ -1,13 +1,14 @@
 import re
 import pandas as pd
+import numpy as np
 
 # Project list
 project_list = ['commons-codec',
                 'delight-nashorn-sandbox',
                 'empire-db']
 round_number = 6
-random_mutant = False
-random_test = True
+random_mutant = True
+random_test = False
 seed_list = [0, 2024, 99999]
 mutant_choice = {
     False: 'default-mutant',
@@ -122,7 +123,7 @@ def process_block(block,
         key_array.append(key)
         key_dict[key] = key_id
         keyId_mutantId_dict[key_id] = (mutant_id,)
-        keyId_runtimeList_dict[key_id] = [0 for _ in range(round_number)]
+        keyId_runtimeList_dict[key_id] = [np.nan for _ in range(round_number)]
     else:
         key_id = key_dict[key]
         keyId_mutantId_dict[key_id] += (mutant_id,)
@@ -153,7 +154,6 @@ def parse_log(project,
               seed):
     choice = f'{mutant_choice[random_mutant]}_{test_choice[random_test]}'
     with open(f'pitest-logs/{choice}/{seed}/{project}_{round}.log', 'r') as file:
-    # with open(f'debug.log', 'r') as file:
         block = []
         capturing = False
         for line in file:
@@ -178,7 +178,7 @@ def get_mutant_runtime_csv(seed):
     for key_id, runtime_list in keyId_runtimeList_dict.items():
         key = key_array[key_id]
         df.loc[len(df.index)] = [key] + runtime_list
-    df.to_csv(f'analyzed-data/{mutant_choice[random_mutant]}_{test_choice[random_test]}_{seed}_{project}.csv',
+    df.to_csv(f'analyzed-data/{mutant_choice[random_mutant]}_{test_choice[random_test]}/{seed}_{project}.csv',
               sep=',', header=True, index=False)
 
 
