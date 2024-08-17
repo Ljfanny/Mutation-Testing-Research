@@ -7,8 +7,8 @@ project_list = ['commons-codec',
                 'delight-nashorn-sandbox',
                 'empire-db']
 round_number = 6
-random_mutant = True
-random_test = False
+random_mutant = False
+random_test = True
 seed_list = [0, 2024, 99999]
 mutant_choice = {
     False: 'default-mutant',
@@ -116,7 +116,9 @@ def process_block(block,
            mutant.block,
            mutant.lineNumber,
            mutant.description)
-    if not random_test:
+    if random_test:
+        key += (tuple(set(mutant.testsInOrder)),)
+    else:
         key += (tuple(mutant.testsInOrder),)
     if key not in key_dict:
         key_id = len(key_array)
