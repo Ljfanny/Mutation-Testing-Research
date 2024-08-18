@@ -3,9 +3,13 @@ import pandas as pd
 import numpy as np
 
 # Project list
-project_list = ['commons-codec',
-                'delight-nashorn-sandbox',
-                'empire-db']
+project_list = [
+    'commons-codec',
+    'commons-net',
+    'delight-nashorn-sandbox',
+    'empire-db',
+    'jimfs'
+]
 round_number = 6
 random_mutant = False
 random_test = True
