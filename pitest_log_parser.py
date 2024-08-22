@@ -1,4 +1,6 @@
+import json
 import re
+import os
 import pandas as pd
 import numpy as np
 
@@ -10,6 +12,7 @@ project_list = [
     'empire-db',
     'jimfs'
 ]
+TIMED_OUT = 'TIMED_OUT'
 round_number = 6
 random_mutant = False
 random_test = True
@@ -22,19 +25,23 @@ test_choice = {
     False: 'default-test',
     True: 'random-test'
 }
-
-keyId_runtimeList_dict = {}
+mutant_details_pattern = ''
+mutantId_mutantTuple_dict = {}
+mutantId_runtimeList_dict = {}
+mutantId_testRuntimeListList_dict = {}
+test_testId_dict = {}
 mutant_array = []
-key_dict = {}
-key_array = []
-keyId_mutantId_dict = {}
+mutant_dict = {}
 
 # Regex patterns
-mutant_details_pattern = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
-                         r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
-                         r"description=([^,]+), testsInOrder=\[([^]]+)\]"
+mutant_details_pattern_1 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
+                           r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
+                           r"description=([^,]+), testsInOrder=\[(.*\])\]\]"
+mutant_details_pattern_2 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
+                           r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
+                           r"description=([^,]+), testsInOrder=\[([^]]+)\]"
 replacement_time_pattern = r"replaced class with mutant in (\d+) ms"
-test_description_pattern = r"Test Description \[testClass=([^,]+), name=([^]]+)\] Running time: (\d+) ms"
+test_description_pattern = r"testClass=(.*?), name=(\[.*?\]).*?Running time: (\d+)"
 runtime_pattern = r"run all related tests in (\d+) ms"
 
 
@@ -74,6 +81,16 @@ class Mutant:
         self.description = description
         self.testsInOrder = testsInOrder
 
+    def to_tuple(self):
+        return (self.location.clazz, self.location.method, self.location.methodDesc,
+                self.indexes,
+                self.mutator,
+                self.filename,
+                self.block,
+                self.lineNumber,
+                self.description,
+                tuple(self.testsInOrder))
+
     def __eq__(self, other):
         if not isinstance(other, Mutant):
             return NotImplemented
@@ -98,6 +115,8 @@ def process_block(block,
     block_str = ''.join(block)
     # Extract mutation details
     mutant_details = re.search(mutant_details_pattern, block_str)
+    if not mutant_details:
+        return
     mutant = Mutant(
         Location(
             mutant_details.group(1),
@@ -111,28 +130,20 @@ def process_block(block,
         mutant_details.group(9),
         mutant_details.group(10).split(', ')
     )
-    mutant_id = len(mutant_array)
-    mutant_array.append(mutant)
-    key = (mutant.location.clazz, mutant.location.method, mutant.location.methodDesc,
-           mutant.indexes,
-           mutant.mutator,
-           mutant.filename,
-           mutant.block,
-           mutant.lineNumber,
-           mutant.description)
-    if random_test:
-        key += (tuple(set(mutant.testsInOrder)),)
+    for test in mutant.testsInOrder:
+        if test in test_testId_dict:
+            continue
+        test_testId_dict[test] = len(test_testId_dict)
+
+    if mutant.to_tuple() in mutant_array:
+        mutant_id = mutant_dict[mutant.to_tuple()]
     else:
-        key += (tuple(mutant.testsInOrder),)
-    if key not in key_dict:
-        key_id = len(key_array)
-        key_array.append(key)
-        key_dict[key] = key_id
-        keyId_mutantId_dict[key_id] = (mutant_id,)
-        keyId_runtimeList_dict[key_id] = [np.nan for _ in range(round_number)]
-    else:
-        key_id = key_dict[key]
-        keyId_mutantId_dict[key_id] += (mutant_id,)
+        mutant_id = len(mutant_array)
+        mutant_array.append(mutant.to_tuple())
+        mutant_dict[mutant.to_tuple()] = mutant_id
+        mutantId_mutantTuple_dict[mutant_id] = mutant.to_tuple()
+        mutantId_runtimeList_dict[mutant_id] = [np.nan for _ in range(round_number)]
+        mutantId_testRuntimeListList_dict[mutant_id] = [None for _ in range(round_number)]
 
     # Extract replacement time
     # replacement_time = re.search(replacement_time_pattern, block_str)
@@ -140,18 +151,25 @@ def process_block(block,
     # print("Replacement Time:", replacement_time.group(1), "ms")
 
     # Extract test descriptions
-    # test_descriptions = re.findall(test_description_pattern, block_str)
-    # for test in test_descriptions:
-    #     print("Test Class:", test[0])
-    #     print("Test Name:", test[1])
-    #     print("Running Time:", test[2], "ms")
+    test_descriptions = re.findall(test_description_pattern, block_str)
+    testRuntime_list = []
+    for clazz, name, runtime in test_descriptions:
+        testRuntime_list.append(runtime)
+    run = True
+    while len(testRuntime_list) < len(mutant.testsInOrder):
+        if run:
+            testRuntime_list.append(TIMED_OUT)
+            run = False
+        else:
+            testRuntime_list.append(np.nan)
+    mutantId_testRuntimeListList_dict[mutant_id][round] = testRuntime_list
 
     # Extract test runtime
     runtime = re.search(runtime_pattern, block_str)
     if runtime:
-        keyId_runtimeList_dict[key_id][round] = int(runtime.group(1))
+        mutantId_runtimeList_dict[mutant_id][round] = int(runtime.group(1))
     else:
-        keyId_runtimeList_dict[key_id][round] = 'TIMED_OUT'
+        mutantId_runtimeList_dict[mutant_id][round] = TIMED_OUT
 
 
 # Parse log information
@@ -165,39 +183,50 @@ def parse_log(project,
         for line in file:
             if "start running" in line:
                 if capturing:
-                    process_block(block=block,
-                                  round=round)
+                    process_block(block=block, round=round)
                     capturing = False
                 if not capturing:
                     capturing = True
                     block = [line]
             elif capturing:
                 block.append(line)
+        process_block(block=block, round=round)
 
 
-def get_mutant_runtime_csv(seed):
-    columns = ['mutant']
-    for i in range(round_number):
-        columns.append(f'round-{i}')
-    df = pd.DataFrame(None,
-                      columns=columns)
-    for key_id, runtime_list in keyId_runtimeList_dict.items():
-        key = key_array[key_id]
-        df.loc[len(df.index)] = [key] + runtime_list
-    df.to_csv(f'analyzed-data/{mutant_choice[random_mutant]}_{test_choice[random_test]}/{seed}_{project}.csv',
-              sep=',', header=True, index=False)
+def output_jsons(seed):
+    choice = f'{mutant_choice[random_mutant]}_{test_choice[random_test]}'
+    output_path = f'log-parsed-data/{choice}/{project}_{seed}'
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+    with open(f'{output_path}/mutantId_mutantTuple.json', 'w') as file:
+        json.dump(mutantId_mutantTuple_dict, file, indent=4)
+    with open(f'{output_path}/mutantId_runtimeList.json', 'w') as file:
+        json.dump(mutantId_runtimeList_dict, file, indent=4)
+    with open(f'{output_path}/mutantId_testRuntimeListList.json', 'w') as file:
+        json.dump(mutantId_testRuntimeListList_dict, file, indent=4)
+    with open(f'{output_path}/test_testId.json', 'w') as file:
+        json.dump(test_testId_dict, file, indent=4)
 
 
 if __name__ == '__main__':
+    project_mutantDetailsPattern_dict = {
+        'commons-codec': mutant_details_pattern_1,
+        'commons-net': mutant_details_pattern_1,
+        'delight-nashorn-sandbox': mutant_details_pattern_2,
+        'empire-db': mutant_details_pattern_2,
+        'jimfs': mutant_details_pattern_2
+    }
     for seed in seed_list:
         for project in project_list:
-            keyId_runtimeList_dict.clear()
+            mutant_details_pattern = project_mutantDetailsPattern_dict[project]
+            mutantId_mutantTuple_dict.clear()
+            mutantId_runtimeList_dict.clear()
+            mutantId_testRuntimeListList_dict.clear()
+            test_testId_dict.clear()
             mutant_array.clear()
-            key_dict.clear()
-            key_array.clear()
-            keyId_mutantId_dict.clear()
-            for i in range(round_number):
+            mutant_dict.clear()
+            for r in range(round_number):
                 parse_log(project=project,
-                          round=i,
+                          round=r,
                           seed=seed)
-            get_mutant_runtime_csv(seed=seed)
+            output_jsons(seed=seed)

@@ -1,5 +1,5 @@
 pitest-projects/
 pitest-logs/
+log-parsed-data/
 __pycache__/
-.idea/
 *.zip
