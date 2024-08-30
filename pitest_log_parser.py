@@ -1,7 +1,6 @@
 import json
 import re
 import os
-import pandas as pd
 import numpy as np
 
 # Project list
@@ -25,7 +24,8 @@ test_choice = {
     False: 'default-test',
     True: 'random-test'
 }
-mutant_details_pattern = ''
+mutant_pattern = ''
+test_description_pattern = ''
 mutantId_mutantTuple_dict = {}
 mutantId_runtimeList_dict = {}
 mutantId_testRuntimeListList_dict = {}
@@ -34,14 +34,15 @@ mutant_array = []
 mutant_dict = {}
 
 # Regex patterns
-mutant_details_pattern_1 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
-                           r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
-                           r"description=([^,]+), testsInOrder=\[(.*\])\]\]"
-mutant_details_pattern_2 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
-                           r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
-                           r"description=([^,]+), testsInOrder=\[([^]]+)\]"
-replacement_time_pattern = r"replaced class with mutant in (\d+) ms"
-test_description_pattern = r"testClass=(.*?), name=(\[.*?\]).*?Running time: (\d+)"
+mutant_pattern_junit4 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
+                        r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
+                        r"description=([^,]+), testsInOrder=\[([^]]+)\]"
+
+mutant_pattern_junit5 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
+                        r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
+                        r"description=([^,]+), testsInOrder=\[(.*\])\]\]"
+test_description_pattern_junit4 = r"testClass=([^,]+), name=([^\]]+).*Running time: (\d+) ms"
+test_description_pattern_junit5 = r"testClass=([^,]+), name=(.*)\].*Running time: (\d+) ms"
 runtime_pattern = r"run all related tests in (\d+) ms"
 
 
@@ -49,32 +50,38 @@ class Location:
     def __init__(self,
                  clazz,
                  method,
-                 methodDesc):
+                 methodDesc,
+                 indexes,
+                 mutator):
         self.clazz = clazz
         self.method = method
         self.methodDesc = methodDesc
+        self.indexes = indexes
+        self.mutator = mutator
 
     def __eq__(self, other):
         if isinstance(other, Location):
             return (self.clazz == other.clazz and
                     self.method == other.method and
-                    self.methodDesc == other.methodDesc)
+                    self.methodDesc == other.methodDesc and
+                    self.indexes == other.indexes and
+                    self.mutator == other.mutator)
         return False
+
+    def __str__(self):
+        return f"Location(clazz: {self.clazz}, method: {self.method}, methodDesc: {self.methodDesc}, " \
+               f"indexes: {self.indexes}, mutator: {self.mutator})"
 
 
 class Mutant:
     def __init__(self,
                  location,
-                 indexes,
-                 mutator,
                  filename,
                  block,
                  lineNumber,
                  description,
                  testsInOrder):
         self.location = location
-        self.indexes = indexes
-        self.mutator = mutator
         self.filename = filename
         self.block = block
         self.lineNumber = lineNumber
@@ -83,8 +90,8 @@ class Mutant:
 
     def to_tuple(self):
         return (self.location.clazz, self.location.method, self.location.methodDesc,
-                self.indexes,
-                self.mutator,
+                self.location.indexes,
+                self.location.mutator,
                 self.filename,
                 self.block,
                 self.lineNumber,
@@ -95,8 +102,6 @@ class Mutant:
         if not isinstance(other, Mutant):
             return NotImplemented
         return (self.location == other.location and
-                self.indexes == other.indexes and
-                self.mutator == other.mutator and
                 self.filename == other.filename and
                 self.block == other.block and
                 self.lineNumber == other.lineNumber and
@@ -104,8 +109,7 @@ class Mutant:
                 self.testsInOrder == other.testsInOrder)
 
     def __str__(self):
-        return (f"Mutant(Location: {self.location}, Indexes: {self.indexes}, "
-                f"Mutator: {self.mutator}, Filename: {self.filename}, "
+        return (f"Mutant(Location: {self.location}, Filename: {self.filename}, "
                 f"Block: {self.block}, LineNumber: {self.lineNumber}, "
                 f"Description: {self.description}, TestsInOrder: {self.testsInOrder})")
 
@@ -114,16 +118,16 @@ def process_block(block,
                   round):
     block_str = ''.join(block)
     # Extract mutation details
-    mutant_details = re.search(mutant_details_pattern, block_str)
+    mutant_details = re.search(mutant_pattern, block_str)
     if not mutant_details:
         return
     mutant = Mutant(
         Location(
             mutant_details.group(1),
             mutant_details.group(2),
-            mutant_details.group(3)),
-        mutant_details.group(4),
-        mutant_details.group(5),
+            mutant_details.group(3),
+            mutant_details.group(4),
+            mutant_details.group(5)),
         mutant_details.group(6),
         mutant_details.group(7),
         mutant_details.group(8),
@@ -154,7 +158,7 @@ def process_block(block,
     test_descriptions = re.findall(test_description_pattern, block_str)
     testRuntime_list = []
     for clazz, name, runtime in test_descriptions:
-        testRuntime_list.append(runtime)
+        testRuntime_list.append(int(runtime))
     run = True
     while len(testRuntime_list) < len(mutant.testsInOrder):
         if run:
@@ -209,16 +213,26 @@ def output_jsons(seed):
 
 
 if __name__ == '__main__':
-    project_mutantDetailsPattern_dict = {
-        'commons-codec': mutant_details_pattern_1,
-        'commons-net': mutant_details_pattern_1,
-        'delight-nashorn-sandbox': mutant_details_pattern_2,
-        'empire-db': mutant_details_pattern_2,
-        'jimfs': mutant_details_pattern_2
+    project_testVersion_dict = {
+        'commons-codec': 'junit5',
+        'commons-net': 'junit5',
+        'delight-nashorn-sandbox': 'junit4',
+        'empire-db': 'junit4',
+        'jimfs': 'junit4'
+    }
+    mutant_pattern_dict = {
+        'junit4': mutant_pattern_junit4,
+        'junit5': mutant_pattern_junit5
+    }
+    test_description_pattern_dict = {
+        'junit4': test_description_pattern_junit4,
+        'junit5': test_description_pattern_junit5
     }
     for seed in seed_list:
         for project in project_list:
-            mutant_details_pattern = project_mutantDetailsPattern_dict[project]
+            print(f'{project} is processing... ...')
+            mutant_pattern = mutant_pattern_dict[project_testVersion_dict[project]]
+            test_description_pattern = test_description_pattern_dict[project_testVersion_dict[project]]
             mutantId_mutantTuple_dict.clear()
             mutantId_runtimeList_dict.clear()
             mutantId_testRuntimeListList_dict.clear()
