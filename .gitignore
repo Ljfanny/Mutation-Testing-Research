@@ -1,5 +1,7 @@
-pitest-projects/
-pitest-logs/
-log-parsed-data/
+pitest_logs/
+controlled_logs/
+parsed_data/
+controlled_parsed_data/
 __pycache__/
 *.zip
+record.docx
