@@ -1,235 +1,651 @@
 mutant,T-test,U-test
-692,0.43144412046173775,0.48484848484848486
-3741,0.3408931323020601,0.24475712863976373
-1224,0.0026217788037277297,0.0048466012104884885
-738,0.01228086950691615,0.004479258891846413
-1969,0.06461526125177988,0.07326407689400848
-767,0.56525944981903,0.46725091936068786
-675,1.2777623671078032e-06,0.004624228801499123
-1993,0.04933219563992165,0.06212455388335773
-1574,0.2093831274286452,0.1697813514350759
-1971,0.36049966800292776,0.5415077725193881
-2052,0.5994703106545753,0.6732899796599957
-815,0.2800795166169084,0.5745038102346656
-2046,0.2093831274286454,0.21835469056590173
-1977,0.9006580644325357,0.3974110630857076
-1981,0.09785461425781246,0.10923560011796228
-1142,9.75334441913702e-06,0.004771821713797115
-3854,0.0008049335458390876,0.004771821713797115
-621,0.04498358067382005,0.06319958766571356
-2887,0.011430917553897593,0.015077345632837134
-3250,0.44753822239272356,0.43151217333942393
-3522,0.30353225499145514,0.29346681958735044
-2875,1.0,1.0
-1976,0.8918384025459682,1.0
-2040,0.5223227519080971,1.0
-2014,0.3408931323020601,0.5228166539190886
-714,0.0007041450467003582,0.004407757995697681
-552,0.7366911238202933,0.9360746770666198
-1983,0.5884493383159483,0.6769222390213793
-723,0.00040202075453325673,0.004624228801499123
-2019,0.09785461425781246,0.02804919058166734
-1985,0.013343655022569565,0.008851273865500501
-712,0.007382588067005298,0.006027336750585726
-1960,0.47321155214434774,0.8678800215147104
-631,5.116214151816735e-05,0.00469769748933007
-808,0.10566028029282956,0.2572801771541815
-62,0.03788339445591644,0.06493506493506493
-2036,0.6642514717311346,1.0
-705,0.0044779260189802775,0.012280818673445076
-2028,0.0010302038251037995,0.00360091506678742
-587,0.006897224234951265,0.019805123458112327
-2005,0.10182016809573108,0.17063754156700373
-2006,0.2595729319051038,0.41759283514412704
-1956,0.10706337805718785,0.32394475804475675
-1543,0.3150420467722827,0.22317890256684636
-1963,0.7073422033413626,0.9313445027988295
-677,0.0014888060774976375,0.00492203567532315
-2032,0.24316040739285988,0.26077729309845066
-795,0.4412881515122634,0.6303555263618644
-2018,0.48354171264678103,0.5073877047301287
-1968,0.31716336263410516,0.7870052402565042
-2881,0.0012797165347425586,0.005405951438463383
-1990,0.47321155214434774,0.4871327581713819
-3846,0.15561495634641712,0.21440071155302465
-1955,0.5952226640059608,1.0
-2004,0.9263887956099066,0.31822533101902484
-791,0.6180796670958388,0.16970719633297593
-633,0.01046171857612528,0.012906570419653433
-1984,0.21995838398004605,0.27314099423045035
-2058,0.34086244094203844,0.3395562157854821
-2011,0.5154662314060063,0.5504668540589885
-758,7.420538970498155e-05,0.00469769748933007
-7,0.23034337922271422,0.29283365264601635
-3871,0.0018778361349120214,0.0022681318882976555
-2003,0.1831545634528558,0.20342018398908446
-2927,0.5994703106545749,0.6403735394530488
-2050,0.7341695578680077,0.7180483349468499
-831,0.17394837931045473,0.30316023312819407
-2007,0.6642514717311346,1.0
-1958,0.6669919599178739,0.8579765514355241
-2023,0.40103438967134697,0.5270892568655381
-3852,6.290603513541758e-05,0.00360091506678742
-2043,0.1449276054040804,0.17394501679990915
-2897,0.2896916120510081,0.31086287025889725
-2026,1.0,1.0
-2025,,1.0
-1965,0.2891103214407256,0.5105379701969994
-627,0.00023827541043736493,0.004479258891846413
-3851,0.3408931323020601,0.38310353658297847
-709,6.190508328708085e-06,0.002724531790919405
-2044,0.5490144385436051,0.5947925222500688
-2056,0.5994703106545753,0.6403735394530488
-2053,0.6867440479548108,0.7180483349468499
-3849,0.14825437428814864,0.0740099699862347
-694,0.182381154955397,0.1993972627538182
-2013,0.19565115601099622,0.2268180436817162
-557,0.6428806413920611,0.4217118075268833
-656,0.00490920676101898,0.00492203567532315
-2047,1.0,1.0
-3503,0.9115245922224116,1.0
-580,0.2413537221013329,0.33412028935789195
-3869,0.027572307178797197,0.022845265971045896
-3850,0.8583130498901215,1.0
-2015,0.8040232639921933,0.7518296340458492
-781,0.33481997647037776,0.4192445902189239
-747,0.055592146608517315,0.06461008912954472
-724,0.020172032581952107,0.019805123458112327
-596,0.02106649636083891,0.03034794173956043
-739,0.8463947479254016,0.73935787474536
-1988,0.06526224616890815,0.08991933017896085
-1994,0.13223546816583812,0.1980594224610146
-817,0.7825998894634065,0.871662990600504
-2049,1.0,1.0
-1978,0.765031950448988,1.0
-2033,0.3951292062102053,0.38310353658297847
-2230,1.0,1.0
-1962,0.2633716105310271,0.3537893140997207
-2054,0.6642514717311346,1.0
-1995,0.14715737423187963,0.09495256205694293
-2002,0.30353225499145514,0.29346681958735044
-1529,0.0029569034548600406,0.00469769748933007
-1572,1.0,0.8085324114919136
-1987,0.6400146645525311,0.38886121403562657
-634,0.13091639189900012,0.1430905647493587
-2051,0.09243590837260104,0.11384629800665805
-2029,0.5994703106545749,0.5981614526835282
-3845,0.14492760540408026,0.17394501679990915
-2001,0.4875701368187705,0.6769222390213793
-3520,0.728571880004918,1.0
-1998,0.8046416648308672,0.5097560188294326
-2048,1.0,1.0
-2041,0.3101752265486871,0.4741135606054442
-798,1.336288862565561e-05,0.00469769748933007
-1549,0.5441094304291274,0.6210143706612847
-2037,0.2959369059228676,0.2063236116957211
-2024,0.40351414589219514,0.7518296340458492
-1959,0.3951292062102053,0.5992659619828535
-2010,0.5274604519226599,0.848518937078283
-827,0.02314595166726575,0.0048466012104884885
-1996,0.27693462471271163,0.5105379701969994
-2016,0.0493321956399217,0.026885511853408067
-575,0.14911524054568523,0.14811579591762544
-1986,0.3050239795579033,0.4898003774180698
-1957,0.7925219807672708,0.6814439810261488
-1964,0.5430325345646851,0.38310353658297847
-2042,0.032504131873545825,0.04485176188864056
-2031,1.0,0.9280749690439829
-2038,0.03428770646936413,0.051608605945879134
-3726,0.19652643871830994,0.20606807298356933
-574,0.09700051708068971,0.17046586501309957
-768,0.2041012158651309,0.22649054028251026
-3738,0.24556439393963783,0.28406662328943666
-1569,0.7484360437107711,0.8693374974537501
-2017,0.329079486556938,0.20342018398908446
-1997,0.8376174472761054,0.2268180436817162
-1999,0.23458491443862808,0.2558688597814819
-617,4.7670854570867815e-05,0.0048466012104884885
-1546,0.00096803659311828,0.00469769748933007
-836,0.23511727104197466,0.2572801771541815
-707,3.445900178659443e-05,0.00360091506678742
-772,0.5163896996228385,0.47039300443864773
-1980,0.8523170500952564,0.49756288784320013
-2926,0.2595729319051038,0.28242534756801174
-2030,0.10561210687215775,0.1174324743592521
-1471,0.0011653201813774509,0.006947483790139712
-661,0.0017802084400935013,0.004336913286459083
-1961,0.754759068962218,0.8631963950027435
-2872,3.330126082726424e-06,0.004624228801499123
-2008,0.3628341653203132,0.34426365693253047
-2000,0.2217401850828271,0.4619504545877914
-2057,1.0,0.9290127047257105
-2027,6.415929484303426e-15,0.00360091506678742
-805,1.5751042090563852e-07,0.004407757995697681
-650,0.31639823645372606,0.29710698354709286
-670,0.003037504082143689,0.020022386750866865
-1967,1.0,0.7525537501972419
-2873,0.12184932717055386,0.11384629800665805
-2903,0.02959246220674108,0.04978916576104952
-2012,0.7341695578680077,0.6732899796599957
-2912,0.5994703106545749,0.6403735394530488
-2020,0.787160340449371,1.0
-769,0.0007542354282651691,0.004771821713797115
-3870,0.007899757186599037,0.006542562867816492
-1570,0.0004911875377552651,0.004407757995697681
-2913,,1.0
-690,0.001905137686757164,0.007795826617354622
-2034,1.0,0.8551321405847059
-3748,1.0,1.0
-626,1.1783833884379449e-05,0.00277843011009903
-2035,1.0,0.9280749690439829
-639,0.54801390342303,0.8091970817231279
-2906,0.0001442234778489105,0.003537936478222105
-3844,7.844668986366854e-07,0.00455141587451369
-81,0.009010659332577105,0.004998124765082457
-2923,0.0493321956399217,0.06927988322120195
-585,0.0002028807308332313,0.004128316645700646
-1560,0.24077632004933588,0.2521349105025775
-3847,1.0,1.0
-563,0.36881817137821316,0.48484848484848486
-2022,0.055234799362281255,0.0749754384360778
-753,0.00033365606311555065,0.004197192618010305
-812,0.4653833279330968,1.0
-1966,0.4265884002188134,0.4192445902189239
-1488,1.2450989684116008e-10,0.004998124765082457
-2039,0.10089208704794038,0.06644415115604024
-2055,0.765031950448988,1.0
-2901,0.020882410865328615,0.02765949214637323
-618,0.0003720097634692965,0.004624228801499123
-2021,0.5736632290147845,0.43718552348326645
-834,0.5565468794448674,0.29710698354709286
-682,0.010194282260374603,0.029768442392064092
-1973,0.19565115601099622,0.3413266425963498
-600,0.06342599662096261,0.006027336750585726
-1979,0.5633847422306074,0.38886121403562657
-3858,0.058742655663679415,0.059455698010167216
-1481,0.030723879038442214,0.01649491527041682
-1989,0.8249680582315566,0.5581742172523718
-1525,7.849983696561943e-09,0.00469769748933007
-2009,0.6510257325401846,0.6538960586655933
-1992,0.017554138853976477,0.035081283718920234
-3739,1.0631610679690873e-05,0.004336913286459083
-576,0.06971633695044116,0.06508095865779158
-673,0.019499650968969315,0.00360091506678742
-3749,0.3408931323020601,0.40465676192728617
-594,0.09262978580594629,0.09098322527006637
-3848,0.2896916120510084,0.5992659619828535
-1991,0.7559674291207321,0.9290127047257105
-2045,0.18766987086960307,0.21835469056590173
-1974,1.0,0.9324274137022991
-1553,0.0004245121878007676,0.00492203567532315
-1982,0.7341695578680077,1.0
-2898,0.2765913528910878,0.29346681958735044
-1970,1.372916007722973e-09,0.0036645475900385395
-2242,0.0007880310390497357,0.002671274611601153
-615,4.2353576745010785e-05,0.00455141587451369
-840,0.006689494769892685,0.015936570533391065
-1975,0.8668645305917584,1.0
-1511,0.9000041439287914,0.9328204911819891
-2894,0.05706129943689496,0.06927988322120195
-558,0.0022451547965890543,0.008127042631068452
-818,1.0,1.0
-700,0.0015729784057614737,0.004197192618010305
-1972,0.013343655022569565,0.026885511853408067
-1831,0.5994703106545749,0.6732899796599957
-662,0.2821746640590147,0.33412028935789195
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleX', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.8559596233285862,0.8088656132399987
+"('org.apache.commons.codec.language.DoubleMetaphone', 'encode', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.24171679447519592,0.0915542414558325
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.05215295535206699,0.04495124270244937
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleGH', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I', '49', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.11092094416482662,0.10745320436896048
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleJ', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I', '130', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.14880552427436608,0.22813286774813712
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '354', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7513373361570646,0.624206114766406
+"('org.apache.commons.codec.language.DoubleMetaphone', 'isDoubleMetaphoneEqual', '(Ljava/lang/String;Ljava/lang/String;Z)Z', '12', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.5737196490578421,0.5211099829589063
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleS', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I', '158', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.0905174406716936,0.12686934931105504
+"('org.apache.commons.codec.language.DoubleMetaphone', 'isDoubleMetaphoneEqual', '(Ljava/lang/String;Ljava/lang/String;)Z', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.5372608055848392,0.6857812652417206
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '228', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4475382223927238,0.27866049489924416
+"('org.apache.commons.codec.language.DoubleMetaphone', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5358612337546245,0.7457495492415471
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleX', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I', '12', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.8536936167862077,0.188173874521692
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleS', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I', '141', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.595659224830033,0.8723367813053394
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '110', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.4242519712453847,0.16970719633297593
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '317', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0025608887349466993,0.00492203567532315
+"('org.apache.commons.codec.language.DoubleMetaphone', 'cleanInput', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.1532998110607359,0.4217118075268833
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleC', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I', '242', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.23578368871613253,0.2598175080058419
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '320', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.43772127764749813,1.0
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '113', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.002569407631714145,0.00469769748933007
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleX', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I', '89', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3461402475942146,0.2289506814145954
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;Z)Ljava/lang/String;', '423', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7593502070595265,1.0
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleJ', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I', '127', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.8402074091042278,0.8095268319140044
+"('org.apache.commons.codec.language.DoubleMetaphone', 'isDoubleMetaphoneEqual', '(Ljava/lang/String;Ljava/lang/String;Z)Z', '12', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.8461347794427037,0.8725590308923818
+"('org.apache.commons.codec.language.DoubleMetaphone', 'cleanInput', '(Ljava/lang/String;)Ljava/lang/String;', '23', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2509183746569594,0.6303555263618644
+"('org.apache.commons.codec.language.DoubleMetaphone', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.12044303371990385,0.012748797268379925
+"('org.apache.commons.codec.language.DoubleMetaphone', 'isDoubleMetaphoneEqual', '(Ljava/lang/String;Ljava/lang/String;)Z', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.7828677890976748,0.6297540975459626
+"('org.apache.commons.codec.language.DoubleMetaphone', 'doubleMetaphone', '(Ljava/lang/String;)Ljava/lang/String;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.09560361706171684,0.24025974025974026
+"('org.apache.commons.codec.language.DoubleMetaphone', 'handleS', '(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I', '154', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.6815462514931224,0.8721133649121213
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(I)J', '47', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.011614992571625527,0.015271611339433996
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '23', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.008464583755029845,0.004998124765082457
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '256', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.048494031512358336,0.04112554112554113
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(I)J', '41', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.015655840794283223,0.024975490231931016
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '375', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.12691893724787676,0.06508095865779158
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '443', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.09566199019724704,0.07712763781563145
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '124', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.247097071649841,0.5174126467501994
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '206', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.03103131714386784,0.06461008912954472
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '269', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.16567321971159185,0.12753770929748698
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '129', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4127823913296147,0.2606581238113129
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '254', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.31853819982955817,0.5887445887445888
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '88', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11002295227856053,0.17046586501309957
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '458', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7353246630770871,0.9359624729209428
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '94', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.19250204140778313,0.12753770929748698
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '55', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7871603404493709,0.9333340800150559
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '250', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7367363089561945,0.8095268319140044
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '152', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.39341057565937887,0.33240600419598887
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '104', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4607191862029236,0.4549578535121156
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '88', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7045735519892021,0.5745038102346656
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '234', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3943576442938779,0.5203772558898253
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '105', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5047482086957266,0.7421555933677129
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '101', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.15517988698402727,0.03506401813012014
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '27', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.09243590837260077,0.11384629800665805
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '117', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6722777486787126,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '271', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9120684518553381,0.748348568843747
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '132', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9032469163683161,0.8095268319140044
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '137', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06295432591084603,0.05898970790216689
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '61', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7676110863686649,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '15', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7650319504489876,0.485331203626996
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '464', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.8399419395673322,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '124', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9323269014440451,0.6991341991341992
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(J)J', '54', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.16055171688774517,0.027788425061237465
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64', '([BIII)[J', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.44972928878422225,0.6825450986404671
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '116', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.712681948645331,0.8718887714676588
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '112', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1445399820007233,0.19860784944113763
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '320', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5755145498802894,0.4217118075268833
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '103', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7490904377102692,0.6878845906625766
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '19', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.39932446431227864,0.2598175080058419
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '340', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.162800305718094,0.22483923580791298
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '209', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.8856247353602065,0.9359624729209428
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '80', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6273725746979797,0.5717930544204819
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '419', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06428565867256865,0.22813286774813712
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '25', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5432260842938808,0.8085324114919136
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '123', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7912821997735914,0.9355076744536179
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '128', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3224940957136102,0.5189017424108715
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '324', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9137606201541139,0.6878845906625766
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '356', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06762833879682903,0.06508095865779158
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BI)I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([B)I', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '407', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.10625748603700341,0.07504619556200975
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '50', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.018020872001717442,0.030057756930680038
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '23', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.4738729005907155,0.6303555263618644
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '122', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.15666777300626866,0.22731282288651522
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '222', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.27936178707253206,0.2529990614746843
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '104', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7310793403879665,0.6303555263618644
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '343', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7115166860503005,0.8723367813053394
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '190', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.008642852056847583,0.012591911490379705
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '139', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.15596370674250457,0.22234533413401147
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '390', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6242553991528598,0.6873627164487798
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '89', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.17798108885072736,0.14668567006267275
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '90', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6161561830071943,0.628542403042692
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(I)J', '7', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0493321956399217,0.07053284913489208
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '29', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.860155095438029,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '391', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.641651535292447,0.2606581238113129
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '50', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.860631863568732,0.4656590663836154
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '(J)I', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.5994703106545749,0.6403735394530488
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '240', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6297666001118851,0.6279320892338778
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '(JI)I', '30', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.25312291664497755,0.24155411177533737
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '49', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.17394837931045473,0.20124262095772394
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '368', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.03304438464198874,0.04457559645720927
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '30', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.42801349642828945,0.7870052402565042
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128', '([B)[J', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3093874627824372,0.43718552348326645
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '130', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0624585298514365,0.04495124270244937
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '77', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9539964884201217,0.6863110758915425
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '238', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11798235923687798,0.09307359307359307
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '470', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11926194569539403,0.06493506493506493
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '107', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11531183010824349,0.08069025949416836
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '310', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1220508778948124,0.17273282913055155
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(I)J', '17', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1449276054040804,0.17394501679990915
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '17', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.05706129943689496,0.08991933017896085
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '140', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1808940088740638,0.4664567479216082
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '159', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.09156005366931175,0.06508095865779158
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '98', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.14422982857008976,0.16970719633297593
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '19', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.5527388731075367,0.46882883249379725
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '193', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.13867537734897248,0.13946759722027496
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '311', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.060244749603835794,0.03670925799782523
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '86', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.21665098258032586,0.1993972627538182
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '400', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.23554246113945487,0.422527407168231
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '75', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.08445133846290036,0.04420063384763642
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '121', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.8834285283909047,0.8676323347781927
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '122', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3786561139643866,0.6780706794876312
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(J)J', '40', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.37304272594291177,0.7841912294016191
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '295', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9384894111563142,0.8098548786049068
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128', '(Ljava/lang/String;)[J', '14', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.05706129943689496,0.06927988322120195
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BII)J', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.8909928457434516,0.23519749502928955
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(I)J', '29', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2595729319051038,0.28242534756801174
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(J)J', '14', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.20938312742864565,0.07313979965890892
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '153', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.007382588067005286,0.01937338485003019
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '352', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.24384538879378062,0.3742687643618553
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '170', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.10206750929029694,0.17197868192455812
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '186', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.047032116193844654,0.05339706030199013
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '225', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.07988683810121752,0.08984076945930668
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '359', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.23320752515919532,0.10558779671958753
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '37', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.14715737423187955,0.03437586260377615
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128', '([BIII)[J', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7607206242299532,0.8714360118108195
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '110', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.02704031021855496,0.05339706030199013
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '174', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6344226121695424,0.12553027026341518
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '224', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.02235474550341954,0.01937338485003019
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '218', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9746788008314875,0.46725091936068786
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '108', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.38201203934519035,0.05852420201771583
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '336', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0023475614039346533,0.010006794351659458
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '486', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.40774398455273575,0.33497274465939986
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '(JJ)I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.1398912058725304,0.10034824646229075
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '277', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.004454949961486237,0.012906570419653433
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '13', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.004348531777111529,0.024469650576986687
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '75', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0002806865996296164,0.00492203567532315
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '78', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.07327511927753672,0.006208355730252649
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '9', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.21617120445792187,0.12418808667114138
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '417', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.003596417558774226,0.004998124765082457
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '25', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.37304272594291177,0.7841912294016191
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '51', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11148134598698275,0.1459689032011983
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(J)J', '42', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5490144385436062,0.5947925222500688
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '342', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1453448114007734,0.12753770929748698
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(J)J', '48', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.48354171264678136,0.9312054462375265
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '63', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7122922947131776,0.6279320892338778
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '384', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.005834005397558894,0.004998124765082457
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(J)J', '26', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.00023081920662770223,0.003537936478222105
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '161', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9647054240974923,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '30', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.41407314065702905,0.6303555263618644
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '492', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.21309576859436213,0.33497274465939986
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(J)J', '32', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5555730752494203,0.9290127047257105
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '85', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.05501437786032287,0.07712763781563145
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '372', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.01119029362669108,0.019158922740534087
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '506', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0917753381603195,0.12686934931105504
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '72', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7871603404493708,0.9356222819645424
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BII)I', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.4475382223927241,0.6150589419317398
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '326', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5008270842295449,0.4217118075268833
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '308', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2184928061946981,0.33497274465939986
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '327', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.10103273388101658,0.19702339527349688
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '404', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9491444997254608,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '61', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2595729319051038,0.28242534756801174
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '437', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.022661501438244632,0.05381882207022779
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '92', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.10514909208717964,0.035391416429758196
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '388', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.30964188865209535,0.2289506814145954
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '31', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.20938312742864573,0.24821307898992373
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '(Ljava/lang/String;)I', '14', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.8284055064024055,0.5456454923718861
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '106', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11485968922082551,0.06461008912954472
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '177', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.01880418211833856,0.020022386750866865
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '192', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7426729990783703,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64', '([B)[J', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '304', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.26427512695757166,0.2962580613588991
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '425', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9026217668988593,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '(JI)I', '36', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.2959369059228677,0.31454512824041914
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([B)J', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.8249680582315566,0.9343268823508644
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '67', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.44584389664541213,0.8653386122528043
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(I)J', '35', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3381120992564305,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '266', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.13703467639952724,0.168185341869038
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '374', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.056072837324627055,0.016059333429185727
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '62', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6707091776189419,0.12620020095760107
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '76', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6615311606574759,0.6884038632756921
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '(S)J', '18', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3869850086837887,0.7841912294016191
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '358', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6472421996564821,0.4640530709615893
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '72', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.05209169539293862,0.04495124270244937
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '176', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.524886936451095,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '43', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.32742821164162017,0.33497274465939986
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([B)I', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.420777894837422,1.0
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64', '([BIII)[J', '9', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06629749648508214,0.19702339527349688
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '208', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.01472388818956381,0.01612241534330035
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '406', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1003776896818438,0.22731282288651522
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '257', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.03575063386839781,0.0915542414558325
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '26', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,0.9357362806427562
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '241', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.92141508044381,0.9355076744536179
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '202', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.12523974967365442,0.22731282288651522
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash64', '([BIII)J', '133', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.009362355272642932,0.015202415878109048
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '289', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.9754172422706674,0.7466248114708864
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '68', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.8986566039058654,0.8014796067672727
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '(JI)I', '21', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7804925748060049,0.9285484515511329
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32', '([BIII)I', '135', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.04295842581085617,0.05297584324106664
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash128x64Internal', '([BIIJ)[J', '451', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4205303740208166,0.33412028935789195
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '87', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.33409493672609214,0.3759621824832893
+"('org.apache.commons.codec.digest.MurmurHash3', 'hash32x86', '([BIII)I', '93', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.33940845049660684,0.8714360118108195
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '277', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",2.961154187341043e-06,0.00492203567532315
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '465', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",2.7482127632145357e-05,0.004336913286459083
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '422', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.02243629209879451,0.03830311920937907
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '458', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.90374552778453,1.0
+"('org.apache.commons.codec.binary.Base32', 'getLineSeparator', '()[B', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.014665581959320462,0.008856284285235973
+"('org.apache.commons.codec.binary.Base32', 'encode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '947', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0044779260189802775,0.008610126617306363
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '482', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1449276054040803,0.20869447975620004
+"('org.apache.commons.codec.binary.Base32', 'builder', '()Lorg/apache/commons/codec/binary/Base32$Builder;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7629487630536502,0.9356222819645424
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '463', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3753695042888866,0.3734170503556904
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '444', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,1.0
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '282', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3534968412547772,0.3912194278441157
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '234', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,0.7870052402565042
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '446', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.30502397955790306,0.6660020092940073
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '477', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0035070936190234425,0.013378287811594171
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '439', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.21976498913571801,0.38894420078158876
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '284', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.26719952583799367,0.6774979907148524
+"('org.apache.commons.codec.binary.Base32', 'encode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '956', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.29843071495151796,0.7407680498705027
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '268', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.1190124205261109,0.04879612639204954
+"('org.apache.commons.codec.binary.Base32', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '429', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.005507826311791853,0.008367475040112425
+"('org.apache.commons.codec.digest.UnixCrypt', 'crypt', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2619240264937349,0.16435439993797896
+"('org.apache.commons.codec.digest.UnixCrypt', 'crypt', '(Ljava/lang/String;)Ljava/lang/String;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2959369059228676,0.4506702853141802
+"('org.apache.commons.codec.binary.Base64', 'toIntegerBytes', '(Ljava/math/BigInteger;)[B', '33', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.007843404543772966,0.02417896686841391
+"('org.apache.commons.codec.binary.Base64', 'encodeBase64URLSafe', '([B)[B', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0005373336027564515,0.006735947344953688
+"('org.apache.commons.codec.binary.Base64', 'encodeBase64URLSafeString', '([B)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.0015962997323943724,0.02205835214926533
+"('org.apache.commons.codec.binary.Base64', 'isUrlSafe', '()Z', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.01011955973543371,0.015077345632837134
+"('org.apache.commons.codec.binary.Base64', 'calculateDecodeTable', '([B)[B', '20', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",,1.0
+"('org.apache.commons.codec.binary.Base64', 'decode', '([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V', '192', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.6642514717311356,1.0
+"('org.apache.commons.codec.binary.Base64', 'isBase64', '(Ljava/lang/String;)Z', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.007030465949176591,0.020262769386687446
+"('org.apache.commons.codec.binary.Base64', 'validateTrailingCharacter', '()V', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,1.0
+"('org.apache.commons.codec.binary.Base64', 'calculateDecodeTable', '([B)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.5633847422306076,0.2617485776068029
+"('org.apache.commons.codec.binary.Base64', 'isBase64', '(Ljava/lang/String;)Z', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.4010343896713471,0.5270892568655381
+"('org.apache.commons.codec.binary.Base64', 'calculateDecodeTable', '([B)[B', '20', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.1449276054040804,0.17394501679990915
+"('org.apache.commons.codec.binary.Base64', 'calculateDecodeTable', '([B)[B', '38', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",7.935947790627646e-06,0.003352919152960925
+"('org.apache.commons.codec.digest.DigestUtils', 'digest', '(Ljava/lang/String;)[B', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5033583315432523,0.5143928747389944
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_256Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.1774282012917745,0.13361440253771611
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_224Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.30353225499145514,0.24334500914876245
+"('org.apache.commons.codec.digest.DigestUtils', 'shaHex', '([B)Ljava/lang/String;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.4010343896713471,0.19543141861211055
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_512Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.18316715184682397,1.0
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_256Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.017488537183279317,0.008367475040112425
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.6821365764276908,0.9317566669966539
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_256', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.11157492438835556,0.1573644909211892
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_224Hex', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.6044562055691385,1.0
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_224', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.6585615515000811,1.0
+"('org.apache.commons.codec.digest.DigestUtils', 'md5', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.4790966796313679,0.3699763387619128
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_384', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5620952300324515,0.8068398667404373
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_256Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.8937702769092654,0.5711072720421347
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_256', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2665662286967403,0.256857534804089
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.49911814572958735,0.46725091936068786
+"('org.apache.commons.codec.digest.DigestUtils', 'md2Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2744957416939605,0.29540628115829926
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_384Hex', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.5086008609611296,0.7421555933677129
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.5545670194399003,0.6808891137721891
+"('org.apache.commons.codec.digest.DigestUtils', 'digestAsHex', '(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.034863869365692135,0.04159593817019687
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_384', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5112623585987119,0.32094916563110054
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_224Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.26270325298728475,0.5669225848685784
+"('org.apache.commons.codec.digest.DigestUtils', 'sha256Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.39312275084944026,0.8690979321823111
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_224Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.23361631336684754,0.2893626153186982
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_256Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.12771572871830014,0.08412265660238245
+"('org.apache.commons.codec.digest.DigestUtils', 'sha384', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7124884655784454,1.0
+"('org.apache.commons.codec.digest.DigestUtils', 'md2', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5884493383159477,0.6825450986404671
+"('org.apache.commons.codec.digest.DigestUtils', 'getSha512_224Digest', '()Ljava/security/MessageDigest;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.6224698478296316,0.8081974613229053
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7313700055371246,0.934447888954391
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_224Hex', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.5198877806979787,0.5589234608112341
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_224Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",1.0,0.9325592051798114
+"('org.apache.commons.codec.digest.DigestUtils', 'digestAsHex', '(Ljava/lang/String;)Ljava/lang/String;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.18990569674090735,0.16894702169308384
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_512Hex', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.10757099809848802,0.16894702169308384
+"('org.apache.commons.codec.digest.DigestUtils', 'shaHex', '(Ljava/lang/String;)Ljava/lang/String;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.014497456342723293,0.039393270229857606
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_224', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.4105126712790068,0.38798191590770215
+"('org.apache.commons.codec.digest.DigestUtils', 'digest', '(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)[B', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.6669919599178739,0.6847135504649174
+"('org.apache.commons.codec.digest.DigestUtils', 'md5Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.17114072575545236,0.22234533413401147
+"('org.apache.commons.codec.digest.DigestUtils', 'getMessageDigest', '()Ljava/security/MessageDigest;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0012579820263352894,0.004998124765082457
+"('org.apache.commons.codec.digest.DigestUtils', 'md2', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7993445937762911,1.0
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_512', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.15796658718691184,0.1459689032011983
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_256', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7387017255136488,0.7421555933677129
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_512', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7159125729268161,0.8051016355875565
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_256Hex', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.3125234236260829,0.5690300868926521
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_256', '([B)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.06655785362620593,0.08412265660238245
+"('org.apache.commons.codec.digest.DigestUtils', 'getSha512_256Digest', '()Ljava/security/MessageDigest;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.8965290851338024,0.9332067877988893
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_384Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.4572007978017636,0.5683309908015002
+"('org.apache.commons.codec.digest.DigestUtils', 'shaHex', '(Ljava/io/InputStream;)Ljava/lang/String;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.07632521855149509,0.08240637679870151
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_224', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.20938312742864565,0.21216318677404367
+"('org.apache.commons.codec.digest.DigestUtils', 'md5Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7961128560340756,0.6715980124535905
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_256Hex', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2633716105310271,0.36292791389269496
+"('org.apache.commons.codec.digest.DigestUtils', 'sha384Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.3989279611029205,0.5017267566307462
+"('org.apache.commons.codec.digest.DigestUtils', 'sha256', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.37675058479249046,0.16435439993797896
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_512Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7628607573002956,1.0
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_384Hex', '(Ljava/io/InputStream;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.06995259135343604,0.06226112073422298
+"('org.apache.commons.codec.digest.DigestUtils', 'md2Hex', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.46504964106448843,0.8068398667404373
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_256', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5526637788188435,0.14668567006267275
+"('org.apache.commons.codec.digest.DigestUtils', 'md5', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.08563843884502517,0.09369553038912785
+"('org.apache.commons.codec.digest.DigestUtils', 'sha3_224', '(Ljava/io/InputStream;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.34725425168133073,0.49242726998290076
+"('org.apache.commons.codec.digest.DigestUtils', 'sha512_224', '([B)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.500827084229545,0.5159097614725954
+"('org.apache.commons.codec.digest.DigestUtils', 'getDigest', '(Ljava/lang/String;Ljava/security/MessageDigest;)Ljava/security/MessageDigest;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7559674291207334,0.8698127085376393
+"('org.apache.commons.codec.digest.MurmurHash2', 'hash32', '(Ljava/lang/String;II)I', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.41778700474506536,0.5228166539190886
+"('org.apache.commons.codec.digest.MurmurHash2', 'hash64', '(Ljava/lang/String;II)J', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.2166509825803259,0.16720126970856808
+"('org.apache.commons.codec.digest.MurmurHash2', 'hash32', '(Ljava/lang/String;)I', '12', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.295457965438805,0.31731050786291415
+"('org.apache.commons.codec.digest.MurmurHash2', 'hash32', '(Ljava/lang/String;II)I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06461526125177976,0.08802898672755748
+"('org.apache.commons.codec.digest.MurmurHash2', 'hash64', '(Ljava/lang/String;II)J', '7', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.46478851925766096,0.9328204911819891
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '433', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.015553335507001453,0.009785073204469958
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '518', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.010681489655827495,0.019760533869767533
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '436', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.33732655942982503,0.14544984436145708
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '366', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.03458134743591216,0.05753522879260477
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '436', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5555730752494201,0.7298589390398688
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '270', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.4475382223927241,0.43151217333942393
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '389', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.1449276054040804,0.12573434547609025
+"('org.apache.commons.codec.language.Metaphone', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5736632290147845,0.22963742206631377
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '136', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.26656622869673985,0.21835469056590173
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '106', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.10089208704794038,0.11811126886899109
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '547', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7208269913626657,0.7293298010585041
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '394', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.26999628736368964,0.22587235588913834
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '445', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.6642514717311356,0.5838824207703652
+"('org.apache.commons.codec.language.Metaphone', 'metaphone', '(Ljava/lang/String;)Ljava/lang/String;', '389', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.6867440479548104,0.7180483349468499
+"('org.apache.commons.codec.digest.Sha2Crypt', 'sha512Crypt', '([BLjava/lang/String;Ljava/util/Random;)Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.187669870869603,0.24164976576539
+"('org.apache.commons.codec.digest.Sha2Crypt', 'sha256Crypt', '([BLjava/lang/String;Ljava/util/Random;)Ljava/lang/String;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.08088634123994827,0.023642218909198487
+"('org.apache.commons.codec.digest.Sha2Crypt', 'sha256Crypt', '([BLjava/lang/String;Ljava/util/Random;)Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.4475382223927241,0.4125114942650385
+"('org.apache.commons.codec.digest.Sha2Crypt', 'sha512Crypt', '([BLjava/lang/String;Ljava/util/Random;)Ljava/lang/String;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.005330876979642753,0.015202415878109048
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '202', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",3.833625911279958e-05,0.00469769748933007
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '288', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.00409509588484426,0.003925625174650279
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '38', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.019556391759734764,0.005679041078583963
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '228', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.858313049890121,0.8686148218939327
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '76', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.08155339870160565,0.08011831372763417
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '210', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.20727551095112653,0.21898823408168433
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '135', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.16925720590702825,0.21440071155302465
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '270', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.011614992571625536,0.01225385464586109
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '52', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.058822023640798145,0.02748425364612059
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '78', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1716580031336782,0.07313979965890892
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '28', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.03931612277902693,0.009785073204469958
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '83', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.07828518117266553,0.1037185792000196
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '230', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.13989120587253004,0.12246239911417303
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '246', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.31716336263410516,0.7870052402565042
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '184', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06461526125177988,0.07326407689400848
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '302', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.6057975823680928,0.4217118075268833
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '74', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.45057447346243096,0.43718552348326645
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '126', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.004803437315054658,0.009373090997211148
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '304', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.23143502224408133,0.2617485776068029
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '217', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2595729319051038,0.41759283514412704
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '226', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2665662286967403,0.23519749502928955
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '48', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5581574285469886,0.8655993734133421
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '28', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,0.28227697610638014
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '55', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.024839397803722383,0.025294083572429765
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '45', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2595729319051038,0.1766930332990293
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '159', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6170597953333559,0.9241023104566971
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '242', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",1.0,0.8551321405847059
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '257', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.015655840794283237,0.00811311726556578
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '154', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.02243629209879451,0.02804919058166734
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '20', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.30353225499145514,0.38798191590770215
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '186', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.23143502224408133,0.34523436653678796
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '22', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3050239795579033,0.4898003774180698
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '277', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.8040232639921933,0.7518296340458492
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '119', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11138558808489407,0.14221806785010388
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '161', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.16925720590702825,0.21440071155302465
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '99', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.23458491443862808,0.38886121403562657
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '(I)V', '12', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11157492438835537,0.07897463824405934
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '190', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,0.9282338408623975
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '57', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5633847422306074,0.2617485776068029
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '10', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4593959578682658,0.5589234608112341
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '208', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2239751601528441,0.24065448094787556
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '204', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.18114932460633545,0.31454512824041914
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '237', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4405216964361721,0.6660020092940073
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '145', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5080373219656829,0.32806478170083675
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'reset', '()V', '4', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.4847912130983969,0.6621086743332107
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '112', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.413727796576257,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '131', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06826435765193688,0.14221806785010388
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '147', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.08155339870160565,0.0740099699862347
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '266', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.787160340449371,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '306', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06826435765193688,0.05115265438669658
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '157', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.13139787977650494,0.19895893109240215
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '115', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.08155339870160565,0.0740099699862347
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '36', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5994703106545753,0.6732899796599957
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '117', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.19565115601099622,0.08991933017896085
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '107', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.05398743860036232,0.04796787374273122
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '268', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2633716105310271,0.4619504545877914
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '93', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.8174241482456043,0.9324274137022991
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '297', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5490144385436062,0.5947925222500688
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '(I)V', '16', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.40103438967134697,0.5270892568655381
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '222', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '244', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.15969894130062023,0.102340691905055
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '182', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.11138558808489413,0.08991933017896085
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'getValue', '()J', '9', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.787160340449371,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '42', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6320686438208908,0.6109295601849647
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '177', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,0.4591481427617
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '224', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0524410684493531,0.039758349639090744
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '58', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6610861884638375,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '310', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0023763201281442217,0.004197192618010305
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '149', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5490144385436051,0.5947925222500688
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '95', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.37148578456157033,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '89', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.14492760540408026,0.17394501679990915
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '66', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.40103438967134697,0.5270892568655381
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '143', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.07330340605205327,0.012296453703374836
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '262', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.010681489655827495,0.019760533869767533
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '129', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.04418696218757278,0.06212455388335773
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '197', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'getValue', '()J', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.5633847422306074,0.6660020092940073
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '188', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5490144385436062,0.795646902640574
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '65', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.05999946154776259,0.017589271957929333
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '284', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.25957293190510367,0.28242534756801174
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '206', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.289691612051008,0.3537893140997207
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '87', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,0.8576687548774105
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '(I)V', '14', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.34089313230205964,0.40465676192728617
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '62', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5825878500810265,0.6524683072570377
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '282', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",1.0,0.7525537501972419
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '97', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.612879742856022,0.6524683072570377
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '47', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11138558808489413,0.10034824646229075
+"('org.apache.commons.codec.digest.PureJavaCrc32', '<init>', '()V', '8', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.04933219563992175,0.04798194194775237
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'getValue', '()J', '6', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1818537501838959,0.039165951609026646
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '286', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3101752265486871,0.4741135606054442
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '308', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0006054433887597597,0.003352919152960925
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '85', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.09243590837260077,0.11384629800665805
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '264', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '103', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2093831274286454,0.21835469056590173
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '121', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6867440479548108,0.9233418401809065
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '67', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7341695578680077,0.7180483349468499
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '250', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.029592462206741103,0.039165951609026646
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '290', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.010119559735433699,0.008881643748418357
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '(I)V', '7', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.06461526125177962,0.08109208502833234
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '140', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '133', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.26999628736368964,0.3395562157854821
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '(I)V', '18', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0004922378802721128,0.00801011683155578
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '105', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0552347993622813,0.025980241951404134
+"('org.apache.commons.codec.digest.PureJavaCrc32', 'update', '([BII)V', '248', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.34132354910201734,0.3154704263245328
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encode', '(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.36049966800292776,0.5302012379880764
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.19565115601099622,0.2268180436817162
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7804925748060049,0.7841912294016191
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.36049966800292776,0.3936904377219629
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '34', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0014635824553978923,0.007326374777270018
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '34', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.36049966800292776,0.2819025817283859
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.460825918671255,0.4871327581713819
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encodeQuotedPrintable', '(Ljava/util/BitSet;[BZ)[B', '186', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.36049966800292776,0.3936904377219629
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encodeQuotedPrintable', '(Ljava/util/BitSet;[BZ)[B', '196', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.20938312742864562,0.24681015326181155
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.4105126712790068,0.43718552348326645
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.34089313230206,0.6524683072570377
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encodeQuotedPrintable', '(Ljava/util/BitSet;[BZ)[B', '191', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.8284055064024057,0.4381149856244809
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7341695578680077,0.6627670083811275
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'decode', '(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.4688366489711776,0.5283870187043228
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.38750340235100733,0.8655993734133421
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0032578082307496703,0.007776319859925886
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5994703106545753,0.6403735394530488
+"('org.apache.commons.codec.net.QuotedPrintableCodec', 'encode', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.10861104847573877,0.15025487133931867
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '141', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",3.715592281685681e-05,0.0018205326093252568
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '125', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",3.715592281685681e-05,0.0018205326093252568
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '101', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",2.0501491144711053e-08,0.003352919152960925
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '178', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.41778700474506536,0.5228166539190886
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '180', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,1.0
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '91', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0493321956399217,0.07053284913489208
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '208', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.12184932717055404,0.13977957425023516
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '70', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0493321956399217,0.037884416534219784
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '96', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7871603404493709,0.9333340800150559
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '151', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0733880347707404,0.07313979965890892
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '64', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.17394837931045473,0.20124262095772394
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '60', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0733880347707404,0.07313979965890892
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '17', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7243500069273169,0.7883715944199081
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '216', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.07338803477074025,0.07313979965890892
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '106', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2595729319051038,0.28242534756801174
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '186', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.06461526125177976,0.08633151856116363
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '197', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0493321956399217,0.07053284913489208
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '191', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,1.0
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '123', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5994703106545749,0.6403735394530488
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '133', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.20938312742864562,0.24821307898992373
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '166', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.01011955973543371,0.009002799524086667
+"('org.apache.commons.codec.language.bm.Rule', 'lambda$parseRules$4', '(Ljava/lang/String;)Ljava/util/List;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",,1.0
+"('org.apache.commons.codec.language.bm.Rule', 'pattern', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Rule$RPattern;', '202', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.06461526125177976,0.07313979965890892
+"('org.apache.commons.codec.binary.BaseNCodec', 'isInAlphabet', '([BZ)Z', '33', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.06346652104918524,0.009002799524086667
+"('org.apache.commons.codec.binary.BaseNCodec', 'isInAlphabet', '(Ljava/lang/String;)Z', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.002702654540481129,0.038665643134563527
+"('org.apache.commons.codec.binary.BaseNCodec', 'isInAlphabet', '([BZ)Z', '38', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.18115905989279085,0.1235158465460036
+"('org.apache.commons.codec.binary.BaseNCodec', 'createPositiveCapacity', '(I)I', '17', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4010343896713471,0.5270892568655381
+"('org.apache.commons.codec.binary.BaseNCodec', 'isInAlphabet', '(Ljava/lang/String;)Z', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.2595729319051038,0.28242534756801174
+"('org.apache.commons.codec.language.MatchRatingApproachEncoder', 'isEncodeEquals', '(Ljava/lang/String;Ljava/lang/String;)Z', '125', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",1.0,0.23057135296393616
+"('org.apache.commons.codec.language.MatchRatingApproachEncoder', 'removeAccents', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.18518905883371561,0.1953463014649477
+"('org.apache.commons.codec.language.MatchRatingApproachEncoder', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.20938312742864562,0.24821307898992373
+"('org.apache.commons.codec.language.MatchRatingApproachEncoder', 'isEncodeEquals', '(Ljava/lang/String;Ljava/lang/String;)Z', '62', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.44753822239272356,0.43151217333942393
+"('org.apache.commons.codec.binary.BinaryCodec', 'toByteArray', '(Ljava/lang/String;)[B', '15', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0001442234778489105,0.004303072907216339
+"('org.apache.commons.codec.binary.BinaryCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0274126172099521,0.045909671506055995
+"('org.apache.commons.codec.binary.BinaryCodec', 'fromAscii', '([C)[B', '12', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.15114474447410142,0.7298589390398688
+"('org.apache.commons.codec.binary.BinaryCodec', 'toAsciiString', '([B)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",1.0,1.0
+"('org.apache.commons.codec.binary.BinaryCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '45', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,1.0
+"('org.apache.commons.codec.binary.BinaryCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.6867440479548104,0.9233418401809065
+"('org.apache.commons.codec.binary.BinaryCodec', 'toByteArray', '(Ljava/lang/String;)[B', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7443992288956518,0.866880832268926
+"('org.apache.commons.codec.binary.BinaryCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '32', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.417787004745065,0.5228166539190886
+"('org.apache.commons.codec.binary.BinaryCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5490144385436057,0.9233418401809065
+"('org.apache.commons.codec.binary.BinaryCodec', 'encode', '([B)[B', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3408931323020601,1.0
+"('org.apache.commons.codec.binary.BinaryCodec', 'toByteArray', '(Ljava/lang/String;)[B', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0010464356539330786,0.004336913286459083
+"('org.apache.commons.codec.language.Nysiis', 'transcodeRemaining', '(CCCC)[C', '73', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.03582973763061277,0.023223192940087675
+"('org.apache.commons.codec.language.Nysiis', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.5581574285469888,1.0
+"('org.apache.commons.codec.language.Nysiis', 'nysiis', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2949711472873055,0.3395562157854821
+"('org.apache.commons.codec.language.Nysiis', 'transcodeRemaining', '(CCCC)[C', '86', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.021872300003868913,0.03250944464571951
+"('org.apache.commons.codec.language.Nysiis', 'transcodeRemaining', '(CCCC)[C', '52', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2959369059228676,0.38310353658297847
+"('org.apache.commons.codec.language.Nysiis', 'nysiis', '(Ljava/lang/String;)Ljava/lang/String;', '23', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7208269913626657,0.7293298010585041
+"('org.apache.commons.codec.net.PercentCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.04554128410546252,0.08412265660238245
+"('org.apache.commons.codec.net.PercentCodec', 'containsSpace', '([B)Z', '27', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.5154662314060063,0.5504668540589885
+"('org.apache.commons.codec.net.PercentCodec', 'doEncode', '([BIZ)[B', '90', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3408931323020601,0.3393476202193042
+"('org.apache.commons.codec.net.PercentCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.39892796110292017,0.5551388298552509
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacMd5Hex', '([B[B)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",1.127460141278627e-06,0.004407757995697681
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha384Hex', '([BLjava/io/InputStream;)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.000484171833245654,0.0030004585355605587
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha1', '([BLjava/io/InputStream;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.021872300003868913,0.037880713541841575
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha1', '(Ljava/lang/String;Ljava/lang/String;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.18114932460633545,0.11494074923871192
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacMd5', '(Ljava/lang/String;Ljava/lang/String;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.026932674450361092,0.015077345632837134
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha256', '([BLjava/io/InputStream;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.11658555790570706,0.06520651565396936
+"('org.apache.commons.codec.digest.HmacUtils', 'getHmacSha384', '([B)Ljavax/crypto/Mac;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.06461526125177976,0.06958836922959732
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha256', '([B[B)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.01488450830191897,0.007446727349778727
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha512Hex', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.004803437315054658,0.009373090997211148
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;Ljava/io/InputStream;)Ljavax/crypto/Mac;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0012493913249422995,0.002671274611601153
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha256', '(Ljava/lang/String;Ljava/lang/String;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.008065662804193538,0.009924336503833947
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;Ljava/io/InputStream;)Ljavax/crypto/Mac;', '44', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.034581347435912235,0.037880713541841575
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;[B)Ljavax/crypto/Mac;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.HmacUtils', 'getHmacSha256', '([B)Ljavax/crypto/Mac;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.029880010276699485,0.028887495035598478
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha384', '([BLjava/io/InputStream;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3408931323020601,0.3864762307712327
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha384Hex', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.04933219563992165,0.0688944202078717
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;Ljava/io/InputStream;)Ljavax/crypto/Mac;', '30', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.7547590689622177,0.28406662328943666
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha1Hex', '([B[B)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.5490144385436062,0.6660020092940073
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha384', '([B[B)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.26999628736368964,0.3413266425963498
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha256Hex', '([BLjava/io/InputStream;)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha512', '([B[B)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha384', '(Ljava/lang/String;Ljava/lang/String;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.21075202986886207,0.20933442291687654
+"('org.apache.commons.codec.digest.HmacUtils', 'getHmacMd5', '([B)Ljavax/crypto/Mac;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.34089313230205964,0.40465676192728617
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacMd5', '([BLjava/io/InputStream;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2896916120510081,0.31086287025889725
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;[B)Ljavax/crypto/Mac;', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.1449276054040804,0.17394501679990915
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha1', '([B[B)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.001463582455397895,0.007326374777270018
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha512', '([BLjava/io/InputStream;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,0.8551321405847059
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha512Hex', '([B[B)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;Ljava/io/InputStream;)Ljavax/crypto/Mac;', '23', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.34089313230205964,0.40465676192728617
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacMd5', '([B[B)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.1449276054040804,0.17394501679990915
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha256Hex', '([B[B)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.20938312742864562,0.24681015326181155
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha384Hex', '([B[B)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.007314617739307248,0.01828380871693175
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha512Hex', '([BLjava/io/InputStream;)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.10994623026607982,0.13732871364589386
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;[B)Ljavax/crypto/Mac;', '13', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.1449276054040804,0.1766930332990293
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha256Hex', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.5154662314060063,0.5504668540589885
+"('org.apache.commons.codec.digest.HmacUtils', 'hmacSha512', '(Ljava/lang/String;Ljava/lang/String;)[B', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2093831274286454,0.2063236116957211
+"('org.apache.commons.codec.digest.HmacUtils', 'updateHmac', '(Ljavax/crypto/Mac;Ljava/io/InputStream;)Ljavax/crypto/Mac;', '23', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2595729319051038,0.28242534756801174
+"('org.apache.commons.codec.digest.HmacUtils', 'getHmacSha512', '([B)Ljavax/crypto/Mac;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0733880347707404,0.07313979965890892
+"('org.apache.commons.codec.digest.Md5Crypt', 'apr1Crypt', '([BLjava/util/Random;)Ljava/lang/String;', '15', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7871603404493709,0.9333340800150559
+"('org.apache.commons.codec.digest.Md5Crypt', 'apr1Crypt', '(Ljava/lang/String;)Ljava/lang/String;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.765031950448988,1.0
+"('org.apache.commons.codec.digest.Md5Crypt', 'md5Crypt', '([BLjava/util/Random;)Ljava/lang/String;', '15', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.09194808529332303,0.010925908404662264
+"('org.apache.commons.codec.digest.Md5Crypt', 'md5Crypt', '([BLjava/lang/String;Ljava/lang/String;Ljava/util/Random;)Ljava/lang/String;', '60', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3408931323020603,0.40465676192728617
+"('org.apache.commons.codec.digest.Md5Crypt', 'md5Crypt', '([BLjava/lang/String;Ljava/lang/String;Ljava/util/Random;)Ljava/lang/String;', '57', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.10280915246539714,0.013934638062457576
+"('org.apache.commons.codec.binary.Base16', 'isInAlphabet', '(B)Z', '23', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.4847912130983969,0.5283870187043228
+"('org.apache.commons.codec.binary.Base16', 'isInAlphabet', '(B)Z', '9', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5700757670142852,0.6037427672550899
+"('org.apache.commons.codec.binary.Base16', 'isInAlphabet', '(B)Z', '15', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,1.0
+"('org.apache.commons.codec.binary.Base16', 'isInAlphabet', '(B)Z', '9', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.13948593048546193,0.13654955508657102
+"('org.apache.commons.codec.binary.Base16', 'isInAlphabet', '(B)Z', '5', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3951292062102053,0.35748981064588625
+"('org.apache.commons.codec.language.ColognePhonetic', 'isEncodeEqual', '(Ljava/lang/String;Ljava/lang/String;)Z', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",6.848531272327632e-05,0.004624228801499123
+"('org.apache.commons.codec.language.ColognePhonetic', 'colognePhonetic', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.03553691144879933,0.03311773333120043
+"('org.apache.commons.codec.language.ColognePhonetic', 'isEncodeEqual', '(Ljava/lang/String;Ljava/lang/String;)Z', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.41778700474506536,0.5228166539190886
+"('org.apache.commons.codec.language.ColognePhonetic', 'colognePhonetic', '(Ljava/lang/String;)Ljava/lang/String;', '219', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,0.5456454923718861
+"('org.apache.commons.codec.language.ColognePhonetic', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '40', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,1.0
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32x86', 'finalise', '(II[BI)I', '23', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.11157492438835524,0.06958836922959732
+"('org.apache.commons.codec.net.URLCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.49564750438312033,0.38886121403562657
+"('org.apache.commons.codec.net.URLCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.41051267127900704,0.7744854344291277
+"('org.apache.commons.codec.net.URLCodec', 'decode', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.25957293190510367,0.28242534756801174
+"('org.apache.commons.codec.net.URLCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,0.9324274137022991
+"('org.apache.commons.codec.net.URLCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '34', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.6190998195838731,1.0
+"('org.apache.commons.codec.net.URLCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7341695578680077,1.0
+"('org.apache.commons.codec.net.URLCodec', 'encode', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.6867440479548108,0.8585862013366392
+"('org.apache.commons.codec.net.URLCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5633847422306074,0.6734018511364575
+"('org.apache.commons.codec.net.URLCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7871603404493709,0.9333340800150559
+"('org.apache.commons.codec.net.URLCodec', 'encode', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",4.61517165737739e-08,0.003352919152960925
+"('org.apache.commons.codec.net.URLCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '34', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.06461526125177962,0.08633151856116363
+"('org.apache.commons.codec.net.URLCodec', 'decode', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7804925748060049,1.0
+"('org.apache.commons.codec.net.URLCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.28969161205100885,0.31086287025889725
+"('org.apache.commons.codec.net.URLCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.10994623026607972,0.13732871364589386
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex', 'lambda$static$0', '(Lorg/apache/commons/codec/language/DaitchMokotoffSoundex$Rule;Lorg/apache/commons/codec/language/DaitchMokotoffSoundex$Rule;)I', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.7988551011763774,0.8653386122528043
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex', 'lambda$static$1', '(Ljava/lang/Character;Ljava/util/List;)V', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.6642514717311346,1.0
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex', 'lambda$static$0', '(Lorg/apache/commons/codec/language/DaitchMokotoffSoundex$Rule;Lorg/apache/commons/codec/language/DaitchMokotoffSoundex$Rule;)I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1774282012917745,0.2324304819741162
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex', 'lambda$parseRules$2', '(Ljava/lang/Character;)Ljava/util/List;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.085638438845025,0.10034824646229075
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex', 'encode', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.41778700474506536,0.23533326650958586
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.1917653521946366,0.34620097373163994
+"('org.apache.commons.codec.binary.StringUtils', 'getByteBuffer', '(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/nio/ByteBuffer;', '16', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2896916120510081,0.31086287025889725
+"('org.apache.commons.codec.binary.StringUtils', 'getByteBuffer', '(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/nio/ByteBuffer;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0924359083726009,0.1121958240846801
+"('org.apache.commons.codec.binary.StringUtils', 'getByteBufferUtf8', '(Ljava/lang/String;)Ljava/nio/ByteBuffer;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.4010343896713471,0.4760334929424296
+"('org.apache.commons.codec.binary.StringUtils', 'getBytesUtf16', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0012787189327764577,0.0025666784731500736
+"('org.apache.commons.codec.binary.StringUtils', 'getBytesUtf16Le', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.20938312742864565,0.24681015326181155
+"('org.apache.commons.codec.binary.StringUtils', 'getBytesUtf16Be', '(Ljava/lang/String;)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.1692572059070283,0.21440071155302465
+"('org.apache.commons.codec.binary.StringUtils', 'newString', '([BLjava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.06192696255543695,0.009002799524086667
+"('org.apache.commons.codec.language.bm.PhoneticEngine', 'encode', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;)Ljava/lang/String;', '159', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7988551011763774,0.7198307076577725
+"('org.apache.commons.codec.language.bm.PhoneticEngine', 'encode', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;)Ljava/lang/String;', '125', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.019307872935307325,0.02033072629585609
+"('org.apache.commons.codec.language.bm.PhoneticEngine', 'applyFinalRules', '(Lorg/apache/commons/codec/language/bm/PhoneticEngine$PhonemeBuilder;Ljava/util/Map;)Lorg/apache/commons/codec/language/bm/PhoneticEngine$PhonemeBuilder;', '15', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.12729151141117723,0.22731282288651522
+"('org.apache.commons.codec.language.Soundex', 'difference', '(Ljava/lang/String;Ljava/lang/String;)I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.34089313230205986,0.3864762307712327
+"('org.apache.commons.codec.language.Soundex', '<init>', '([C)V', '24', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,1.0
+"('org.apache.commons.codec.language.Soundex', 'hasMarker', '([C)Z', '27', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.2959369059228673,0.3395562157854821
+"('org.apache.commons.codec.net.QCodec', 'encode', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.20182574974114081,0.29110401940254904
+"('org.apache.commons.codec.net.QCodec', 'doEncoding', '([B)[B', '30', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.8713075424240612,0.8033156253747962
+"('org.apache.commons.codec.net.QCodec', 'doEncoding', '([B)[B', '37', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0780421542967699,0.048432548006671655
+"('org.apache.commons.codec.net.QCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.4693401441115843,1.0
+"('org.apache.commons.codec.net.QCodec', 'isEncodeBlanks', '()Z', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.4105126712790065,0.45153575792889766
+"('org.apache.commons.codec.net.QCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5678795467792426,0.5097560188294326
+"('org.apache.commons.codec.net.QCodec', 'isEncodeBlanks', '()Z', '5', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.2133908979650272,0.08755444133283341
+"('org.apache.commons.codec.net.QCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.012247267266363458,0.027768363487336238
+"('org.apache.commons.codec.net.QCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.18279081705490013,0.31454512824041914
+"('org.apache.commons.codec.net.QCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0004385306549228381,0.004771821713797115
+"('org.apache.commons.codec.net.QCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.289691612051008,0.3537893140997207
+"('org.apache.commons.codec.net.QCodec', 'doDecoding', '([B)[B', '69', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.30353225499145514,0.4532547047537364
+"('org.apache.commons.codec.net.QCodec', 'doEncoding', '([B)[B', '30', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5349823669389406,0.6229390941134841
+"('org.apache.commons.codec.net.QCodec', 'doDecoding', '([B)[B', '80', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.18513718708922106,0.2442362964321273
+"('org.apache.commons.codec.net.QCodec', 'doDecoding', '([B)[B', '69', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.51695351030911,0.4116536891929302
+"('org.apache.commons.codec.net.QCodec', 'doDecoding', '([B)[B', '105', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,0.9328204911819891
+"('org.apache.commons.codec.language.bm.Languages$SomeLanguages', 'merge', '(Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;)Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;', '19', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3951292062102053,0.6538960586655933
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch', 'equals', '(Ljava/lang/Object;)Z', '15', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.4761785894949254,0.848518937078283
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch', 'equals', '(Ljava/lang/Object;)Z', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.49564750438312044,0.38886121403562657
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch', 'equals', '(Ljava/lang/Object;)Z', '29', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.3229421555926433,0.41759283514412704
+"('org.apache.commons.codec.language.DaitchMokotoffSoundex$Branch', 'equals', '(Ljava/lang/Object;)Z', '29', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",5.255553462310571e-07,0.004336913286459083
+"('org.apache.commons.codec.language.RefinedSoundex', 'difference', '(Ljava/lang/String;Ljava/lang/String;)I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.0007348119508964397,0.003992533063261791
+"('org.apache.commons.codec.language.RefinedSoundex', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.04933219563992175,0.037884416534219784
+"('org.apache.commons.codec.net.BCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.003507093619023449,0.013378287811594171
+"('org.apache.commons.codec.net.BCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.04933219563992165,0.07783133783315573
+"('org.apache.commons.codec.net.BCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.17114072575545225,0.17992880513060894
+"('org.apache.commons.codec.net.BCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.011234028904971518,0.022478873366125265
+"('org.apache.commons.codec.net.BCodec', 'encode', '(Ljava/lang/Object;)Ljava/lang/Object;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3229421555926433,0.34230982228617846
+"('org.apache.commons.codec.net.BCodec', 'encode', '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.002468118253799636,0.0048466012104884885
+"('org.apache.commons.codec.net.BCodec', 'decode', '(Ljava/lang/Object;)Ljava/lang/Object;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.06728752793614513,0.1174324743592521
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '56', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.7306895618277576e-06,0.0036645475900385395
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '90', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.08088634123994827,0.08991933017896085
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '72', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2896916120510081,0.31086287025889725
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '44', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0307475829513118,0.015077345632837134
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '25', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0733880347707404,0.07313979965890892
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '106', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3409392692288721,0.848518937078283
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '38', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.01652808961068039,0.007446727349778727
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '204', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3408931323020601,0.40465676192728617
+"('org.apache.commons.codec.language.bm.Lang', 'loadFromResource', '(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;', '72', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.014884508301918984,0.007446727349778727
+"('org.apache.commons.codec.binary.CharSequenceUtils', 'regionMatches', '(Ljava/lang/CharSequence;ZILjava/lang/CharSequence;II)Z', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.8563962454154139,1.0
+"('org.apache.commons.codec.binary.CharSequenceUtils', 'regionMatches', '(Ljava/lang/CharSequence;ZILjava/lang/CharSequence;II)Z', '78', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5109213457490083,0.8061501709029357
+"('org.apache.commons.codec.binary.CharSequenceUtils', 'regionMatches', '(Ljava/lang/CharSequence;ZILjava/lang/CharSequence;II)Z', '20', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.25630088592723244,0.5415077725193881
+"('org.apache.commons.codec.digest.Crypt', 'crypt', '(Ljava/lang/String;)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2959369059228676,0.4125114942650385
+"('org.apache.commons.codec.digest.Crypt', 'crypt', '([B)Ljava/lang/String;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.7107293597548228,1.0
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '60', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",3.4274526818779666e-06,0.00455141587451369
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '42', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2896916120510084,0.5992659619828535
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '33', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4847912130983969,0.5283870187043228
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '21', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.34844605001479834,0.5302012379880764
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '66', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.20086856086704305,0.2946648061242889
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '32', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0006031808155272298,0.00277843011009903
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '79', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.8454891913803457,0.7883715944199081
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '73', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4381238655742168,0.5302012379880764
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '22', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,0.7883715944199081
+"('org.apache.commons.codec.digest.MurmurHash3$IncrementalHash32', 'finalise', '(II[BI)I', '48', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5490144385436062,0.9233418401809065
+"('org.apache.commons.codec.language.bm.BeiderMorseEncoder', 'getNameType', '()Lorg/apache/commons/codec/language/bm/NameType;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.07671943752164107,0.06461008912954472
+"('org.apache.commons.codec.language.bm.BeiderMorseEncoder', 'encode', '(Ljava/lang/String;)Ljava/lang/String;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.07059778947389991,0.015860817134668685
+"('org.apache.commons.codec.language.bm.BeiderMorseEncoder', 'getRuleType', '()Lorg/apache/commons/codec/language/bm/RuleType;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.7659779755769165,0.45239722100818014
+"('org.apache.commons.codec.language.bm.BeiderMorseEncoder', 'isConcat', '()Z', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.1532998110607359,0.18242243945173575
+"('org.apache.commons.codec.language.bm.BeiderMorseEncoder', 'isConcat', '()Z', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.058742655663679415,0.059455698010167216
+"('org.apache.commons.codec.language.bm.Languages', 'getInstance', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Languages;', '25', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.8376174472761054,1.0
+"('org.apache.commons.codec.language.bm.Languages', 'getInstance', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Languages;', '53', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.00011368371686277784,0.0048466012104884885
+"('org.apache.commons.codec.language.bm.Languages', 'getInstance', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Languages;', '64', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.00731461773930726,0.005771715821905299
+"('org.apache.commons.codec.language.bm.Languages', 'getInstance', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Languages;', '35', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.34089313230205964,0.40465676192728617
+"('org.apache.commons.codec.language.bm.Languages', 'getInstance', '(Ljava/lang/String;)Lorg/apache/commons/codec/language/bm/Languages;', '41', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,0.7518296340458492

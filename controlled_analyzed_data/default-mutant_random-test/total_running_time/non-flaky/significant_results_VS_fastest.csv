@@ -1,0 +1,4 @@
+project,seed-pair,T-test,U-test
+commons-codec,"(0, 'fastest')",5.132740341367188e-12,0.0021645021645021645
+commons-codec,"(2024, 'fastest')",6.899541676457363e-07,0.0021645021645021645
+commons-codec,"(99999, 'fastest')",0.25631710543392344,0.09307359307359307

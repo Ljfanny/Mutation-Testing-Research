@@ -1,109 +1,367 @@
 mutant,T-test,U-test
-1247,0.00032027871953238003,0.004771821713797115
-240,0.01011955973543371,0.02460867246744561
-212,2.46266592598897e-08,0.003352919152960925
-468,0.003595013700244952,0.011220550455523517
-297,3.8624132483570234e-15,0.00360091506678742
-961,0.0493321956399217,0.0688944202078717
-1153,0.019668781020468984,0.002515336771798898
-239,1.743615867034836e-06,0.002515336771798898
-1155,0.11138558808489413,0.14221806785010388
-1162,0.7341695578680072,0.7980410598650202
-1693,0.00027029574725461754,0.002618657286500888
-1641,2.4866232310253586e-06,0.003413939087604959
-189,3.070738925747131e-06,0.0030004585355605587
-255,0.0005660948949003442,0.00469769748933007
-37,0.8436289715321075,0.935392452671305
-107,0.00030620986586496387,0.004479258891846413
-1149,0.054521094398866404,0.03506401813012014
-236,8.295277550574217e-05,0.004407757995697681
-178,1.8051626671458044e-31,0.002724531790919405
-228,1.6219971868593433e-10,0.0048466012104884885
-252,2.7807025692458227e-11,0.004771821713797115
-960,0.00016474787078673439,0.004336913286459083
-1157,0.26914286892760764,0.14302811893657194
-1599,4.061714368303117e-06,0.00469769748933007
-508,1.1774942789666156e-05,0.00360091506678742
-464,3.4114010142784045e-05,0.004336913286459083
-320,7.168038642449127e-07,0.003537936478222105
-1482,2.295270227643795e-24,0.0030575798826322116
-253,2.2234740862768055e-11,0.004407757995697681
-182,0.06230136932564595,0.052555181981230756
-260,3.820692321979839e-10,0.004336913286459083
-244,2.4604449227967647e-17,0.003352919152960925
-1603,0.2595729319051038,0.28242534756801174
-973,0.2595729319051038,0.28242534756801174
-1152,0.017900123202763796,0.034094293192590455
-152,0.09686101517571298,0.1321405297667547
-1709,,1.0
-1657,1.4895664695552584e-07,0.002724531790919405
-218,0.5245448957502021,0.24164976576539
-148,0.12446408993655923,0.18985402693947395
-1653,0.2595729319051038,0.28242534756801174
-538,0.0018778361349120214,0.0022681318882976555
-1642,0.34089313230205964,0.40465676192728617
-1654,0.0493321956399217,0.07053284913489208
-406,0.01011955973543371,0.015077345632837134
-656,6.1668095412706e-07,0.00469769748933007
-1161,0.5107292149256676,0.9290127047257105
-318,7.060567236929194e-11,0.00469769748933007
-220,4.710570926168961e-12,0.003352919152960925
-213,1.4275056182392029e-35,0.0025666784731500736
-955,3.5442655907265395e-05,0.003992533063261791
-219,1.5813848411989347e-15,0.003537936478222105
-1692,0.6748281036032711,0.7374413586294356
-1156,0.46029416398690326,1.0
-1660,0.00017435617814891085,0.002671274611601153
-1478,,1.0
-1655,0.5490144385436057,0.5947925222500688
-223,6.744039490843666e-42,0.0018205326093252568
-1708,,1.0
-22,0.2072755109511263,0.17573433564422514
-274,2.2552602826669472e-12,0.003352919152960925
-203,3.2706083056721225e-05,0.0021645021645021645
-306,5.8964001519084056e-40,0.0022681318882976555
-1652,0.3408931323020601,0.40465676192728617
-1556,1.0780057088824663e-11,0.004479258891846413
-1659,2.9196011872191343e-05,0.004624228801499123
-246,0.018953695470302526,0.0321566979384839
-124,0.11138558808489413,0.17793172526825463
-1158,0.1449276054040803,0.18985402693947395
-342,0.0019282278006677298,0.003413939087604959
-225,0.0002916593877216552,0.002671274611601153
-1661,0.0002506265395480837,0.003992533063261791
-188,5.517642151392417e-16,0.004336913286459083
-1440,0.007314617739307252,0.01828380871693175
-1658,4.4931537863187175e-09,0.004128316645700646
-307,3.280803936527416e-07,0.00469769748933007
-1662,1.0,1.0
-979,0.5490144385436059,0.5947925222500688
-209,1.2750404015964766e-40,0.002365119473665663
-1640,1.4643559739620176e-06,0.002724531790919405
-293,3.177457317142741e-18,0.003352919152960925
-196,4.102961224881652e-11,0.002671274611601153
-195,0.006831951222197146,0.04307995419323593
-69,0.0,0.0012619447673879731
-303,1.6084011843855155e-11,0.00469769748933007
-238,8.166624620445064e-08,0.004336913286459083
-1555,9.125391406413695e-31,0.003992533063261791
-1602,3.4114010142784045e-05,0.003992533063261791
-1600,0.18279081705490013,0.051608605945879134
-1479,0.34089313230205964,0.40465676192728617
-251,6.91934082475298e-39,0.002515336771798898
-172,1.5397609335086024e-12,0.0048466012104884885
-1691,0.034337446142867475,0.037220850379772664
-1690,3.572869064408786e-05,0.004336913286459083
-1558,0.14418188070209526,0.103032464488723
-231,0.017900123202763796,0.034094293192590455
-187,1.0368177259898724e-14,0.003992533063261791
-208,1.2792576064136083e-12,0.004479258891846413
-250,1.2729167505416408e-40,0.002365119473665663
-173,0.008055535770701153,0.006661326198264342
-294,0.11393741215192038,0.15342934196703448
-257,7.481421574637472e-12,0.0048466012104884885
-987,0.34095477930237106,0.3593173383295707
-612,0.0006115058709985137,0.004336913286459083
-1747,0.34090851997880645,0.6524683072570377
-1601,3.90145756422067e-05,0.00360091506678742
-288,5.310182118962637e-05,0.003537936478222105
-211,0.7781080015121487,0.9357362806427562
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '132', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",2.2560958905784174e-05,0.004998124765082457
+"('com.google.common.jimfs.RegularFile', 'closed', '()V', '17', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.7387017255136485,0.6044793610377097
+"('com.google.common.jimfs.RegularFile', 'read', '(JLjava/lang/Iterable;)J', '52', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",4.230305674802091e-07,0.0025666784731500736
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '84', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.06880956031070004,0.01412233232023612
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '44', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.2690265129827313,0.35748981064588625
+"('com.google.common.jimfs.RegularFile', 'write', '(JLjava/lang/Iterable;)J', '27', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,0.7870052402565042
+"('com.google.common.jimfs.RegularFile', 'read', '(JLjava/lang/Iterable;)J', '63', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.549014438543606,0.5947925222500688
+"('com.google.common.jimfs.RegularFile', 'blockForWrite', '(I)[B', '14', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.41389176012556617,0.9290127047257105
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '44', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3465811102443265,0.3647113371506284
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '94', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.00012261884045851332,0.004479258891846413
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '74', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.36049966800292776,0.5270892568655381
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '6', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.33290813465182,0.7972523796379415
+"('com.google.common.jimfs.RegularFile', 'blockForWrite', '(I)[B', '12', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.1449276054040803,0.17394501679990915
+"('com.google.common.jimfs.RegularFile', 'blockForWrite', '(I)[B', '30', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3408931323020601,0.5228166539190886
+"('com.google.common.jimfs.RegularFile', 'write', '(JB)I', '46', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.622691357084265,0.8631963950027435
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '11', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.06516650271937918,0.05481912481911926
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '67', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.1774282012917743,0.20124262095772394
+"('com.google.common.jimfs.RegularFile', 'read', '(JLjava/lang/Iterable;)J', '7', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.5994703106545751,0.5981614526835282
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '52', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.06461526125177976,0.06958836922959732
+"('com.google.common.jimfs.RegularFile', 'blockForWrite', '(I)[B', '22', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.599470310654575,0.6403735394530488
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '13', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.0493321956399217,0.07053284913489208
+"('com.google.common.jimfs.RegularFile', 'write', '(JB)I', '34', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.05018200704719669,0.020515715393129966
+"('com.google.common.jimfs.RegularFile', 'read', '(JLjava/lang/Iterable;)J', '7', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2665662286967404,0.38310353658297847
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '109', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.16150892197743602,0.2759151212509654
+"('com.google.common.jimfs.RegularFile', 'read', '(JLjava/lang/Iterable;)J', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",1.0,1.0
+"('com.google.common.jimfs.RegularFile', 'read', '(JLjava/lang/Iterable;)J', '42', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.09243590837260099,0.1121958240846801
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '117', 'org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator')",0.6138953925593694,0.9287042131953864
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '102', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",7.786974191944326e-08,0.00492203567532315
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '74', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.34089313230205964,0.40465676192728617
+"('com.google.common.jimfs.RegularFile', 'read', '(JLjava/lang/Iterable;)J', '62', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0493321956399217,0.07053284913489208
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '126', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.05706129943689486,0.02804919058166734
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '13', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.6867440479548104,0.4414183267820536
+"('com.google.common.jimfs.RegularFile', 'write', '(JLjava/lang/Iterable;)J', '38', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",2.0426787646906397e-05,0.004771821713797115
+"('com.google.common.jimfs.RegularFile', 'write', '(JB)I', '34', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7443992288956516,0.9312054462375265
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '66', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.1002658573000172,0.1030947009127415
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '132', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3839792738102412,0.6052118763838099
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '87', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5633847422306074,0.6621086743332107
+"('com.google.common.jimfs.RegularFile', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '60', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3408931323020601,0.40465676192728617
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '11', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.599470310654575,0.3673596577225431
+"('com.google.common.jimfs.RegularFile', 'blockForWrite', '(I)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,1.0
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '143', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6867440479548104,0.5328840277868037
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '77', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",,1.0
+"('com.google.common.jimfs.RegularFile', 'blockForWrite', '(I)[B', '6', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.0007351992951887601,0.00469769748933007
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '144', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",3.10270832178069e-06,0.004624228801499123
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '84', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.037928971445557756,0.02765949214637323
+"('com.google.common.jimfs.RegularFile', 'read', '(J)I', '34', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",5.228617086199235e-06,0.0021645021645021645
+"('com.google.common.jimfs.RegularFile', 'write', '(JLjava/lang/Iterable;)J', '37', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.002252499782730631,0.004606532263391765
+"('com.google.common.jimfs.RegularFile', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '77', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.01488450830191897,0.02392395144762641
+"('com.google.common.jimfs.RegularFile', 'write', '(JB)I', '40', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7796142977511202,0.9350430462786913
+"('com.google.common.jimfs.RegularFile', 'write', '(JB)I', '6', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.3421401591249157,0.3759621824832893
+"('com.google.common.jimfs.JimfsFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '17', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",8.102266655343327e-05,0.00360091506678742
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '50', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.055234799362281255,0.06520651565396936
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '295', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.6867440479548104,0.8585862013366392
+"('com.google.common.jimfs.JimfsFileChannel', 'force', '(Z)V', '21, 31', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0025467745422889506,0.00426672482217613
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0007506244348482195,0.0048466012104884885
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '28', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.01822281947058682,0.039758349639090744
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '72', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.5412795170748121,0.8585862013366392
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '67', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.003587512898049426,0.007259626422881426
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '249, 237', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.5490144385436062,0.5947925222500688
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '83, 95', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;)I', '115, 103', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",3.239312425831098e-09,0.004624228801499123
+"('com.google.common.jimfs.JimfsFileChannel', 'force', '(Z)V', '12', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",2.049906759780923e-05,0.004771821713797115
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;)I', '136', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.9169317708640918,0.4591481427617
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '100, 88', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '116', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.06691516813111857,0.02205835214926533
+"('com.google.common.jimfs.JimfsFileChannel', 'checkLockArguments', '(JJZ)V', '10', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.5884115350555123e-05,0.004407757995697681
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '221', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.4027263735658513e-07,0.003352919152960925
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '259, 275, 199, 286', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.2545398338068886,0.06319958766571356
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '56', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.36101877727810916,0.5535976285780404
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '51', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0037111729879916555,0.004771821713797115
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '94', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '205', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",6.594000794041352e-06,0.004771821713797115
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '([Ljava/nio/ByteBuffer;II)J', '77', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",3.960081258684301e-06,0.004336913286459083
+"('com.google.common.jimfs.JimfsFileChannel', 'beginBlocking', '()Z', '38', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '18', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",7.732993196011807e-08,0.00492203567532315
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '210', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.3498695699554897e-07,0.0048466012104884885
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;)I', '84', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",2.0310815764613948e-05,0.004998124765082457
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '131, 147, 56, 158', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0493321956399217,0.07053284913489208
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '36', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",4.911112649275888e-07,0.00469769748933007
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '50', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;)I', '176', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",4.708680648664275e-08,0.004197192618010305
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '10', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.9639562518206648,0.748348568843747
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '121, 109', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.588449338315948,0.5992659619828535
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '89, 77', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '31', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0011128581761611492,0.004998124765082457
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;)I', '93', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.293223447082638,0.08869781456879132
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '87', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.34089313230205964,0.40465676192728617
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '85', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",7.280304904255178e-09,0.00360091506678742
+"('com.google.common.jimfs.JimfsFileChannel', 'beginBlocking', '()Z', '38', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.6610861884638355,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '([Ljava/nio/ByteBuffer;II)J', '132, 120', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.059302475938893394,0.03247611812920555
+"('com.google.common.jimfs.JimfsFileChannel', 'position', '(J)Ljava/nio/channels/FileChannel;', '93', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0243915892160564e-11,0.00455141587451369
+"('com.google.common.jimfs.JimfsFileChannel', 'implCloseChannel', '()V', '26', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '78', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",3.789632066953423e-07,0.003413939087604959
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '99', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",5.558536815190398e-13,0.002515336771798898
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;)I', '54', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.003863102392205611,0.01852124454491248
+"('com.google.common.jimfs.JimfsFileChannel', 'checkLockArguments', '(JJZ)V', '28', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.187669870869603,0.21835469056590173
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '243, 231', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.09480922904443206,0.103032464488723
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '227', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '23', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.001134856667929186,0.004624228801499123
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '270', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.3050239795579033,0.4898003774180698
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '161', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.00010692472240549753,0.004407757995697681
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '64', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0019324829493466119,0.003537936478222105
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '104', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.1449276054040803,0.17394501679990915
+"('com.google.common.jimfs.JimfsFileChannel', 'asAsynchronousFileChannel', '(Ljava/util/concurrent/ExecutorService;)Ljava/nio/channels/AsynchronousFileChannel;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.00731461773930726,0.01828380871693175
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '116, 104', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '187', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.34089313230205964,0.40465676192728617
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '264', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",3.26307258402009e-09,0.00469769748933007
+"('com.google.common.jimfs.JimfsFileChannel', 'checkLockArguments', '(JJZ)V', '18', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.20938312742864562,0.24821307898992373
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '99, 115, 40, 126', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",4.472821542999391e-07,0.00426672482217613
+"('com.google.common.jimfs.JimfsFileChannel', 'lock', '(JJZ)Ljava/nio/channels/FileLock;', '52', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '90', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.6867440479548104,0.4414183267820536
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '51, 153, 126, 142', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.JimfsFileChannel', 'checkLockArguments', '(JJZ)V', '22', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.010681489655827495,0.02392395144762641
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0235777140304907,0.039758349639090744
+"('com.google.common.jimfs.JimfsFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.5994703106545749,0.6403735394530488
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '10', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.37502818280543837,0.28760932542545514
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '([Ljava/nio/ByteBuffer;II)J', '101', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.02243629209879452,0.03830311920937907
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '110', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.1108901377996124e-05,0.004771821713797115
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '163, 136, 152, 59', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.11077180273782575,0.16281152672549914
+"('com.google.common.jimfs.JimfsFileChannel', 'checkLockArguments', '(JJZ)V', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",2.856063652103385e-05,0.00360091506678742
+"('com.google.common.jimfs.JimfsFileChannel', 'lock', '(JJZ)Ljava/nio/channels/FileLock;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.3909694919786334,0.6235741992716557
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '141', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.10994623026607982,0.11494074923871192
+"('com.google.common.jimfs.JimfsFileChannel', 'force', '(Z)V', '4', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.06074656521328167,0.06520651565396936
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '47', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",2.9377005558088514e-07,0.00426672482217613
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '14', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.07869665550095002,0.004624228801499123
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '94', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.21665098258032622,0.24821307898992373
+"('com.google.common.jimfs.JimfsFileChannel', 'lock', '(JJZ)Ljava/nio/channels/FileLock;', '34, 61', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.015655840794283237,0.00811311726556578
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '17', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",1.0,0.573830926598377
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '289', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.00020497931778709527,0.00360091506678742
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '194, 280, 253, 269', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.028951401385413928,0.004771821713797115
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '23', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0001457904551136422,0.004407757995697681
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '37, 137, 110, 126', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.042776442425197084,0.061324254102878645
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '([Ljava/nio/ByteBuffer;II)J', '110', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.23143502224408133,0.34230982228617846
+"('com.google.common.jimfs.JimfsFileChannel', 'checkLockArguments', '(JJZ)V', '14', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,0.321813127081764
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '190', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.6144632047146532,0.7403005363339777
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '([Ljava/nio/ByteBuffer;II)J', '193', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.08155339870160565,0.12573434547609025
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;)I', '59', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.8174241482456048,0.9312054462375265
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '19', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",6.3004462601623e-05,0.00492203567532315
+"('com.google.common.jimfs.JimfsFileChannel', 'lock', '(JJZ)Ljava/nio/channels/FileLock;', '15', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.040267501457588735,0.051608605945879134
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '73', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.00010248066103210913,0.004197192618010305
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '64', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",1.8235004416455488e-06,0.00426672482217613
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '135', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.4608259186712549,0.6732899796599957
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '185', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0002496222339460269,0.007905444507901475
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '132, 105, 121, 45', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.25978969185963546,0.1522571316591019
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)I', '31', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0034244112519382247,0.004624228801499123
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '42', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0,0.0012619447673879731
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '27', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.12544156991803,0.005679041078583963
+"('com.google.common.jimfs.JimfsFileChannel', 'transferTo', '(JJLjava/nio/channels/WritableByteChannel;)J', '15', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.44753822239272556,0.27866049489924416
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '([Ljava/nio/ByteBuffer;II)J', '72', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.6642514717311346,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'transferFrom', '(Ljava/nio/channels/ReadableByteChannel;JJ)J', '69', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.JimfsFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)I', '64', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.1560544788728323,0.21325850560790915
+"('com.google.common.jimfs.JimfsFileChannel', 'truncate', '(J)Ljava/nio/channels/FileChannel;', '13', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.004840826776437915,0.004407757995697681
+"('com.google.common.jimfs.JimfsFileChannel', 'read', '([Ljava/nio/ByteBuffer;II)J', '114, 126', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.3408931323020601,0.40465676192728617
+"('com.google.common.jimfs.FileSystemView', 'setAttribute', '(Lcom/google/common/jimfs/JimfsPath;Ljava/lang/String;Ljava/lang/Object;Ljava/util/Set;)V', '18', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.002347293870677405,0.008367475040112425
+"('com.google.common.jimfs.FileSystemView', 'copy', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;Ljava/util/Set;Z)V', '213', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.44600142262643605,0.4150631068565258
+"('com.google.common.jimfs.FileSystemView', 'link', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;)V', '117', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.06430537257048856,0.06273015992675805
+"('com.google.common.jimfs.FileSystemView', 'readSymbolicLink', '(Lcom/google/common/jimfs/JimfsPath;)Lcom/google/common/jimfs/JimfsPath;', '32', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",2.874248670339912e-07,0.00469769748933007
+"('com.google.common.jimfs.FileSystemView', 'copy', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;Ljava/util/Set;Z)V', '187', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0405856543361266,0.004771821713797115
+"('com.google.common.jimfs.FileSystemView', 'getFileAttributeView', '(Lcom/google/common/jimfs/FileLookup;Ljava/lang/Class;)Ljava/nio/file/attribute/FileAttributeView;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.10089208704794038,0.06212455388335773
+"('com.google.common.jimfs.FileSystemView', 'copy', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;Ljava/util/Set;Z)V', '174', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.026579089401193485,0.06319958766571356
+"('com.google.common.jimfs.FileSystemView', 'copy', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;Ljava/util/Set;Z)V', '181', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0006163238309068252,0.00492203567532315
+"('com.google.common.jimfs.FileSystemView', 'copy', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;Ljava/util/Set;Z)V', '260', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.037928971445557756,0.054291828366854596
+"('com.google.common.jimfs.FileSystemView', 'copy', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;Ljava/util/Set;Z)V', '168', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.6302593904025844,0.19463260245111924
+"('com.google.common.jimfs.FileSystemView', 'checkDeletable', '(Lcom/google/common/jimfs/File;Lcom/google/common/jimfs/FileSystemView$DeleteMode;Ljava/nio/file/Path;)V', '71', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",7.828668112673221e-05,0.004336913286459083
+"('com.google.common.jimfs.FileSystemView', 'readSymbolicLink', '(Lcom/google/common/jimfs/JimfsPath;)Lcom/google/common/jimfs/JimfsPath;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2730087885749747,0.6223007724507496
+"('com.google.common.jimfs.FileSystemView', 'link', '(Lcom/google/common/jimfs/JimfsPath;Lcom/google/common/jimfs/FileSystemView;Lcom/google/common/jimfs/JimfsPath;)V', '111', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0001868521366480869,0.00492203567532315
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '47', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.03234710595887159,0.025091736426079307
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '51', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3950648464379296,0.6216592071261193
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '97', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.4505744734624314,0.6150589419317398
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '9', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.25312291664497755,0.32274805351112157
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '110', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.17394837931045473,0.20124262095772394
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '38', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.20285344107123,0.059569379174260584
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '37', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.031446844236608776,0.039758349639090744
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0929498047702519,0.14221806785010388
+"('com.google.common.jimfs.JimfsPath', 'resolve', '(Ljava/nio/file/Path;)Lcom/google/common/jimfs/JimfsPath;', '42', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.43458147310173734,0.720417367981172
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '48', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,0.6150589419317398
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '63', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.03144684423660873,0.039393270229857606
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '87', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.7559674291207321,0.8620862243896527
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.08276397149965752,0.13873971043028918
+"('com.google.common.jimfs.JimfsPath', 'relativize', '(Ljava/nio/file/Path;)Lcom/google/common/jimfs/JimfsPath;', '56', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2896916120510084,0.31086287025889725
+"('com.google.common.jimfs.JimfsPath', 'register', '(Ljava/nio/file/WatchService;[Ljava/nio/file/WatchEvent$Kind;)Ljava/nio/file/WatchKey;', '15', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.1449276054040804,0.17394501679990915
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '52', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.6544779187953054,1.0
+"('com.google.common.jimfs.JimfsPath', 'resolveSibling', '(Ljava/nio/file/Path;)Lcom/google/common/jimfs/JimfsPath;', '49', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.JimfsPath', 'relativize', '(Ljava/nio/file/Path;)Lcom/google/common/jimfs/JimfsPath;', '46', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0493321956399217,0.07053284913489208
+"('com.google.common.jimfs.JimfsPath', 'resolve', '(Ljava/nio/file/Path;)Lcom/google/common/jimfs/JimfsPath;', '32', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.6168951779597884,0.44804950353053796
+"('com.google.common.jimfs.JimfsPath', 'resolve', '(Ljava/lang/String;)Lcom/google/common/jimfs/JimfsPath;', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.17679152714131954,0.32453351853244383
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '12', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",,1.0
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '87', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.0009801198009580317,0.008367475040112425
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2783316914351597,0.18979995541489458
+"('com.google.common.jimfs.JimfsPath', 'endsWith', '(Ljava/nio/file/Path;)Z', '34', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.3626613711502261,0.5647840257932712
+"('com.google.common.jimfs.JimfsPath', 'endsWith', '(Ljava/nio/file/Path;)Z', '26', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.02732292020295862,0.04159593817019687
+"('com.google.common.jimfs.JimfsPath', 'hashCode', '()I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.03220944851845121,0.00789277254493989
+"('com.google.common.jimfs.JimfsPath', 'normalize', '()Lcom/google/common/jimfs/JimfsPath;', '79', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.34020100810110065,0.5535976285780404
+"('com.google.common.jimfs.JimfsPath', 'isNormal', '()Z', '66', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.029592462206741103,0.039165951609026646
+"('com.google.common.jimfs.AttributeService', 'getAttributeInternal', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;', '39', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",7.95162415221403e-06,0.004336913286459083
+"('com.google.common.jimfs.AttributeService', 'createInheritedViews', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/jimfs/AttributeProvider;)Lcom/google/common/collect/ImmutableMap;', '24', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.5581267388718785,0.05389861050714108
+"('com.google.common.jimfs.AttributeService', 'readAll', '(Lcom/google/common/jimfs/File;Lcom/google/common/jimfs/AttributeProvider;Ljava/util/Map;)V', '27', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.23318479805887005,0.06319958766571356
+"('com.google.common.jimfs.AttributeService', 'addMissingProviders', '(Ljava/util/Map;)V', '93', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.25957293190510405,0.20124262095772394
+"('com.google.common.jimfs.AttributeService', 'readAll', '(Lcom/google/common/jimfs/File;Lcom/google/common/jimfs/AttributeProvider;Ljava/util/Map;)V', '12', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.1449276054040803,0.18985402693947395
+"('com.google.common.jimfs.AttributeService', 'readAttributes', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Lcom/google/common/collect/ImmutableMap;', '94', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.19652643871830994,0.38886121403562657
+"('com.google.common.jimfs.AttributeService', 'setAttributeInternal', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '69', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.024306393311574102,0.0025666784731500736
+"('com.google.common.jimfs.AttributeService', 'getFileAttributeView', '(Lcom/google/common/jimfs/FileLookup;Ljava/lang/Class;Ljava/util/Map;)Ljava/nio/file/attribute/FileAttributeView;', '23', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",,1.0
+"('com.google.common.jimfs.AttributeService', 'addMissingProviders', '(Ljava/util/Map;)V', '85', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.19515780094022886,0.17063754156700373
+"('com.google.common.jimfs.AttributeService', 'readAttributes', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Lcom/google/common/collect/ImmutableMap;', '65', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.00026178837349453716,0.004624228801499123
+"('com.google.common.jimfs.AttributeService', 'supportsFileAttributeView', '(Ljava/lang/Class;)Z', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.01011955973543371,0.020262769386687446
+"('com.google.common.jimfs.AttributeService', 'getAttributeInternal', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;', '55', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.1716580031336782,0.08109208502833234
+"('com.google.common.jimfs.AttributeService', 'createInheritedViews', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/jimfs/AttributeProvider;Ljava/util/Map;)V', '11', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",,1.0
+"('com.google.common.jimfs.AttributeService', 'createInheritedViews', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/jimfs/AttributeProvider;)Lcom/google/common/collect/ImmutableMap;', '29', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.3408931323020601,0.40465676192728617
+"('com.google.common.jimfs.AttributeService', 'readAttributes', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Lcom/google/common/collect/ImmutableMap;', '76', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.18654650887423302,0.08703014614605807
+"('com.google.common.jimfs.AttributeService', 'createInheritedViews', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/jimfs/AttributeProvider;Ljava/util/Map;)V', '21', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.4509505534287218,1.0
+"('com.google.common.jimfs.AttributeService', 'getFileAttributeView', '(Lcom/google/common/jimfs/FileLookup;Ljava/lang/Class;Ljava/util/Map;)Ljava/nio/file/attribute/FileAttributeView;', '15', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.AttributeService', 'copyAttributes', '(Lcom/google/common/jimfs/File;Lcom/google/common/jimfs/File;Lcom/google/common/jimfs/AttributeCopyOption;)V', '13', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.19705050811182007,0.14302811893657194
+"('com.google.common.jimfs.Directory', 'put', '(Lcom/google/common/jimfs/DirectoryEntry;Z)V', '134', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.01012919907766946,0.016059333429185727
+"('com.google.common.jimfs.Directory', 'addToBucket', '(I[Lcom/google/common/jimfs/DirectoryEntry;Lcom/google/common/jimfs/DirectoryEntry;)V', '30', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.9105952939488107,0.12095907663668132
+"('com.google.common.jimfs.Directory', 'expandIfNeeded', '()Z', '59', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.47546332357612775,0.934806934494413
+"('com.google.common.jimfs.Directory', 'expandIfNeeded', '()Z', '94', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.7862095995921303,1.0
+"('com.google.common.jimfs.Directory', 'put', '(Lcom/google/common/jimfs/DirectoryEntry;Z)V', '41', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.019556391759734747,0.016279573377278176
+"('com.google.common.jimfs.Directory', 'expandIfNeeded', '()Z', '99', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.6395866243766597,1.0
+"('com.google.common.jimfs.Directory', 'addToBucket', '(I[Lcom/google/common/jimfs/DirectoryEntry;Lcom/google/common/jimfs/DirectoryEntry;)V', '15', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3381120992564305,0.1766930332990293
+"('com.google.common.jimfs.Directory', 'expandIfNeeded', '()Z', '45', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5736632290147846,0.22587235588913834
+"('com.google.common.jimfs.Directory', 'expandIfNeeded', '()Z', '19', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.09007072156502145,0.10807412087693885
+"('com.google.common.jimfs.PathService', 'hash', '(Lcom/google/common/jimfs/JimfsPath;)I', '65', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3408931323020601,0.40465676192728617
+"('com.google.common.jimfs.PathService', 'hash', '(Lcom/google/common/jimfs/JimfsPath;)I', '68', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3408931323020601,0.40465676192728617
+"('com.google.common.jimfs.JimfsFileStore', 'isReadOnly', '()Z', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",8.388555755024064e-06,0.00469769748933007
+"('com.google.common.jimfs.JimfsFileStore', 'getUsableSpace', '()J', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.JimfsFileStore', 'setAttribute', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/Object;)V', '14', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.044586310758152226,0.04233644912821505
+"('com.google.common.jimfs.JimfsFileStore', 'name', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.07903926514303725,0.059569379174260584
+"('com.google.common.jimfs.JimfsFileStore', 'getUsableSpace', '()J', '10', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.05722404072471905,0.039393270229857606
+"('com.google.common.jimfs.JimfsFileStore', 'setAttribute', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/Object;)V', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.5274604519226598,1.0
+"('com.google.common.jimfs.JimfsFileStore', 'type', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.8008406982670624,0.6210143706612847
+"('com.google.common.jimfs.JimfsFileStore', 'getUnallocatedSpace', '()J', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.19565115601099625,0.059455698010167216
+"('com.google.common.jimfs.JimfsFileStore', 'getUnallocatedSpace', '()J', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.549014438543606,0.5947925222500688
+"('com.google.common.jimfs.JimfsFileSystemProvider', 'newAsynchronousFileChannel', '(Ljava/nio/file/Path;Ljava/util/Set;Ljava/util/concurrent/ExecutorService;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/AsynchronousFileChannel;', '31', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.00016974804952247746,0.003925625174650279
+"('com.google.common.jimfs.JimfsFileSystemProvider', 'newAsynchronousFileChannel', '(Ljava/nio/file/Path;Ljava/util/Set;Ljava/util/concurrent/ExecutorService;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/AsynchronousFileChannel;', '13', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.JimfsFileSystemProvider', 'isSameFile', '(Ljava/nio/file/Path;Ljava/nio/file/Path;)Z', '24', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.04934259744625028,0.2324304819741162
+"('com.google.common.jimfs.JimfsInputStream', 'skip', '(J)J', '65', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.002091338862567212,0.004624228801499123
+"('com.google.common.jimfs.JimfsInputStream', 'skip', '(J)J', '26', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.7946990035628585,0.20869447975620004
+"('com.google.common.jimfs.JimfsInputStream', 'skip', '(J)J', '42', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.4159931116394613,0.9282338408623975
+"('com.google.common.jimfs.JimfsInputStream', 'skip', '(J)J', '56', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.5078506333336441,0.5745038102346656
+"('com.google.common.jimfs.JimfsInputStream', 'skip', '(J)J', '33', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.8132670928421764,0.5328840277868037
+"('com.google.common.jimfs.Configuration$Builder', 'addAttributeProvider', '(Lcom/google/common/jimfs/AttributeProvider;)Lcom/google/common/jimfs/Configuration$Builder;', '29', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,1.0
+"('com.google.common.jimfs.Configuration$Builder', 'addAttributeProvider', '(Lcom/google/common/jimfs/AttributeProvider;)Lcom/google/common/jimfs/Configuration$Builder;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5412795170748121,1.0
+"('com.google.common.jimfs.Configuration$Builder', 'setWatchServiceConfiguration', '(Lcom/google/common/jimfs/WatchServiceConfiguration;)Lcom/google/common/jimfs/Configuration$Builder;', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.549014438543606,0.5947925222500688
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'size', '()J', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",5.738635723428688e-06,0.004336913286459083
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'lock', '(JJZ)Lcom/google/common/util/concurrent/ListenableFuture;', '24', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.35499299632934544,0.06413956344277968
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '19', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.10994623026607982,0.11494074923871192
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.00016474787078673439,0.00360091506678742
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'lock', '(JJZ)Lcom/google/common/util/concurrent/ListenableFuture;', '50', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",5.092332728287508e-05,0.003925625174650279
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'lock', '(JJZ)Lcom/google/common/util/concurrent/ListenableFuture;', '29', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.20938312742864573,0.24060649312550753
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '42', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.04026750145758878,0.025294083572429765
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'lock', '(JJZLjava/lang/Object;Ljava/nio/channels/CompletionHandler;)V', '16', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.14492761296507936,0.17573433564422514
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'write', '(Ljava/nio/ByteBuffer;J)Lcom/google/common/util/concurrent/ListenableFuture;', '14', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0024192005009485667,0.006661326198264342
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'closedChannelFuture', '()Lcom/google/common/util/concurrent/ListenableFuture;', '16', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.880635088196303e-05,0.00360091506678742
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '10', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0379289714455577,0.054291828366854596
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '15', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0006517671685707711,0.003352919152960925
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'lock', '(JJZ)Lcom/google/common/util/concurrent/ListenableFuture;', '36', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0493321956399217,0.07053284913489208
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '31', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.5490144385436062,0.5947925222500688
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'truncate', '(J)Ljava/nio/channels/AsynchronousFileChannel;', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.007314617739307252,0.01828380871693175
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'tryLock', '(JJZ)Ljava/nio/channels/FileLock;', '24', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.00035999005662344896,0.00277843011009903
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'read', '(Ljava/nio/ByteBuffer;J)Lcom/google/common/util/concurrent/ListenableFuture;', '28', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.49564750438312,1.0
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel', 'lock', '(JJZ)Lcom/google/common/util/concurrent/ListenableFuture;', '19', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0435447987099615e-06,0.00426672482217613
+"('com.google.common.jimfs.File', 'putAll', '(Lcom/google/common/collect/Table;)V', '13', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3628341653203132,0.38886121403562657
+"('com.google.common.jimfs.File', 'copyAttributes', '(Lcom/google/common/jimfs/File;)V', '11', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.17351107793030948,0.018526747292176748
+"('com.google.common.jimfs.File', 'putAll', '(Lcom/google/common/collect/Table;)V', '8', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.39211222041937743,0.9312054462375265
+"('com.google.common.jimfs.File', 'copyAttributes', '(Lcom/google/common/jimfs/File;)V', '5', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.File', 'putAll', '(Lcom/google/common/collect/Table;)V', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",3.131858757227928e-05,0.00469769748933007
+"('com.google.common.jimfs.File', 'putAll', '(Lcom/google/common/collect/Table;)V', '25', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",3.694516088827982e-05,0.00492203567532315
+"('com.google.common.jimfs.JimfsFileSystem', 'getDefaultThreadPool', '()Ljava/util/concurrent/ExecutorService;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",5.216283392527965e-06,0.0030575798826322116
+"('com.google.common.jimfs.JimfsFileSystem', 'getDefaultThreadPool', '()Ljava/util/concurrent/ExecutorService;', '58', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.UnixAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '149', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",2.8299785249646333e-06,0.00469769748933007
+"('com.google.common.jimfs.UnixAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '143', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.027955556566261638,0.01747787205617402
+"('com.google.common.jimfs.UnixAttributeProvider', 'toMode', '(Ljava/util/Set;)I', '66', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.0002225708826730143,0.004624228801499123
+"('com.google.common.jimfs.UnixAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '156', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.07903926514303718,0.05805919292604577
+"('com.google.common.jimfs.UnixAttributeProvider', 'getUniqueId', '(Ljava/lang/Object;)Ljava/lang/Integer;', '32', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2114941043191847,0.08240637679870151
+"('com.google.common.jimfs.UnixAttributeProvider', 'getUniqueId', '(Ljava/lang/Object;)Ljava/lang/Integer;', '41', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.34089313230205964,0.40465676192728617
+"('com.google.common.jimfs.UnixAttributeProvider', 'toMode', '(Ljava/util/Set;)I', '36', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.26386792966275496,0.6044793610377097
+"('com.google.common.jimfs.UnixAttributeProvider', 'toMode', '(Ljava/util/Set;)I', '136', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.00044602884754417363,0.004197192618010305
+"('com.google.common.jimfs.UnixAttributeProvider', 'getUniqueId', '(Ljava/lang/Object;)Ljava/lang/Integer;', '12', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.554891878815865e-06,0.00469769748933007
+"('com.google.common.jimfs.UnixAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '131', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,0.5838824207703652
+"('com.google.common.jimfs.UnixAttributeProvider', 'toMode', '(Ljava/util/Set;)I', '96', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.2896916120510081,0.31086287025889725
+"('com.google.common.jimfs.UnixAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '137', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,0.485331203626996
+"('com.google.common.jimfs.UnixAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '114', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.8765938137547569,0.31822533101902484
+"('com.google.common.jimfs.UnixAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '99', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,1.0
+"('com.google.common.jimfs.UnixAttributeProvider', 'toMode', '(Ljava/util/Set;)I', '46', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.3951292062102053,0.6627670083811275
+"('com.google.common.jimfs.BasicAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '130', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.04933219563992165,0.0688944202078717
+"('com.google.common.jimfs.BasicAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '110', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.3408931323020601,0.3864762307712327
+"('com.google.common.jimfs.JimfsSecureDirectoryStream', 'deleteFile', '(Ljava/nio/file/Path;)V', '16', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.00032027871953238003,0.004771821713797115
+"('com.google.common.jimfs.JimfsSecureDirectoryStream', 'newByteChannel', '(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/SeekableByteChannel;', '34', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.34658111024432703,0.5270892568655381
+"('com.google.common.jimfs.JimfsSecureDirectoryStream', 'move', '(Ljava/nio/file/Path;Ljava/nio/file/SecureDirectoryStream;Ljava/nio/file/Path;)V', '19', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0842770184897784,0.06984814159988043
+"('com.google.common.jimfs.JimfsSecureDirectoryStream', 'move', '(Ljava/nio/file/Path;Ljava/nio/file/SecureDirectoryStream;Ljava/nio/file/Path;)V', '47', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.2586203063991714e-08,0.00492203567532315
+"('com.google.common.jimfs.JimfsSecureDirectoryStream', 'deleteDirectory', '(Ljava/nio/file/Path;)V', '16', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.2896916120510081,0.31086287025889725
+"('com.google.common.jimfs.PosixAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '65', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",6.161655747435028e-06,0.00426672482217613
+"('com.google.common.jimfs.PosixAttributeProvider', 'view', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/collect/ImmutableMap;)Ljava/nio/file/attribute/PosixFileAttributeView;', '21', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2959369059228676,0.19077554444898137
+"('com.google.common.jimfs.PosixAttributeProvider', 'defaultValues', '(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;', '91', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.01011955973543371,0.02460867246744561
+"('com.google.common.jimfs.PosixAttributeProvider', 'defaultValues', '(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;', '73', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3408777871229193,0.5270892568655381
+"('com.google.common.jimfs.AbstractWatchService$Key', 'overflowEvent', '(I)Ljava/nio/file/WatchEvent;', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.AbstractWatchService$Key', 'reset', '()Z', '21', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.17394837931045473,0.17573433564422514
+"('com.google.common.jimfs.FileSystemState', 'close', '()V', '66', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0005373336027564515,0.006735947344953688
+"('com.google.common.jimfs.FileSystemState', 'close', '()V', '115', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.FileSystemState', 'close', '()V', '55', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",3.715592281685681e-05,0.0018205326093252568
+"('com.google.common.jimfs.AbstractWatchService', 'poll', '(JLjava/util/concurrent/TimeUnit;)Ljava/nio/file/WatchKey;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.DosAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '12', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",6.020378099715246e-08,0.004479258891846413
+"('com.google.common.jimfs.DosAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '23', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.666557761473442e-06,0.004197192618010305
+"('com.google.common.jimfs.DosAttributeProvider', 'fixedAttributes', '()Lcom/google/common/collect/ImmutableSet;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0,1.0
+"('com.google.common.jimfs.DosAttributeProvider', 'view', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/collect/ImmutableMap;)Ljava/nio/file/attribute/DosFileAttributeView;', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.1449276054040803,0.17394501679990915
+"('com.google.common.jimfs.DosAttributeProvider', 'readAttributes', '(Lcom/google/common/jimfs/File;)Ljava/nio/file/attribute/DosFileAttributes;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",,1.0
+"('com.google.common.jimfs.DosAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '6', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.011681714070639278,0.009373090997211148
+"('com.google.common.jimfs.AclAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '25', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,0.8551321405847059
+"('com.google.common.jimfs.AclAttributeProvider', 'view', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/collect/ImmutableMap;)Ljava/nio/file/attribute/AclFileAttributeView;', '11', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.01011955973543371,0.02460867246744561
+"('com.google.common.jimfs.AclAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '12', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0,0.0012619447673879731
+"('com.google.common.jimfs.AclAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '6', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.23361631336684746,0.24681015326181155
+"('com.google.common.jimfs.UserDefinedAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '77', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",3.8173382067266347e-10,0.00360091506678742
+"('com.google.common.jimfs.UserDefinedAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '31', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.549014438543606,0.5947925222500688
+"('com.google.common.jimfs.UserDefinedAttributeProvider', 'set', '(Lcom/google/common/jimfs/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z)V', '16', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",,1.0
+"('com.google.common.jimfs.UserDefinedAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '12', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",,1.0
+"('com.google.common.jimfs.UserDefinedAttributeProvider', 'view', '(Lcom/google/common/jimfs/FileLookup;Lcom/google/common/collect/ImmutableMap;)Ljava/nio/file/attribute/UserDefinedFileAttributeView;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",,1.0
+"('com.google.common.jimfs.UserDefinedAttributeProvider', 'get', '(Lcom/google/common/jimfs/File;Ljava/lang/String;)Ljava/lang/Object;', '22', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",1.0494909057693684e-08,0.003413939087604959
+"('com.google.common.jimfs.PathURLConnection', 'getHeaderFields', '()Ljava/util/Map;', '22', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",1.4740755897236531e-06,0.0036645475900385395
+"('com.google.common.jimfs.PathURLConnection', 'getHeaderFields', '()Ljava/util/Map;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.7341695578680077,0.6627670083811275
+"('com.google.common.jimfs.PollingWatchService$Snapshot', 'postChanges', '(Lcom/google/common/jimfs/PollingWatchService$Snapshot;Lcom/google/common/jimfs/AbstractWatchService$Key;)Z', '130', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.11138558808492267,0.1247104126526841
+"('com.google.common.jimfs.PollingWatchService$Snapshot', 'postChanges', '(Lcom/google/common/jimfs/PollingWatchService$Snapshot;Lcom/google/common/jimfs/AbstractWatchService$Key;)Z', '176', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.7208269913626807,0.7293298010585041
+"('com.google.common.jimfs.PollingWatchService$Snapshot', 'postChanges', '(Lcom/google/common/jimfs/PollingWatchService$Snapshot;Lcom/google/common/jimfs/AbstractWatchService$Key;)Z', '104', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,0.9324274137022991
+"('com.google.common.jimfs.PollingWatchService$Snapshot', 'postChanges', '(Lcom/google/common/jimfs/PollingWatchService$Snapshot;Lcom/google/common/jimfs/AbstractWatchService$Key;)Z', '162', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.0,0.866880832268926
+"('com.google.common.jimfs.PollingWatchService$Snapshot', 'postChanges', '(Lcom/google/common/jimfs/PollingWatchService$Snapshot;Lcom/google/common/jimfs/AbstractWatchService$Key;)Z', '158', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.9973562970849586e-08,0.004771821713797115
+"('com.google.common.jimfs.PollingWatchService$Snapshot', 'postChanges', '(Lcom/google/common/jimfs/PollingWatchService$Snapshot;Lcom/google/common/jimfs/AbstractWatchService$Key;)Z', '10', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.8801570914836546,0.934806934494413
+"('com.google.common.jimfs.GlobToRegex$6', 'process', '(Lcom/google/common/jimfs/GlobToRegex;C)V', '47', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'delete', '(Ljava/lang/String;)V', '8', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0426192886643149e-06,0.004624228801499123
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'size', '(Ljava/lang/String;)I', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.3869850086837885,0.4532547047537364
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'list', '()Ljava/util/List;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.0924359083726009,0.0848763583431382
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'getStoredBytes', '(Ljava/lang/String;)[B', '14', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'write', '(Ljava/lang/String;Ljava/nio/ByteBuffer;)I', '21', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",4.7546603649330204e-05,0.004624228801499123
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'name', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.11138558808489413,0.10034824646229075
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'write', '(Ljava/lang/String;Ljava/nio/ByteBuffer;)I', '26', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.7804925748060055,0.7525537501972419
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'getStoredBytes', '(Ljava/lang/String;)[B', '40', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2896916120510084,0.31086287025889725
+"('com.google.common.jimfs.UserDefinedAttributeProvider$View', 'read', '(Ljava/lang/String;Ljava/nio/ByteBuffer;)I', '17', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",2.7979134679545585e-06,0.004479258891846413
+"('com.google.common.jimfs.BasicAttributeProvider$View', 'name', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",2.4560980515948242e-05,0.00360091506678742
+"('com.google.common.jimfs.DosAttributeProvider$View', 'setArchive', '(Z)V', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.4896574708179585,0.5196411841272132
+"('com.google.common.jimfs.DosAttributeProvider$View', 'readAttributes', '()Ljava/nio/file/attribute/DosFileAttributes;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.2896916120510084,0.31086287025889725
+"('com.google.common.jimfs.DosAttributeProvider$View', 'name', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.0011934668300203238,0.002515336771798898
+"('com.google.common.jimfs.DosAttributeProvider$View', 'setTimes', '(Ljava/nio/file/attribute/FileTime;Ljava/nio/file/attribute/FileTime;Ljava/nio/file/attribute/FileTime;)V', '8', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0018778361349120214,0.003992533063261791
+"('com.google.common.jimfs.DosAttributeProvider$View', 'setSystem', '(Z)V', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.DosAttributeProvider$View', 'setHidden', '(Z)V', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.DosAttributeProvider$View', 'setReadOnly', '(Z)V', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.34060140398735816,0.21440071155302465
+"('com.google.common.jimfs.Handler', 'register', '(Ljava/lang/Class;)V', '23', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",1.5072837355439103e-05,0.004197192618010305
+"('com.google.common.jimfs.Handler', 'register', '(Ljava/lang/Class;)V', '49', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.Handler', 'register', '(Ljava/lang/Class;)V', '23', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.2595729319051038,0.28242534756801174
+"('com.google.common.jimfs.Handler', 'register', '(Ljava/lang/Class;)V', '33', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.Handler', 'register', '()V', '4', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.3408931323020601,0.40465676192728617
+"('com.google.common.jimfs.Handler', 'register', '(Ljava/lang/Class;)V', '7', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",2.673577716314674e-10,0.003992533063261791
+"('com.google.common.jimfs.PosixAttributeProvider$View', 'setPermissions', '(Ljava/util/Set;)V', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",7.669109829351816e-07,0.0048466012104884885
+"('com.google.common.jimfs.PosixAttributeProvider$View', 'getOwner', '()Ljava/nio/file/attribute/UserPrincipal;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",5.626653248719276e-06,0.004197192618010305
+"('com.google.common.jimfs.PosixAttributeProvider$View', 'setOwner', '(Ljava/nio/file/attribute/UserPrincipal;)V', '6', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.28247876017476653,0.7303849878510907
+"('com.google.common.jimfs.PosixAttributeProvider$View', 'name', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",,1.0
+"('com.google.common.jimfs.PosixAttributeProvider$View', 'readAttributes', '()Ljava/nio/file/attribute/PosixFileAttributes;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",2.281134924581504e-09,0.004128316645700646
+"('com.google.common.jimfs.PosixAttributeProvider$View', 'setGroup', '(Ljava/nio/file/attribute/GroupPrincipal;)V', '9', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",1.0,1.0
+"('com.google.common.jimfs.AclAttributeProvider$View', 'name', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.2958867088546875,0.6303555263618644
+"('com.google.common.jimfs.AclAttributeProvider$View', 'setOwner', '(Ljava/nio/file/attribute/UserPrincipal;)V', '6', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",3.461651623530861e-05,0.0022681318882976555
+"('com.google.common.jimfs.AclAttributeProvider$View', 'setAcl', '(Ljava/util/List;)V', '14', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.28651076606826936,0.3395562157854821
+"('com.google.common.jimfs.AclAttributeProvider$View', 'getAcl', '()Ljava/util/List;', '9', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.6748281036032711,0.7374413586294356
+"('com.google.common.jimfs.AclAttributeProvider$View', 'getOwner', '()Ljava/nio/file/attribute/UserPrincipal;', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.001956165436330357,0.007365274980311024
+"('com.google.common.jimfs.UserLookupService', 'lookupPrincipalByGroupName', '(Ljava/lang/String;)Ljava/nio/file/attribute/GroupPrincipal;', '18', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",5.229099750868021e-09,0.002724531790919405
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel$CompletionHandlerCallback', 'onSuccess', '(Ljava/lang/Object;)V', '8', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.JimfsAsynchronousFileChannel$CompletionHandlerCallback', 'run', '()V', '40', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",,1.0
+"('com.google.common.jimfs.OwnerAttributeProvider$View', 'name', '()Ljava/lang/String;', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.08608844744570139,0.12753770929748698
+"('com.google.common.jimfs.UserLookupService$NamedPrincipal', 'hashCode', '()I', '6', 'org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator')",0.34090851997880645,0.6524683072570377
+"('com.google.common.jimfs.JimfsSecureDirectoryStream$1', 'accept', '(Ljava/lang/Object;)Z', '4', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.7247974437215399,0.8098548786049068

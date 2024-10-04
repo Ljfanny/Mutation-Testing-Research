@@ -1,21 +1,43 @@
 mutant,T-test,U-test
-205,0.22475352737372725,0.21216318677404367
-204,0.10828371572884359,0.051608605945879134
-212,0.802909234015512,0.12321267577886379
-216,0.14268675332349556,0.09620858273577738
-206,0.16600533863149855,0.07244801352978714
-210,0.03589437253102527,0.05574204909160302
-203,0.008445326540244876,0.019805123458112327
-214,0.02048504244227017,0.033439907088311766
-239,0.006489725005093292,0.004336913286459083
-218,0.2159693227931796,0.1459689032011983
-208,0.09498856687919596,0.1380107375686596
-217,0.4088400539922876,0.934806934494413
-257,0.0361909675406237,0.04112554112554113
-256,0.030418898825850214,0.03794147102312427
-213,0.10319457771922927,0.08011831372763417
-219,0.34557224228682093,0.1573644909211892
-207,0.041684201542663335,0.036503879130271345
-209,0.28277116800765467,0.11334550921952585
-215,0.06941818683033397,0.02391005481871856
-211,0.061474991273396846,0.1430905647493587
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'setWriter', '(Ljava/io/Writer;)V', '7', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.010814405197205784,0.0021645021645021645
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'isAllowed', '(Ljava/lang/Class;)Z', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.031099404437080067,0.06493506493506493
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'isAllowed', '(Ljava/lang/Class;)Z', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",2.0806662294444896e-05,0.004998124765082457
+"('delight.nashornsandbox.internal.NashornSandboxImpl', '<init>', '(Ljavax/script/ScriptEngine;[Ljava/lang/String;)V', '63', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.11329125721286785,0.00492203567532315
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'getLazySandboxedInvocable', '()Ljavax/script/Invocable;', '23', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.13310188400091183,0.13203463203463203
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'inject', '(Ljava/lang/String;Ljava/lang/Object;)V', '4', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.12832276956110505,0.13203463203463203
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'getLazySandboxedInvocable', '()Ljavax/script/Invocable;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.004548980186163641,0.004329004329004329
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'disallow', '(Ljava/lang/Class;)V', '6', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.009039355375948833,0.004998124765082457
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'inject', '(Ljava/lang/String;Ljava/lang/Object;)V', '10', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.005915485065235714,0.004998124765082457
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'getSandboxedInvocable', '()Ljavax/script/Invocable;', '24', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.04291103436140716,0.01937338485003019
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'inject', '(Ljava/lang/String;Ljava/lang/Object;)V', '16', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.1001752238306617,0.015151515151515152
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'eval', '(Ljavax/script/CompiledScript;Ljavax/script/ScriptContext;)Ljava/lang/Object;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.00010523748584590356,0.004771821713797115
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'eval', '(Ljavax/script/CompiledScript;Ljavax/script/Bindings;)Ljava/lang/Object;', '8', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0136990907521875,0.004998124765082457
+"('delight.nashornsandbox.internal.NashornSandboxImpl', 'inject', '(Ljava/lang/String;Ljava/lang/Object;)V', '24', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.0009118576284122821,0.004998124765082457
+"('delight.nashornsandbox.internal.ThreadMonitor', 'registerThreadToMonitor', '(Ljava/lang/Thread;)Z', '19', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator')",0.6272723739288817,0.1993972627538182
+"('delight.nashornsandbox.internal.ThreadMonitor', 'registerThreadToMonitor', '(Ljava/lang/Thread;)Z', '19', 'org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator')",0.77377318998749,0.7750292601639038
+"('delight.nashornsandbox.internal.ThreadMonitor', 'run', '()V', '42', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.13609372758075983,0.09212510369170912
+"('delight.nashornsandbox.internal.JsSanitizer', '<init>', '(Ljavax/script/ScriptEngine;Ldelight/nashornsandbox/SecuredJsCache;)V', '18', 'org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator')",0.7526786313584034,0.4159064593170644
+"('delight.nashornsandbox.internal.JsSanitizer', 'getInjectJs', '()Ljava/lang/String;', '43', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.5638302018008734,0.30952380952380953
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '90', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.00012852657638245601,0.00426672482217613
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '87', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.12420314447806431,0.09054915588749132
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '27', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.12321047005696238,0.036146793024090525
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '99', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2140539243413348,0.07244801352978714
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '174', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.2452476708299979,0.2112995473337107
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '124', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3665885969062104,1.0
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '174', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.8494262762600598,0.7457495492415471
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '65', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.02187230000386893,0.036146793024090525
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '68', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.010982634101221715,0.040858510635687045
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator')",0.22663553262306715,0.13140204194464666
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '20', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.3426326332968481,0.21302447739456698
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '49', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.05799950952075447,0.05574204909160302
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '142', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.0860081168288369,0.03247611812920555
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '164', 'org.pitest.mutationtest.engine.gregor.mutators.MathMutator')",0.07585501173977226,0.08011831372763417
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '191', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.00848773153941691,0.03026028002047163
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '58', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.6698127188475652,0.9360746770666198
+"('delight.nashornsandbox.internal.RemoveComments', 'perform', '(Ljava/lang/String;)Ljava/lang/String;', '156', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.13621554257723886,0.103032464488723
+"('delight.nashornsandbox.internal.EvaluateCompiledOperation', 'executeScriptEngineOperation', '(Ljavax/script/ScriptEngine;)Ljava/lang/Object;', '36', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.006489725005093292,0.004336913286459083
+"('delight.nashornsandbox.internal.EvaluateCompiledOperation', 'executeScriptEngineOperation', '(Ljavax/script/ScriptEngine;)Ljava/lang/Object;', '50', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.00811000892689121,0.011518904220244241
+"('delight.nashornsandbox.exceptions.ScriptAbuseException', 'getMessage', '()Ljava/lang/String;', '17', 'org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator')",0.0010617044318361238,0.007154777220316968
+"('delight.nashornsandbox.exceptions.ScriptAbuseException', 'getMessage', '()Ljava/lang/String;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.001008395741012433,0.007154777220316968
+"('delight.nashornsandbox.internal.InvokeOperation', 'executeScriptEngineOperation', '(Ljavax/script/ScriptEngine;)Ljava/lang/Object;', '5', 'org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator')",0.030418898825850214,0.03794147102312427
+"('delight.nashornsandbox.NashornSandboxes', 'create', '([Ljava/lang/String;)Ldelight/nashornsandbox/NashornSandbox;', '7', 'org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator')",0.0361909675406237,0.04112554112554113
