@@ -2,6 +2,7 @@ pitest_logs/
 controlled_logs/
 parsed_data/
 controlled_parsed_data/
+controlled_mutation_xmls/
 __pycache__/
 *.zip
 record.docx

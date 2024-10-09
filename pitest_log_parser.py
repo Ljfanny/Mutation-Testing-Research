@@ -3,11 +3,10 @@ import re
 import os
 import numpy as np
 
-# Project list
 project_list = [
-    'commons-codec',
+    # 'commons-codec',
     # 'commons-net',
-    # 'delight-nashorn-sandbox',
+    'delight-nashorn-sandbox',
     # 'empire-db',
     # 'jimfs'
 ]
