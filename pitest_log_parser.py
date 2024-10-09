@@ -7,8 +7,8 @@ project_list = [
     # 'commons-codec',
     # 'commons-net',
     'delight-nashorn-sandbox',
-    # 'empire-db',
-    # 'jimfs'
+    'empire-db',
+    'jimfs'
 ]
 TIMED_OUT = 'TIMED_OUT'
 round_number = 6
@@ -192,8 +192,8 @@ def parse_log(project,
               round,
               seed):
     choice = f'{mutant_choice[random_mutant]}_{test_choice[random_test]}'
-    with open(f'controlled_logs/{choice}/{seed}/{project}_{round}.log', 'r') as file:
-    # with open(f'controlled_logs/{choice}/fastest/{project}_{round}.log', 'r') as file:
+    # with open(f'controlled_logs/{choice}/{seed}/{project}_{round}.log', 'r') as file:
+    with open(f'controlled_logs/{choice}/fastest/{project}_{round}.log', 'r') as file:
         block = []
         capturing = False
         for line in file:
@@ -211,8 +211,8 @@ def parse_log(project,
 
 def output_jsons(seed):
     choice = f'{mutant_choice[random_mutant]}_{test_choice[random_test]}'
-    # output_path = f'controlled_parsed_data/{choice}/{project}_fastest'
-    output_path = f'controlled_parsed_data/{choice}/{project}_{seed}'
+    output_path = f'controlled_parsed_data/{choice}/{project}_fastest'
+    # output_path = f'controlled_parsed_data/{choice}/{project}_{seed}'
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     with open(f'{output_path}/mutantId_mutantTuple.json', 'w') as file:
