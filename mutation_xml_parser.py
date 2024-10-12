@@ -37,10 +37,13 @@ def parse_xml(mutation_set, seed, project, round_cnt):
         for character in mutation:
             if character.tag == 'indexes' or character.tag == 'blocks':
                 mutation_dict[character.tag] = tuple([c.text for c in character])
-            elif (character.tag == 'succeedingTests' or character.tag == 'killingTests')\
-                    and character.text is not None\
-                    and '|' in character.text:
-                mutation_dict[character.tag] = tuple(character.text.split('|'))
+            elif character.tag == 'succeedingTests' or character.tag == 'killingTests':
+                if character.text is None:
+                    mutation_dict[character.tag] = character.text
+                elif '|' in character.text:
+                    mutation_dict[character.tag] = tuple(character.text.split('|'))
+                else:
+                    mutation_dict[character.tag] = (character.text, )
             else:
                 mutation_dict[character.tag] = character.text
         mutation_set.add(tuple(mutation_dict.items()))
