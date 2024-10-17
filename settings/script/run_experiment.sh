@@ -33,7 +33,9 @@ randomMutant=$3 #true or false
 randomTest=$4 #true or false
 verbosity=$5 #RANDOM_VERBOSE or default
 randomSeed=$6 #a random number
-round="${7:-5}" #number to run pitest, default is 5
+readFromFile=$7
+filePath=$8
+round="${9:-5}" #number to run pitest, default is 5
 
 if [[ "$randomMutant" == "true" && "$randomTest" == "false" ]]; then
     SUBDIR="random-mutant_default-test/$randomSeed"
@@ -41,8 +43,12 @@ elif [[ "$randomMutant" == "false" && "$randomTest" == "true" ]]; then
     SUBDIR="default-mutant_random-test/$randomSeed"
 elif [[ "$randomMutant" == "true" && "$randomTest" == "true" ]]; then
     SUBDIR="random-mutant_random-test/$randomSeed"
+elif [[ "$randomMutant" == "false" && "$randomTest" == "false" ]]; then
+    SUBDIR="default-mutant_default-test/$randomSeed"
+    # SUBDIR="default-mutant_default-test"
 fi
+SUBDIR="random-mutant_default-test/$randomSeed"
 
-docker exec -it "$CONTAINER_ID" /bin/bash -c "chmod +x $RUN_PITEST_PATH && $RUN_PITEST_PATH $REPO_URL $COMMIT_CODE $randomMutant $randomTest $verbosity $randomSeed $round $SUBDIR"
+docker exec -it "$CONTAINER_ID" /bin/bash -c "chmod +x $RUN_PITEST_PATH && $RUN_PITEST_PATH $REPO_URL $COMMIT_CODE $randomMutant $randomTest $verbosity $randomSeed $readFromFile $filePath $round $SUBDIR"
 docker stop $CONTAINER_ID
 docker rm $CONTAINER_ID
