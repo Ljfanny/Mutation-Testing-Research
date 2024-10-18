@@ -1,4 +1,4 @@
-project,seed,T-test,U-test,reduction_percentage
+project,seed,T-test,U-test,ratio(avg. fastest/avg. seed)
 commons-codec,0,0.000,0.002,0.670
 commons-codec,2024,0.000,0.002,0.734
 commons-codec,99999,0.256,0.093,0.990
