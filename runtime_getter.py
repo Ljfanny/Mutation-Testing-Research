@@ -243,7 +243,7 @@ if __name__ == '__main__':
                                                                      i_seed,
                                                                      j_seed,
                                                                      f'{t_p_value:.5f}',
-                                                                     f'{u_p_value:.3f}',
+                                                                     f'{u_p_value:.5f}',
                                                                      '']
             avg_rate = np.mean(fastest_array) / np.mean(i_array)
             t_stat, t_p_value = ttest_ind(i_array, fastest_array)
