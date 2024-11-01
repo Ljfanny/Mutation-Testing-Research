@@ -242,7 +242,7 @@ if __name__ == '__main__':
                     significant_df.loc[len(significant_df.index)] = [project,
                                                                      i_seed,
                                                                      j_seed,
-                                                                     f'{t_p_value:.3f}',
+                                                                     f'{t_p_value:.5f}',
                                                                      f'{u_p_value:.3f}',
                                                                      '']
             avg_rate = np.mean(fastest_array) / np.mean(i_array)
@@ -251,9 +251,9 @@ if __name__ == '__main__':
             significant_df.loc[len(significant_df.index)] = [project,
                                                              i_seed,
                                                              'fastest',
-                                                             f'{t_p_value:.3f}',
-                                                             f'{u_p_value:.3f}',
-                                                             avg_rate]
+                                                             f'{t_p_value:.5f}',
+                                                             f'{u_p_value:.5f}',
+                                                             f'{avg_rate:.5f}']
         runtime_df.to_csv(f'{analyzed_path}/{choice}/total_running_time/{project}.csv',
                           sep=',', header=True, index=False)
     significant_df.to_csv(f'{analyzed_path}/{choice}/total_running_time/significant_results.csv',
