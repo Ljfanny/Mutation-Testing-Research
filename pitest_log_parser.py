@@ -5,16 +5,44 @@ import numpy as np
 
 project_list = [
     # 'commons-codec',
-    'commons-net',
+    # 'commons-net',
     # 'delight-nashorn-sandbox',
     # 'empire-db',
-    # 'jimfs'
+    'jimfs',
+    # 'assertj-assertions-generator',
+    # 'commons-cli',
+    # 'commons-collections',
+    # 'commons-csv',
+    # 'commons-net',
+    # 'empire-db',
+    # 'guava',
+    # 'handlebars.java',
+    # 'httpcore',
+    # 'java-design-patterns',
+    # 'jooby',
+    # 'maven-dependency-plugin',
+    # 'maven-shade-plugin',
+    # 'riptide',
+    # 'sling-org-apache-sling-auth-core',
+    # 'stream-lib'
 ]
 TIMED_OUT = 'TIMED_OUT'
 round_number = 6
 random_mutant = False
-random_test = True
-seed_list = [0, 2024, 99999]
+random_test = False
+seed_list = [
+    # 0,
+    # 42,
+    # 123,
+    # 216,
+    # 1202,
+    # 1999,
+    # 2002,
+    # 2024,
+    # 31415,
+    # 99999,
+    'fastest'
+]
 mutant_choice = {
     False: 'default-mutant',
     True: 'random-mutant'
@@ -28,7 +56,23 @@ project_junitVersion_dict = {
     'commons-net': 'junit5',
     'delight-nashorn-sandbox': 'junit4',
     'empire-db': 'junit4',
-    'jimfs': 'junit4'
+    'jimfs': 'junit4',
+    'commons-cli': 'junit5',
+    'assertj-assertions-generator': 'junit5',
+    'commons-collections': 'junit5',
+    'commons-csv': 'junit5',
+    'commons-net': 'junit5',
+    'empire-db': 'junit4',
+    'guava': 'junit4',
+    'handlebars.java': 'junit5',
+    'httpcore': 'junit5',
+    'java-design-patterns': 'junit5',
+    'jooby': 'junit5',
+    'maven-dependency-plugin': 'junit5',
+    'maven-shade-plugin': 'junit4',
+    'riptide': 'junit5',
+    'sling-org-apache-sling-auth-core': 'junit4',
+    'stream-lib': 'junit4'
 }
 junit_version = ''
 mutant_pattern = ''
@@ -44,7 +88,7 @@ mutant_dict = {}
 # Regex patterns
 mutant_pattern_junit4 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
                         r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
-                        r"description=([^,]+), testsInOrder=\[([^]]+)\]"
+                        r"description=([^,]+), testsInOrder=\[(.*)\]\]"
 mutant_pattern_junit5 = r"location=Location \[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([" \
                         r"^]]+)\], mutator=([^,]+)\], filename=([^,]+), block=\[([^]]+)\], lineNumber=(\d+), " \
                         r"description=([^,]+), testsInOrder=\[(.*\])\]\]"
@@ -192,8 +236,9 @@ def parse_log(project,
               round,
               seed):
     choice = f'{mutant_choice[random_mutant]}_{test_choice[random_test]}'
-    with open(f'controlled_logs/{choice}/{seed}/{project}_{round}.log', 'r') as file:
+    with open(f'controlled_logs/more_projects/{seed}/{project}_{round}.log', 'r') as file:
     # with open(f'controlled_logs/{choice}/fastest/{project}_{round}.log', 'r') as file:
+    # with open(f'pitest_logs/default_version/{project}.log', 'r') as file:
         block = []
         capturing = False
         for line in file:
@@ -212,7 +257,8 @@ def parse_log(project,
 def output_jsons(seed):
     choice = f'{mutant_choice[random_mutant]}_{test_choice[random_test]}'
     # output_path = f'controlled_parsed_data/{choice}/{project}_fastest'
-    output_path = f'controlled_parsed_data/{choice}/{project}_{seed}'
+    output_path = f'controlled_parsed_data/more_projects/{project}_{seed}'
+    # output_path = f'parsed_data/default_version/{project}'
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     with open(f'{output_path}/mutantId_mutantTuple.json', 'w') as file:
