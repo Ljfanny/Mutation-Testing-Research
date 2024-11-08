@@ -8,7 +8,7 @@ project_list = [
     'commons-codec',
     # 'commons-net',
     'delight-nashorn-sandbox',
-    # 'empire-db',
+    'empire-db',
     'jimfs',
     'assertj-assertions-generator',
     'commons-cli',
@@ -53,6 +53,11 @@ SURVIVED = 'survived'
 BOTH = 'killed/survived'
 KILLING_TESTS = 'killingTests'
 SUCCEEDING_TESTS = 'succeedingTests'
+clazz_index = 0
+method_index = 1
+methodDesc_index = 2
+indexes_index = 3
+mutator_index = 4
 
 
 def filter_mutation(mutations, non_flaky_list, mutantId_mutantTuple_dict):
@@ -106,6 +111,17 @@ def add_list(array1, array2):
             array1[i] += int(array2[i])
 
 
+def add_up_runtime(file_path):
+    runtime_list = [0 for _ in range(round_number)]
+    mutantId_mutantTuple_dict, mutantId_runtimeList_dict = get_info(file_path)
+    for mutant_id, mutant_tuple in mutantId_mutantTuple_dict.items():
+        muid = log_to_key(mutant_tuple)
+        if muid in normal_mutants:
+            if muid in muid_isConsistent_dict and muid_isConsistent_dict[muid]:
+                add_list(runtime_list, mutantId_runtimeList_dict[mutant_id])
+    return runtime_list
+
+
 def recode_test(test_statuses_dict, i, tests, status):
     if tests is None:
         return
@@ -118,9 +134,30 @@ def recode_test(test_statuses_dict, i, tests, status):
             test_statuses_dict[t][i] = BOTH
 
 
+def xml_to_key(obj):
+    return (obj['mutatedClass'],
+            obj['mutatedMethod'],
+            obj['methodDescription'],
+            str([int(i) for i in obj['indexes']]),
+            obj['mutator'])
+
+
+def log_to_key(obj):
+    return (obj[clazz_index],
+            obj[method_index],
+            obj[methodDesc_index],
+            str([int(i) for i in obj[indexes_index].split(', ')]),
+            obj[mutator_index])
+
+
 if __name__ == '__main__':
     parent_path = f'controlled_parsed_data/{choice}'
-    significant_df = pd.DataFrame(None, columns=['project', 'seed1', 'seed2', 'T-test', 'U-test', 'ratio(avg. fastest/avg. seed)'])
+    significant_df = pd.DataFrame(None, columns=['project',
+                                                 'seed1',
+                                                 'seed2',
+                                                 'T-test',
+                                                 'U-test',
+                                                 'ratio(avg. fastest/avg. seed)'])
     for project in project_list:
         muid_isConsistent_dict = {}
         muid_killedTests_dict = {}
@@ -139,8 +176,7 @@ if __name__ == '__main__':
                                                                    mutantId_mutantTuple_dict)
             if not is_visited:
                 for mutation in filtered_mutations:
-                    muid = (mutation['mutatedClass'], mutation['mutatedMethod'], mutation['methodDescription'])
-                    muid += (str([int(i) for i in mutation['indexes']]), mutation['mutator'])
+                    muid = xml_to_key(mutation)
                     muid_isConsistent_dict[muid] = True
                     muid_indexMatrix_dict[muid] = [[] for _ in range(seed_number)]
                     muid_killedTests_dict[muid] = mutation[KILLING_TESTS]
@@ -148,8 +184,7 @@ if __name__ == '__main__':
 
             # the same order has different statuses.
             for j, mutation in enumerate(filtered_mutations):
-                muid = (mutation['mutatedClass'], mutation['mutatedMethod'], mutation['methodDescription'])
-                muid += (str([int(i) for i in mutation['indexes']]), mutation['mutator'])
+                muid = xml_to_key(mutation)
                 if len(muid_indexMatrix_dict[muid][i]) >= 1:
                     k = muid_indexMatrix_dict[muid][i][0]
                     if is_different(mutation_list[k][KILLING_TESTS], mutation[KILLING_TESTS]) or is_different(
@@ -160,8 +195,7 @@ if __name__ == '__main__':
             # the different order has different statuses.
             if is_visited:
                 for j, mutation in enumerate(filtered_mutations):
-                    muid = (mutation['mutatedClass'], mutation['mutatedMethod'], mutation['methodDescription'])
-                    muid += (str([int(i) for i in mutation['indexes']]), mutation['mutator'])
+                    muid = xml_to_key(mutation)
                     if not muid_isConsistent_dict[muid]:
                         continue
                     killing_tests = mutation[KILLING_TESTS]
@@ -209,27 +243,27 @@ if __name__ == '__main__':
         columns = ['seed'] + [f'round{i}' for i in range(round_number)]
         runtime_df = pd.DataFrame(None, columns=columns)
         seed_totalRuntimeList_dict = {}
+        # ignore TIMED_OUT & MEMORY_ERROR
+        normal_mutants = set()
+        for seed in seed_list:
+            mutantId_mutantTuple_dict, mutantId_runtimeList_dict = get_info(f'{parsed_path}/{choice}/{project}_{seed}')
+            per_normal = set()
+            for mutant_id, mutant_tuple in mutantId_mutantTuple_dict.items():
+                if TIMED_OUT in mutantId_runtimeList_dict[mutant_id]:
+                    continue
+                per_normal.add(log_to_key(mutant_tuple))
+            if len(normal_mutants) == 0:
+                normal_mutants |= per_normal
+            else:
+                normal_mutants &= per_normal
         # normal one
         for seed in seed_list:
-            runtime_list = [0 for _ in range(round_number)]
-            mutantId_mutantTuple_dict, mutantId_runtimeList_dict = get_info(f'{parsed_path}/{choice}/{project}_{seed}')
-            for mutant_id, mutant_tuple in mutantId_mutantTuple_dict.items():
-                muid = tuple(mutant_tuple[:3])
-                muid += (str([int(i) for i in mutant_tuple[3].split(', ')]), mutant_tuple[4])
-                if muid in muid_isConsistent_dict and muid_isConsistent_dict[muid]:
-                    add_list(runtime_list, mutantId_runtimeList_dict[mutant_id])
+            runtime_list = add_up_runtime(f'{parsed_path}/{choice}/{project}_{seed}')
             seed_totalRuntimeList_dict[seed] = runtime_list
             runtime_df.loc[len(runtime_df.index)] = [seed] + runtime_list
-        fastest_array = runtime_list
         # fastest one
-        mutantId_mutantTuple_dict, mutantId_runtimeList_dict = get_info(f'{parsed_path}/{choice}/{project}_fastest')
-        fastest_array = [0 for _ in range(round_number)]
-        for mutant_id, mutant_tuple in mutantId_mutantTuple_dict.items():
-            muid = tuple(mutant_tuple[:3])
-            muid += (str([int(i) for i in mutant_tuple[3].split(', ')]), mutant_tuple[4])
-            if muid in muid_isConsistent_dict and muid_isConsistent_dict[muid]:
-                add_list(fastest_array, mutantId_runtimeList_dict[mutant_id])
-        runtime_df.loc[len(runtime_df.index)] = ['fastest'] + fastest_array
+        # fastest_array = add_up_runtime(f'{parsed_path}/{choice}/{project}_fastest')
+        # runtime_df.loc[len(runtime_df.index)] = ['fastest'] + fastest_array
         for i in range(seed_number):
             i_seed = seed_list[i]
             i_array = seed_totalRuntimeList_dict[i_seed]
@@ -245,15 +279,15 @@ if __name__ == '__main__':
                                                                      f'{t_p_value:.5f}',
                                                                      f'{u_p_value:.5f}',
                                                                      '']
-            avg_rate = np.mean(fastest_array) / np.mean(i_array)
-            t_stat, t_p_value = ttest_ind(i_array, fastest_array)
-            u_stat, u_p_value = mannwhitneyu(i_array, fastest_array)
-            significant_df.loc[len(significant_df.index)] = [project,
-                                                             i_seed,
-                                                             'fastest',
-                                                             f'{t_p_value:.5f}',
-                                                             f'{u_p_value:.5f}',
-                                                             f'{avg_rate:.5f}']
+            # avg_rate = np.mean(fastest_array) / np.mean(i_array)
+            # t_stat, t_p_value = ttest_ind(i_array, fastest_array)
+            # u_stat, u_p_value = mannwhitneyu(i_array, fastest_array)
+            # significant_df.loc[len(significant_df.index)] = [project,
+            #                                                  i_seed,
+            #                                                  'fastest',
+            #                                                  f'{t_p_value:.5f}',
+            #                                                  f'{u_p_value:.5f}',
+            #                                                  f'{avg_rate:.5f}']
         runtime_df.to_csv(f'{analyzed_path}/{choice}/total_running_time/{project}.csv',
                           sep=',', header=True, index=False)
     significant_df.to_csv(f'{analyzed_path}/{choice}/total_running_time/significant_results.csv',

@@ -7,8 +7,8 @@ project_list = [
     # 'commons-codec',
     # 'commons-net',
     # 'delight-nashorn-sandbox',
-    # 'empire-db',
-    'jimfs',
+    'empire-db',
+    # 'jimfs',
     # 'assertj-assertions-generator',
     # 'commons-cli',
     # 'commons-collections',
@@ -31,17 +31,17 @@ round_number = 6
 random_mutant = False
 random_test = False
 seed_list = [
-    # 0,
-    # 42,
-    # 123,
-    # 216,
-    # 1202,
-    # 1999,
-    # 2002,
-    # 2024,
-    # 31415,
-    # 99999,
-    'fastest'
+    0,
+    42,
+    123,
+    216,
+    1202,
+    1999,
+    2002,
+    2024,
+    31415,
+    99999,
+    # 'fastest'
 ]
 mutant_choice = {
     False: 'default-mutant',
@@ -53,9 +53,7 @@ test_choice = {
 }
 project_junitVersion_dict = {
     'commons-codec': 'junit5',
-    'commons-net': 'junit5',
     'delight-nashorn-sandbox': 'junit4',
-    'empire-db': 'junit4',
     'jimfs': 'junit4',
     'commons-cli': 'junit5',
     'assertj-assertions-generator': 'junit5',
