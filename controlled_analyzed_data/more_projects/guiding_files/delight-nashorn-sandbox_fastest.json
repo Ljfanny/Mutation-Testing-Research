@@ -327,23 +327,6 @@
     {
         "id": {
             "location": {
-                "clazz": "delight.nashornsandbox.NashornSandboxes",
-                "method": "create",
-                "methodDesc": "([Ljava/lang/String;)Ldelight/nashornsandbox/NashornSandbox;"
-            },
-            "indexes": "[7]",
-            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
-        },
-        "testsInOrder": [
-            {
-                "definingClass": "delight.nashornsandbox.TestIssue40_ScriptEngineParameters",
-                "name": "delight.nashornsandbox.TestIssue40_ScriptEngineParameters.test(delight.nashornsandbox.TestIssue40_ScriptEngineParameters)"
-            }
-        ]
-    },
-    {
-        "id": {
-            "location": {
                 "clazz": "delight.nashornsandbox.internal.JsSanitizer",
                 "method": "<init>",
                 "methodDesc": "(Ljavax/script/ScriptEngine;I)V"

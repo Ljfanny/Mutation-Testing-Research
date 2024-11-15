@@ -12,7 +12,7 @@ project_list = [
     'commons-codec',
     'delight-nashorn-sandbox',
     'empire-db',
-    # 'jimfs',
+    'jimfs',
     # 'commons-net',
     # 'commons-collections',
     # 'commons-net',
