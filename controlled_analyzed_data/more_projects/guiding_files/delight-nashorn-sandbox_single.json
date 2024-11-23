@@ -1,0 +1,1073 @@
+[
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.NashornSandboxes",
+                "method": "create",
+                "methodDesc": "()Ldelight/nashornsandbox/NashornSandbox;"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestSimpleEval",
+                "name": "delight.nashornsandbox.TestSimpleEval.test(delight.nashornsandbox.TestSimpleEval)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.NashornSandboxes",
+                "method": "create",
+                "methodDesc": "([Ljava/lang/String;)Ldelight/nashornsandbox/NashornSandbox;"
+            },
+            "indexes": "[7]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue40_ScriptEngineParameters",
+                "name": "delight.nashornsandbox.TestIssue40_ScriptEngineParameters.test(delight.nashornsandbox.TestIssue40_ScriptEngineParameters)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "<init>",
+                "methodDesc": "(Ljavax/script/ScriptEngine;I)V"
+            },
+            "indexes": "[20]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestInvocable",
+                "name": "delight.nashornsandbox.TestInvocable.testInvokeFunction(delight.nashornsandbox.TestInvocable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "<init>",
+                "methodDesc": "(Ljavax/script/ScriptEngine;Ldelight/nashornsandbox/SecuredJsCache;)V"
+            },
+            "indexes": "[18]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "checkJs",
+                "methodDesc": "(Ljava/lang/String;)V"
+            },
+            "indexes": "[10]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "checkJs",
+                "methodDesc": "(Ljava/lang/String;)V"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "createSecuredJsCache",
+                "methodDesc": "(I)Ldelight/nashornsandbox/SecuredJsCache;"
+            },
+            "indexes": "[15]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestGetFunction",
+                "name": "delight.nashornsandbox.TestGetFunction.test(delight.nashornsandbox.TestGetFunction)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "getInjectJs",
+                "methodDesc": "()Ljava/lang/String;"
+            },
+            "indexes": "[111]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "getInjectJs",
+                "methodDesc": "()Ljava/lang/String;"
+            },
+            "indexes": "[43]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestAccessFunction",
+                "name": "delight.nashornsandbox.TestAccessFunction.test_access_variable(delight.nashornsandbox.TestAccessFunction)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "getPreamble",
+                "methodDesc": "()Ljava/lang/String;"
+            },
+            "indexes": "[48]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestInvocable",
+                "name": "delight.nashornsandbox.TestInvocable.testInvokeFunction(delight.nashornsandbox.TestInvocable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "injectAsFunction",
+                "methodDesc": "(Ljava/lang/Object;)Ljava/util/function/Function;"
+            },
+            "indexes": "[10]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "injectAsFunction",
+                "methodDesc": "(Ljava/lang/Object;)Ljava/util/function/Function;"
+            },
+            "indexes": "[5]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "injectInterruptionCalls",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[8]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "lambda$injectAsFunction$1",
+                "methodDesc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[22]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "lambda$secureJs$0",
+                "methodDesc": "(Ljava/lang/String;[Ljavax/script/ScriptException;)Ljava/lang/String;"
+            },
+            "indexes": "[7]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "newSecuredJsCache",
+                "methodDesc": "(I)Ldelight/nashornsandbox/SecuredJsCache;"
+            },
+            "indexes": "[20]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestGetFunction",
+                "name": "delight.nashornsandbox.TestGetFunction.test(delight.nashornsandbox.TestGetFunction)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "newSecuredJsCache",
+                "methodDesc": "(I)Ldelight/nashornsandbox/SecuredJsCache;"
+            },
+            "indexes": "[8]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestGetFunction",
+                "name": "delight.nashornsandbox.TestGetFunction.test(delight.nashornsandbox.TestGetFunction)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "secureJs",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[11]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestInvocable",
+                "name": "delight.nashornsandbox.TestInvocable.testInvokeFunction(delight.nashornsandbox.TestInvocable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "secureJs",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[34]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "secureJs",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[45]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "secureJs",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[5]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "secureJsImpl",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[17]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "secureJsImpl",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[21]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestCustomCache",
+                "name": "delight.nashornsandbox.TestCustomCache.testCustomCacheUsage(delight.nashornsandbox.TestCustomCache)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.JsSanitizer",
+                "method": "secureJsImpl",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[33]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestInvocable",
+                "name": "delight.nashornsandbox.TestInvocable.testInvokeFunction(delight.nashornsandbox.TestInvocable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornDetection",
+                "method": "createSandboxClassFilter",
+                "methodDesc": "()Ldelight/nashornsandbox/internal/SandboxClassFilter;"
+            },
+            "indexes": "[13]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue57",
+                "name": "delight.nashornsandbox.TestIssue57.testMapReduce(delight.nashornsandbox.TestIssue57)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornDetection",
+                "method": "createSandboxClassFilter",
+                "methodDesc": "()Ldelight/nashornsandbox/internal/SandboxClassFilter;"
+            },
+            "indexes": "[17]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue57",
+                "name": "delight.nashornsandbox.TestIssue57.testMapReduce(delight.nashornsandbox.TestIssue57)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornDetection",
+                "method": "getClassFilterClass",
+                "methodDesc": "()Ljava/lang/Class;"
+            },
+            "indexes": "[13]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue57",
+                "name": "delight.nashornsandbox.TestIssue57.testMapReduce(delight.nashornsandbox.TestIssue57)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornDetection",
+                "method": "getClassFilterClass",
+                "methodDesc": "()Ljava/lang/Class;"
+            },
+            "indexes": "[4]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue57",
+                "name": "delight.nashornsandbox.TestIssue57.testMapReduce(delight.nashornsandbox.TestIssue57)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornDetection",
+                "method": "getNashornScriptEngineFactory",
+                "methodDesc": "()Ljava/lang/Object;"
+            },
+            "indexes": "[20]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue57",
+                "name": "delight.nashornsandbox.TestIssue57.testMapReduce(delight.nashornsandbox.TestIssue57)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornDetection",
+                "method": "getNashornScriptEngineFactory",
+                "methodDesc": "()Ljava/lang/Object;"
+            },
+            "indexes": "[31]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue57",
+                "name": "delight.nashornsandbox.TestIssue57.testMapReduce(delight.nashornsandbox.TestIssue57)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "<init>",
+                "methodDesc": "(Ljavax/script/ScriptEngine;[Ljava/lang/String;)V"
+            },
+            "indexes": "[63]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestIssue40_ScriptEngineParameters",
+                "name": "delight.nashornsandbox.TestIssue40_ScriptEngineParameters.test(delight.nashornsandbox.TestIssue40_ScriptEngineParameters)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "allowExitFunctions",
+                "methodDesc": "(Z)V"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "allowGlobalsObjects",
+                "methodDesc": "(Z)V"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "allowLoadFunctions",
+                "methodDesc": "(Z)V"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "allowPrintFunctions",
+                "methodDesc": "(Z)V"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "allowReadFunctions",
+                "methodDesc": "(Z)V"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "compile",
+                "methodDesc": "(Ljava/lang/String;)Ljavax/script/CompiledScript;"
+            },
+            "indexes": "[4]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestAllowAndDisallowClasses",
+                "name": "delight.nashornsandbox.TestAllowAndDisallowClasses.test_file_compiled(delight.nashornsandbox.TestAllowAndDisallowClasses)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "createBindings",
+                "methodDesc": "()Ljavax/script/Bindings;"
+            },
+            "indexes": "[6]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "createNashornScriptEngineFactory",
+                "methodDesc": "([Ljava/lang/String;)Ljavax/script/ScriptEngine;"
+            },
+            "indexes": "[60]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "createSandboxClassFilter",
+                "methodDesc": "()Ldelight/nashornsandbox/internal/SandboxClassFilter;"
+            },
+            "indexes": "[4]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "getSanitizer",
+                "methodDesc": "()Ldelight/nashornsandbox/internal/JsSanitizer;"
+            },
+            "indexes": "[5]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.internal.JsSanitizerTest",
+                "name": "delight.nashornsandbox.internal.JsSanitizerTest.test_issue_66_case1(delight.nashornsandbox.internal.JsSanitizerTest)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "inject",
+                "methodDesc": "(Ljava/lang/String;Ljava/lang/Object;)V"
+            },
+            "indexes": "[10]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestGlobalVariable",
+                "name": "delight.nashornsandbox.TestGlobalVariable.test_java_variable(delight.nashornsandbox.TestGlobalVariable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "inject",
+                "methodDesc": "(Ljava/lang/String;Ljava/lang/Object;)V"
+            },
+            "indexes": "[16]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestGlobalVariable",
+                "name": "delight.nashornsandbox.TestGlobalVariable.test_java_variable(delight.nashornsandbox.TestGlobalVariable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "inject",
+                "methodDesc": "(Ljava/lang/String;Ljava/lang/Object;)V"
+            },
+            "indexes": "[24]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestGlobalVariable",
+                "name": "delight.nashornsandbox.TestGlobalVariable.test_java_variable(delight.nashornsandbox.TestGlobalVariable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "inject",
+                "methodDesc": "(Ljava/lang/String;Ljava/lang/Object;)V"
+            },
+            "indexes": "[4]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestGlobalVariable",
+                "name": "delight.nashornsandbox.TestGlobalVariable.test_java_variable(delight.nashornsandbox.TestGlobalVariable)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "isAllowed",
+                "methodDesc": "(Ljava/lang/Class;)Z"
+            },
+            "indexes": "[7]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestAllowAndDisallowClasses",
+                "name": "delight.nashornsandbox.TestAllowAndDisallowClasses.test_file(delight.nashornsandbox.TestAllowAndDisallowClasses)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.NashornSandboxImpl",
+                "method": "isAllowed",
+                "methodDesc": "(Ljava/lang/Class;)Z"
+            },
+            "indexes": "[7]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestAllowAndDisallowClasses",
+                "name": "delight.nashornsandbox.TestAllowAndDisallowClasses.test_file(delight.nashornsandbox.TestAllowAndDisallowClasses)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[124]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[142]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[156]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[164]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[174]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[174]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[191]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[20]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[20]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[27]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[49]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[58]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[65]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[68]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[87]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    },
+    {
+        "id": {
+            "location": {
+                "clazz": "delight.nashornsandbox.internal.RemoveComments",
+                "method": "perform",
+                "methodDesc": "(Ljava/lang/String;)Ljava/lang/String;"
+            },
+            "indexes": "[90]",
+            "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+        },
+        "testsInOrder": [
+            {
+                "definingClass": "delight.nashornsandbox.TestRemoveComments",
+                "name": "delight.nashornsandbox.TestRemoveComments.test(delight.nashornsandbox.TestRemoveComments)"
+            }
+        ]
+    }
+]

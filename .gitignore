@@ -1,9 +1,14 @@
 pitest_logs/
-controlled_logs/
 parsed_data/
 analyzed_data/
+
+controlled_logs/
+controlled_projects/
 controlled_parsed_data/
-controlled_mutation_xmls/
+
+tested_logs/
+tested_projects/
+tested_parsed_data/
 __pycache__/
 *.zip
 experiment-record.log

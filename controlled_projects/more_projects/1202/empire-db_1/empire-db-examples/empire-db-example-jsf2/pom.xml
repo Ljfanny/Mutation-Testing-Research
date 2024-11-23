@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Licensed to the Apache Software Foundation (ASF) under one or more
+	contributor license agreements. See the NOTICE file distributed with
+	this work for additional information regarding copyright ownership.
+	The ASF licenses this file to You under the Apache License, Version
+	2.0 (the "License"); you may not use this file except in compliance
+	with the License. You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+	applicable law or agreed to in writing, software distributed under the
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+	CONDITIONS OF ANY KIND, either express or implied. See the License for
+	the specific language governing permissions and limitations under the
+	License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>empire-db-examples</artifactId>
+		<groupId>org.apache.empire-db</groupId>
+		<version>3.2.0</version>
+	</parent>
+	<artifactId>empire-db-example-jsf2</artifactId>
+	<name>Apache Empire-db JSF2 Example</name>
+	<description>Example showing the use of the empire-db-jsf2 extensions</description>
+	<packaging>war</packaging>
+	
+	<properties>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.empire-db</groupId>
+			<artifactId>empire-db</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.empire-db</groupId>
+			<artifactId>empire-db-jsf2</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Sun Mojarra -->
+		<!--
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.2.20</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.20</version>
+		</dependency>
+		 -->
+
+		<!-- Apache MyFaces -->
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-api</artifactId>
+			<version>2.3.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-impl</artifactId>
+			<version>2.3.10</version>
+		</dependency>
+
+		<!-- EL --> 
+		<dependency>
+		    <groupId>javax.el</groupId>
+		    <artifactId>javax.el-api</artifactId>
+		    <version>3.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- logging -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-reload4j</artifactId>
+		</dependency>
+
+		<!-- All Databases (scope: runtime) -->
+		<!-- hsqldb -->
+		<dependency>
+		    <groupId>org.hsqldb</groupId>
+		    <artifactId>hsqldb</artifactId>
+		    <classifier>jdk8</classifier>
+		    <scope>runtime</scope>
+		</dependency> 
+		<!-- dh2 -->
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <scope>runtime</scope>
+		</dependency> 
+		<!-- derby -->
+		<dependency>
+		    <groupId>org.apache.derby</groupId>
+		    <artifactId>derby</artifactId>
+		    <scope>runtime</scope>
+		</dependency> 
+		<!-- mysql -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+		<!-- postgresql -->
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+		<!-- msssql -->
+		<dependency>
+		    <groupId>com.microsoft.sqlserver</groupId>
+		    <artifactId>mssql-jdbc</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+		<!-- oracle -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc8</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+	
+	<build>
+		<finalName>empjsf</finalName>
+		<plugins>
+			<!-- WTP-Eclipse-Projekt --> 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId> 
+				<configuration>
+					<m2eclipse>true</m2eclipse> 
+					<downloadSources>true</downloadSources>
+					<wtpversion>1.5</wtpversion> 
+				</configuration> 
+			</plugin>
+			<!-- Sysdeo Tomcat Eclipse -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sysdeo-tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<webPath>empire-db-example-jsf2</webPath>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
+

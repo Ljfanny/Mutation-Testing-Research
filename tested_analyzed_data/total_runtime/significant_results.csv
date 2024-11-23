@@ -1,0 +1,4 @@
+project,seed1,seed2,T-test,U-test
+assertj-assertions-generator,42,default,0.147,0.394
+assertj-assertions-generator,42,fastest,0.998,1.000
+assertj-assertions-generator,default,fastest,0.145,0.394

@@ -3,25 +3,26 @@ import json
 from pitest_log_parser import mutant_choice, test_choice
 
 project_list = [
-    'assertj-assertions-generator',
-    'commons-cli',
-    'commons-csv',
-    'commons-codec',
-    'delight-nashorn-sandbox',
+    # 'assertj-assertions-generator',
+    # 'commons-cli',
+    # 'commons-csv',
+    # 'commons-codec',
+    # 'delight-nashorn-sandbox',
     # 'empire-db',
     # 'jimfs',
+    'handlebars.java',
+    'httpcore',
+    'riptide',
+
     # 'commons-net',
     # 'commons-collections',
     # 'commons-net',
     # 'empire-db',
     # 'guava',
-    # 'handlebars.java',
-    # 'httpcore',
     # 'java-design-patterns',
     # 'jooby',
     # 'maven-dependency-plugin',
     # 'maven-shade-plugin',
-    # 'riptide',
     # 'sling-org-apache-sling-auth-core',
     # 'stream-lib'
 ]
@@ -36,17 +37,33 @@ seed_list = [
     # 2024,
     # 31415,
     # 99999,
-    # 'default',
-    'fastest'
+    'default',
+    # 'fastest',
+    # 'single',
+    # 'half'
 ]
+project_subdir_dict = {
+    'assertj-assertions-generator': '',
+    'commons-cli': '',
+    'commons-csv': '',
+    'commons-codec': '',
+    'delight-nashorn-sandbox': '',
+    'jimfs': 'jimfs/',
+    'empire-db': 'empire-db/',
+    'httpcore': 'httpcore5/',
+    'handlebars.java': 'handlebars/',
+    'riptide': 'riptide-core/'
+}
 round_number = 6
 random_mutant = False
 random_test = False
-parent_dir = 'controlled_mutation_xmls'
+choice = 'more_projects'
+xmls_dir = f'controlled_projects/{choice}'
+parsed_dir = f'controlled_parsed_data/{choice}'
 
 
 def parse_xml(s, p, rnd):
-    xml_path = f'{parent_dir}/more_projects/{s}/{p}_{rnd}/target/pit-reports/mutations.xml'
+    xml_path = f'{xmls_dir}/{s}/{p}_{rnd}/{project_subdir_dict[p]}target/pit-reports/mutations.xml'
     tree = ET.parse(xml_path)
     root = tree.getroot()
     mutations = root.findall('mutation')
@@ -59,7 +76,7 @@ def parse_xml(s, p, rnd):
                 if character.text is None:
                     mutation_dict[character.tag] = character.text
                 elif '|' in character.text:
-                    mutation_dict[character.tag] = tuple(character.text.split('|'))
+                    mutation_dict[character.tag] = tuple(set(character.text.split('|')))
                 else:
                     mutation_dict[character.tag] = (character.text, )
             else:
@@ -68,12 +85,11 @@ def parse_xml(s, p, rnd):
 
 
 if __name__ == '__main__':
-    choice = 'more_projects'
     for project in project_list:
         for seed in seed_list:
             print(f'{project} with {seed} is processing... ...')
             mutation_set = set()
             for i in range(round_number):
                 parse_xml(s=seed, p=project, rnd=i)
-            with open(f'controlled_parsed_data/more_projects/{project}_{seed}/mutations_xml.json', 'w') as file:
+            with open(f'{parsed_dir}/{project}_{seed}/mutations_xml.json', 'w') as file:
                 json.dump([dict(mutation) for mutation in mutation_set], file, indent=4)

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Licensed to the Apache Software Foundation (ASF) under one or more
+		contributor license agreements. See the NOTICE file distributed with
+		this work for additional information regarding copyright ownership.
+		The ASF licenses this file to You under the Apache License, Version
+		2.0 (the "License"); you may not use this file except in compliance
+		with the License. You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License.
+	-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.apache.empire-db</groupId>
+		<artifactId>empire-db-examples</artifactId>
+		<version>3.2.0</version>
+	</parent>
+	
+    <artifactId>empire-db-example-codegen</artifactId>
+	<name>Apache Empire-db Maven Codegen Example</name>
+	<description>Example showing the use of the empire-db codegen maven plugin</description>
+	<packaging>pom</packaging>
+    
+	<dependencies>
+	
+        <dependency>
+			<groupId>org.apache.empire-db</groupId>
+			<artifactId>empire-db</artifactId>
+		</dependency>
+
+        <dependency>
+			<groupId>org.apache.empire-db</groupId>
+			<artifactId>empire-db-codegen</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.hsqldb</groupId>
+		    <artifactId>hsqldb</artifactId>
+		    <classifier>jdk8</classifier>
+		</dependency> 
+		
+		<!-- test scope -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<optimize>true</optimize>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+            <!-- empire-db-maven-plugin -->
+			<plugin>
+				<groupId>org.apache.empire-db</groupId>
+				<artifactId>empire-db-maven-plugin</artifactId>
+                <version>${project.version}</version>
+				<!-- mvn help:describe -DgroupId=org.apache.empire-db -DartifactId=empire-db-maven-plugin -Ddetail=true -->
+				<configuration>
+					<!-- either specify a config file -->  
+					<configFile>generate-example.xml</configFile>
+					<!-- or provide the parameters directly  
+					<jdbcClass>org.hsqldb.jdbc.JDBCDriver</jdbcClass>
+					<jdbcURL>jdbc:hsqldb:file:${project.basedir}/src/test/resources/hsqldb/sample;shutdown=true</jdbcURL>
+					<jdbcUser>sa</jdbcUser>
+					<jdbcPwd></jdbcPwd>
+					<dbmsHandlerClass>org.apache.empire.dbms.hsql.DBMSHandlerHSql</dbmsHandlerClass>
+					<packageName>org.apache.empire.db.example</packageName>
+					<dbClassName>MyDatabase</dbClassName>
+					-->
+				</configuration>
+				<!-- Don't define executions. Instead run with: --> 
+				<!--   mvn empire-db:codegen    -->		
+				<!-- 
+				<executions>
+					<execution>
+						<goals>
+							<goal>codegen</goal>
+						</goals>
+					</execution>
+				</executions>
+				 -->
+				<dependencies>
+					<dependency>
+						<groupId>org.hsqldb</groupId>
+						<artifactId>hsqldb</artifactId>
+                        <version>2.7.1</version>
+					</dependency> 
+				</dependencies>
+			</plugin>
+		</plugins>
+		
+		<pluginManagement>
+			<plugins>
+				<!-- skip some -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<configuration>
+						<skip>true</skip>
+					</configuration>
+				</plugin>
+				<plugin>
+	                <groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<skip>true</skip>
+					</configuration>
+				</plugin>
+            </plugins>
+		</pluginManagement>
+		
+	</build>
+	
+</project>

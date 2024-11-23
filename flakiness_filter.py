@@ -6,25 +6,26 @@ from pitest_log_parser import project_junitVersion_dict, mutant_choice, test_cho
 
 
 project_list = [
-    'assertj-assertions-generator',
-    'commons-cli',
-    'commons-csv',
-    'commons-codec',
-    'delight-nashorn-sandbox',
-    'empire-db',
-    'jimfs',
+    # 'assertj-assertions-generator',
+    # 'commons-cli',
+    # 'commons-csv',
+    # 'commons-codec',
+    # 'delight-nashorn-sandbox',
+    # 'empire-db',
+    # 'jimfs',
+    'handlebars.java',
+    'httpcore',
+    'riptide',
+
     # 'commons-net',
     # 'commons-collections',
     # 'commons-net',
     # 'empire-db',
     # 'guava',
-    # 'handlebars.java',
-    # 'httpcore',
     # 'java-design-patterns',
     # 'jooby',
     # 'maven-dependency-plugin',
     # 'maven-shade-plugin',
-    # 'riptide',
     # 'sling-org-apache-sling-auth-core',
     # 'stream-lib'
 ]
@@ -40,12 +41,14 @@ seed_list = [
     31415,
     99999,
     'default',
-    'fastest'
+    # 'fastest'
 ]
 round_number = 6
 random_mutant = False
 random_test = False
 choice = 'more_projects'
+parsed_dir = f'controlled_parsed_data/{choice}'
+analyzed_dir = f'controlled_analyzed_data/{choice}'
 seed_number = len(seed_list)
 EMPTY = ''
 KILLED = 'killed'
@@ -91,7 +94,7 @@ def log_to_key(obj):
 
 
 def discard_flaky_mutants(mutants, p, s):
-    per_id_tuple_dict, per_id_runtimes_dict, _, per_xml_infos = get_info(f'{up_dir}/{p}_{s}')
+    per_id_tuple_dict, per_id_runtimes_dict, _, per_xml_infos = get_info(f'{parsed_dir}/{p}_{s}')
     # flaky mutants due to diff test orders
     for mut_id, runtimes in per_id_runtimes_dict.items():
         if np.isnan(runtimes).any():
@@ -121,10 +124,9 @@ def discard_flaky_mutants(mutants, p, s):
 
 
 if __name__ == '__main__':
-    up_dir = 'controlled_parsed_data/more_projects'
     for project in project_list:
         print(f'{project} is processing... ...')
-        fastest_dir = f'{up_dir}/{project}_fastest'
+        fastest_dir = f'{parsed_dir}/{project}_fastest'
         is_convenient = False
         total_mutants = set()
         tup_test_status_dict = dict()
@@ -150,11 +152,11 @@ if __name__ == '__main__':
         # record non-flaky id per seed
         for seed in seed_list:
             non_flaky_id_list = []
-            per_id_tuple_dict, _, _, _ = get_info(f'{up_dir}/{project}_{seed}')
+            per_id_tuple_dict, _, _, _ = get_info(f'{parsed_dir}/{project}_{seed}')
             for mut_id, mut_tup in per_id_tuple_dict.items():
                 tup = log_to_key(mut_tup)
                 if tup in total_mutants:
                     non_flaky_id_list.append(mut_id)
             print(len(non_flaky_id_list))
-            with open(f'controlled_analyzed_data/more_projects/mutant_list/non-flaky/{project}_{seed}.json', 'w') as f:
+            with open(f'{analyzed_dir}/mutant_list/non-flaky/{project}_{seed}.json', 'w') as f:
                 json.dump(non_flaky_id_list, f, indent=4)

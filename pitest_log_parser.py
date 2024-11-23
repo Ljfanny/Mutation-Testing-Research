@@ -4,25 +4,26 @@ import os
 import numpy as np
 
 project_list = [
-    'assertj-assertions-generator',
-    'commons-cli',
-    'commons-csv',
-    'commons-codec',
-    'delight-nashorn-sandbox',
-    'empire-db',
-    'jimfs',
+    # 'assertj-assertions-generator',
+    # 'commons-cli',
+    # 'commons-csv',
+    # 'commons-codec',
+    # 'delight-nashorn-sandbox',
+    # 'empire-db',
+    # 'jimfs',
+    'httpcore',
+    'handlebars.java',
+    'riptide',
+
     # 'commons-net',
     # 'commons-collections',
     # 'commons-net',
     # 'empire-db',
     # 'guava',
-    # 'handlebars.java',
-    # 'httpcore',
     # 'java-design-patterns',
     # 'jooby',
     # 'maven-dependency-plugin',
     # 'maven-shade-plugin',
-    # 'riptide',
     # 'sling-org-apache-sling-auth-core',
     # 'stream-lib'
 ]
@@ -40,9 +41,14 @@ seed_list = [
     # 2024,
     # 31415,
     # 99999,
-    # 'default',
-    'fastest'
+    'default',
+    # 'fastest',
+    # 'single',
+    # 'half'
 ]
+choice = 'more_projects'
+logs_dir = f'controlled_logs/{choice}'
+parsed_dir = f'controlled_parsed_data/{choice}'
 mutant_choice = {
     False: 'default-mutant',
     True: 'random-mutant'
@@ -194,7 +200,7 @@ def process_block(blk: list, rnd: int):
 
 # Parse log information
 def parse_log(p, rnd, s):
-    with open(f'controlled_logs/{choice}/{s}/{p}_{rnd}.log', 'r') as file:
+    with open(f'{logs_dir}/{s}/{p}_{rnd}.log', 'r') as file:
         block = []
         capturing = False
         for line in file:
@@ -211,7 +217,7 @@ def parse_log(p, rnd, s):
 
 
 def output_jsons(p, s):
-    output_path = f'controlled_parsed_data/{choice}/{p}_{s}'
+    output_path = f'{parsed_dir}/{p}_{s}'
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     with open(f'{output_path}/mutantId_mutantTuple.json', 'w') as file:
@@ -227,7 +233,6 @@ def output_jsons(p, s):
 
 
 if __name__ == '__main__':
-    choice = 'more_projects'
     mutant_pattern_dict = {
         'junit4': mutant_pattern_junit4,
         'junit5': mutant_pattern_junit5

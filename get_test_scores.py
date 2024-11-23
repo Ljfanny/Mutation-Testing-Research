@@ -37,20 +37,22 @@ seed_list = [
     2024,
     31415,
     99999,
-    'default',
-    'fastest'
+    'default'
 ]
-w_kills = 0.5
-w_covers = 1 - w_kills
-parsed_path = 'controlled_parsed_data'
-analyzed_path = 'controlled_analyzed_data'
+seed_num = len(seed_list)
+w_kill = 0.5
+w_cover = 1 - w_kill
 choice = 'more_projects'
+parsed_dir = f'controlled_parsed_data/{choice}'
+analyzed_dir = f'controlled_analyzed_data/{choice}'
 MUTATED_CLASS = 'mutatedClass'
 KILLING_TESTS = 'killingTests'
 clazz_index = 0
+method_index = 1
+methodDesc_index = 2
+indexes_index = 3
+mutator_index = 4
 name_index = 1
-kills_index = 0
-covers_index = 1
 
 
 def get_info(file_path):
@@ -66,43 +68,79 @@ def get_info(file_path):
     return id_tuple_dict, id_tests_dict, mutants
 
 
+def xml_to_key(obj):
+    return (obj['mutatedClass'],
+            obj['mutatedMethod'],
+            obj['methodDescription'],
+            str([int(i) for i in obj['indexes']]),
+            obj['mutator'])
+
+
+def log_to_key(obj):
+    return (obj[clazz_index],
+            obj[method_index],
+            obj[methodDesc_index],
+            str([int(i) for i in obj[indexes_index].split(', ')]),
+            obj[mutator_index])
+
+
 if __name__ == '__main__':
     for project in project_list:
+        mutants = set()
         clazz_mutantNum_dict = dict()
-        test_kills_covers_dict = dict()
+        test_killingRatios_dict = dict()
+        test_coverageRatios_dict = dict()
         is_recorded = False
         for seed in seed_list:
-            with open(f'{analyzed_path}/{choice}/mutant_list/non-flaky/{project}_{seed}.json', 'r') as f:
+            print(f'{project} with {seed} is processing... ...')
+            test_killNum_dict = dict()
+            test_coverNum_dict = dict()
+            with open(f'{analyzed_dir}/mutant_list/non-flaky/{project}_{seed}.json', 'r') as f:
                 non_flaky_id_list = json.load(f)
-            per_id_tuple_dict, per_id_tests_dict, per_xml_infos = get_info(f'{parsed_path}/{choice}/{project}_{seed}')
+            per_id_tuple_dict, per_id_tests_dict, per_xml_infos = get_info(f'{parsed_dir}/{project}_{seed}')
             for mut_id in non_flaky_id_list:
                 tup = per_id_tuple_dict[mut_id]
                 tests = per_id_tests_dict[mut_id]
                 clazz = tup[clazz_index]
-                if is_recorded:
-                    clazz_mutantNum_dict[clazz] += 1
-                else:
-                    clazz_mutantNum_dict[clazz] = 1
-                for t in tests:
-                    if (clazz, t) in test_kills_covers_dict:
-                        test_kills_covers_dict[(clazz, t)][covers_index] += 1
+                if not is_recorded:
+                    mutants.add(log_to_key(tup))
+                    if clazz in clazz_mutantNum_dict:
+                        clazz_mutantNum_dict[clazz] += 1
                     else:
-                        test_kills_covers_dict[(clazz, t)] = [0, 1]
+                        clazz_mutantNum_dict[clazz] = 1
+                for t in tests:
+                    if (clazz, t) in test_coverNum_dict:
+                        test_coverNum_dict[(clazz, t)] += 1
+                    else:
+                        test_coverNum_dict[(clazz, t)] = 1
+                        test_killNum_dict[(clazz, t)] = 0
+                        if not is_recorded:
+                            test_coverageRatios_dict[(clazz, t)] = 0
+                            test_killingRatios_dict[(clazz, t)] = 0
             for mut in per_xml_infos:
-                clazz = mut[MUTATED_CLASS]
-                killing_tests = mut[KILLING_TESTS]
-                if killing_tests:
-                    for t in killing_tests:
-                        if (clazz, t) in test_kills_covers_dict:
-                            test_kills_covers_dict[(clazz, t)][kills_index] += 1
+                if xml_to_key(mut) in mutants:
+                    clazz = mut[MUTATED_CLASS]
+                    killing_tests = mut[KILLING_TESTS]
+                    if killing_tests:
+                        for t in killing_tests:
+                            if (clazz, t) in test_killNum_dict:
+                                test_killNum_dict[(clazz, t)] += 1
+            
+            for t, cover_num in test_coverNum_dict.items():
+                clazz = t[clazz_index]
+                test_coverageRatios_dict[t] += cover_num / clazz_mutantNum_dict[clazz]
+                test_killingRatios_dict[t] += test_killNum_dict[t] / cover_num
             is_recorded = True
+
         test_score_dict = dict()
-        for t, info_tup in test_kills_covers_dict.items():
+        for t, cover_ratios in test_coverageRatios_dict.items():
             clazz = t[clazz_index]
-            kills_ratio = w_kills * (info_tup[kills_index] / info_tup[covers_index])
-            covers_ratio = w_covers * (info_tup[covers_index] / clazz_mutantNum_dict[clazz])
-            test_score_dict[t] = kills_ratio + covers_ratio
+            cover_ratio = cover_ratios / seed_num
+            kill_ratio = test_killingRatios_dict[t] / seed_num
+            test_score_dict[t] = w_kill * kill_ratio + w_cover * cover_ratio
         df = pd.DataFrame(None, columns=['clazz', 'test', 'score'])
         for t, score in test_score_dict.items():
             df.loc[len(df.index)] = [t[clazz_index], t[name_index], score]
-        df.to_csv(f'{analyzed_path}/{choice}/test_scores/{project}.csv', sep=',', header=True, index=False)
+        with open(f'{analyzed_dir}/test_scores/{project}.json', 'w') as f:
+            f.write(json.dumps({str(k): v for k, v in test_score_dict.items()}, indent=4))
+        df.to_csv(f'{analyzed_dir}/test_scores/{project}.csv', sep=',', header=True, index=False)

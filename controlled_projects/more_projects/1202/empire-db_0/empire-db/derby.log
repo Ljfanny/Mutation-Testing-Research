@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Nov 07 05:56:43 GMT 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0193-0532-4f62-00001ee76500 
+on database directory memory:/app/empire-db/empire-db/data/derby/test with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2b2fa4f7 
+Loaded from file:/root/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Ubuntu
+java.runtime.version=17.0.12+7-Ubuntu-1ubuntu222.04
+user.dir=/app/empire-db/empire-db
+os.name=Linux
+os.arch=amd64
+os.version=5.4.0-190-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
