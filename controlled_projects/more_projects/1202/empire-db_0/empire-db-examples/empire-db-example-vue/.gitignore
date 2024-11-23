@@ -1,9 +1,0 @@
-target/
-.settings/
-.metadata/
-.classpath
-.project
-.tern-project
-*.log
-/.apt_generated/
-/.factorypath
