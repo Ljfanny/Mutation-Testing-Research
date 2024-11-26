@@ -3,16 +3,16 @@ import json
 from pitest_log_parser import mutant_choice, test_choice
 
 project_list = [
-    # 'assertj-assertions-generator',
-    # 'commons-cli',
-    # 'commons-csv',
-    # 'commons-codec',
+    'assertj-assertions-generator',
+    'commons-cli',
+    'commons-csv',
+    'commons-codec',
     # 'delight-nashorn-sandbox',
-    # 'empire-db',
-    # 'jimfs',
-    'handlebars.java',
-    'httpcore',
-    'riptide',
+    'empire-db',
+    'jimfs',
+    # 'handlebars.java',
+    # 'httpcore',
+    # 'riptide',
 
     # 'commons-net',
     # 'commons-collections',
@@ -27,8 +27,8 @@ project_list = [
     # 'stream-lib'
 ]
 seed_list = [
-    # 0,
-    # 42,
+    0,
+    42,
     # 123,
     # 216,
     # 1202,
@@ -38,9 +38,9 @@ seed_list = [
     # 31415,
     # 99999,
     'default',
-    # 'fastest',
-    # 'single',
-    # 'half'
+    'fastest',
+    # 'GC_torder',
+    # 'GC_morder'
 ]
 project_subdir_dict = {
     'assertj-assertions-generator': '',
@@ -58,8 +58,8 @@ round_number = 6
 random_mutant = False
 random_test = False
 choice = 'more_projects'
-xmls_dir = f'controlled_projects/{choice}'
-parsed_dir = f'controlled_parsed_data/{choice}'
+xmls_dir = f'tested_projects'
+parsed_dir = f'tested_parsed_data'
 
 
 def parse_xml(s, p, rnd):

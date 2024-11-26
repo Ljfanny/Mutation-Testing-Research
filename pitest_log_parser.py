@@ -4,16 +4,16 @@ import os
 import numpy as np
 
 project_list = [
-    # 'assertj-assertions-generator',
-    # 'commons-cli',
-    # 'commons-csv',
-    # 'commons-codec',
-    # 'delight-nashorn-sandbox',
-    # 'empire-db',
-    # 'jimfs',
-    'httpcore',
-    'handlebars.java',
-    'riptide',
+    'assertj-assertions-generator',
+    'commons-cli',
+    'commons-csv',
+    'commons-codec',
+    'delight-nashorn-sandbox',
+    'empire-db',
+    'jimfs',
+    # 'httpcore',
+    # 'handlebars.java',
+    # 'riptide',
 
     # 'commons-net',
     # 'commons-collections',
@@ -31,8 +31,8 @@ round_number = 6
 random_mutant = False
 random_test = False
 seed_list = [
-    # 0,
-    # 42,
+    0,
+    42,
     # 123,
     # 216,
     # 1202,
@@ -42,13 +42,13 @@ seed_list = [
     # 31415,
     # 99999,
     'default',
-    # 'fastest',
-    # 'single',
-    # 'half'
+    'fastest',
+    # 'GC_torder',
+    # 'GC_morder'
 ]
 choice = 'more_projects'
-logs_dir = f'controlled_logs/{choice}'
-parsed_dir = f'controlled_parsed_data/{choice}'
+logs_dir = f'tested_logs'
+parsed_dir = f'tested_parsed_data'
 mutant_choice = {
     False: 'default-mutant',
     True: 'random-mutant'

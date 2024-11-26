@@ -6,16 +6,16 @@ from pitest_log_parser import project_junitVersion_dict, mutant_choice, test_cho
 
 
 project_list = [
-    # 'assertj-assertions-generator',
-    # 'commons-cli',
-    # 'commons-csv',
-    # 'commons-codec',
+    'assertj-assertions-generator',
+    'commons-cli',
+    'commons-csv',
+    'commons-codec',
     # 'delight-nashorn-sandbox',
-    # 'empire-db',
-    # 'jimfs',
-    'handlebars.java',
-    'httpcore',
-    'riptide',
+    'empire-db',
+    'jimfs',
+    # 'handlebars.java',
+    # 'httpcore',
+    # 'riptide',
 
     # 'commons-net',
     # 'commons-collections',
@@ -32,23 +32,25 @@ project_list = [
 seed_list = [
     0,
     42,
-    123,
-    216,
-    1202,
-    1999,
-    2002,
-    2024,
-    31415,
-    99999,
+    # 123,
+    # 216,
+    # 1202,
+    # 1999,
+    # 2002,
+    # 2024,
+    # 31415,
+    # 99999,
     'default',
-    # 'fastest'
+    'fastest',
+    'GC_torder',
+    'GC_morder'
 ]
 round_number = 6
 random_mutant = False
 random_test = False
 choice = 'more_projects'
-parsed_dir = f'controlled_parsed_data/{choice}'
-analyzed_dir = f'controlled_analyzed_data/{choice}'
+parsed_dir = f'tested_parsed_data'
+analyzed_dir = f'tested_analyzed_data'
 seed_number = len(seed_list)
 EMPTY = ''
 KILLED = 'killed'
@@ -132,7 +134,7 @@ if __name__ == '__main__':
         tup_test_status_dict = dict()
         if os.path.exists(fastest_dir):
             total_id_tuple_dict, _, total_id_tests_dict, _ = get_info(fastest_dir)
-            is_convenient = True
+            is_convenient = False
         else:
             total_id_tuple_dict, _, total_id_tests_dict, _ = get_info(f'parsed_data/default_version/{project}')
         
