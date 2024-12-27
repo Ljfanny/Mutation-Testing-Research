@@ -4,21 +4,19 @@ import os
 import numpy as np
 
 project_list = [
-    'assertj-assertions-generator',
+    # 'assertj-assertions-generator',
     'commons-cli',
     'commons-csv',
     'commons-codec',
+    'commons-net',
     'delight-nashorn-sandbox',
     'empire-db',
     'jimfs',
-    # 'httpcore',
-    # 'handlebars.java',
-    # 'riptide',
+    'httpcore',
+    'handlebars.java',
+    'riptide',
 
-    # 'commons-net',
     # 'commons-collections',
-    # 'commons-net',
-    # 'empire-db',
     # 'guava',
     # 'java-design-patterns',
     # 'jooby',
@@ -31,8 +29,8 @@ round_number = 6
 random_mutant = False
 random_test = False
 seed_list = [
-    0,
-    42,
+    # 0,
+    # 42,
     # 123,
     # 216,
     # 1202,
@@ -42,13 +40,34 @@ seed_list = [
     # 31415,
     # 99999,
     'default',
-    'fastest',
-    # 'GC_torder',
-    # 'GC_morder'
+    # 'fastest',
+    # 'GC_test_order',
+    # 'M_fewest_tests',
+    # 'M_most_tests',
+    # 'M_most_coverage',
+    # 'M_most_similar',
+    # 'M_most_different',
+    # 'def_1_groups',
+    # 'def_2_groups',
+    # 'def_4_groups',
+    # 'def_6_groups',
+    # 'def_8_groups',
+    # 'def_10_groups',
+    # 'def_15_groups',
+    # 'def_20_groups',
+    # 'def_25_groups',
+    # 'def_30_groups',
+    # 'def_40_groups',
+    # 'def_50_groups',
+    # 'def_65_groups',
+    # 'def_80_groups',
+    # 'def_100_groups',
+    'by_clazz',
+    'by_line'
 ]
 choice = 'more_projects'
-logs_dir = f'tested_logs'
-parsed_dir = f'tested_parsed_data'
+logs_dir = f'controlled_logs/both'
+parsed_dir = f'controlled_parsed_data/both'
 mutant_choice = {
     False: 'default-mutant',
     True: 'random-mutant'

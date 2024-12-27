@@ -6,21 +6,19 @@ from pitest_log_parser import project_junitVersion_dict, mutant_choice, test_cho
 
 
 project_list = [
-    'assertj-assertions-generator',
+    # 'assertj-assertions-generator',
     'commons-cli',
     'commons-csv',
     'commons-codec',
-    # 'delight-nashorn-sandbox',
+    'commons-net',
+    'delight-nashorn-sandbox',
     'empire-db',
     'jimfs',
-    # 'handlebars.java',
-    # 'httpcore',
-    # 'riptide',
+    'httpcore',
+    'handlebars.java',
+    'riptide',
 
-    # 'commons-net',
     # 'commons-collections',
-    # 'commons-net',
-    # 'empire-db',
     # 'guava',
     # 'java-design-patterns',
     # 'jooby',
@@ -30,8 +28,8 @@ project_list = [
     # 'stream-lib'
 ]
 seed_list = [
-    0,
-    42,
+    # 0,
+    # 42,
     # 123,
     # 216,
     # 1202,
@@ -41,16 +39,37 @@ seed_list = [
     # 31415,
     # 99999,
     'default',
-    'fastest',
-    'GC_torder',
-    'GC_morder'
+    # 'fastest',
+    # 'GC_test_order',
+    # 'M_fewest_tests',
+    # 'M_most_tests',
+    # 'M_most_coverage',
+    # 'M_most_similar',
+    # 'M_most_different',
+    # 'def_1_groups',
+    # 'def_2_groups',
+    # 'def_4_groups',
+    # 'def_6_groups',
+    # 'def_8_groups',
+    # 'def_10_groups',
+    # 'def_15_groups',
+    # 'def_20_groups',
+    # 'def_25_groups',
+    # 'def_30_groups',
+    # 'def_40_groups',
+    # 'def_50_groups',
+    # 'def_65_groups',
+    # 'def_80_groups',
+    # 'def_100_groups',
+    'by_clazz',
+    'by_line'
 ]
 round_number = 6
 random_mutant = False
 random_test = False
 choice = 'more_projects'
-parsed_dir = f'tested_parsed_data'
-analyzed_dir = f'tested_analyzed_data'
+parsed_dir = f'controlled_parsed_data/both'
+analyzed_dir = f'controlled_analyzed_data/both'
 seed_number = len(seed_list)
 EMPTY = ''
 KILLED = 'killed'
@@ -134,7 +153,7 @@ if __name__ == '__main__':
         tup_test_status_dict = dict()
         if os.path.exists(fastest_dir):
             total_id_tuple_dict, _, total_id_tests_dict, _ = get_info(fastest_dir)
-            is_convenient = False
+            is_convenient = True
         else:
             total_id_tuple_dict, _, total_id_tests_dict, _ = get_info(f'parsed_data/default_version/{project}')
         
@@ -159,6 +178,5 @@ if __name__ == '__main__':
                 tup = log_to_key(mut_tup)
                 if tup in total_mutants:
                     non_flaky_id_list.append(mut_id)
-            print(len(non_flaky_id_list))
             with open(f'{analyzed_dir}/mutant_list/non-flaky/{project}_{seed}.json', 'w') as f:
                 json.dump(non_flaky_id_list, f, indent=4)
