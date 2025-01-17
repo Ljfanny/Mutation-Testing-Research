@@ -1,0 +1,16 @@
+class,default,clz_clz-cvg_def,clz_ln-cvg_def,n-tst_clz-cvg_def,n-tst_ln-cvg_def,mean_deviation
+delight.nashornsandbox.internal.InvokeOperation,1630,226,211,192,173,8.21
+delight.nashornsandbox.NashornSandboxes,1710,321,380,372,404,4.66
+delight.nashornsandbox.internal.NashornSandboxImpl$1,3666,1184,1114,1242,1126,3.15
+delight.nashornsandbox.internal.LinkedHashMapSecuredJsCache,6889,3984,3851,3824,3833,1.78
+delight.nashornsandbox.internal.RemoveComments,32,20,19,20,22,1.58
+delight.nashornsandbox.internal.SandboxClassFilter,5467,3489,3380,3178,3861,1.58
+delight.nashornsandbox.internal.StandaloneNashornClassFilter,19541,13244,12868,13448,14236,1.45
+delight.nashornsandbox.exceptions.ScriptAbuseException,9656,8950,9166,6194,6659,1.29
+delight.nashornsandbox.internal.NashornDetection,381,1176,336,210,204,1.28
+delight.nashornsandbox.internal.InterruptTest,15902,12807,12577,15388,15218,1.15
+delight.nashornsandbox.internal.JsSanitizer,328454,291081,293330,289748,290398,1.13
+delight.nashornsandbox.internal.EvaluateCompiledOperation,6688,6249,5777,6205,5702,1.12
+delight.nashornsandbox.internal.EvaluateOperation,60938,59221,58383,52538,55858,1.08
+delight.nashornsandbox.internal.ThreadMonitor,488867,457137,457659,455586,455446,1.07
+delight.nashornsandbox.internal.NashornSandboxImpl,497317,468908,468892,469283,469909,1.06

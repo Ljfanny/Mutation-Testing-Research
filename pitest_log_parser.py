@@ -5,17 +5,16 @@ import numpy as np
 
 project_list = [
     # 'assertj-assertions-generator',
+    # 'commons-net',
     'commons-cli',
     'commons-csv',
     'commons-codec',
-    'commons-net',
     'delight-nashorn-sandbox',
     'empire-db',
     'jimfs',
     'httpcore',
     'handlebars.java',
     'riptide',
-
     # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
@@ -39,7 +38,7 @@ seed_list = [
     # 2024,
     # 31415,
     # 99999,
-    'default',
+    # 'default',
     # 'fastest',
     # 'GC_test_order',
     # 'M_fewest_tests',
@@ -62,8 +61,12 @@ seed_list = [
     # 'def_65_groups',
     # 'def_80_groups',
     # 'def_100_groups',
-    'by_clazz',
-    'by_line'
+    # 'clz_clz-cvg_def',
+    # 'clz_ln-cvg_def',
+    # 'n-tst_clz-cvg_def',
+    # 'n-tst_ln-cvg_def',
+    '01-tst_clz-cvg_def',
+    '01-tst_ln-cvg_def'
 ]
 choice = 'more_projects'
 logs_dir = f'controlled_logs/both'
@@ -260,8 +263,8 @@ if __name__ == '__main__':
         'junit4': test_description_pattern_junit4,
         'junit5': test_description_pattern_junit5
     }
-    for seed in seed_list:
-        for project in project_list:
+    for project in project_list:
+        for seed in seed_list:
             print(f'{project} with {seed} is processing... ...')
             junit_version = project_junitVersion_dict[project]
             mutant_pattern = mutant_pattern_dict[junit_version]

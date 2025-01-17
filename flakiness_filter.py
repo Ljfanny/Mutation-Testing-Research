@@ -7,17 +7,16 @@ from pitest_log_parser import project_junitVersion_dict, mutant_choice, test_cho
 
 project_list = [
     # 'assertj-assertions-generator',
+    # 'commons-net',
     'commons-cli',
     'commons-csv',
     'commons-codec',
-    'commons-net',
     'delight-nashorn-sandbox',
     'empire-db',
     'jimfs',
     'httpcore',
     'handlebars.java',
     'riptide',
-
     # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
@@ -61,8 +60,12 @@ seed_list = [
     # 'def_65_groups',
     # 'def_80_groups',
     # 'def_100_groups',
-    'by_clazz',
-    'by_line'
+    'clz_clz-cvg_def',
+    'clz_ln-cvg_def',
+    'n-tst_clz-cvg_def',
+    'n-tst_ln-cvg_def',
+    '01-tst_clz-cvg_def',
+    '01-tst_ln-cvg_def'
 ]
 round_number = 6
 random_mutant = False

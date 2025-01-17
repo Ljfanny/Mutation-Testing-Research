@@ -4,17 +4,16 @@ from pitest_log_parser import mutant_choice, test_choice
 
 project_list = [
     # 'assertj-assertions-generator',
+    # 'commons-net',
     'commons-cli',
     'commons-csv',
     'commons-codec',
-    'commons-net',
     'delight-nashorn-sandbox',
     'empire-db',
     'jimfs',
     'httpcore',
     'handlebars.java',
     'riptide',
-
     # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
@@ -35,7 +34,7 @@ seed_list = [
     # 2024,
     # 31415,
     # 99999,
-    'default',
+    # 'default',
     # 'fastest',
     # 'GC_test_order',
     # 'M_fewest_tests',
@@ -58,8 +57,12 @@ seed_list = [
     # 'def_65_groups',
     # 'def_80_groups',
     # 'def_100_groups',
-    'by_clazz',
-    'by_line'
+    # 'clz_clz-cvg_def',
+    # 'clz_ln-cvg_def',
+    # 'n-tst_clz-cvg_def',
+    # 'n-tst_ln-cvg_def',
+    '01-tst_clz-cvg_def',
+    '01-tst_ln-cvg_def'
 ]
 project_subdir_dict = {
     'assertj-assertions-generator': '',

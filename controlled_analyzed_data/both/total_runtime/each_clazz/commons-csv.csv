@@ -1,0 +1,11 @@
+class,default,clz_clz-cvg_def,clz_ln-cvg_def,n-tst_clz-cvg_def,n-tst_ln-cvg_def,mean_deviation
+org.apache.commons.csv.CSVFormat$Predefined,144,109,117,54,50,2.02
+org.apache.commons.csv.Token,966,922,941,449,421,1.63
+org.apache.commons.csv.CSVRecord,3052,2900,3867,2032,1970,1.22
+org.apache.commons.csv.CSVPrinter,21435,18874,18631,18871,18566,1.14
+org.apache.commons.csv.ExtendedBufferedReader,58035,53144,52851,52506,52578,1.1
+org.apache.commons.csv.CSVFormat,114849,106328,106138,105962,106827,1.08
+org.apache.commons.csv.Lexer,89927,85313,83434,84847,83648,1.07
+org.apache.commons.csv.CSVParser,42234,41002,41113,41335,41042,1.03
+org.apache.commons.csv.CSVParser$CSVRecordIterator,2640,2739,2637,2580,2943,0.97
+org.apache.commons.csv.CSVFormat$Builder,9070,9263,9516,9190,9445,0.97
