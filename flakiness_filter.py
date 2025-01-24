@@ -27,43 +27,16 @@ project_list = [
     # 'stream-lib'
 ]
 seed_list = [
-    # 0,
-    # 42,
-    # 123,
-    # 216,
-    # 1202,
-    # 1999,
-    # 2002,
-    # 2024,
-    # 31415,
-    # 99999,
     'default',
-    # 'fastest',
-    # 'GC_test_order',
-    # 'M_fewest_tests',
-    # 'M_most_tests',
-    # 'M_most_coverage',
-    # 'M_most_similar',
-    # 'M_most_different',
-    # 'def_1_groups',
-    # 'def_2_groups',
-    # 'def_4_groups',
-    # 'def_6_groups',
-    # 'def_8_groups',
-    # 'def_10_groups',
-    # 'def_15_groups',
-    # 'def_20_groups',
-    # 'def_25_groups',
-    # 'def_30_groups',
-    # 'def_40_groups',
-    # 'def_50_groups',
-    # 'def_65_groups',
-    # 'def_80_groups',
-    # 'def_100_groups',
+    'sgl_grp',
     'clz_clz-cvg_def',
     'clz_ln-cvg_def',
     'n-tst_clz-cvg_def',
     'n-tst_ln-cvg_def',
+    'n-tst_clz-sim_def',
+    'n-tst_clz-diff_def',
+    'n-tst_clz-ext_def',
+    'n-tst_ln-ext_def',
     '01-tst_clz-cvg_def',
     '01-tst_ln-cvg_def'
 ]
@@ -118,12 +91,18 @@ def log_to_key(obj):
 
 
 def discard_flaky_mutants(mutants, p, s):
-    per_id_tuple_dict, per_id_runtimes_dict, _, per_xml_infos = get_info(f'{parsed_dir}/{p}_{s}')
-    # flaky mutants due to diff test orders
+    per_id_tuple_dict, per_id_runtimes_dict, per_id_tests_dict, per_xml_infos = get_info(f'{parsed_dir}/{p}_{s}')
+    # flaky mutants due to diff test orders or error stuffs
+    orig_num = 0
+    for _, tests in per_id_tests_dict.items():
+        orig_num += len(tests)
+    # print('Original pairs:', orig_num)
     for mut_id, runtimes in per_id_runtimes_dict.items():
         if np.isnan(runtimes).any():
             mutants.discard(log_to_key(per_id_tuple_dict[mut_id]))
 
+    flaky_test_num = 0
+    flaky_test_set = set()
     # flaky mutants due to flaky tests
     for mut in per_xml_infos:
         tup = xml_to_key(mut)
@@ -136,6 +115,8 @@ def discard_flaky_mutants(mutants, p, s):
                     if tup_test_status_dict[tup_test] == EMPTY:
                         tup_test_status_dict[tup_test] = KILLED
                     elif tup_test_status_dict[tup_test] == SURVIVED:
+                        flaky_test_num += 1
+                        flaky_test_set.add(test)
                         mutants.discard(tup)
         if succeeding_tests:
             for test in succeeding_tests:
@@ -144,7 +125,19 @@ def discard_flaky_mutants(mutants, p, s):
                     if tup_test_status_dict[tup_test] == EMPTY:
                         tup_test_status_dict[tup_test] = SURVIVED
                     elif tup_test_status_dict[tup_test] == KILLED:
+                        flaky_test_num += 1
+                        flaky_test_set.add(test)
                         mutants.discard(tup)
+    # print('Number of flaky tests:', flaky_test_num)
+    # print(len(flaky_test_set))
+    # print(flaky_test_set)
+    num = 0
+    for mut_id, mut_tup in per_id_tuple_dict.items():
+        tup = log_to_key(mut_tup)
+        tests = per_id_tests_dict[mut_id]
+        if tup in mutants:
+            num += len(tests)
+    # print(f'Within the {s}:', num)
 
 
 if __name__ == '__main__':
@@ -176,10 +169,16 @@ if __name__ == '__main__':
         # record non-flaky id per seed
         for seed in seed_list:
             non_flaky_id_list = []
-            per_id_tuple_dict, _, _, _ = get_info(f'{parsed_dir}/{project}_{seed}')
+            per_id_tuple_dict, _, per_id_tests_dict, _ = get_info(f'{parsed_dir}/{project}_{seed}')
+            total_pairs_num = 0
+            non_flaky_pairs_num = 0
             for mut_id, mut_tup in per_id_tuple_dict.items():
                 tup = log_to_key(mut_tup)
+                tests = per_id_tests_dict[mut_id]
+                total_pairs_num += len(tests)
                 if tup in total_mutants:
                     non_flaky_id_list.append(mut_id)
+                    non_flaky_pairs_num += len(tests)
+            # print(total_pairs_num, non_flaky_pairs_num)
             with open(f'{analyzed_dir}/mutant_list/non-flaky/{project}_{seed}.json', 'w') as f:
                 json.dump(non_flaky_id_list, f, indent=4)
