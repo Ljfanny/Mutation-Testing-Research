@@ -265,8 +265,18 @@ def reorder_mutants_by_similarity(mutant_id_list, order='descending'):
     return sorted_mid_list
 
 
-def reorder_mutants_by_frequency():
-    return None
+def reorder_mutants_by_frequency(mutant_id_list):
+    idx_by_tup_list = list()
+    for i, mut_id in enumerate(mutant_id_list):
+        tests = id_tests_dict[mut_id]
+        score = 0
+        for t in tests:
+            score += len(test_lines_dict[t])
+        score /= len(tests)
+        idx_by_tup_list.append((i, score, len(tests)))
+    idx_by_tup_list.sort(key=lambda x: (x[1], x[2]), reverse=True)
+    sorted_mid_list = [mutant_id_list[tup[0]] for tup in idx_by_tup_list]
+    return sorted_mid_list
 
 
 if __name__ == '__main__':
@@ -331,9 +341,10 @@ if __name__ == '__main__':
             #                                        by='line')
             # mid_list = reorder_mutants_by_similarity(mutant_id_list=mutants,
             #                                          order='ascending')
-            mid_list = reorder_mutants_by_more_other_stuffs(group_id=grp_id,
-                                                            mutant_id_list=mutants,
-                                                            by='line')
+            # mid_list = reorder_mutants_by_more_other_stuffs(group_id=grp_id,
+            #                                                 mutant_id_list=mutants,
+            #                                                 by='line')
+            mid_list = reorder_mutants_by_frequency(mutant_id_list=mutants)
             for j, mid in enumerate(mid_list):
                 output_list.append(mutant_to_json(mutant=id_tuple_dict[mid],
                                                   test_list=id_tests_dict[mid],
@@ -342,5 +353,5 @@ if __name__ == '__main__':
                                                   exec_seq=j,
                                                   junit_version=junit_version))
         # [clz, n-tst, 01-tst]_[clz-cvg, ln-cvg, clz-sim, clz-diff, clz-ext, ln-ext]_[def]
-        with open(f'controlled_analyzed_data/both/guiding_files/{project}_n-tst_ln-ext_def.json', 'w') as f:
+        with open(f'controlled_analyzed_data/both/guiding_files/{project}_n-tst_ln-freq_def.json', 'w') as f:
             f.write(json.dumps(output_list, indent=4))
