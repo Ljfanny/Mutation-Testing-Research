@@ -30,14 +30,16 @@ random_test = False
 seed_list = [
     # 'default',
     # 'sgl_grp',
+    'def_ln-freq_def',
+    'def_def_shuf',
     # 'clz_clz-cvg_def',
     # 'clz_ln-cvg_def',
     # 'n-tst_clz-cvg_def',
     # 'n-tst_ln-cvg_def',
     # 'n-tst_clz-sim_def',
     # 'n-tst_clz-diff_def',
-    'n-tst_clz-ext_def',
-    'n-tst_ln-ext_def',
+    # 'n-tst_clz-ext_def',
+    # 'n-tst_ln-ext_def',
     # '01-tst_clz-cvg_def',
     # '01-tst_ln-cvg_def'
 ]

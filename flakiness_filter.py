@@ -30,6 +30,8 @@ project_list = [
 seed_list = [
     'default',
     'sgl_grp',
+    'def_ln-freq_def',
+    'def_def_shuf',
     'clz_clz-cvg_def',
     'clz_ln-cvg_def',
     'n-tst_clz-cvg_def',
@@ -51,7 +53,7 @@ seed_number = len(seed_list)
 EMPTY = 0
 KILLED = -1
 SURVIVED = 1
-UNAVAILABLE = sys.maxsize
+FLAKY = sys.maxsize
 KILLING_TESTS = 'killingTests'
 SUCCEEDING_TESTS = 'succeedingTests'
 clazz_index = 0
@@ -112,23 +114,40 @@ def discard_flaky_mutants(p:str, s:str, cd:int):
                 pair = tup + (t, )
                 pair_set.discard(pair)
                 discard_mutant_set.add(pair[:-1])
-    print(f'STRATEGY-{s} pair number with deleted errors:', cur_pairs_num - len(pair_set))
+    print(f'STRATEGY-{s} pair number with errors:', cur_pairs_num - len(pair_set))
     cur_pairs_num = len(pair_set)
     # flaky mutants due to flaky tests
+    missing_num = 0
+    killed_mutant_set = set()
     for mut in xml_infos:
         tup = xml_to_key(mut)
         killing_tests = mut[KILLING_TESTS]
         succeeding_tests = mut[SUCCEEDING_TESTS]
         if killing_tests:
+            if tup in mutant_statuses_dict:
+                if mutant_statuses_dict[tup][cd] == EMPTY:
+                    mutant_statuses_dict[tup][cd] = KILLED
+                    killed_mutant_set.add(tup)
+                elif mutant_statuses_dict[tup][cd] == SURVIVED:
+                    mutant_statuses_dict[tup][cd] = FLAKY
+            else:
+                print(f'{tup} is not in the guiding file!!!')
             for t in killing_tests:
                 pair = tup + (t, )
                 if pair in pair_statuses_dict:
                     if pair_statuses_dict[pair][cd] == EMPTY:
                         pair_statuses_dict[pair][cd] = KILLED
                     elif pair_statuses_dict[pair][cd] == SURVIVED:
-                        pair_statuses_dict[pair][cd] = UNAVAILABLE
+                        pair_statuses_dict[pair][cd] = FLAKY
                         pair_set.discard(pair)
                         discard_mutant_set.add(pair[:-1])
+                else:
+                    missing_num += 1
+        else:
+            if mutant_statuses_dict[tup][cd] == EMPTY:
+                mutant_statuses_dict[tup][cd] = SURVIVED
+            elif mutant_statuses_dict[tup][cd] == KILLED:
+                mutant_statuses_dict[tup][cd] = FLAKY
         if succeeding_tests:
             for t in succeeding_tests:
                 pair = tup + (t, )
@@ -136,11 +155,16 @@ def discard_flaky_mutants(p:str, s:str, cd:int):
                     if pair_statuses_dict[pair][cd] == EMPTY:
                         pair_statuses_dict[pair][cd] = SURVIVED
                     elif pair_statuses_dict[pair][cd] == KILLED:
-                        pair_statuses_dict[pair][cd] = UNAVAILABLE
+                        pair_statuses_dict[pair][cd] = FLAKY
                         pair_set.discard(pair)
                         discard_mutant_set.add(pair[:-1])
-    print(f'STRATEGY-{s} pair number with deleted flaky tests:', cur_pairs_num - len(pair_set))
+                else:
+                    missing_num += 1
+    print(f'STRATEGY-{s} killed mutant number:', len(killed_mutant_set))
+    print(f'STRATEGY-{s} missing pair number:', missing_num)
+    print(f'STRATEGY-{s} pair number with flaky tests:', cur_pairs_num - len(pair_set))
     print(f'STRATEGY-{s} available pair number:', len(pair_set))
+    print()
     return discard_mutant_set
 
 
@@ -149,41 +173,54 @@ if __name__ == '__main__':
         0: 'EMPTY',
         1: 'SURVIVED',
         -1: 'KILLED',
-        sys.maxsize: 'UNAVAILABLE'
+        sys.maxsize: 'FLAKY'
     }
     for project in project_list:
         print(f'{project} is processing... ...')
         def_id_tuple_dict, def_id_tests_dict, _, _ = get_info(f'parsed_data/default_version/{project}')
         mutant_set = set()
         pair_statuses_dict = dict()
+        mutant_statuses_dict = dict()
         for mut_id, mut_tup in def_id_tuple_dict.items():
             tup = log_to_key(mut_tup)
             mutant_set.add(tup)
+            if tup not in mutant_statuses_dict:
+                mutant_statuses_dict[tup] = [EMPTY for _ in range(len(seed_list))]
             tests = def_id_tests_dict[mut_id]
             for t in tests:
                 pair = tup + (t, )
-                pair_statuses_dict[pair] = [0 for _ in range(len(seed_list))]
+                pair_statuses_dict[pair] = [EMPTY for _ in range(len(seed_list))]
         
+        print('Total number of mutants:', len(mutant_set))
         for i, seed in enumerate(seed_list):
             cur_discard_mutant_set = discard_flaky_mutants(p=project, s=seed, cd=i)
             for mut in cur_discard_mutant_set:
                 mutant_set.discard(mut)
         
+        mutant_info_cols = ['clazz', 'method', 'methodDesc', 'indexes', 'mutator']
+        mutant_df = pd.DataFrame(None, columns=mutant_info_cols + seed_list)
+        for mut, status_list in mutant_statuses_dict.items():
+            mut_info = list(mut)
+            available_list = [cd for cd in status_list if cd != FLAKY and cd != EMPTY]
+            if len(set(available_list)) > 1:
+                mutant_df.loc[len(mutant_df.index)] = mut_info + [code_status_dict[cd] for cd in status_list]
+        mutant_df.to_csv(f'{analyzed_dir}/status_info/of_mutants/{project}.csv', sep=',', header=True, index=False)
+
         flaky_pair_num = 0
         flaky_test_set = set()
         pair_info_cols = ['clazz', 'method', 'methodDesc', 'indexes', 'mutator', 'test']
-        df = pd.DataFrame(None, columns=pair_info_cols + seed_list)
+        pair_df = pd.DataFrame(None, columns=pair_info_cols + seed_list)
         for pr, status_list in pair_statuses_dict.items():
             pr_info = list(pr)
-            available_list = [cd for cd in status_list if cd != UNAVAILABLE and cd != EMPTY]
+            available_list = [cd for cd in status_list if cd != FLAKY and cd != EMPTY]
             if len(set(available_list)) > 1:
                 flaky_pair_num += 1
                 flaky_test_set.add(pr[-1])
                 mutant_set.discard(pr[:-1])
-                df.loc[len(df.index)] = pr_info + [code_status_dict[cd] for cd in status_list]
+                pair_df.loc[len(pair_df.index)] = pr_info + [code_status_dict[cd] for cd in status_list]
             if EMPTY in status_list:
                 mutant_set.discard(pr[:-1])
-        df.to_csv(f'{analyzed_dir}/status_info/{project}.csv', sep=',', header=True, index=False)
+        pair_df.to_csv(f'{analyzed_dir}/status_info/of_pairs/{project}.csv', sep=',', header=True, index=False)
         print('Flaky counts BETWEEN strategies:', flaky_pair_num)
         for t in flaky_test_set:
             print(t)

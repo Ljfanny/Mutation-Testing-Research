@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="mustache.specs.InterpolationTest" time="0.06" tests="31" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.class.path" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/test-classes:/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/classes:/root/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/root/.m2/repository/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/root/.m2/repository/org/ow2/asm/asm/7.3.1/asm-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-commons/7.3.1/asm-commons-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-analysis/7.3.1/asm-analysis-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-tree/7.3.1/asm-tree-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-util/7.3.1/asm-util-7.3.1.jar:/root/.m2/repository/jakarta/servlet/jakarta.servlet-api/5.0.0/jakarta.servlet-api-5.0.0.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.5.2/logback-classic-1.5.2.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.5.2/logback-core-1.5.2.jar:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/root/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/root/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/root/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="GMT"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/surefire/surefirebooter-20250207231312664_3.jar /jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/surefire 2025-02-07T23-13-12_601-jvmRun1 surefire-20250207231312664_1tmp surefire_0-20250207231312664_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/test-classes:/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/classes:/root/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/root/.m2/repository/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/root/.m2/repository/org/ow2/asm/asm/7.3.1/asm-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-commons/7.3.1/asm-commons-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-analysis/7.3.1/asm-analysis-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-tree/7.3.1/asm-tree-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-util/7.3.1/asm-util-7.3.1.jar:/root/.m2/repository/jakarta/servlet/jakarta.servlet-api/5.0.0/jakarta.servlet-api-5.0.0.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.5.2/logback-classic-1.5.2.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.5.2/logback-core-1.5.2.jar:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/root/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/root/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/root/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/surefire/surefirebooter-20250207231312664_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.12+7-Ubuntu-1ubuntu222.04"/>
+    <property name="user.name" value="root"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.4.0-200-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="17.0.12+7-Ubuntu-1ubuntu222.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="interpolation(Spec)[1]" classname="mustache.specs.InterpolationTest" time="0.0">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 0. No Interpolation: Mustache-free templates should render as-is.
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO Hello from {Mustache}!
+
+INFO EXPECTED:
+INFO Hello from {Mustache}!
+
+INFO OUTPUT:
+INFO Hello from {Mustache}!
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[2]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 1. Basic Interpolation: Unadorned tags should interpolate content into the template.
+INFO DATA:
+INFO {subject=world}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO Hello, {{subject}}!
+
+INFO EXPECTED:
+INFO Hello, world!
+
+INFO OUTPUT:
+INFO Hello, world!
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[3]" classname="mustache.specs.InterpolationTest" time="0.0">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 2. HTML Escaping: Basic interpolation should be HTML escaped.
+INFO DATA:
+INFO {forbidden=& " < >}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO These characters should be HTML escaped: {{forbidden}}
+
+INFO EXPECTED:
+INFO These characters should be HTML escaped: &amp; &quot; &lt; &gt;
+
+INFO OUTPUT:
+INFO These characters should be HTML escaped: &amp; &quot; &lt; &gt;
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[4]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 3. Triple Mustache: Triple mustaches should interpolate without HTML escaping.
+INFO DATA:
+INFO {forbidden=& " < >}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO These characters should not be HTML escaped: {{{forbidden}}}
+
+INFO EXPECTED:
+INFO These characters should not be HTML escaped: & " < >
+
+INFO OUTPUT:
+INFO These characters should not be HTML escaped: & " < >
+
+INFO TOTAL    : 1ms
+INFO   (0%)compile: 0ms
+INFO   (100%)merge  : 1ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[5]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 4. Ampersand: Ampersand should interpolate without HTML escaping.
+INFO DATA:
+INFO {forbidden=& " < >}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO These characters should not be HTML escaped: {{&forbidden}}
+
+INFO EXPECTED:
+INFO These characters should not be HTML escaped: & " < >
+
+INFO OUTPUT:
+INFO These characters should not be HTML escaped: & " < >
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[6]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 5. Basic Integer Interpolation: Integers should interpolate seamlessly.
+INFO DATA:
+INFO {mph=85}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{mph}} miles an hour!"
+INFO EXPECTED:
+INFO "85 miles an hour!"
+INFO OUTPUT:
+INFO "85 miles an hour!"
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[7]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 6. Triple Mustache Integer Interpolation: Integers should interpolate seamlessly.
+INFO DATA:
+INFO {mph=85}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{{mph}}} miles an hour!"
+INFO EXPECTED:
+INFO "85 miles an hour!"
+INFO OUTPUT:
+INFO "85 miles an hour!"
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[8]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 7. Ampersand Integer Interpolation: Integers should interpolate seamlessly.
+INFO DATA:
+INFO {mph=85}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{&mph}} miles an hour!"
+INFO EXPECTED:
+INFO "85 miles an hour!"
+INFO OUTPUT:
+INFO "85 miles an hour!"
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[9]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 8. Basic Decimal Interpolation: Decimals should interpolate seamlessly with proper significance.
+INFO DATA:
+INFO {power=1.21}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{power}} jiggawatts!"
+INFO EXPECTED:
+INFO "1.21 jiggawatts!"
+INFO OUTPUT:
+INFO "1.21 jiggawatts!"
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[10]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 9. Triple Mustache Decimal Interpolation: Decimals should interpolate seamlessly with proper significance.
+INFO DATA:
+INFO {power=1.21}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{{power}}} jiggawatts!"
+INFO EXPECTED:
+INFO "1.21 jiggawatts!"
+INFO OUTPUT:
+INFO "1.21 jiggawatts!"
+INFO TOTAL    : 1ms
+INFO   (0%)compile: 0ms
+INFO   (100%)merge  : 1ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[11]" classname="mustache.specs.InterpolationTest" time="0.007">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 10. Ampersand Decimal Interpolation: Decimals should interpolate seamlessly with proper significance.
+INFO DATA:
+INFO {power=1.21}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{&power}} jiggawatts!"
+INFO EXPECTED:
+INFO "1.21 jiggawatts!"
+INFO OUTPUT:
+INFO "1.21 jiggawatts!"
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[12]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 11. Basic Context Miss Interpolation: Failed context lookups should default to empty strings.
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO I ({{cannot}}) be seen!
+INFO EXPECTED:
+INFO I () be seen!
+INFO OUTPUT:
+INFO I () be seen!
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[13]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 12. Triple Mustache Context Miss Interpolation: Failed context lookups should default to empty strings.
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO I ({{{cannot}}}) be seen!
+INFO EXPECTED:
+INFO I () be seen!
+INFO OUTPUT:
+INFO I () be seen!
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[14]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 13. Ampersand Context Miss Interpolation: Failed context lookups should default to empty strings.
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO I ({{&cannot}}) be seen!
+INFO EXPECTED:
+INFO I () be seen!
+INFO OUTPUT:
+INFO I () be seen!
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[15]" classname="mustache.specs.InterpolationTest" time="0.002">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 14. Dotted Names - Basic Interpolation: Dotted names should be considered a form of shorthand for sections.
+INFO DATA:
+INFO {person={name=Joe}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{person.name}}" == "{{#person}}{{name}}{{/person}}"
+INFO EXPECTED:
+INFO "Joe" == "Joe"
+INFO OUTPUT:
+INFO "Joe" == "Joe"
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[16]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 15. Dotted Names - Triple Mustache Interpolation: Dotted names should be considered a form of shorthand for sections.
+INFO DATA:
+INFO {person={name=Joe}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{{person.name}}}" == "{{#person}}{{{name}}}{{/person}}"
+INFO EXPECTED:
+INFO "Joe" == "Joe"
+INFO OUTPUT:
+INFO "Joe" == "Joe"
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[17]" classname="mustache.specs.InterpolationTest" time="0.002">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 16. Dotted Names - Ampersand Interpolation: Dotted names should be considered a form of shorthand for sections.
+INFO DATA:
+INFO {person={name=Joe}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{&person.name}}" == "{{#person}}{{&name}}{{/person}}"
+INFO EXPECTED:
+INFO "Joe" == "Joe"
+INFO OUTPUT:
+INFO "Joe" == "Joe"
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[18]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 17. Dotted Names - Arbitrary Depth: Dotted names should be functional to any level of nesting.
+INFO DATA:
+INFO {a={b={c={d={e={name=Phil}}}}}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{a.b.c.d.e.name}}" == "Phil"
+INFO EXPECTED:
+INFO "Phil" == "Phil"
+INFO OUTPUT:
+INFO "Phil" == "Phil"
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[19]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 18. Dotted Names - Broken Chains: Any falsey value prior to the last part of the name should yield ''.
+INFO DATA:
+INFO {a={}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{a.b.c}}" == ""
+INFO EXPECTED:
+INFO "" == ""
+INFO OUTPUT:
+INFO "" == ""
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[20]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 19. Dotted Names - Broken Chain Resolution: Each part of a dotted name should resolve only against its parent.
+INFO DATA:
+INFO {a={b={}}, c={name=Jim}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{a.b.c.name}}" == ""
+INFO EXPECTED:
+INFO "" == ""
+INFO OUTPUT:
+INFO "" == ""
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[21]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 20. Dotted Names - Initial Resolution: The first part of a dotted name should resolve as any other name.
+INFO DATA:
+INFO {a={b={c={d={e={name=Phil}}}}}, b={c={d={e={name=Wrong}}}}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO "{{#a}}{{b.c.d.e.name}}{{/a}}" == "Phil"
+INFO EXPECTED:
+INFO "Phil" == "Phil"
+INFO OUTPUT:
+INFO "Phil" == "Phil"
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[22]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 21. Dotted Names - Context Precedence: Dotted names should be resolved against former resolutions.
+INFO DATA:
+INFO {a={b={}}, b={c=ERROR}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{#a}}{{b.c}}{{/a}}
+INFO EXPECTED:
+INFO 
+INFO OUTPUT:
+INFO 
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[23]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 22. Interpolation - Surrounding Whitespace: Interpolation should not alter surrounding whitespace.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO | {{string}} |
+INFO EXPECTED:
+INFO | --- |
+INFO OUTPUT:
+INFO | --- |
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[24]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 23. Triple Mustache - Surrounding Whitespace: Interpolation should not alter surrounding whitespace.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO | {{{string}}} |
+INFO EXPECTED:
+INFO | --- |
+INFO OUTPUT:
+INFO | --- |
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[25]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 24. Ampersand - Surrounding Whitespace: Interpolation should not alter surrounding whitespace.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO | {{&string}} |
+INFO EXPECTED:
+INFO | --- |
+INFO OUTPUT:
+INFO | --- |
+INFO TOTAL    : 1ms
+INFO   (0%)compile: 0ms
+INFO   (100%)merge  : 1ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[26]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 25. Interpolation - Standalone: Standalone interpolation should not alter surrounding whitespace.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO   {{string}}
+
+INFO EXPECTED:
+INFO   ---
+
+INFO OUTPUT:
+INFO   ---
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[27]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 26. Triple Mustache - Standalone: Standalone interpolation should not alter surrounding whitespace.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO   {{{string}}}
+
+INFO EXPECTED:
+INFO   ---
+
+INFO OUTPUT:
+INFO   ---
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[28]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 27. Ampersand - Standalone: Standalone interpolation should not alter surrounding whitespace.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO   {{&string}}
+
+INFO EXPECTED:
+INFO   ---
+
+INFO OUTPUT:
+INFO   ---
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[29]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 28. Interpolation With Padding: Superfluous in-tag whitespace should be ignored.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO |{{ string }}|
+INFO EXPECTED:
+INFO |---|
+INFO OUTPUT:
+INFO |---|
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[30]" classname="mustache.specs.InterpolationTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 29. Triple Mustache With Padding: Superfluous in-tag whitespace should be ignored.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO |{{{ string }}}|
+INFO EXPECTED:
+INFO |---|
+INFO OUTPUT:
+INFO |---|
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="interpolation(Spec)[31]" classname="mustache.specs.InterpolationTest" time="0.0">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 30. Ampersand With Padding: Superfluous in-tag whitespace should be ignored.
+INFO DATA:
+INFO {string=---}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO |{{& string }}|
+INFO EXPECTED:
+INFO |---|
+INFO OUTPUT:
+INFO |---|
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+</testsuite>

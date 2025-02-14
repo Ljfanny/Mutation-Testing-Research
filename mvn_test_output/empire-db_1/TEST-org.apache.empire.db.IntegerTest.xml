@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apache.empire.db.IntegerTest" time="0.51" tests="5" errors="0" skipped="1" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.class.path" value="/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db/target/test-classes:/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db/target/classes:/root/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/root/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/root/.m2/repository/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar:/root/.m2/repository/ch/qos/reload4j/reload4j/1.2.19/reload4j-1.2.19.jar:/root/.m2/repository/org/xerial/sqlite-jdbc/3.42.0.1/sqlite-jdbc-3.42.0.1.jar:/root/.m2/repository/org/hsqldb/hsqldb/2.7.2/hsqldb-2.7.2-jdk8.jar:/root/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/root/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar:/root/.m2/repository/commons-io/commons-io/2.15.0/commons-io-2.15.0.jar:/root/.m2/repository/junit/junit/4.7/junit-4.7.jar:/root/.m2/repository/org/mockito/mockito-core/1.8.2/mockito-core-1.8.2.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/root/.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="GMT"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db/target/surefire/surefirebooter-20250207045942513_3.jar /jiefang/mutation_testing_research/benchmarks/empire-db/empire-db/target/surefire 2025-02-07T04-59-42_458-jvmRun1 surefire-20250207045942513_1tmp surefire_0-20250207045942513_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db/target/test-classes:/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db/target/classes:/root/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/root/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/root/.m2/repository/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar:/root/.m2/repository/ch/qos/reload4j/reload4j/1.2.19/reload4j-1.2.19.jar:/root/.m2/repository/org/xerial/sqlite-jdbc/3.42.0.1/sqlite-jdbc-3.42.0.1.jar:/root/.m2/repository/org/hsqldb/hsqldb/2.7.2/hsqldb-2.7.2-jdk8.jar:/root/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/root/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar:/root/.m2/repository/commons-io/commons-io/2.15.0/commons-io-2.15.0.jar:/root/.m2/repository/junit/junit/4.7/junit-4.7.jar:/root/.m2/repository/org/mockito/mockito-core/1.8.2/mockito-core-1.8.2.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/root/.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="derby.stream.error.file" value="target/derby.log"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db/target/surefire/surefirebooter-20250207045942513_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.12+7-Ubuntu-1ubuntu222.04"/>
+    <property name="user.name" value="root"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.4.0-200-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="/jiefang/mutation_testing_research/benchmarks/empire-db/empire-db"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vm.version" value="17.0.12+7-Ubuntu-1ubuntu222.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testSQlitedb" classname="org.apache.empire.db.IntegerTest" time="0.0"/>
+  <testcase name="testHsqldb" classname="org.apache.empire.db.IntegerTest" time="0.017"/>
+  <testcase name="testDerby" classname="org.apache.empire.db.IntegerTest" time="0.395"/>
+  <testcase name="testH2" classname="org.apache.empire.db.IntegerTest" time="0.097"/>
+  <testcase name="testMySql" classname="org.apache.empire.db.IntegerTest" time="0.0">
+    <skipped message="This can only run when we have a local mydsl server set up"/>
+  </testcase>
+</testsuite>

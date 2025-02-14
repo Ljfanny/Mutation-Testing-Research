@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.github.jknack.handlebars.HelpersTest" time="0.035" tests="19" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.class.path" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/test-classes:/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/classes:/root/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/root/.m2/repository/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/root/.m2/repository/org/ow2/asm/asm/7.3.1/asm-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-commons/7.3.1/asm-commons-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-analysis/7.3.1/asm-analysis-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-tree/7.3.1/asm-tree-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-util/7.3.1/asm-util-7.3.1.jar:/root/.m2/repository/jakarta/servlet/jakarta.servlet-api/5.0.0/jakarta.servlet-api-5.0.0.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.5.2/logback-classic-1.5.2.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.5.2/logback-core-1.5.2.jar:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/root/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/root/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/root/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="GMT"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/surefire/surefirebooter-20250207230953818_3.jar /jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/surefire 2025-02-07T23-09-53_758-jvmRun1 surefire-20250207230953818_1tmp surefire_0-20250207230953818_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/test-classes:/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/classes:/root/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar:/root/.m2/repository/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/root/.m2/repository/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/root/.m2/repository/org/ow2/asm/asm/7.3.1/asm-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-commons/7.3.1/asm-commons-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-analysis/7.3.1/asm-analysis-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-tree/7.3.1/asm-tree-7.3.1.jar:/root/.m2/repository/org/ow2/asm/asm-util/7.3.1/asm-util-7.3.1.jar:/root/.m2/repository/jakarta/servlet/jakarta.servlet-api/5.0.0/jakarta.servlet-api-5.0.0.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.5.2/logback-classic-1.5.2.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.5.2/logback-core-1.5.2.jar:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/root/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/root/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/root/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/root/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/root/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/root/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/root/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar:/root/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/root/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars/target/surefire/surefirebooter-20250207230953818_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.12+7-Ubuntu-1ubuntu222.04"/>
+    <property name="user.name" value="root"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.4.0-200-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="/jiefang/mutation_testing_research/benchmarks/handlebars.java/handlebars"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="17.0.12+7-Ubuntu-1ubuntu222.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="helpers(Spec)[1]" classname="com.github.jknack.handlebars.HelpersTest" time="0.002">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 0. with: Instead of invoking the block with the current context, we will invoke it
+with whatever context the template passed in.
+
+INFO DATA:
+INFO {title=First Post, story={intro=Before the jump, body=After the jump}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+  <h1>{{title}}</h1>
+  {{#with story}}
+  <div class="intro">{{{intro}}}</div>
+  <div class="body">{{{body}}}</div>
+  {{/with}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h1>First Post</h1>
+  <div class="intro">Before the jump</div>
+  <div class="body">After the jump</div>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h1>First Post</h1>
+  <div class="intro">Before the jump</div>
+  <div class="body">After the jump</div>
+</div>
+
+INFO TOTAL    : 2ms
+INFO   (100%)compile: 2ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[2]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 1. with empty scope: It should render the block body.
+INFO DATA:
+INFO {title=First Post, story={}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+  <h1>{{title}}</h1>
+  {{#with story}}
+  <div class="intro">{{{intro}}}</div>
+  <div class="body">{{{body}}}</div>
+  {{/with}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h1>First Post</h1>
+  <div class="intro"></div>
+  <div class="body"></div>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h1>First Post</h1>
+  <div class="intro"></div>
+  <div class="body"></div>
+</div>
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[3]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 2. with with fail lookup: It should n't render the block body.
+INFO DATA:
+INFO {title=First Post}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+  <h1>{{title}}</h1>
+  {{#with story}}
+  <div class="intro">{{{intro}}}</div>
+  <div class="body">{{{body}}}</div>
+  {{/with}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h1>First Post</h1>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h1>First Post</h1>
+</div>
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[4]" classname="com.github.jknack.handlebars.HelpersTest" time="0.0">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 3. each: It should iterate over the elements and render one by one
+INFO DATA:
+INFO {nav=[{url=http://www.yehudakatz.com, title=Katz Got Your Tongue}, {url=http://www.sproutcore.com/block, title=SproutCore Blog}]}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{#each nav}}
+<a href="{{url}}">{{title}}</a>
+{{/each}}
+
+INFO EXPECTED:
+INFO <a href="http://www.yehudakatz.com">Katz Got Your Tongue</a>
+<a href="http://www.sproutcore.com/block">SproutCore Blog</a>
+
+INFO OUTPUT:
+INFO <a href="http://www.yehudakatz.com">Katz Got Your Tongue</a>
+<a href="http://www.sproutcore.com/block">SproutCore Blog</a>
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[5]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 4. each empty list: Don't render text if the list is empty
+INFO DATA:
+INFO {nav=[]}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{#each nav}}
+<a href="{{url}}">{{title}}</a>
+{{/each}}
+
+INFO EXPECTED:
+INFO 
+INFO OUTPUT:
+INFO 
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[6]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 5. each fail lookup: Don't render text if the list is empty
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{#each nav}}
+<a href="{{url}}">{{title}}</a>
+{{/each}}
+
+INFO EXPECTED:
+INFO 
+INFO OUTPUT:
+INFO 
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[7]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 6. custom list iterator: It should iterate over the elements and render one by one
+INFO DATA:
+INFO {nav=[{url=http://www.yehudakatz.com, title=Katz Got Your Tongue}, {url=http://www.sproutcore.com/block, title=SproutCore Blog}]}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{#list nav}}
+<a href="{{url}}">{{title}}</a>
+{{/list}}
+
+INFO EXPECTED:
+INFO <ul>
+  <li>
+    <a href="http://www.yehudakatz.com">Katz Got Your Tongue</a>
+  </li>
+  <li>
+    <a href="http://www.sproutcore.com/block">SproutCore Blog</a>
+  </li>
+</ul>
+
+INFO OUTPUT:
+INFO <ul>
+  <li>
+    <a href="http://www.yehudakatz.com">Katz Got Your Tongue</a>
+  </li>
+  <li>
+    <a href="http://www.sproutcore.com/block">SproutCore Blog</a>
+  </li>
+</ul>
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[8]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 7. if: It should be rendered only if the value is evaluated as true
+INFO DATA:
+INFO {isActive=true}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{#if isActive}}
+<img src="star.gif" alt="Active">
+{{/if}}
+
+INFO EXPECTED:
+INFO <img src="star.gif" alt="Active">
+
+INFO OUTPUT:
+INFO <img src="star.gif" alt="Active">
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[9]" classname="com.github.jknack.handlebars.HelpersTest" time="0.002">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 8. if (empty context): If there isn't a context nothing should be rendered
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+{{#if author}}
+  <h1>{{firstName}} {{lastName}}</h1>
+{{/if}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+</div>
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[10]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 9. if (truthy context): null
+INFO DATA:
+INFO {author=true, firstName=eric, lastName=blair}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+{{#if author}}
+  <h1>{{firstName}} {{lastName}}</h1>
+{{/if}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h1>eric blair</h1>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h1>eric blair</h1>
+</div>
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[11]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 10. if/else: It should render the else clause
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+{{#if author}}
+  <h1>{{firstName}} {{lastName}}</h1>
+{{else}}
+  <h1>Unknown Author</h1>
+{{/if}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h1>Unknown Author</h1>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h1>Unknown Author</h1>
+</div>
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[12]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 11. unless (falsy): null
+INFO DATA:
+INFO {}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+{{#unless license}}
+  <h3 class="warning">WARNING: This entry does not have a license!</h3>
+{{/unless}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h3 class="warning">WARNING: This entry does not have a license!</h3>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h3 class="warning">WARNING: This entry does not have a license!</h3>
+</div>
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[13]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 12. unless (truthy): null
+INFO DATA:
+INFO {license=true}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+{{#unless license}}
+  <h3 class="warning">WARNING: This entry does not have a license!</h3>
+{{/unless}}
+  <h3>License Exists!</h3>
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h3>License Exists!</h3>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h3>License Exists!</h3>
+</div>
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[14]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 13. qualified path: null
+INFO DATA:
+INFO {title=My First Blog Post!, author={id=47, name=Yehuda Katz}, body=My first post. Wheeeee!}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="entry">
+  <h1>{{title}}</h1>
+  <h2>By {{author.name}}</h2>
+  <div class="body">
+    {{body}}
+  </div>
+</div>
+
+INFO EXPECTED:
+INFO <div class="entry">
+  <h1>My First Blog Post!</h1>
+  <h2>By Yehuda Katz</h2>
+  <div class="body">
+    My first post. Wheeeee!
+  </div>
+</div>
+
+INFO OUTPUT:
+INFO <div class="entry">
+  <h1>My First Blog Post!</h1>
+  <h2>By Yehuda Katz</h2>
+  <div class="body">
+    My first post. Wheeeee!
+  </div>
+</div>
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[15]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 14. variable with helper: helper should works for var
+INFO DATA:
+INFO {author={firstName=Alan, lastName=Johnson}, body=I Love Handlebars, comments=[{author={firstName=Yehuda, lastName=Katz}, body=Me too!}]}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <div class="post">
+  <h1>By {{fullName author}}</h1>
+  <div class="body">{{body}}</div>
+
+  <h1>Comments</h1>
+
+  {{#each comments}}
+  <h2>By {{fullName author}}</h2>
+  <div class="body">{{body}}</h2>
+  {{/each}}
+</div>
+
+INFO EXPECTED:
+INFO <div class="post">
+  <h1>By Alan Johnson</h1>
+  <div class="body">I Love Handlebars</div>
+
+  <h1>Comments</h1>
+
+  <h2>By Yehuda Katz</h2>
+  <div class="body">Me too!</h2>
+</div>
+
+INFO OUTPUT:
+INFO <div class="post">
+  <h1>By Alan Johnson</h1>
+  <div class="body">I Love Handlebars</div>
+
+  <h1>Comments</h1>
+
+  <h2>By Yehuda Katz</h2>
+  <div class="body">Me too!</h2>
+</div>
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[16]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 15. iterable variable with helper: helper should works for iterable var
+INFO DATA:
+INFO {items=[{name=Handlebars, emotion=love}, {name=Mustache, emotion=enjoy}, {name=SproutCore, emotion=want to learn}]}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO <ul>
+{{#each items}}
+  <li>{{agree_button}}</li>
+{{/each}}
+</ul>
+
+INFO EXPECTED:
+INFO <ul>
+  <li><button>I agree. I love Handlebars</button></li>
+  <li><button>I agree. I enjoy Mustache</button></li>
+  <li><button>I agree. I want to learn SproutCore</button></li>
+</ul>
+
+INFO OUTPUT:
+INFO <ul>
+  <li><button>I agree. I love Handlebars</button></li>
+  <li><button>I agree. I enjoy Mustache</button></li>
+  <li><button>I agree. I want to learn SproutCore</button></li>
+</ul>
+
+INFO TOTAL    : 1ms
+INFO   (100%)compile: 1ms
+INFO   (0%)merge  : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[17]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 16. params string literal: null
+INFO DATA:
+INFO {story={url=http://handlebars.java}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{{link "See more..." story.url}}}
+
+INFO EXPECTED:
+INFO <a href='http://handlebars.java'>See more...</a>
+
+INFO OUTPUT:
+INFO <a href='http://handlebars.java'>See more...</a>
+
+INFO TOTAL    : 1ms
+INFO   (0%)compile: 0ms
+INFO   (100%)merge  : 1ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[18]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 17. params lookup: null
+INFO DATA:
+INFO {story={text=See more..., url=http://handlebars.java}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{{link story.text story.url}}}
+
+INFO EXPECTED:
+INFO <a href='http://handlebars.java'>See more...</a>
+
+INFO OUTPUT:
+INFO <a href='http://handlebars.java'>See more...</a>
+
+INFO TOTAL    : 0ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+  <testcase name="helpers(Spec)[19]" classname="com.github.jknack.handlebars.HelpersTest" time="0.001">
+    <system-out><![CDATA[INFO ********************************************************************************
+INFO * 18. hash: support lookup params
+INFO DATA:
+INFO {story={url=http://handlebars.java}}
+INFO PARTIALS:
+INFO 
+INFO INPUT:
+INFO {{{link-hash "See more..." href=story.url class="story"}}}
+
+INFO EXPECTED:
+INFO <a href="http://handlebars.java" class="story">See more...</a>
+
+INFO OUTPUT:
+INFO <a href="http://handlebars.java" class="story">See more...</a>
+
+INFO TOTAL    : 1ms
+INFO   (0%)compile: 0ms
+INFO   (100%)merge  : 1ms
+INFO ********************************************************************************
+]]></system-out>
+  </testcase>
+</testsuite>

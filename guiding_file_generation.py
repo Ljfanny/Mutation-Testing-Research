@@ -2,6 +2,7 @@ import math
 import json
 import numpy as np
 import warnings
+import random
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from pitest_log_parser import project_junitVersion_dict
@@ -182,6 +183,19 @@ def get_best_group_allocation(by='clazz'):
     return id_gid_dict
 
 
+def get_default_allocation():
+    id_gid_dict = dict()
+    grp_id = -1
+    cur_clazz = ''
+    for mut_id, mut_tup in id_tuple_dict.items():
+        clz = mut_tup[clazz_idx]
+        if clz != cur_clazz:
+            grp_id += 1
+            cur_clazz = clz
+        id_gid_dict[mut_id] = grp_id
+    return id_gid_dict
+
+
 def reorder_mutants_by_coverage(mutant_id_list, by='clazz', order='descending'):
     idx_by_tup_list = list()
     for i, mut_id in enumerate(mutant_id_list):
@@ -294,11 +308,12 @@ if __name__ == '__main__':
         clazz_idx_dict = {clz: i for i, clz in enumerate(clazz_list)}
         clazz_vecSum_dict = dict()
         
-        mid_gid_dict = get_best_group_allocation(by='test')
+        # mid_gid_dict = get_best_group_allocation(by='test')
+        mid_gid_dict = get_default_allocation()
         
         mutants_by_group = [None] * clazz_num
         gid_list = [-1 for _ in range(clazz_num)]
-        vecSum_list = [0 for _ in range(clazz_num)]
+        # vecSum_list = [0 for _ in range(clazz_num)]
         grp_id = -1
         cur_clazz = ''
         cur_list = list()
@@ -310,33 +325,34 @@ if __name__ == '__main__':
                     i = clazz_idx_dict[cur_clazz]
                     mutants_by_group[i] = cur_list
                     gid_list[i] = grp_id
-                    vecSum_list[i] = clazz_vecSum_dict[cur_clazz]
+                    # vecSum_list[i] = clazz_vecSum_dict[cur_clazz]
                     cur_list = list()
                 cur_clazz = clazz
             cur_list.append(mid)
         i = clazz_idx_dict[cur_clazz]
         mutants_by_group[i] = cur_list
         gid_list[i] = grp_id
-        vecSum_list[i] = clazz_vecSum_dict[cur_clazz]
+        # vecSum_list[i] = clazz_vecSum_dict[cur_clazz]
 
-        temp_list = [(i, tup[0], tup[1]) for i, tup in enumerate(zip(gid_list, vecSum_list))]
-        sorted_temp_list = sorted(temp_list, key=lambda x: (x[1], x[2]))
-        cid_list = [-1 for _ in range(clazz_num)]
-        cur_gid = -1
-        cur_cid = 0
-        for tup in sorted_temp_list:
-            grp_id = tup[1]
-            if cur_gid != grp_id:
-                cur_gid = grp_id
-                cur_cid = 0
-            else:
-                cur_cid += 1
-            cid_list[tup[0]] = cur_cid
+        # temp_list = [(i, tup[0], tup[1]) for i, tup in enumerate(zip(gid_list, vecSum_list))]
+        # sorted_temp_list = sorted(temp_list, key=lambda x: (x[1], x[2]))
+        # cid_list = [-1 for _ in range(clazz_num)]
+        # cur_gid = -1
+        # cur_cid = 0
+        # for tup in sorted_temp_list:
+        #     grp_id = tup[1]
+        #     if cur_gid != grp_id:
+        #         cur_gid = grp_id
+        #         cur_cid = 0
+        #     else:
+        #         cur_cid += 1
+        #     cid_list[tup[0]] = cur_cid
 
         output_list = list()
         for i, mutants in enumerate(mutants_by_group):
             grp_id = int(gid_list[i])
-            clz_id = cid_list[i]
+            clz_id = 0
+            # clz_id = cid_list[i]
             # mid_list = reorder_mutants_by_coverage(mutant_id_list=mutants,
             #                                        by='line')
             # mid_list = reorder_mutants_by_similarity(mutant_id_list=mutants,
@@ -344,14 +360,16 @@ if __name__ == '__main__':
             # mid_list = reorder_mutants_by_more_other_stuffs(group_id=grp_id,
             #                                                 mutant_id_list=mutants,
             #                                                 by='line')
-            mid_list = reorder_mutants_by_frequency(mutant_id_list=mutants)
+            # mid_list = reorder_mutants_by_frequency(mutant_id_list=mutants)
+            mid_list = mutants
             for j, mid in enumerate(mid_list):
+                tests = id_tests_dict[mid]
                 output_list.append(mutant_to_json(mutant=id_tuple_dict[mid],
-                                                  test_list=id_tests_dict[mid],
+                                                  test_list=random.sample(tests, k=len(tests)),
                                                   group_id=grp_id,
                                                   clazz_id=clz_id,
                                                   exec_seq=j,
                                                   junit_version=junit_version))
         # [clz, n-tst, 01-tst]_[clz-cvg, ln-cvg, clz-sim, clz-diff, clz-ext, ln-ext]_[def]
-        with open(f'controlled_analyzed_data/both/guiding_files/{project}_n-tst_ln-freq_def.json', 'w') as f:
+        with open(f'controlled_analyzed_data/both/guiding_files/{project}_def_def_shuf.json', 'w') as f:
             f.write(json.dumps(output_list, indent=4))

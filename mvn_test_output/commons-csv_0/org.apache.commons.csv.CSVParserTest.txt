@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.commons.csv.CSVParserTest
+-------------------------------------------------------------------------------
+Tests run: 128, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.260 s -- in org.apache.commons.csv.CSVParserTest
