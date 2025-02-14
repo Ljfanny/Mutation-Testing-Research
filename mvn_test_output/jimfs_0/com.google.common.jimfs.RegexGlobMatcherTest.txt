@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.google.common.jimfs.RegexGlobMatcherTest
--------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in com.google.common.jimfs.RegexGlobMatcherTest

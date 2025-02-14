@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.github.jknack.handlebars.i401.Issue401
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.github.jknack.handlebars.i401.Issue401

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.apache.empire.dbms.sqlite.DBMSHandlerSQLiteTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.079 s -- in org.apache.empire.dbms.sqlite.DBMSHandlerSQLiteTest

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.github.jknack.handlebars.i177.Issue177
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.github.jknack.handlebars.i177.Issue177

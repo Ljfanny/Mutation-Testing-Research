@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: delight.nashornsandbox.TestEvalWithScriptBindings
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.582 s -- in delight.nashornsandbox.TestEvalWithScriptBindings
