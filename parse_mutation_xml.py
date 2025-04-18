@@ -1,19 +1,19 @@
 import xml.etree.ElementTree as ET
 import json
-from pitest_log_parser import mutant_choice, test_choice
+from parse_pitest_log import mutant_choice, test_choice
 
 project_list = [
     # 'assertj-assertions-generator',
     # 'commons-net',
     'commons-cli',
-    'commons-csv',
-    'commons-codec',
-    'delight-nashorn-sandbox',
-    'empire-db',
-    'jimfs',
-    'httpcore',
-    'handlebars.java',
-    'riptide',
+    # 'commons-csv',
+    # 'commons-codec',
+    # 'delight-nashorn-sandbox',
+    # 'empire-db',
+    # 'jimfs',
+    # 'httpcore',
+    # 'handlebars.java',
+    # 'riptide',
     # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
@@ -26,8 +26,8 @@ project_list = [
 seed_list = [
     # 'default',
     # 'sgl_grp',
-    'def_ln-freq_def',
-    'def_def_shuf',
+    # 'def_ln-freq_def',
+    # 'def_def_shuf',
     # 'clz_clz-cvg_def',
     # 'clz_ln-cvg_def',
     # 'n-tst_clz-cvg_def',
@@ -38,6 +38,11 @@ seed_list = [
     # 'n-tst_ln-ext_def',
     # '01-tst_clz-cvg_def',
     # '01-tst_ln-cvg_def'
+
+    'ln-1_0-55',
+    'ln-1_56-111',
+    'ln-1_56-83',
+    'ln-1_84-111'
 ]
 project_subdir_dict = {
     'assertj-assertions-generator': '',
@@ -56,12 +61,12 @@ round_number = 6
 random_mutant = False
 random_test = False
 choice = 'more_projects'
-xmls_dir = f'controlled_projects/both'
-parsed_dir = f'controlled_parsed_data/both'
+xmls_dir = f'controlled_projects/confirmation'
+parsed_dir = f'controlled_parsed_data/confirmation'
 
 
-def parse_xml(s, p, rnd):
-    xml_path = f'{xmls_dir}/{s}/{p}_{rnd}/{project_subdir_dict[p]}target/pit-reports/mutations.xml'
+def parse_xml(p, s, rnd):
+    xml_path = f'{xmls_dir}/{p}_{s}_{rnd}/{project_subdir_dict[p]}target/pit-reports/mutations.xml'
     tree = ET.parse(xml_path)
     root = tree.getroot()
     mutations = root.findall('mutation')
@@ -88,6 +93,6 @@ if __name__ == '__main__':
             print(f'{project} with {seed} is processing... ...')
             mutation_set = set()
             for i in range(round_number):
-                parse_xml(s=seed, p=project, rnd=i)
+                parse_xml(p=project, s=seed, rnd=i)
             with open(f'{parsed_dir}/{project}_{seed}/mutations_xml.json', 'w') as file:
                 json.dump([dict(mutation) for mutation in mutation_set], file, indent=4)
