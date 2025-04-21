@@ -71,6 +71,10 @@ Run 0-jimfs_6-0-edge_5-0-mid.json, both fail.
 
 Run 0-jimfs_6-0-edge_5-0-mid_dummy.json (polluted mutant did nothing), only polluter exists and passes.
 
+Maybe depend on the polluter test?
+
+Because the same mutant but run different tests, the status of the victim test is different???
+
 #### polluter
 
 ##### code
@@ -345,6 +349,8 @@ mvn test -Dtest=ConfigurationTest#testFileSystemForDefaultOsXConfiguration
 Run 2-jimfs_5-0-mid_9-0-mid.json, both fail.
 
 Run 2-jimfs_5-0-mid_9-0-mid_dummy.json (polluted mutant did nothing), both pass.
+
+**[2-jimfs_others.json]** Run the same polluter test with different mutant but from the same class, the victim passes.
 
 #### polluter
 
@@ -1043,6 +1049,8 @@ Run 5-jimfs_5-0-mid_7-0-edge.json, both fail.
 
 Run 5-jimfs_5-0-mid_7-0-edge_dummy.json (polluted mutant did nothing), both pass.
 
+**[5-jimfs_others-1.json]** Run the same polluter test with different mutant but from the same class, the victim passes.
+
 #### polluter
 
 ##### code
@@ -1411,6 +1419,8 @@ Run 12-jimfs_2-0-mid_9-0-edge.json, both fail.
 
 Run 12-jimfs_2-0-mid_9-0-edge_dummy.json (polluted mutant did nothing), only victim exists and passes.
 
+**[12-jimfs_others.json]** Polluter test and victim test often cover the same mutant. And both pass.
+
 #### polluter
 
 ##### code
@@ -1617,6 +1627,8 @@ Run 13-jimfs_3-0-mid_8-0-mid.json, both fail.
 
 Run 13-jimfs_3-0-mid_8-0-mid_dummy.json (polluted mutant did nothing), only victim exists and passes.
 
+**[13-jimfs_others.json]** NO_COVERAGE.
+
 #### polluter
 
 ##### code
@@ -1705,6 +1717,8 @@ mvn test -Dtest=ConfigurationTest#testFileSystemForDefaultOsXConfiguration
 Run 14-jimfs_3-0-mid_8-0-edge.json, both fail.
 
 Run 14-jimfs_3-0-mid_8-0-edge_dummy.json (polluted mutant did nothing), both pass.
+
+**[14-jimfs_others.json]** Run the same polluter test with different mutant but from the same class, the victim passes.
 
 #### polluter
 
