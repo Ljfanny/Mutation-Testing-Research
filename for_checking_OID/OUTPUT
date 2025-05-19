@@ -1,0 +1,213 @@
+Process commons-codec... ...
+Total number of mutants: 3922
+STRATEGY-default total pair number: 90851
+STRATEGY-default pair number with errors: 4468
+STRATEGY-default killed mutant number: 3564
+STRATEGY-default missing pair number: 1
+STRATEGY-default pair number with flaky tests: 7
+STRATEGY-default available pair number: 86376
+
+STRATEGY-sgl_grp total pair number: 90851
+STRATEGY-sgl_grp pair number with errors: 3413
+STRATEGY-sgl_grp killed mutant number: 3564
+STRATEGY-sgl_grp missing pair number: 1
+STRATEGY-sgl_grp pair number with flaky tests: 18
+STRATEGY-sgl_grp available pair number: 87420
+
+STRATEGY-shuffled total pair number: 85375
+STRATEGY-shuffled pair number with errors: 0
+STRATEGY-shuffled killed mutant number: 3480
+STRATEGY-shuffled missing pair number: 0
+STRATEGY-shuffled pair number with flaky tests: 0
+STRATEGY-shuffled available pair number: 85375
+
+STRATEGY-def_ln-freq_def total pair number: 90851
+STRATEGY-def_ln-freq_def pair number with errors: 3663
+STRATEGY-def_ln-freq_def killed mutant number: 3566
+STRATEGY-def_ln-freq_def missing pair number: 1
+STRATEGY-def_ln-freq_def pair number with flaky tests: 15
+STRATEGY-def_ln-freq_def available pair number: 87173
+
+STRATEGY-def_def_shuf total pair number: 90851
+STRATEGY-def_def_shuf pair number with errors: 3607
+STRATEGY-def_def_shuf killed mutant number: 3566
+STRATEGY-def_def_shuf missing pair number: 1
+STRATEGY-def_def_shuf pair number with flaky tests: 15
+STRATEGY-def_def_shuf available pair number: 87229
+
+STRATEGY-clz_clz-cvg_def total pair number: 90851
+STRATEGY-clz_clz-cvg_def pair number with errors: 3490
+STRATEGY-clz_clz-cvg_def killed mutant number: 3565
+STRATEGY-clz_clz-cvg_def missing pair number: 1
+STRATEGY-clz_clz-cvg_def pair number with flaky tests: 17
+STRATEGY-clz_clz-cvg_def available pair number: 87344
+
+STRATEGY-clz_ln-cvg_def total pair number: 90851
+STRATEGY-clz_ln-cvg_def pair number with errors: 3856
+STRATEGY-clz_ln-cvg_def killed mutant number: 3565
+STRATEGY-clz_ln-cvg_def missing pair number: 1
+STRATEGY-clz_ln-cvg_def pair number with flaky tests: 4
+STRATEGY-clz_ln-cvg_def available pair number: 86991
+
+STRATEGY-n-tst_clz-cvg_def total pair number: 90851
+STRATEGY-n-tst_clz-cvg_def pair number with errors: 3121
+STRATEGY-n-tst_clz-cvg_def killed mutant number: 3564
+STRATEGY-n-tst_clz-cvg_def missing pair number: 1
+STRATEGY-n-tst_clz-cvg_def pair number with flaky tests: 20
+STRATEGY-n-tst_clz-cvg_def available pair number: 87710
+
+STRATEGY-n-tst_ln-cvg_def total pair number: 90851
+STRATEGY-n-tst_ln-cvg_def pair number with errors: 3759
+STRATEGY-n-tst_ln-cvg_def killed mutant number: 3564
+STRATEGY-n-tst_ln-cvg_def missing pair number: 1
+STRATEGY-n-tst_ln-cvg_def pair number with flaky tests: 7
+STRATEGY-n-tst_ln-cvg_def available pair number: 87085
+
+STRATEGY-n-tst_clz-sim_def total pair number: 90851
+STRATEGY-n-tst_clz-sim_def pair number with errors: 3174
+STRATEGY-n-tst_clz-sim_def killed mutant number: 3564
+STRATEGY-n-tst_clz-sim_def missing pair number: 1
+STRATEGY-n-tst_clz-sim_def pair number with flaky tests: 22
+STRATEGY-n-tst_clz-sim_def available pair number: 87655
+
+STRATEGY-n-tst_clz-diff_def total pair number: 90851
+STRATEGY-n-tst_clz-diff_def pair number with errors: 3804
+STRATEGY-n-tst_clz-diff_def killed mutant number: 3564
+STRATEGY-n-tst_clz-diff_def missing pair number: 1
+STRATEGY-n-tst_clz-diff_def pair number with flaky tests: 7
+STRATEGY-n-tst_clz-diff_def available pair number: 87040
+
+STRATEGY-n-tst_clz-ext_def total pair number: 90851
+STRATEGY-n-tst_clz-ext_def pair number with errors: 3451
+STRATEGY-n-tst_clz-ext_def killed mutant number: 3565
+STRATEGY-n-tst_clz-ext_def missing pair number: 1
+STRATEGY-n-tst_clz-ext_def pair number with flaky tests: 13
+STRATEGY-n-tst_clz-ext_def available pair number: 87387
+
+STRATEGY-n-tst_ln-ext_def total pair number: 90851
+STRATEGY-n-tst_ln-ext_def pair number with errors: 3450
+STRATEGY-n-tst_ln-ext_def killed mutant number: 3565
+STRATEGY-n-tst_ln-ext_def missing pair number: 1
+STRATEGY-n-tst_ln-ext_def pair number with flaky tests: 11
+STRATEGY-n-tst_ln-ext_def available pair number: 87390
+
+STRATEGY-01-tst_clz-cvg_def total pair number: 90851
+STRATEGY-01-tst_clz-cvg_def pair number with errors: 3820
+STRATEGY-01-tst_clz-cvg_def killed mutant number: 3565
+STRATEGY-01-tst_clz-cvg_def missing pair number: 1
+STRATEGY-01-tst_clz-cvg_def pair number with flaky tests: 5
+STRATEGY-01-tst_clz-cvg_def available pair number: 87026
+
+STRATEGY-01-tst_ln-cvg_def total pair number: 90851
+STRATEGY-01-tst_ln-cvg_def pair number with errors: 3405
+STRATEGY-01-tst_ln-cvg_def killed mutant number: 3565
+STRATEGY-01-tst_ln-cvg_def missing pair number: 1
+STRATEGY-01-tst_ln-cvg_def pair number with flaky tests: 15
+STRATEGY-01-tst_ln-cvg_def available pair number: 87431
+
+Process riptide... ...
+Total number of mutants: 273
+STRATEGY-default total pair number: 63448
+STRATEGY-default pair number with errors: 16581
+STRATEGY-default killed mutant number: 255
+STRATEGY-default missing pair number: 0
+STRATEGY-default pair number with flaky tests: 0
+STRATEGY-default available pair number: 46867
+
+STRATEGY-sgl_grp total pair number: 63479
+STRATEGY-sgl_grp pair number with errors: 16802
+STRATEGY-sgl_grp killed mutant number: 255
+STRATEGY-sgl_grp missing pair number: 0
+STRATEGY-sgl_grp pair number with flaky tests: 0
+STRATEGY-sgl_grp available pair number: 46677
+
+STRATEGY-shuffled total pair number: 46665
+STRATEGY-shuffled pair number with errors: 1
+STRATEGY-shuffled killed mutant number: 217
+STRATEGY-shuffled missing pair number: 0
+STRATEGY-shuffled pair number with flaky tests: 0
+STRATEGY-shuffled available pair number: 46664
+
+STRATEGY-def_ln-freq_def total pair number: 63478
+STRATEGY-def_ln-freq_def pair number with errors: 16612
+STRATEGY-def_ln-freq_def killed mutant number: 255
+STRATEGY-def_ln-freq_def missing pair number: 0
+STRATEGY-def_ln-freq_def pair number with flaky tests: 0
+STRATEGY-def_ln-freq_def available pair number: 46866
+
+STRATEGY-def_def_shuf total pair number: 63441
+STRATEGY-def_def_shuf pair number with errors: 16574
+STRATEGY-def_def_shuf killed mutant number: 255
+STRATEGY-def_def_shuf missing pair number: 0
+STRATEGY-def_def_shuf pair number with flaky tests: 0
+STRATEGY-def_def_shuf available pair number: 46867
+
+STRATEGY-clz_clz-cvg_def total pair number: 63485
+STRATEGY-clz_clz-cvg_def pair number with errors: 16614
+STRATEGY-clz_clz-cvg_def killed mutant number: 255
+STRATEGY-clz_clz-cvg_def missing pair number: 0
+STRATEGY-clz_clz-cvg_def pair number with flaky tests: 0
+STRATEGY-clz_clz-cvg_def available pair number: 46871
+
+STRATEGY-clz_ln-cvg_def total pair number: 63471
+STRATEGY-clz_ln-cvg_def pair number with errors: 16600
+STRATEGY-clz_ln-cvg_def killed mutant number: 255
+STRATEGY-clz_ln-cvg_def missing pair number: 0
+STRATEGY-clz_ln-cvg_def pair number with flaky tests: 0
+STRATEGY-clz_ln-cvg_def available pair number: 46871
+
+STRATEGY-n-tst_clz-cvg_def total pair number: 63422
+STRATEGY-n-tst_clz-cvg_def pair number with errors: 16542
+STRATEGY-n-tst_clz-cvg_def killed mutant number: 255
+STRATEGY-n-tst_clz-cvg_def missing pair number: 0
+STRATEGY-n-tst_clz-cvg_def pair number with flaky tests: 0
+STRATEGY-n-tst_clz-cvg_def available pair number: 46880
+
+STRATEGY-n-tst_ln-cvg_def total pair number: 63489
+STRATEGY-n-tst_ln-cvg_def pair number with errors: 16619
+STRATEGY-n-tst_ln-cvg_def killed mutant number: 255
+STRATEGY-n-tst_ln-cvg_def missing pair number: 0
+STRATEGY-n-tst_ln-cvg_def pair number with flaky tests: 0
+STRATEGY-n-tst_ln-cvg_def available pair number: 46870
+
+STRATEGY-n-tst_clz-sim_def total pair number: 63491
+STRATEGY-n-tst_clz-sim_def pair number with errors: 16604
+STRATEGY-n-tst_clz-sim_def killed mutant number: 255
+STRATEGY-n-tst_clz-sim_def missing pair number: 0
+STRATEGY-n-tst_clz-sim_def pair number with flaky tests: 0
+STRATEGY-n-tst_clz-sim_def available pair number: 46887
+
+STRATEGY-n-tst_clz-diff_def total pair number: 63472
+STRATEGY-n-tst_clz-diff_def pair number with errors: 16602
+STRATEGY-n-tst_clz-diff_def killed mutant number: 255
+STRATEGY-n-tst_clz-diff_def missing pair number: 0
+STRATEGY-n-tst_clz-diff_def pair number with flaky tests: 0
+STRATEGY-n-tst_clz-diff_def available pair number: 46870
+
+STRATEGY-n-tst_clz-ext_def total pair number: 63433
+STRATEGY-n-tst_clz-ext_def pair number with errors: 16563
+STRATEGY-n-tst_clz-ext_def killed mutant number: 255
+STRATEGY-n-tst_clz-ext_def missing pair number: 0
+STRATEGY-n-tst_clz-ext_def pair number with flaky tests: 0
+STRATEGY-n-tst_clz-ext_def available pair number: 46870
+
+STRATEGY-n-tst_ln-ext_def total pair number: 63487
+STRATEGY-n-tst_ln-ext_def pair number with errors: 16617
+STRATEGY-n-tst_ln-ext_def killed mutant number: 255
+STRATEGY-n-tst_ln-ext_def missing pair number: 0
+STRATEGY-n-tst_ln-ext_def pair number with flaky tests: 0
+STRATEGY-n-tst_ln-ext_def available pair number: 46870
+
+STRATEGY-01-tst_clz-cvg_def total pair number: 63478
+STRATEGY-01-tst_clz-cvg_def pair number with errors: 16607
+STRATEGY-01-tst_clz-cvg_def killed mutant number: 255
+STRATEGY-01-tst_clz-cvg_def missing pair number: 0
+STRATEGY-01-tst_clz-cvg_def pair number with flaky tests: 0
+STRATEGY-01-tst_clz-cvg_def available pair number: 46871
+
+STRATEGY-01-tst_ln-cvg_def total pair number: 63487
+STRATEGY-01-tst_ln-cvg_def pair number with errors: 16616
+STRATEGY-01-tst_ln-cvg_def killed mutant number: 255
+STRATEGY-01-tst_ln-cvg_def missing pair number: 0
+STRATEGY-01-tst_ln-cvg_def pair number with flaky tests: 0
+STRATEGY-01-tst_ln-cvg_def available pair number: 46871

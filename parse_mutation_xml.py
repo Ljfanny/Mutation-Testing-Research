@@ -1,19 +1,18 @@
 import xml.etree.ElementTree as ET
 import json
-from parse_pitest_log import mutant_choice, test_choice
 
 project_list = [
     # 'assertj-assertions-generator',
     # 'commons-net',
-    'commons-cli',
+    # 'commons-cli',
     # 'commons-csv',
-    # 'commons-codec',
+    'commons-codec',
     # 'delight-nashorn-sandbox',
     # 'empire-db',
     # 'jimfs',
     # 'httpcore',
     # 'handlebars.java',
-    # 'riptide',
+    'riptide',
     # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
@@ -24,25 +23,20 @@ project_list = [
     # 'stream-lib'
 ]
 seed_list = [
-    # 'default',
-    # 'sgl_grp',
-    # 'def_ln-freq_def',
-    # 'def_def_shuf',
-    # 'clz_clz-cvg_def',
-    # 'clz_ln-cvg_def',
-    # 'n-tst_clz-cvg_def',
-    # 'n-tst_ln-cvg_def',
-    # 'n-tst_clz-sim_def',
-    # 'n-tst_clz-diff_def',
-    # 'n-tst_clz-ext_def',
-    # 'n-tst_ln-ext_def',
-    # '01-tst_clz-cvg_def',
-    # '01-tst_ln-cvg_def'
-
-    'ln-1_0-55',
-    'ln-1_56-111',
-    'ln-1_56-83',
-    'ln-1_84-111'
+    'default',
+    'sgl_grp',
+    'def_ln-freq_def',
+    'def_def_shuf',
+    'clz_clz-cvg_def',
+    'clz_ln-cvg_def',
+    'n-tst_clz-cvg_def',
+    'n-tst_ln-cvg_def',
+    'n-tst_clz-sim_def',
+    'n-tst_clz-diff_def',
+    'n-tst_clz-ext_def',
+    'n-tst_ln-ext_def',
+    '01-tst_clz-cvg_def',
+    '01-tst_ln-cvg_def'
 ]
 project_subdir_dict = {
     'assertj-assertions-generator': '',
@@ -57,16 +51,11 @@ project_subdir_dict = {
     'handlebars.java': 'handlebars/',
     'riptide': 'riptide-core/'
 }
-round_number = 6
-random_mutant = False
-random_test = False
-choice = 'more_projects'
-xmls_dir = f'controlled_projects/confirmation'
-parsed_dir = f'controlled_parsed_data/confirmation'
 
 
 def parse_xml(p, s, rnd):
-    xml_path = f'{xmls_dir}/{p}_{s}_{rnd}/{project_subdir_dict[p]}target/pit-reports/mutations.xml'
+    # xml_path = f'{xmls_dir}/{p}_{s}_{rnd}/{project_subdir_dict[p]}target/pit-reports/mutations.xml'
+    xml_path = f'{xmls_dir}/{p}_{s}_{rnd}.xml'
     tree = ET.parse(xml_path)
     root = tree.getroot()
     mutations = root.findall('mutation')
@@ -88,9 +77,15 @@ def parse_xml(p, s, rnd):
 
 
 if __name__ == '__main__':
+    round_number = 6
+    random_mutant = False
+    random_test = False
+    xmls_dir = 'for_checking_OID/xmls'
+    parsed_dir = 'controlled_parsed_data/both'
+    seed_list = ['shuffled']
     for project in project_list:
         for seed in seed_list:
-            print(f'{project} with {seed} is processing... ...')
+            print(f'Process {project} with {seed}... ...')
             mutation_set = set()
             for i in range(round_number):
                 parse_xml(p=project, s=seed, rnd=i)

@@ -6,14 +6,14 @@ import numpy as np
 project_list = [
     # 'assertj-assertions-generator',
     # 'commons-net',
-    'commons-cli',
-    'commons-csv',
+    # 'commons-cli',
+    # 'commons-csv',
     'commons-codec',
-    'delight-nashorn-sandbox',
-    'empire-db',
-    'jimfs',
-    'httpcore',
-    'handlebars.java',
+    # 'delight-nashorn-sandbox',
+    # 'empire-db',
+    # 'jimfs',
+    # 'httpcore',
+    # 'handlebars.java',
     'riptide',
     # 'commons-collections',
     # 'guava',
@@ -24,28 +24,22 @@ project_list = [
     # 'sling-org-apache-sling-auth-core',
     # 'stream-lib'
 ]
-round_number = 6
-random_mutant = False
-random_test = False
 seed_list = [
-    # 'default',
-    # 'sgl_grp',
+    'default',
+    'sgl_grp',
     'def_ln-freq_def',
     'def_def_shuf',
-    # 'clz_clz-cvg_def',
-    # 'clz_ln-cvg_def',
-    # 'n-tst_clz-cvg_def',
-    # 'n-tst_ln-cvg_def',
-    # 'n-tst_clz-sim_def',
-    # 'n-tst_clz-diff_def',
-    # 'n-tst_clz-ext_def',
-    # 'n-tst_ln-ext_def',
-    # '01-tst_clz-cvg_def',
-    # '01-tst_ln-cvg_def'
+    'clz_clz-cvg_def',
+    'clz_ln-cvg_def',
+    'n-tst_clz-cvg_def',
+    'n-tst_ln-cvg_def',
+    'n-tst_clz-sim_def',
+    'n-tst_clz-diff_def',
+    'n-tst_clz-ext_def',
+    'n-tst_ln-ext_def',
+    '01-tst_clz-cvg_def',
+    '01-tst_ln-cvg_def'
 ]
-choice = 'more_projects'
-logs_dir = f'controlled_logs/both'
-parsed_dir = f'controlled_parsed_data/both'
 mutant_choice = {
     False: 'default-mutant',
     True: 'random-mutant'
@@ -180,12 +174,12 @@ def process_block(blk: list, rnd: int):
 
     # Extract test descriptions
     test_descriptions = re.findall(test_description_pattern, block_str)
-    testRuntime_list = []
+    test_runtime_list = []
     for clazz, name, runtime in test_descriptions:
-        testRuntime_list.append(int(runtime))
-    while len(testRuntime_list) < len(test_list):
-        testRuntime_list.append(np.nan)
-    mutantId_testRuntimeMatrix_dict[mutant_cnt][rnd] = testRuntime_list
+        test_runtime_list.append(int(runtime))
+    while len( test_runtime_list) < len(test_list):
+         test_runtime_list.append(np.nan)
+    mutantId_testRuntimeMatrix_dict[mutant_cnt][rnd] =  test_runtime_list
 
     # Extract test runtime
     runtime = re.search(runtime_pattern, block_str)
@@ -197,7 +191,8 @@ def process_block(blk: list, rnd: int):
 
 # Parse log information
 def parse_log(p, rnd, s):
-    with open(f'{logs_dir}/{s}/{p}_{rnd}.log', 'r') as file:
+    # with open(f'{logs_dir}/{s}/{p}_{rnd}.log', 'r') as file:
+    with open(f'{logs_dir}/{p}_{s}_{rnd}.log', 'r') as file:
         block = []
         capturing = False
         for line in file:
@@ -230,6 +225,11 @@ def output_jsons(p, s):
 
 
 if __name__ == '__main__':
+    round_number = 6
+    random_mutant = False
+    random_test = False
+    logs_dir = 'for_checking_OID/logs'
+    parsed_dir = 'controlled_parsed_data/both'
     mutant_pattern_dict = {
         'junit4': mutant_pattern_junit4,
         'junit5': mutant_pattern_junit5
@@ -238,9 +238,10 @@ if __name__ == '__main__':
         'junit4': test_description_pattern_junit4,
         'junit5': test_description_pattern_junit5
     }
+    seed_list = ['shuffled']
     for project in project_list:
         for seed in seed_list:
-            print(f'{project} with {seed} is processing... ...')
+            print(f'Process {project} with {seed}... ...')
             junit_version = project_junitVersion_dict[project]
             mutant_pattern = mutant_pattern_dict[junit_version]
             test_description_pattern = test_description_pattern_dict[junit_version]

@@ -10,6 +10,8 @@ controlled_analyzed_data/more_projects
 controlled_analyzed_data/both/guiding_files
 controlled_analyzed_data/both/mutant_list
 about_conflicts
+for_checking_OID/logs
+for_checking_OID/xmls
 __pycache__
 .idea
 *.zip
