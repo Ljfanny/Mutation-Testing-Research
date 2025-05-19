@@ -217,14 +217,14 @@ if __name__ == '__main__':
             if EMPTY in status_list:
                 mutant_set.discard(pr[:-1])
         # pair_df.to_csv(f'{analyzed_dir}/status_info/of_pairs/{project}.csv', sep=',', header=True, index=False)
-        pair_df.to_csv(f'for_checking_OID/{project}.csv', sep=',', header=True, index=False)
+        # pair_df.to_csv(f'for_checking_OID/{project}.csv', sep=',', header=True, index=False)
 
-        # for seed in seed_list:
-        #     non_flaky_id_list = []
-        #     cur_id_tuple_dict, cur_id_tests_dict, _, _ = get_info(f'{parsed_dir}/{project}_{seed}')
-        #     for mut_id, mut_tup in cur_id_tuple_dict.items():
-        #         tup = log_to_key(mut_tup)
-        #         if tup in mutant_set:
-        #             non_flaky_id_list.append(mut_id)
-        #     with open(f'{analyzed_dir}/mutant_list/non-flaky/{project}_{seed}.json', 'w') as f:
-        #         json.dump(non_flaky_id_list, f, indent=4)
+        for seed in seed_list:
+            non_flaky_id_list = []
+            cur_id_tuple_dict, cur_id_tests_dict, _, _ = get_info(f'{parsed_dir}/{project}_{seed}')
+            for mut_id, mut_tup in cur_id_tuple_dict.items():
+                tup = log_to_key(mut_tup)
+                if tup in mutant_set:
+                    non_flaky_id_list.append(mut_id)
+            with open(f'for_checking_OID/mutant_list/non-flaky/{project}_{seed}.json', 'w') as f:
+                json.dump(non_flaky_id_list, f, indent=4)

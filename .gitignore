@@ -12,6 +12,7 @@ controlled_analyzed_data/both/mutant_list
 about_conflicts
 for_checking_OID/logs
 for_checking_OID/xmls
+for_checking_OID/mutant_list
 __pycache__
 .idea
 *.zip
