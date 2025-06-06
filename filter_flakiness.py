@@ -7,15 +7,15 @@ from scipy.stats import ttest_ind, mannwhitneyu
 project_list = [
     # 'assertj-assertions-generator',
     # 'commons-net',
-    'commons-cli',
+    # 'commons-cli',
     # 'commons-csv',
     'commons-codec',
-    'delight-nashorn-sandbox',
-    'empire-db',
-    'jimfs',
+    # 'delight-nashorn-sandbox',
+    # 'empire-db',
+    # 'jimfs',
     # # 'httpcore',
-    'handlebars.java',
-    'riptide',
+    # 'handlebars.java',
+    # 'riptide',
     # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
@@ -50,8 +50,9 @@ seed_number = len(seed_list)
 
 
 def append_line(file_path, text):
-    with open(file_path, 'a', encoding='utf-8') as file:
-        file.write(text + '\n')
+    if isOK:
+        with open(file_path, 'a', encoding='utf-8') as f:
+            f.write(text + '\n')
 
 
 def process_info(s):
@@ -157,12 +158,12 @@ def process_repl_time(s):
 
 
 def get_total_runtime(s):
-    _, p_runtime_mapping = process_info(s)
+    _, runtime_mapping = process_info(s)
     id_repl_time_mapping = process_repl_time(s)
     repl_recording = set()
     runtime_arr = np.array([0.0 for _ in range(round_number)])
     for p in safe_pair_arr:
-        runtime_arr += np.array(p_runtime_mapping[p])
+        runtime_arr += np.array(runtime_mapping[p])
         if p[0] not in repl_recording and p[0] in id_repl_time_mapping.keys():
             runtime_arr += np.array(id_repl_time_mapping[p[0]])
             repl_recording.add(p[0])
@@ -175,6 +176,7 @@ if __name__ == '__main__':
     random_test = False
     parsed_dir = 'for_checking_OID/temp_outputs'
     output_file = f'{parsed_dir}/INFO.txt'
+    isOK = False
     significant_df = pd.DataFrame(None, columns=['project', 'seed1', 'seed2', 'T-test', 'U-test'])
     for project in project_list:
         print(f'Process {project}... ...')
@@ -211,29 +213,57 @@ if __name__ == '__main__':
         append_line(output_file, f'Number of pairs where at least one of strategies is none: {none_num}')
         # pair_df.to_csv(f'for_checking_OID/flaky_tables/{project}.csv', sep=',', header=True, index=False)
 
+        # Focus on different runtime of pairs between seeds
+        pair_df = pd.DataFrame(None, columns=pair_info_cols + ['default'] + seed_list + ['avg. seed–default difference'])
+        p_runtime_mapping = dict()
+        for seed in ['default'] + seed_list:
+            _, cur_p_runtime_mapping = process_info(seed)
+            for pair in safe_pair_arr:
+                if pair in p_runtime_mapping:
+                    p_runtime_mapping[pair].append(np.mean(cur_p_runtime_mapping[pair]))
+                else:
+                    p_runtime_mapping[pair] = [np.mean(cur_p_runtime_mapping[pair])]
+        for pair in safe_pair_arr:
+            arr = [t - p_runtime_mapping[pair][0] for t in p_runtime_mapping[pair][1:]]
+            p_runtime_mapping[pair].append(np.mean(arr))
+        sorted_p_runtime_items = sorted(
+            p_runtime_mapping.items(),
+            key=lambda i: i[1][-1],
+            reverse=True
+        )
+        for itm in sorted_p_runtime_items:
+            pair = itm[0]
+            arr = itm[1]
+            mut = id_mutant_mapping[pair[0]]
+            pair_df.loc[len(pair_df.index)] = [mut['clazz'], mut['method'], mut['methodDesc'], mut['indexes'], mut['mutator']] + [id_test_mapping[str(pair[1])]] + [f'{t:.2f}' for t in arr]
+        pair_df.to_csv(f'for_checking_OID/{project}.csv', sep=',', header=True, index=False)
+
         # Total running time
         append_line(output_file, f'Number of available pairs: {len(safe_pair_arr)}\n')
         seed_runtime_arr_mapping = dict()
-        get_total_runtime('default')
-        for seed in seed_list:
-            get_total_runtime(seed)
-
-        cols = ['seed'] + [f'round{i}' for i in range(round_number)] + ['avg.', '/avg. default']
-        runtime_df = pd.DataFrame(None, columns=cols)
-        def_avg_runtime = np.mean(seed_runtime_arr_mapping['default'])
-        runtime_df.loc[len(runtime_df.index)] = ['default'] + [int(runtime) for runtime in seed_runtime_arr_mapping['default']] + [f'{def_avg_runtime:.2f}', f'{1.0:.4f}']
-        for i in range(seed_number):
-            seed1 = seed_list[i]
-            runtime_arr1 = seed_runtime_arr_mapping[seed1]
-            avg_runtime = np.mean(runtime_arr1)
-            ratio_vs_def = avg_runtime / def_avg_runtime
-            info_arr = [seed1] + [int(runtime) for runtime in runtime_arr1] + [f'{avg_runtime:.2f}', f'{ratio_vs_def:.4f}']
-            runtime_df.loc[len(runtime_df.index)] = info_arr
-            for j in range(i + 1, seed_number):
-                seed2 = seed_list[j]
-                runtime_arr2 = seed_runtime_arr_mapping[seed2]
-                t_stat, t_p_value = ttest_ind(runtime_arr1, runtime_arr2)
-                u_stat, u_p_value = mannwhitneyu(runtime_arr1, runtime_arr2)
-                significant_df.loc[len(significant_df.index)] = [project, seed1, seed2, f'{t_p_value:.4f}', f'{u_p_value:.4f}']
-        runtime_df.to_csv(f'for_checking_OID/total_runtime/{project}.csv', sep=',', header=True, index=False)
-    significant_df.to_csv(f'for_checking_OID/total_runtime/significant.csv', sep=',', header=True, index=False)
+        # get_total_runtime('default')
+        # for seed in seed_list:
+        #     get_total_runtime(seed)
+        #
+        # cols = ['seed'] + [f'round{i}' for i in range(round_number)] + ['avg.', '/avg. default', 'T-test vs. default', 'U-test vs. default']
+        # runtime_df = pd.DataFrame(None, columns=cols)
+        # def_runtime_arr = seed_runtime_arr_mapping['default']
+        # def_avg_runtime = np.mean(def_runtime_arr)
+        # runtime_df.loc[len(runtime_df.index)] = ['default'] + [int(runtime) for runtime in seed_runtime_arr_mapping['default']] + [f'{def_avg_runtime:.2f}', f'{1.0:.4f}', f'{1.0:.4f}', f'{1.0:.4f}']
+        # for i in range(seed_number):
+        #     seed1 = seed_list[i]
+        #     runtime_arr1 = seed_runtime_arr_mapping[seed1]
+        #     avg_runtime = np.mean(runtime_arr1)
+        #     ratio_vs_def = avg_runtime / def_avg_runtime
+        #     _, t_p_value = ttest_ind(runtime_arr1, def_runtime_arr)
+        #     _, u_p_value = mannwhitneyu(runtime_arr1, def_runtime_arr)
+        #     info_arr = [seed1] + [int(runtime) for runtime in runtime_arr1] + [f'{avg_runtime:.2f}', f'{ratio_vs_def:.4f}', f'{t_p_value:.4f}', f'{u_p_value:.4f}']
+        #     runtime_df.loc[len(runtime_df.index)] = info_arr
+        #     for j in range(i + 1, seed_number):
+        #         seed2 = seed_list[j]
+        #         runtime_arr2 = seed_runtime_arr_mapping[seed2]
+        #         t_stat, t_p_value = ttest_ind(runtime_arr1, runtime_arr2)
+        #         u_stat, u_p_value = mannwhitneyu(runtime_arr1, runtime_arr2)
+        #         significant_df.loc[len(significant_df.index)] = [project, seed1, seed2, f'{t_p_value:.4f}', f'{u_p_value:.4f}']
+        # runtime_df.to_csv(f'for_checking_OID/total_runtime/{project}.csv', sep=',', header=True, index=False)
+    # significant_df.to_csv(f'for_checking_OID/total_runtime/significant.csv', sep=',', header=True, index=False)
