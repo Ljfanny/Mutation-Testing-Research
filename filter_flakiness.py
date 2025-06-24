@@ -7,15 +7,15 @@ from scipy.stats import ttest_ind, mannwhitneyu
 project_list = [
     # 'assertj-assertions-generator',
     # 'commons-net',
-    # 'commons-cli',
+    'commons-cli',
     # 'commons-csv',
-    'commons-codec',
-    # 'delight-nashorn-sandbox',
-    # 'empire-db',
-    # 'jimfs',
+    # 'commons-codec',
+    'delight-nashorn-sandbox',
+    'empire-db',
+    'jimfs',
     # # 'httpcore',
-    # 'handlebars.java',
-    # 'riptide',
+    'handlebars.java',
+    'riptide',
     # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
@@ -175,7 +175,7 @@ if __name__ == '__main__':
     random_mutant = False
     random_test = False
     parsed_dir = 'for_checking_OID/temp_outputs'
-    output_file = f'{parsed_dir}/INFO.txt'
+    output_file = 'INFO.txt'
     isOK = False
     significant_df = pd.DataFrame(None, columns=['project', 'seed1', 'seed2', 'T-test', 'U-test'])
     for project in project_list:
@@ -189,7 +189,7 @@ if __name__ == '__main__':
         p_status_mapping = dict()
 
         print('Process default.')
-        def_p_status_mapping, _ = process_info('default')
+        def_p_status_mapping, def_p_runtime_mapping = process_info('default')
         parse_info('default', def_p_status_mapping)
 
         for seed in seed_list:
@@ -214,29 +214,51 @@ if __name__ == '__main__':
         # pair_df.to_csv(f'for_checking_OID/flaky_tables/{project}.csv', sep=',', header=True, index=False)
 
         # Focus on different runtime of pairs between seeds
-        pair_df = pd.DataFrame(None, columns=pair_info_cols + ['default'] + seed_list + ['avg. seed–default difference'])
-        p_runtime_mapping = dict()
-        for seed in ['default'] + seed_list:
+        other_cols = list()
+        other_cols.append('default')
+        for seed in seed_list:
+            other_cols.append(seed)
+            other_cols.append('U-test against default')
+        pair_df = pd.DataFrame(None, columns=pair_info_cols + other_cols)
+        # temp_mapping = dict()
+        # for pair in safe_pair_arr:
+        #     temp_mapping[pair] = [np.mean(def_p_runtime_mapping[pair])]
+
+        sign_diff_mapping = dict()
+        better_dict = {k: 0 for k in safe_pair_arr}
+        worse_dict = {k: 0 for k in safe_pair_arr}
+        for seed in seed_list:
             _, cur_p_runtime_mapping = process_info(seed)
+            # [better, worse]
+            sign_diff_mapping[seed] = [0, 0]
             for pair in safe_pair_arr:
-                if pair in p_runtime_mapping:
-                    p_runtime_mapping[pair].append(np.mean(cur_p_runtime_mapping[pair]))
-                else:
-                    p_runtime_mapping[pair] = [np.mean(cur_p_runtime_mapping[pair])]
-        for pair in safe_pair_arr:
-            arr = [t - p_runtime_mapping[pair][0] for t in p_runtime_mapping[pair][1:]]
-            p_runtime_mapping[pair].append(np.mean(arr))
-        sorted_p_runtime_items = sorted(
-            p_runtime_mapping.items(),
-            key=lambda i: i[1][-1],
-            reverse=True
-        )
-        for itm in sorted_p_runtime_items:
-            pair = itm[0]
-            arr = itm[1]
-            mut = id_mutant_mapping[pair[0]]
-            pair_df.loc[len(pair_df.index)] = [mut['clazz'], mut['method'], mut['methodDesc'], mut['indexes'], mut['mutator']] + [id_test_mapping[str(pair[1])]] + [f'{t:.2f}' for t in arr]
-        pair_df.to_csv(f'for_checking_OID/{project}.csv', sep=',', header=True, index=False)
+                cur_avg = np.mean(cur_p_runtime_mapping[pair])
+                def_avg = np.mean(def_p_runtime_mapping[pair])
+                # temp_mapping[pair].append(cur_avg)
+                _, u_p_value = mannwhitneyu(def_p_runtime_mapping[pair], cur_p_runtime_mapping[pair])
+                if u_p_value < 0.05:
+                    if cur_avg < def_avg:
+                        sign_diff_mapping[seed][0] += 1
+                        better_dict[pair] += 1
+                    elif cur_avg > def_avg:
+                        sign_diff_mapping[seed][1] += 1
+                        worse_dict[pair] += 1
+                # temp_mapping[pair].append(u_p_value)
+        with open(f'for_checking_OID/consistently_better_{project}.txt', 'w') as file:
+            for pair, cnt in better_dict.items():
+                if cnt >= seed_number:
+                    file.write(f'{id_mutant_mapping[pair[0]]}.{id_test_mapping[str(pair[1])]}\n')
+        with open(f'for_checking_OID/consistently_worse_{project}.txt', 'w') as file:
+            for pair, cnt in worse_dict.items():
+                if cnt >= seed_number:
+                    file.write(f'{id_mutant_mapping[pair[0]]}.{id_test_mapping[str(pair[1])]}\n')
+        # for pair, arr in temp_mapping.items():
+        #     mut = id_mutant_mapping[pair[0]]
+        #     pair_df.loc[len(pair_df.index)] = [mut['clazz'], mut['method'], mut['methodDesc'], mut['indexes'], mut['mutator']] + [id_test_mapping[str(pair[1])]] + [f'{t:.2f}' for t in arr]
+        # pair_df.to_csv(f'for_checking_OID/{project}.csv', sep=',', header=True, index=False)
+
+        print(len(safe_pair_arr))
+        print(sign_diff_mapping)
 
         # Total running time
         append_line(output_file, f'Number of available pairs: {len(safe_pair_arr)}\n')

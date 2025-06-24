@@ -1,8 +1,0 @@
-seed,round0,round1,round2,round3,round4,round5,avg.,/avg. default
-default,900,951,854,900,933,904,907.00,1.00
-single-group,905,905,904,873,931,906,904.00,1.00
-single-group_random-42,821,806,814,813,813,813,813.33,0.90
-single-group_random-43,797,786,795,795,796,795,794.00,0.88
-single-group_random-44,759,769,766,775,766,762,766.17,0.84
-single-group_random-45,775,785,775,770,768,771,774.00,0.85
-single-group_random-46,782,789,789,785,787,798,788.33,0.87

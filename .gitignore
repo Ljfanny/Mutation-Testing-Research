@@ -1,6 +1,7 @@
 pitest_logs
 parsed_data
 analyzed_data
+anaconda_projects
 controlled_logs
 controlled_projects
 controlled_parsed_data
@@ -13,6 +14,7 @@ about_conflicts
 for_checking_OID/logs
 for_checking_OID/xmls
 for_checking_OID/inputs
+for_checking_OID/others
 for_checking_OID/mutant_list
 for_checking_OID/temp_outputs
 __pycache__
