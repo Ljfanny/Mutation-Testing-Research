@@ -5,7 +5,7 @@ import warnings
 import random
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
-from parse_rough_data import project_junitVersion_dict
+from parse_rough_data import project_junit_mapping
 
 warnings.filterwarnings("ignore")
 project_list = [

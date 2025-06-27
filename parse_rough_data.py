@@ -31,6 +31,7 @@ project_list = [
 seed_list = [
     'default',
     'single-group',
+    'single-group_errors-at-the-end',
     'single-group_random-42',
     'single-group_random-43',
     'single-group_random-44',
@@ -58,7 +59,7 @@ test_choice = {
     False: 'default-test',
     True: 'random-test'
 }
-project_junitVersion_mapping = {
+project_junit_mapping = {
     'commons-codec': 'junit5',
     'delight-nashorn-sandbox': 'junit4',
     'jimfs': 'junit4',
@@ -193,9 +194,9 @@ def parse_log(p, s, rnd):
             elif capturing:
                 blocks.append(line)
         process_block(blocks, rnd, csv_arr)
-    with open(f'{main_dir}/runtime_analysis_dir/{p}_{s}_{rnd}.csv', 'w', newline='', encoding='utf-8') as f:
-        w = csv.writer(f)
-        w.writerows(csv_arr)
+    # with open(f'{main_dir}/runtime_analysis_dir/{p}_{s}_{rnd}.csv', 'w', newline='', encoding='utf-8') as f:
+    #     w = csv.writer(f)
+    #     w.writerows(csv_arr)
 
 
 # Parse xml file
@@ -251,6 +252,8 @@ def parse_xml(p, s, rnd):
             if mutant == v:
                 mid = k
                 break
+        if status not in [KILLED, SURVIVED]:
+            error_set.add(mid)
         id_status_mapping[mid] = status
         id_info_mapping[mid] = list()
         temp_mapping = dict()
@@ -310,11 +313,12 @@ if __name__ == '__main__':
         test_id_mapping = {v: k for k, v in id_test_mapping.items()}
         seed_runtime_mapping = dict()
         df = pd.DataFrame(None, columns=cols)
+        def_avg = 1.0
         def_arr = list()
-        def_avg = 0
+        error_set = set()
         for seed in seed_list:
             print(f'Process {project} with {seed}... ...')
-            junit_version = project_junitVersion_mapping[project]
+            junit_version = project_junit_mapping[project]
             test_description_pattern = test_description_pattern_mapping[junit_version]
             complete_time_arr = [0 for _ in range(round_number)]
             seed_runtime_mapping[seed] = [0 for _ in range(round_number)]
@@ -333,34 +337,42 @@ if __name__ == '__main__':
                 parse_log(p=project, s=seed, rnd=r)
                 # output_jsons(p=project, s=seed, rnd=r)
                 seed_runtime_mapping[seed][r] = total_replacement_time + total_runtime
+
                 with open(f'{main_dir}/runtime_analysis_dir/per_class/{project}_{seed}_{r}.csv', 'w', newline='', encoding='utf-8') as file:
                     writer = csv.writer(file)
                     writer.writerows([[k] + v for k, v in dict(sorted(clazz_info_mapping.items(), key=lambda kv: kv[0])).items()])
-                if seed == 'default':
-                    for clazz, info_arr in clazz_info_mapping.items():
-                        if clazz not in clazz_percentages_mapping.keys():
-                            clazz_percentages_mapping[clazz] = [0 for _ in range(round_number)]
-                        clazz_percentages_mapping[clazz][r] = (info_arr[0] + info_arr[1]) / (1000 * complete_time_arr[r])
-            if seed == 'default':
-                percentages_arr = list()
-                for clazz, percentages in clazz_percentages_mapping.items():
-                    percentages_arr.append([clazz] + percentages + [np.mean(percentages)])
-                percentages_arr.sort(key=lambda x: x[-1], reverse=True)
-                percentages_arr.insert(0, ['clazz', 'round0', 'round1', 'round2', 'round3', 'round4', 'round5', 'avg.'])
-                for i in range(1, len(percentages_arr)):
-                    percentages_arr[i] = [percentages_arr[i][0]] + [f'{x:.4f}' for x in percentages_arr[i][1:]]
-                with open(f'{main_dir}/runtime_analysis_dir/per_class/{project}_{seed}.csv', 'w', newline='', encoding='utf-8') as file:
-                    writer = csv.writer(file)
-                    writer.writerows(percentages_arr)
                 # if seed == 'default':
-                #   def_arr = complete_time_arr
-                #   def_avg = np.mean(complete_time_arr)
-                #   df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{def_avg:.2f}', f'{1.0:.2f}',  f'{1.0:.4f}',  f'{1.0:.4f}']
-                # else:
-                #   cur_avg = np.mean(complete_time_arr)
-                #   _, t_p_value = ttest_ind(def_arr, complete_time_arr)
-                #   _, u_p_value = mannwhitneyu(def_arr, complete_time_arr)
-                #   df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{cur_avg:.2f}', f'{cur_avg / def_avg:.2f}', f'{t_p_value:.4f}', f'{u_p_value:.4f}']
+                #     for clazz, info_arr in clazz_info_mapping.items():
+                #         if clazz not in clazz_percentages_mapping.keys():
+                #             clazz_percentages_mapping[clazz] = [0 for _ in range(round_number)]
+                #         clazz_percentages_mapping[clazz][r] = (info_arr[0] + info_arr[1]) / (1000 * complete_time_arr[r])
+
+            # if seed == 'default':
+            #     # complete time
+            #     def_arr = complete_time_arr
+            #     def_avg = np.mean(complete_time_arr)
+            #     df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{def_avg:.2f}', f'{1.0:.2f}', f'{1.0:.4f}', f'{1.0:.4f}']
+            #
+            #     # for percentage
+            #     percentages_arr = list()
+            #     for clazz, percentages in clazz_percentages_mapping.items():
+            #         percentages_arr.append([clazz] + percentages + [np.mean(percentages)])
+            #     percentages_arr.sort(key=lambda x: x[-1], reverse=True)
+            #     percentages_arr.insert(0, ['clazz', 'round0', 'round1', 'round2', 'round3', 'round4', 'round5', 'avg.'])
+            #     for i in range(1, len(percentages_arr)):
+            #         percentages_arr[i] = [percentages_arr[i][0]] + [f'{x:.4f}' for x in percentages_arr[i][1:]]
+            #     with open(f'{main_dir}/runtime_analysis_dir/per_class/{project}_{seed}.csv', 'w', newline='', encoding='utf-8') as file:
+            #         writer = csv.writer(file)
+            #         writer.writerows(percentages_arr)
+            # else:
+            #     cur_avg = np.mean(complete_time_arr)
+            #     _, t_p_value = ttest_ind(def_arr, complete_time_arr)
+            #     _, u_p_value = mannwhitneyu(def_arr, complete_time_arr)
+            #     df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{cur_avg:.2f}', f'{cur_avg / def_avg:.2f}', f'{t_p_value:.4f}', f'{u_p_value:.4f}']
+
+        # with open(f'{main_dir}/mutant_list/erroneous/{project}.json', 'w') as f:
+        #     f.write(json.dumps(sorted(list(error_set)), indent=4))
+
         for seed in seed_list:
             cur_avg = np.mean(seed_runtime_mapping[seed])
             seed_runtime_mapping[seed].append(f'{cur_avg:.2f}')
@@ -378,4 +390,5 @@ if __name__ == '__main__':
         with open(f'{main_dir}/runtime_analysis_dir/total_runtime/{project}.csv', 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerows([cols] + [[k] + v for k, v in seed_runtime_mapping.items()])
-        # df.to_csv(f'for_checking_OID/complete_runtime/{project}.csv', sep=',', header=True, index=False)
+
+        # df.to_csv(f'{main_dir}/runtime_analysis_dir/complete_runtime/{project}.csv', sep=',', header=True, index=False)

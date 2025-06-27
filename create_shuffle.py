@@ -1,14 +1,13 @@
 import copy
 import json
 import random
-
+from parse_rough_data import project_junit_mapping
 from create_guiding_file import mutant_to_json
-from parse_rough_data import project_junitVersion_dict
 
 if __name__ == '__main__':
     proj_list = [
-        'commons-codec',
-        'riptide',
+        # 'commons-codec',
+        # 'riptide',
         'commons-cli',
         'jimfs',
         'empire-db',
@@ -68,10 +67,10 @@ if __name__ == '__main__':
                     if t not in uniq_id_test_mapping.values():
                         uniq_id_test_mapping[i] = t
                         i += 1
-        with open(f'{main_dir}/temp_outputs/before/{proj}_mutant_mapping.json', 'w') as f:
-            f.write(json.dumps(uniq_id_tup_mapping, indent=4))
-        with open(f'{main_dir}/temp_outputs/before/{proj}_test_mapping.json', 'w') as f:
-            f.write(json.dumps(uniq_id_test_mapping, indent=4))
+        # with open(f'{main_dir}/temp_outputs/before/{proj}_mutant_mapping.json', 'w') as f:
+        #     f.write(json.dumps(uniq_id_tup_mapping, indent=4))
+        # with open(f'{main_dir}/temp_outputs/before/{proj}_test_mapping.json', 'w') as f:
+        #     f.write(json.dumps(uniq_id_test_mapping, indent=4))
 
         # group_id = 0
         # clazz_id = 0
@@ -95,27 +94,49 @@ if __name__ == '__main__':
         # with open(f'for_checking_OID/inputs/{proj}_default.json', 'w') as f:
         #     f.write(json.dumps(mutant_list, indent=4))
 
-        # group_id = 0
-        # clazz_id = 0
-        # exeq_seq = 0
-        # mutant_list = list()
-        # for clazz in clazz_seq:
-        #     for group in group_list:
-        #         if clazz == id_tup_mapping[group[0]][0]:
-        #             for mut_id in group:
-        #                 mut = id_tup_mapping[mut_id]
-        #                 mutant_list.append(mutant_to_json(mutant=mut,
-        #                                                   test_list=id_tests_mapping[mut_id],
-        #                                                   group_id=group_id,
-        #                                                   clazz_id=clazz_id,
-        #                                                   exec_seq=exeq_seq,
-        #                                                   junit_version=project_junitVersion_dict[proj]))
-        #                 exeq_seq += 1
-        #             break
-        #     clazz_id += 1
-        #     exeq_seq = 0
-        # with open(f'for_checking_OID/inputs/{proj}_single-group.json', 'w') as f:
-        #     f.write(json.dumps(mutant_list, indent=4))
+        group_id = 0
+        clazz_id = 0
+        exeq_seq = 0
+        mutant_list = list()
+        with open(f'{main_dir}/mutant_list/erroneous/{proj}.json', 'r') as f:
+            error_arr = json.load(f)
+        for clazz in clazz_seq:
+            for group in group_list:
+                if clazz == id_tup_mapping[group[0]][0]:
+                    for mut_id in group:
+                        if int(mut_id) in error_arr:
+                            continue
+                        mut = id_tup_mapping[mut_id]
+                        mutant_list.append(mutant_to_json(mutant=mut,
+                                                          test_list=id_tests_mapping[mut_id],
+                                                          group_id=group_id,
+                                                          clazz_id=clazz_id,
+                                                          exec_seq=exeq_seq,
+                                                          junit_version=project_junit_mapping[proj]))
+                        exeq_seq += 1
+                    break
+            clazz_id += 1
+            exeq_seq = 0
+
+        clazz_id -= 1
+        cur_clazz = clazz_seq[-1]
+        for mut_id in error_arr:
+            mut_id = str(mut_id)
+            mut = id_tup_mapping[mut_id]
+            clazz = mut[0]
+            if clazz != cur_clazz:
+                cur_clazz = clazz
+                clazz_id += 1
+                exeq_seq = 0
+            mutant_list.append(mutant_to_json(mutant=mut,
+                                              test_list=id_tests_mapping[mut_id],
+                                              group_id=group_id,
+                                              clazz_id=clazz_id,
+                                              exec_seq=exeq_seq,
+                                              junit_version=project_junit_mapping[proj]))
+            exeq_seq += 1
+        with open(f'for_checking_OID/inputs/{proj}_single-group_errors-at-the-end.json', 'w') as f:
+            f.write(json.dumps(mutant_list, indent=4))
 
         # for seed in rand_seeds:
         #     random.seed(seed)
