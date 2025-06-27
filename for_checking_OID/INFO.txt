@@ -98,6 +98,106 @@ Different outcomes for number of pairs compared to default: 6
 Number of pairs where at least one of strategies is none: 3
 Number of available pairs: 68233
 
+--------------------------------commons-codec--------------------------------
+Default:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3563
+Number of survived mutants: 301
+Number of pairs: 88129
+Number of failed pairs: 65826
+Number of passed pairs: 22274
+Number of flaky pairs: 29
+Different outcomes for number of pairs compared to default: 0
+
+Single-group:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3563
+Number of survived mutants: 300
+Number of pairs: 88082
+Number of failed pairs: 65819
+Number of passed pairs: 22255
+Number of flaky pairs: 8
+Different outcomes for number of pairs compared to default: 0
+
+Single-group_errors-at-the-end:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3563
+Number of survived mutants: 300
+Number of pairs: 88082
+Number of failed pairs: 65816
+Number of passed pairs: 22255
+Number of flaky pairs: 11
+Different outcomes for number of pairs compared to default: 1
+
+Single-group_random-42:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3562
+Number of survived mutants: 301
+Number of pairs: 88034
+Number of failed pairs: 65770
+Number of passed pairs: 22258
+Number of flaky pairs: 6
+Different outcomes for number of pairs compared to default: 0
+
+Single-group_random-43:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3563
+Number of survived mutants: 301
+Number of pairs: 88085
+Number of failed pairs: 65817
+Number of passed pairs: 22257
+Number of flaky pairs: 11
+Different outcomes for number of pairs compared to default: 0
+
+Single-group_random-44:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3563
+Number of survived mutants: 301
+Number of pairs: 88085
+Number of failed pairs: 65815
+Number of passed pairs: 22260
+Number of flaky pairs: 10
+Different outcomes for number of pairs compared to default: 2
+
+Single-group_random-45:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3562
+Number of survived mutants: 301
+Number of pairs: 88034
+Number of failed pairs: 65767
+Number of passed pairs: 22257
+Number of flaky pairs: 10
+Different outcomes for number of pairs compared to default: 0
+
+Single-group_random-46:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3562
+Number of survived mutants: 301
+Number of pairs: 88034
+Number of failed pairs: 65766
+Number of passed pairs: 22257
+Number of flaky pairs: 11
+Different outcomes for number of pairs compared to default: 0
+
+Number of pairs where at least one of strategies is none: 112
+Number of available pairs: 88017
+
 --------------------------------delight-nashorn-sandbox--------------------------------
 Default:
 Number of classes: 18
