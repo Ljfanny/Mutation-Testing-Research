@@ -172,6 +172,7 @@ def process_block(blk: list, rnd: int, csv_arr: list):
     if complete_time:
         complete_time_arr[rnd] = int(complete_time.group(1))
         csv_arr.append(['Total Runtime', None, total_replacement_time, total_runtime, total_error_count, total_mutant_count])
+        print(total_error_count)
         csv_arr.append(['Complete Runtime', None, complete_time_arr[rnd], None, None, None])
 
 
@@ -338,9 +339,9 @@ if __name__ == '__main__':
                 # output_jsons(p=project, s=seed, rnd=r)
                 seed_runtime_mapping[seed][r] = total_replacement_time + total_runtime
 
-                with open(f'{main_dir}/runtime_analysis_dir/per_class/{project}_{seed}_{r}.csv', 'w', newline='', encoding='utf-8') as file:
-                    writer = csv.writer(file)
-                    writer.writerows([[k] + v for k, v in dict(sorted(clazz_info_mapping.items(), key=lambda kv: kv[0])).items()])
+                # with open(f'{main_dir}/runtime_analysis_dir/per_class/{project}_{seed}_{r}.csv', 'w', newline='', encoding='utf-8') as file:
+                #     writer = csv.writer(file)
+                #     writer.writerows([[k] + v for k, v in dict(sorted(clazz_info_mapping.items(), key=lambda kv: kv[0])).items()])
                 # if seed == 'default':
                 #     for clazz, info_arr in clazz_info_mapping.items():
                 #         if clazz not in clazz_percentages_mapping.keys():
@@ -373,22 +374,22 @@ if __name__ == '__main__':
         # with open(f'{main_dir}/mutant_list/erroneous/{project}.json', 'w') as f:
         #     f.write(json.dumps(sorted(list(error_set)), indent=4))
 
-        for seed in seed_list:
-            cur_avg = np.mean(seed_runtime_mapping[seed])
-            seed_runtime_mapping[seed].append(f'{cur_avg:.2f}')
-            if seed == 'default':
-                def_avg = cur_avg
-                seed_runtime_mapping[seed].append(f'{1.0:.2f}')
-                seed_runtime_mapping[seed].append(f'{1.0:.4f}')
-                seed_runtime_mapping[seed].append(f'{1.0:.4f}')
-            else:
-                _, t_p_value = ttest_ind(seed_runtime_mapping['default'][:6], seed_runtime_mapping[seed][:6])
-                _, u_p_value = mannwhitneyu(seed_runtime_mapping['default'][:6], seed_runtime_mapping[seed][:6])
-                seed_runtime_mapping[seed].append(f'{cur_avg / def_avg:.2f}')
-                seed_runtime_mapping[seed].append(f'{t_p_value:.4f}')
-                seed_runtime_mapping[seed].append(f'{u_p_value:.4f}')
-        with open(f'{main_dir}/runtime_analysis_dir/total_runtime/{project}.csv', 'w', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            writer.writerows([cols] + [[k] + v for k, v in seed_runtime_mapping.items()])
+        # for seed in seed_list:
+        #     cur_avg = np.mean(seed_runtime_mapping[seed])
+        #     seed_runtime_mapping[seed].append(f'{cur_avg:.2f}')
+        #     if seed == 'default':
+        #         def_avg = cur_avg
+        #         seed_runtime_mapping[seed].append(f'{1.0:.2f}')
+        #         seed_runtime_mapping[seed].append(f'{1.0:.4f}')
+        #         seed_runtime_mapping[seed].append(f'{1.0:.4f}')
+        #     else:
+        #         _, t_p_value = ttest_ind(seed_runtime_mapping['default'][:6], seed_runtime_mapping[seed][:6])
+        #         _, u_p_value = mannwhitneyu(seed_runtime_mapping['default'][:6], seed_runtime_mapping[seed][:6])
+        #         seed_runtime_mapping[seed].append(f'{cur_avg / def_avg:.2f}')
+        #         seed_runtime_mapping[seed].append(f'{t_p_value:.4f}')
+        #         seed_runtime_mapping[seed].append(f'{u_p_value:.4f}')
+        # with open(f'{main_dir}/runtime_analysis_dir/total_runtime/{project}.csv', 'w', newline='', encoding='utf-8') as file:
+        #     writer = csv.writer(file)
+        #     writer.writerows([cols] + [[k] + v for k, v in seed_runtime_mapping.items()])
 
         # df.to_csv(f'{main_dir}/runtime_analysis_dir/complete_runtime/{project}.csv', sep=',', header=True, index=False)

@@ -27,6 +27,7 @@ project_list = [
 ]
 seed_list = [
     'single-group',
+    'single-group_errors-at-the-end',
     'single-group_random-42',
     'single-group_random-43',
     'single-group_random-44',
@@ -175,8 +176,8 @@ if __name__ == '__main__':
     random_mutant = False
     random_test = False
     parsed_dir = 'for_checking_OID/temp_outputs'
-    output_file = 'INFO.txt'
-    isOK = False
+    output_file = 'for_checking_OID/INFO.txt'
+    isOK = True
     significant_df = pd.DataFrame(None, columns=['project', 'seed1', 'seed2', 'T-test', 'U-test'])
     for project in project_list:
         print(f'Process {project}... ...')
@@ -211,7 +212,7 @@ if __name__ == '__main__':
             else:
                 none_num += 1
         append_line(output_file, f'Number of pairs where at least one of strategies is none: {none_num}')
-        # pair_df.to_csv(f'for_checking_OID/flaky_tables/{project}.csv', sep=',', header=True, index=False)
+        pair_df.to_csv(f'for_checking_OID/flaky_tables/{project}.csv', sep=',', header=True, index=False)
 
         # Focus on different runtime of pairs between seeds
         other_cols = list()
@@ -220,9 +221,6 @@ if __name__ == '__main__':
             other_cols.append(seed)
             other_cols.append('U-test against default')
         pair_df = pd.DataFrame(None, columns=pair_info_cols + other_cols)
-        # temp_mapping = dict()
-        # for pair in safe_pair_arr:
-        #     temp_mapping[pair] = [np.mean(def_p_runtime_mapping[pair])]
 
         sign_diff_mapping = dict()
         better_dict = {k: 0 for k in safe_pair_arr}
@@ -234,7 +232,6 @@ if __name__ == '__main__':
             for pair in safe_pair_arr:
                 cur_avg = np.mean(cur_p_runtime_mapping[pair])
                 def_avg = np.mean(def_p_runtime_mapping[pair])
-                # temp_mapping[pair].append(cur_avg)
                 _, u_p_value = mannwhitneyu(def_p_runtime_mapping[pair], cur_p_runtime_mapping[pair])
                 if u_p_value < 0.05:
                     if cur_avg < def_avg:
@@ -243,24 +240,19 @@ if __name__ == '__main__':
                     elif cur_avg > def_avg:
                         sign_diff_mapping[seed][1] += 1
                         worse_dict[pair] += 1
-                # temp_mapping[pair].append(u_p_value)
-        with open(f'for_checking_OID/consistently_better_{project}.txt', 'w') as file:
-            for pair, cnt in better_dict.items():
-                if cnt >= seed_number:
-                    file.write(f'{id_mutant_mapping[pair[0]]}.{id_test_mapping[str(pair[1])]}\n')
-        with open(f'for_checking_OID/consistently_worse_{project}.txt', 'w') as file:
-            for pair, cnt in worse_dict.items():
-                if cnt >= seed_number:
-                    file.write(f'{id_mutant_mapping[pair[0]]}.{id_test_mapping[str(pair[1])]}\n')
-        # for pair, arr in temp_mapping.items():
-        #     mut = id_mutant_mapping[pair[0]]
-        #     pair_df.loc[len(pair_df.index)] = [mut['clazz'], mut['method'], mut['methodDesc'], mut['indexes'], mut['mutator']] + [id_test_mapping[str(pair[1])]] + [f'{t:.2f}' for t in arr]
-        # pair_df.to_csv(f'for_checking_OID/{project}.csv', sep=',', header=True, index=False)
+        # with open(f'for_checking_OID/consistently_better_{project}.txt', 'w') as file:
+        #     for pair, cnt in better_dict.items():
+        #         if cnt >= seed_number:
+        #             file.write(f'{id_mutant_mapping[pair[0]]}.{id_test_mapping[str(pair[1])]}\n')
+        # with open(f'for_checking_OID/consistently_worse_{project}.txt', 'w') as file:
+        #     for pair, cnt in worse_dict.items():
+        #         if cnt >= seed_number:
+        #             file.write(f'{id_mutant_mapping[pair[0]]}.{id_test_mapping[str(pair[1])]}\n')
 
-        print(len(safe_pair_arr))
-        print(sign_diff_mapping)
+        # print(len(safe_pair_arr))
+        # print(sign_diff_mapping)
 
-        # Total running time
+        # # Total running time
         append_line(output_file, f'Number of available pairs: {len(safe_pair_arr)}\n')
         seed_runtime_arr_mapping = dict()
         # get_total_runtime('default')
