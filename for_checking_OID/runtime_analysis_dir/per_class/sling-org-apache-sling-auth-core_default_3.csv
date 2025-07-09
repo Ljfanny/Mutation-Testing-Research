@@ -1,0 +1,16 @@
+org.apache.sling.auth.core.AuthUtil,3,553,0,1
+org.apache.sling.auth.core.impl.AbstractAuthenticationHandlerHolder,163,5865,1,7
+org.apache.sling.auth.core.impl.AuthenticationHandlerHolder,74,4730,1,4
+org.apache.sling.auth.core.impl.AuthenticationHandlersManager,361,19984,7,26
+org.apache.sling.auth.core.impl.AuthenticationRequirementHolder,158,985,0,13
+org.apache.sling.auth.core.impl.AuthenticationRequirementsManager,2707,14701,3,86
+org.apache.sling.auth.core.impl.FailureCodesMapper,186,1096,1,10
+org.apache.sling.auth.core.impl.HttpBasicAuthenticationHandler,109,600,0,8
+org.apache.sling.auth.core.impl.PathBasedHolder,718,7572,1,31
+org.apache.sling.auth.core.impl.PathBasedHolderCache,241,2082,1,11
+org.apache.sling.auth.core.impl.SlingAuthenticationMetrics,90,1082,0,3
+org.apache.sling.auth.core.impl.SlingAuthenticator,5058,42900,15,147
+org.apache.sling.auth.core.impl.hc.DefaultLoginsHealthCheck,120,310,0,16
+org.apache.sling.auth.core.spi.AuthenticationInfo,430,9138,2,17
+org.apache.sling.auth.core.spi.AuthenticationInfo$ReadOnlyAuthenticationInfo,251,103,0,26
+org.apache.sling.auth.core.spi.DefaultAuthenticationFeedbackHandler,52,1323,0,4

@@ -9,30 +9,34 @@ project_list = [
     # 'commons-net',
     # 'commons-cli',
     # 'commons-csv',
-    'commons-codec',
+    # 'commons-codec',
     # 'delight-nashorn-sandbox',
     # 'empire-db',
     # 'jimfs',
-    # # 'httpcore',
+    # 'httpcore',
     # 'handlebars.java',
     # 'riptide',
-    # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
     # 'jooby',
     # 'maven-dependency-plugin',
     # 'maven-shade-plugin',
+    # 'stream-lib',
+
+    'commons-collections',
+    'jfreechart',
     # 'sling-org-apache-sling-auth-core',
-    # 'stream-lib'
+    # 'Mybatis-PageHelper',
+    # 'JustAuth'
 ]
 seed_list = [
     'single-group',
     'single-group_errors-at-the-end',
-    'single-group_random-42',
-    'single-group_random-43',
-    'single-group_random-44',
-    'single-group_random-45',
-    'single-group_random-46',
+    # 'single-group_random-42',
+    # 'single-group_random-43',
+    # 'single-group_random-44',
+    # 'single-group_random-45',
+    # 'single-group_random-46',
     # 'sgl_grp',
     # 'def_ln-freq_def',
     # 'def_def_shuf',
@@ -176,7 +180,7 @@ if __name__ == '__main__':
     random_mutant = False
     random_test = False
     parsed_dir = 'for_checking_OID/temp_outputs'
-    output_file = 'for_checking_OID/INFO.txt'
+    output_file = 'for_checking_OID/INFO_others.txt'
     isOK = True
     significant_df = pd.DataFrame(None, columns=['project', 'seed1', 'seed2', 'T-test', 'U-test'])
     for project in project_list:

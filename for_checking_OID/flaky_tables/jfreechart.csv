@@ -1,0 +1,2 @@
+clazz,method,methodDesc,indexes,mutator,test,default,single-group,single-group_errors-at-the-end
+org.jfree.chart.axis.DateAxis,previousStandardDate,(Ljava/util/Date;Lorg/jfree/chart/axis/DateTickUnit;)Ljava/util/Date;,[660],org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator,org.jfree.chart.axis.DateAxisTest.[engine:junit-jupiter]/[class:org.jfree.chart.axis.DateAxisTest]/[method:testBug25()],True,True,False

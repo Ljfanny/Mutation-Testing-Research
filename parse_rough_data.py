@@ -5,38 +5,44 @@ import pandas as pd
 import os
 import re
 import xml.etree.ElementTree as ET
+
+from scipy.constants import micro
 from scipy.stats import ttest_ind, mannwhitneyu
 
-project_list = [
+proj_list = [
     # 'assertj-assertions-generator',
     # 'commons-net',
     'commons-cli',
     # 'commons-csv',
     'commons-codec',
-    'delight-nashorn-sandbox',
+    # 'delight-nashorn-sandbox',
     'empire-db',
     'jimfs',
     # 'httpcore',
     'handlebars.java',
     'riptide',
-    # 'commons-collections',
     # 'guava',
     # 'java-design-patterns',
     # 'jooby',
     # 'maven-dependency-plugin',
     # 'maven-shade-plugin',
-    # 'sling-org-apache-sling-auth-core',
-    # 'stream-lib'
+    # 'stream-lib',
+
+    'commons-collections',
+    'jfreechart',
+    'sling-org-apache-sling-auth-core',
+    'Mybatis-PageHelper',
+    'JustAuth'
 ]
 seed_list = [
     'default',
     'single-group',
     'single-group_errors-at-the-end',
-    'single-group_random-42',
-    'single-group_random-43',
-    'single-group_random-44',
-    'single-group_random-45',
-    'single-group_random-46'
+    # 'single-group_random-42',
+    # 'single-group_random-43',
+    # 'single-group_random-44',
+    # 'single-group_random-45',
+    # 'single-group_random-46'
     # 'sgl_grp',
     # 'def_ln-freq_def',
     # 'def_def_shuf',
@@ -59,7 +65,7 @@ test_choice = {
     False: 'default-test',
     True: 'random-test'
 }
-project_junit_mapping = {
+proj_junit_mapping = {
     'commons-codec': 'junit5',
     'delight-nashorn-sandbox': 'junit4',
     'jimfs': 'junit4',
@@ -73,9 +79,12 @@ project_junit_mapping = {
     'handlebars.java': 'junit5',
     'httpcore': 'junit5',
     'java-design-patterns': 'junit5',
+    'jfreechart': 'junit5',
     'jooby': 'junit5',
+    'JustAuth': 'junit4',
     'maven-dependency-plugin': 'junit5',
     'maven-shade-plugin': 'junit4',
+    'Mybatis-PageHelper': 'junit4',
     'riptide': 'junit5',
     'sling-org-apache-sling-auth-core': 'junit4',
     'stream-lib': 'junit4'
@@ -172,7 +181,6 @@ def process_block(blk: list, rnd: int, csv_arr: list):
     if complete_time:
         complete_time_arr[rnd] = int(complete_time.group(1))
         csv_arr.append(['Total Runtime', None, total_replacement_time, total_runtime, total_error_count, total_mutant_count])
-        print(total_error_count)
         csv_arr.append(['Complete Runtime', None, complete_time_arr[rnd], None, None, None])
 
 
@@ -195,9 +203,9 @@ def parse_log(p, s, rnd):
             elif capturing:
                 blocks.append(line)
         process_block(blocks, rnd, csv_arr)
-    # with open(f'{main_dir}/runtime_analysis_dir/{p}_{s}_{rnd}.csv', 'w', newline='', encoding='utf-8') as f:
-    #     w = csv.writer(f)
-    #     w.writerows(csv_arr)
+    with open(f'{main_dir}/runtime_analysis_dir/{p}_{s}_{rnd}.csv', 'w', newline='', encoding='utf-8') as f:
+        w = csv.writer(f)
+        w.writerows(csv_arr)
 
 
 # Parse xml file
@@ -255,6 +263,9 @@ def parse_xml(p, s, rnd):
                 break
         if status not in [KILLED, SURVIVED]:
             error_set.add(mid)
+            if mid not in id_errors_mapping.keys():
+                id_errors_mapping[mid] = ['' for _ in range(len(seed_list))]
+            id_errors_mapping[mid][seed_list.index(s)] = status
         id_status_mapping[mid] = status
         id_info_mapping[mid] = list()
         temp_mapping = dict()
@@ -305,11 +316,26 @@ if __name__ == '__main__':
         'junit5': test_description_pattern_junit5
     }
     cols = ['seed'] + [f'round{i}' for i in range(round_number)] + ['avg.', '/avg. default', 'T-test', 'U-test']
-    for project in project_list:
-        with open(f'{main_dir}/temp_outputs/before/{project}_mutant_mapping.json', 'r') as file:
+    avg_cols = [
+        'project',
+        'default_complete',
+        'single-group_complete',
+        'single-group_rate (vs. default)',
+        'single-group*_complete',
+        'single-group*_rate (vs. default)',
+        'default_total',
+        'single-group_total',
+        'single-group_rate (vs. default)',
+        'single-group*_total',
+        'single-group*_rate (vs. default)'
+    ]
+    # [default complete, single group complete, single group* complete, default total, single group total, single group* total]
+    proj_avg_mapping = {proj: [0 for _ in range(6)] for proj in proj_list}
+    for proj in proj_list:
+        with open(f'{main_dir}/temp_outputs/before/{proj}_mutant_mapping.json', 'r') as file:
             id_mutant_mapping = {int(k): v for k, v in json.load(file).items()}
         mutant_id_mapping = {str(v): k for k, v in id_mutant_mapping.items()}
-        with open(f'{main_dir}/temp_outputs/before/{project}_test_mapping.json', 'r') as file:
+        with open(f'{main_dir}/temp_outputs/before/{proj}_test_mapping.json', 'r') as file:
             id_test_mapping = {int(k): v for k, v in json.load(file).items()}
         test_id_mapping = {v: k for k, v in id_test_mapping.items()}
         seed_runtime_mapping = dict()
@@ -317,9 +343,11 @@ if __name__ == '__main__':
         def_avg = 1.0
         def_arr = list()
         error_set = set()
+        error_df = pd.DataFrame(None, columns=['mutant id'] + seed_list + ['error count'])
+        id_errors_mapping = dict()
         for seed in seed_list:
-            print(f'Process {project} with {seed}... ...')
-            junit_version = project_junit_mapping[project]
+            print(f'Process {proj} with {seed}... ...')
+            junit_version = proj_junit_mapping[proj]
             test_description_pattern = test_description_pattern_mapping[junit_version]
             complete_time_arr = [0 for _ in range(round_number)]
             seed_runtime_mapping[seed] = [0 for _ in range(round_number)]
@@ -334,12 +362,11 @@ if __name__ == '__main__':
                 total_mutant_count = 0
                 total_replacement_time = 0
                 total_runtime = 0
-                parse_xml(p=project, s=seed, rnd=r)
-                parse_log(p=project, s=seed, rnd=r)
-                # output_jsons(p=project, s=seed, rnd=r)
+                parse_xml(p=proj, s=seed, rnd=r)
+                parse_log(p=proj, s=seed, rnd=r)
+                # output_jsons(p=proj, s=seed, rnd=r)
                 seed_runtime_mapping[seed][r] = total_replacement_time + total_runtime
-
-                # with open(f'{main_dir}/runtime_analysis_dir/per_class/{project}_{seed}_{r}.csv', 'w', newline='', encoding='utf-8') as file:
+                # with open(f'{main_dir}/runtime_analysis_dir/per_class/{proj}_{seed}_{r}.csv', 'w', newline='', encoding='utf-8') as file:
                 #     writer = csv.writer(file)
                 #     writer.writerows([[k] + v for k, v in dict(sorted(clazz_info_mapping.items(), key=lambda kv: kv[0])).items()])
                 # if seed == 'default':
@@ -348,31 +375,51 @@ if __name__ == '__main__':
                 #             clazz_percentages_mapping[clazz] = [0 for _ in range(round_number)]
                 #         clazz_percentages_mapping[clazz][r] = (info_arr[0] + info_arr[1]) / (1000 * complete_time_arr[r])
 
-            # if seed == 'default':
-            #     # complete time
-            #     def_arr = complete_time_arr
-            #     def_avg = np.mean(complete_time_arr)
-            #     df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{def_avg:.2f}', f'{1.0:.2f}', f'{1.0:.4f}', f'{1.0:.4f}']
-            #
-            #     # for percentage
-            #     percentages_arr = list()
-            #     for clazz, percentages in clazz_percentages_mapping.items():
-            #         percentages_arr.append([clazz] + percentages + [np.mean(percentages)])
-            #     percentages_arr.sort(key=lambda x: x[-1], reverse=True)
-            #     percentages_arr.insert(0, ['clazz', 'round0', 'round1', 'round2', 'round3', 'round4', 'round5', 'avg.'])
-            #     for i in range(1, len(percentages_arr)):
-            #         percentages_arr[i] = [percentages_arr[i][0]] + [f'{x:.4f}' for x in percentages_arr[i][1:]]
-            #     with open(f'{main_dir}/runtime_analysis_dir/per_class/{project}_{seed}.csv', 'w', newline='', encoding='utf-8') as file:
-            #         writer = csv.writer(file)
-            #         writer.writerows(percentages_arr)
-            # else:
-            #     cur_avg = np.mean(complete_time_arr)
-            #     _, t_p_value = ttest_ind(def_arr, complete_time_arr)
-            #     _, u_p_value = mannwhitneyu(def_arr, complete_time_arr)
-            #     df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{cur_avg:.2f}', f'{cur_avg / def_avg:.2f}', f'{t_p_value:.4f}', f'{u_p_value:.4f}']
+            if seed == 'default':
+                # complete time
+                def_arr = complete_time_arr
+                def_avg = np.mean(complete_time_arr)
+                proj_avg_mapping[proj][0] = def_avg
+        #        df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{def_avg:.2f}', f'{1.0:.2f}', f'{1.0:.4f}', f'{1.0:.4f}']
+        #
+        #         # for percentage
+        #         percentages_arr = list()
+        #         for clazz, percentages in clazz_percentages_mapping.items():
+        #             percentages_arr.append([clazz] + percentages + [np.mean(percentages)])
+        #         percentages_arr.sort(key=lambda x: x[-1], reverse=True)
+        #         percentages_arr.insert(0, ['clazz', 'round0', 'round1', 'round2', 'round3', 'round4', 'round5', 'avg.'])
+        #         for i in range(1, len(percentages_arr)):
+        #             percentages_arr[i] = [percentages_arr[i][0]] + [f'{x:.4f}' for x in percentages_arr[i][1:]]
+        #         with open(f'{main_dir}/runtime_analysis_dir/per_class/percentage/{proj}_{seed}.csv', 'w', newline='', encoding='utf-8') as file:
+        #             writer = csv.writer(file)
+        #             writer.writerows(percentages_arr)
+            else:
+                cur_avg = np.mean(complete_time_arr)
+                if seed == 'single-group':
+                    proj_avg_mapping[proj][1] = cur_avg
+                elif seed == 'single-group_errors-at-the-end':
+                    proj_avg_mapping[proj][2] = cur_avg
+        #        _, t_p_value = ttest_ind(def_arr, complete_time_arr)
+        #        _, u_p_value = mannwhitneyu(def_arr, complete_time_arr)
+        #        df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{cur_avg:.2f}', f'{cur_avg / def_avg:.2f}', f'{t_p_value:.4f}', f'{u_p_value:.4f}']
+        # df.to_csv(f'{main_dir}/runtime_analysis_dir/complete_runtime/{proj}.csv', sep=',', header=True, index=False)
 
-        # with open(f'{main_dir}/mutant_list/erroneous/{project}.json', 'w') as f:
+        proj_avg_mapping[proj][3] = np.mean(seed_runtime_mapping['default']) / 1000
+        proj_avg_mapping[proj][4] = np.mean(seed_runtime_mapping['single-group']) / 1000
+        proj_avg_mapping[proj][5] = np.mean(seed_runtime_mapping['single-group_errors-at-the-end']) / 1000
+
+        # with open(f'{main_dir}/mutant_list/erroneous/{proj}.json', 'w') as f:
         #     f.write(json.dumps(sorted(list(error_set)), indent=4))
+        # for mutant_id, error_arr in id_errors_mapping.items():
+        #     error_cnt = 0
+        #     for e in error_arr:
+        #         if e != '':
+        #             error_cnt += 1
+        #     id_errors_mapping[mutant_id].append(error_cnt)
+        # sorted_id_errors_items = sorted(id_errors_mapping.items(), key=lambda x: x[1][-1])
+        # for mutant_id, error_arr in sorted_id_errors_items:
+        #     error_df.loc[len(error_df.index)] = [mutant_id] + error_arr
+        # error_df.to_csv(f'{main_dir}/runtime_analysis_dir/error_recorded/{proj}.csv', sep=',', header=True, index=False)
 
         # for seed in seed_list:
         #     cur_avg = np.mean(seed_runtime_mapping[seed])
@@ -388,8 +435,59 @@ if __name__ == '__main__':
         #         seed_runtime_mapping[seed].append(f'{cur_avg / def_avg:.2f}')
         #         seed_runtime_mapping[seed].append(f'{t_p_value:.4f}')
         #         seed_runtime_mapping[seed].append(f'{u_p_value:.4f}')
-        # with open(f'{main_dir}/runtime_analysis_dir/total_runtime/{project}.csv', 'w', newline='', encoding='utf-8') as file:
+        # with open(f'{main_dir}/runtime_analysis_dir/total_runtime/{proj}.csv', 'w', newline='', encoding='utf-8') as file:
         #     writer = csv.writer(file)
         #     writer.writerows([cols] + [[k] + v for k, v in seed_runtime_mapping.items()])
-
-        # df.to_csv(f'{main_dir}/runtime_analysis_dir/complete_runtime/{project}.csv', sep=',', header=True, index=False)
+    avg_csv = list()
+    avg_csv.append(avg_cols)
+    avg_avg = [0, 0, 0, 0]
+    micro_avg_matrix = [[0, 0], [0, 0], [0, 0], [0, 0]]
+    for proj, avg_arr in proj_avg_mapping.items():
+        cur_rates = [
+            avg_arr[1] / avg_arr[0],
+            avg_arr[2] / avg_arr[0],
+            avg_arr[4] / avg_arr[3],
+            avg_arr[5] / avg_arr[3]
+        ]
+        cur_arr = [
+            proj,
+            f'{avg_arr[0]:.2f}',
+            f'{avg_arr[1]:.2f}',
+            f'{cur_rates[0]:.4f}',
+            f'{avg_arr[2]:.2f}',
+            f'{cur_rates[1]:.4f}',
+            f'{avg_arr[3]:.2f}',
+            f'{avg_arr[4]:.2f}',
+            f'{cur_rates[2]:.4f}',
+            f'{avg_arr[5]:.2f}',
+            f'{cur_rates[3]:.4f}'
+        ]
+        avg_avg[0] += cur_rates[0]
+        avg_avg[1] += cur_rates[1]
+        avg_avg[2] += cur_rates[2]
+        avg_avg[3] += cur_rates[3]
+        micro_avg_matrix[0][0] += avg_arr[1]
+        micro_avg_matrix[0][1] += avg_arr[0]
+        micro_avg_matrix[1][0] += avg_arr[2]
+        micro_avg_matrix[1][1] += avg_arr[0]
+        micro_avg_matrix[2][0] += avg_arr[4]
+        micro_avg_matrix[2][1] += avg_arr[3]
+        micro_avg_matrix[3][0] += avg_arr[5]
+        micro_avg_matrix[3][1] += avg_arr[3]
+        avg_csv.append(cur_arr)
+    proj_cnt = len(proj_list)
+    avg_avg[0] /= proj_cnt
+    avg_avg[1] /= proj_cnt
+    avg_avg[2] /= proj_cnt
+    avg_avg[3] /= proj_cnt
+    avg_csv.append(['avg.',
+                    '', '', f'{avg_avg[0]:.4f}', '', f'{avg_avg[1]:.4f}',
+                    '', '', f'{avg_avg[2]:.4f}', '', f'{avg_avg[3]:.4f}'])
+    avg_csv.append(['micro avg.',
+                    '', '', f'{micro_avg_matrix[0][0]/micro_avg_matrix[0][1]:.4f}',
+                    '', f'{micro_avg_matrix[1][0]/micro_avg_matrix[1][1]:.4f}',
+                    '', '', f'{micro_avg_matrix[2][0]/micro_avg_matrix[2][1]:.4f}',
+                    '', f'{micro_avg_matrix[3][0]/micro_avg_matrix[3][1]:.4f}'])
+    with open(f'{main_dir}/runtime_analysis_dir/avg.csv', 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerows(avg_csv)

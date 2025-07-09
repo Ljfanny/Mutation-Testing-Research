@@ -17,6 +17,7 @@ for_checking_OID/inputs
 for_checking_OID/others
 for_checking_OID/mutant_list
 for_checking_OID/temp_outputs
+for_checking_OID/parsed_dir
 __pycache__
 .idea
 *.zip

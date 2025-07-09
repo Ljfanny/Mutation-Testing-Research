@@ -1,0 +1,17 @@
+clazz,round0,round1,round2,round3,round4,round5,avg.
+org.apache.sling.auth.core.impl.SlingAuthenticator,0.2849,0.3010,0.2656,0.2650,0.3008,0.3178,0.2892
+org.apache.sling.auth.core.impl.AuthenticationHandlersManager,0.1297,0.1297,0.1123,0.1124,0.1123,0.1468,0.1239
+org.apache.sling.auth.core.impl.AuthenticationRequirementsManager,0.1119,0.0796,0.1117,0.0962,0.0948,0.0956,0.0983
+org.apache.sling.auth.core.spi.AuthenticationInfo,0.0354,0.0525,0.0529,0.0529,0.0527,0.0354,0.0470
+org.apache.sling.auth.core.impl.PathBasedHolder,0.0461,0.0460,0.0466,0.0458,0.0462,0.0463,0.0462
+org.apache.sling.auth.core.impl.AbstractAuthenticationHandlerHolder,0.0154,0.0326,0.0328,0.0333,0.0334,0.0328,0.0301
+org.apache.sling.auth.core.impl.PathBasedHolderCache,0.0299,0.0298,0.0298,0.0128,0.0299,0.0298,0.0270
+org.apache.sling.auth.core.impl.AuthenticationHandlerHolder,0.0264,0.0266,0.0089,0.0265,0.0266,0.0263,0.0236
+org.apache.sling.auth.core.impl.FailureCodesMapper,0.0248,0.0074,0.0242,0.0071,0.0074,0.0246,0.0159
+org.apache.sling.auth.core.spi.DefaultAuthenticationFeedbackHandler,0.0076,0.0075,0.0072,0.0076,0.0077,0.0075,0.0075
+org.apache.sling.auth.core.impl.AuthenticationRequirementHolder,0.0069,0.0064,0.0064,0.0063,0.0064,0.0065,0.0065
+org.apache.sling.auth.core.impl.SlingAuthenticationMetrics,0.0061,0.0064,0.0062,0.0065,0.0061,0.0063,0.0063
+org.apache.sling.auth.core.impl.HttpBasicAuthenticationHandler,0.0039,0.0040,0.0039,0.0039,0.0038,0.0039,0.0039
+org.apache.sling.auth.core.AuthUtil,0.0030,0.0031,0.0030,0.0031,0.0031,0.0030,0.0030
+org.apache.sling.auth.core.impl.hc.DefaultLoginsHealthCheck,0.0023,0.0024,0.0023,0.0024,0.0023,0.0024,0.0024
+org.apache.sling.auth.core.spi.AuthenticationInfo$ReadOnlyAuthenticationInfo,0.0018,0.0018,0.0018,0.0020,0.0019,0.0019,0.0019

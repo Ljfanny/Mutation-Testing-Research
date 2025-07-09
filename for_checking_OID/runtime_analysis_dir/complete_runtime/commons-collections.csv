@@ -1,0 +1,4 @@
+seed,round0,round1,round2,round3,round4,round5,avg.,/avg. default,T-test,U-test
+default,2944,2964,2953,2939,2964,2940,2950.67,1.00,1.0000,1.0000
+single-group,5832,5842,5843,5853,5830,5834,5839.00,1.98,0.0000,0.0050
+single-group_errors-at-the-end,3929,4016,3979,4007,4099,4076,4017.67,1.36,0.0000,0.0050

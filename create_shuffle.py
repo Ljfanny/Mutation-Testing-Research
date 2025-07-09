@@ -1,26 +1,22 @@
 import copy
 import json
 import random
-from parse_rough_data import project_junit_mapping
+from parse_rough_data import proj_junit_mapping
 from create_guiding_file import mutant_to_json
 
 if __name__ == '__main__':
-    proj_list = [
-        # 'commons-codec',
-        # 'riptide',
-        'commons-cli',
-        'jimfs',
-        'empire-db',
-        'delight-nashorn-sandbox',
-        'handlebars.java'
-    ]
+    project_list = ['commons-collections',
+                    'Mybatis-PageHelper',
+                    'jfreechart',
+                    'JustAuth',
+                    'sling-org-apache-sling-auth-core']
     rand_seeds = [42 + i for i in range(5)]
     main_dir = 'for_checking_OID'
     DEFAULT = 'default'
-    for proj in proj_list:
-        with open(f'controlled_parsed_data/both/{proj}_{DEFAULT}/mutantId_mutantTuple.json', 'r') as f:
+    for project in project_list:
+        with open(f'controlled_parsed_data/both/{project}_{DEFAULT}/mutantId_mutantTuple.json', 'r') as f:
             id_tup_mapping = json.load(f)
-        with open(f'controlled_parsed_data/both/{proj}_{DEFAULT}/mutantId_testsInOrder.json', 'r') as f:
+        with open(f'controlled_parsed_data/both/{project}_{DEFAULT}/mutantId_testsInOrder.json', 'r') as f:
             id_tests_mapping = json.load(f)
 
         clazz_seq = list()
@@ -48,28 +44,10 @@ if __name__ == '__main__':
             temp.append(mut_id)
         group_list.append(temp)
 
-        i = 0
-        uniq_id_tup_mapping = dict()
-        uniq_id_test_mapping = dict()
-        for v in id_tup_mapping.values():
-            v_to_json = {'clazz': v[0],
-                         'method': v[1],
-                         'methodDesc': v[2],
-                         'indexes': tuple(int(itm.strip()) for itm in v[3].split(',')),
-                         'mutator': v[4]}
-            if v_to_json not in uniq_id_tup_mapping.values():
-                uniq_id_tup_mapping[i] = v_to_json
-                i += 1
-        i = 0
-        for test_list in id_tests_mapping.values():
-            if len(test_list) > 0:
-                for t in test_list:
-                    if t not in uniq_id_test_mapping.values():
-                        uniq_id_test_mapping[i] = t
-                        i += 1
-        # with open(f'{main_dir}/temp_outputs/before/{proj}_mutant_mapping.json', 'w') as f:
+
+        # with open(f'{main_dir}/temp_outputs/before/{project}_mutant_mapping.json', 'w') as f:
         #     f.write(json.dumps(uniq_id_tup_mapping, indent=4))
-        # with open(f'{main_dir}/temp_outputs/before/{proj}_test_mapping.json', 'w') as f:
+        # with open(f'{main_dir}/temp_outputs/before/{project}_test_mapping.json', 'w') as f:
         #     f.write(json.dumps(uniq_id_test_mapping, indent=4))
 
         # group_id = 0
@@ -86,19 +64,19 @@ if __name__ == '__main__':
         #                                                   group_id=group_id,
         #                                                   clazz_id=clazz_id,
         #                                                   exec_seq=exeq_seq,
-        #                                                   junit_version=project_junitVersion_dict[proj]))
+        #                                                   junit_version=project_junit_mapping[project]))
         #                 exeq_seq += 1
         #             break
         #     group_id += 1
         #     exeq_seq = 0
-        # with open(f'for_checking_OID/inputs/{proj}_default.json', 'w') as f:
+        # with open(f'for_checking_OID/inputs/{project}_default.json', 'w') as f:
         #     f.write(json.dumps(mutant_list, indent=4))
 
         group_id = 0
         clazz_id = 0
         exeq_seq = 0
         mutant_list = list()
-        with open(f'{main_dir}/mutant_list/erroneous/{proj}.json', 'r') as f:
+        with open(f'{main_dir}/mutant_list/erroneous/{project}.json', 'r') as f:
             error_arr = json.load(f)
         for clazz in clazz_seq:
             for group in group_list:
@@ -112,11 +90,13 @@ if __name__ == '__main__':
                                                           group_id=group_id,
                                                           clazz_id=clazz_id,
                                                           exec_seq=exeq_seq,
-                                                          junit_version=project_junit_mapping[proj]))
+                                                          junit_version=proj_junit_mapping[project]))
                         exeq_seq += 1
                     break
             clazz_id += 1
             exeq_seq = 0
+        # with open(f'for_checking_OID/inputs/{project}_single-group.json', 'w') as f:
+        #     f.write(json.dumps(mutant_list, indent=4))
 
         clazz_id -= 1
         cur_clazz = clazz_seq[-1]
@@ -133,9 +113,9 @@ if __name__ == '__main__':
                                               group_id=group_id,
                                               clazz_id=clazz_id,
                                               exec_seq=exeq_seq,
-                                              junit_version=project_junit_mapping[proj]))
+                                              junit_version=project_junit_mapping[project]))
             exeq_seq += 1
-        with open(f'for_checking_OID/inputs/{proj}_single-group_errors-at-the-end.json', 'w') as f:
+        with open(f'for_checking_OID/inputs/{project}_single-group_errors-at-the-end.json', 'w') as f:
             f.write(json.dumps(mutant_list, indent=4))
 
         # for seed in rand_seeds:
