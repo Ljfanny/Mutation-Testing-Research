@@ -38,10 +38,10 @@ def create_csv_default_vs_mvn_test():
     csv_arr = list()
     cols = ['project', 'replacement_time', 'test_running_time', 'completion_time', 'mvn_test_running_time']
     csv_arr.append(cols)
-    replacement_time = 0
-    test_running_time = 0
-    completion_time = 0
     for p in mvn_test_mapping.keys():
+        replacement_time = 0
+        test_running_time = 0
+        completion_time = 0
         for r in range(round_number):
             id_others_mapping = json.load(open(f'{parsed_dir}/{p}/default_{r}/id_others_mapping.json', 'r'))
             completion_time_mapping = {tuple(k): int(v) for k, v in json.load(open(f'{parsed_dir}/{p}/completion_time.json', 'r'))}
