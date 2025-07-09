@@ -1,9 +1,6 @@
 import json
 import re
 import os
-
-from pygments.lexer import default
-
 from parse_rough_data import proj_junit_mapping, mutant_pattern
 
 tests_in_order_pattern_junit4 = r"testsInOrder=\[(.*)\]\]"
@@ -39,12 +36,12 @@ class MutantIdentifier:
                     self.mutator == other.mutator)
         return False
 
-    def to_tuple(self):
-        return (self.location.clazz,
-                self.location.method,
-                self.location.methodDesc,
-                self.indexes,
-                self.mutator)
+    def to_json(self):
+        return {'clazz': self.location.clazz,
+                'method': self.location.method,
+                'methodDesc': self.location.methodDesc,
+                'indexes': tuple(int(itm.strip()) for itm in self.indexes.split(',')),
+                'mutator': self.mutator}
 
 
 def process_block(blk):
@@ -70,22 +67,37 @@ def process_block(blk):
         test_list = tests_in_order.group(1).split('), ')
         for i in range(len(test_list) - 1):
             test_list[i] += ')'
-    mutant_tup = mutant_id.to_tuple()
-    if mutant_tup not in mutant_set:
-        cnt = len(mutant_set)
-        mutant_set.add(mutant_tup)
-        id_tuple_mapping[cnt] = mutant_tup
-        id_test_mapping[cnt] = test_list
-    else:
-        print('WRONG!')
+
+    if mutant_id.location.clazz not in default_seq:
+        default_seq.append(mutant_id.location.clazz)
+        clazz_ids_mapping[mutant_id.location.clazz] = list()
+
+    mutant_cnt = -1
+    mutant = mutant_id.to_json()
+    if mutant not in id_tuple_mapping.values():
+        mutant_cnt = len(id_tuple_mapping.values())
+        id_tuple_mapping[mutant_cnt] = mutant
+
+    if mutant_cnt >= 0:
+        id_arr = list()
+        clazz_ids_mapping[mutant_id.location.clazz].append(mutant_cnt)
+        for t in test_list:
+            if t not in id_test_mapping.values():
+                test_cnt = len(id_test_mapping.values())
+                id_test_mapping[test_cnt] = t
+                test_id_mapping[t] = test_cnt
+            else:
+                test_cnt = test_id_mapping[t]
+            id_arr.append(test_cnt)
+        coverage_mapping[mutant_cnt] = id_arr
 
 
 # Parse log information
 def parse_log(p):
-    with open(f'{logs_dir}/{p}.log', 'r') as file:
+    with open(f'{logs_dir}/{p}.log', 'r') as f:
         block = []
         capturing = False
-        for line in file:
+        for line in f:
             if "start running" in line:
                 if capturing:
                     process_block(block)
@@ -98,57 +110,52 @@ def parse_log(p):
         process_block(block)
 
 
-def output_jsons(p, s):
-    output_path = f'{parsed_dir}/{p}_{s}'
+def output_jsons(p):
+    output_path = f'{parsed_dir}/{p}'
     if not os.path.exists(output_path):
         os.makedirs(output_path)
-    with open(f'{output_path}/mutantId_mutantTuple.json', 'w') as file:
-        json.dump(id_tuple_mapping, file, indent=4)
-    with open(f'{output_path}/mutantId_testsInOrder.json', 'w') as file:
-        json.dump(id_test_mapping, file, indent=4)
+    with open(f'{output_path}/id_mutant_mapping.json', 'w') as f:
+        json.dump(id_tuple_mapping, f, indent=4)
+    with open(f'{output_path}/id_test_mapping.json', 'w') as f:
+        json.dump(id_test_mapping, f, indent=4)
+    with open(f'{output_path}/default_seq.json', 'w') as f:
+        json.dump(default_seq, f, indent=4)
+    with open(f'{output_path}/coverage_mapping.json', 'w') as f:
+        json.dump(coverage_mapping, f, indent=4)
+    with open(f'{output_path}/clazz_ids_mapping.json', 'w') as f:
+        json.dump(clazz_ids_mapping, f, indent=4)
 
 
 if __name__ == '__main__':
-    project_list = ['commons-collections',
-                    'Mybatis-PageHelper',
-                    'jfreechart',
-                    'JustAuth',
-                    'sling-org-apache-sling-auth-core']
+    proj_list = [
+        'commons-cli',
+        'commons-codec',
+        'commons-collections',
+        'empire-db',
+        'handlebars.java',
+        'jfreechart',
+        'jimfs',
+        'JustAuth',
+        'Mybatis-PageHelper',
+        'riptide',
+        'sling-org-apache-sling-auth-core'
+    ]
     logs_dir = 'pitest_logs'
-    parsed_dir = 'controlled_parsed_data/both'
+    parsed_dir = 'for_checking_OID/parsed_dir/basis'
     tests_in_order_pattern_dict = {
         'junit4': tests_in_order_pattern_junit4,
         'junit5': tests_in_order_pattern_junit5
     }
     DEFAULT = 'default'
-    for project in project_list:
-        print(f'Process {project} with {DEFAULT}... ...')
-        mutant_set = set()
-        test_set = set()
+    for proj in proj_list:
+        print(f'Process {proj} with {DEFAULT}... ...')
         id_tuple_mapping = dict()
         id_test_mapping = dict()
+        test_id_mapping = dict()
         coverage_mapping = dict()
+        clazz_ids_mapping = dict()
         default_seq = list()
-        junit_version = proj_junit_mapping[project]
+        junit_version = proj_junit_mapping[proj]
         tests_in_order_pattern = tests_in_order_pattern_dict[junit_version]
-        parse_log(p=project)
-        output_jsons(p=project, s=DEFAULT)
-        # cnt = 0
-        # uniq_id_tup_mapping = dict()
-        # uniq_id_test_mapping = dict()
-        # for v in id_tuple_mapping.values():
-        #     v_to_json = {'clazz': v[0],
-        #                  'method': v[1],
-        #                  'methodDesc': v[2],
-        #                  'indexes': tuple(int(itm.strip()) for itm in v[3].split(',')),
-        #                  'mutator': v[4]}
-        #     if v_to_json not in uniq_id_tup_mapping.values():
-        #         uniq_id_tup_mapping[cnt] = v_to_json
-        #         cnt += 1
-        # cnt = 0
-        # for test_list in id_tests_mapping.values():
-        #     if len(test_list) > 0:
-        #         for t in test_list:
-        #             if t not in uniq_id_test_mapping.values():
-        #                 uniq_id_test_mapping[cnt] = t
-        #                 cnt += 1
+        parse_log(p=proj)
+        output_jsons(p=proj)

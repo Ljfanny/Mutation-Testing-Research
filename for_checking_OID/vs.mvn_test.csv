@@ -1,0 +1,4 @@
+project,replacement_time,test_running_time,completion_time,mvn_test_running_time
+commons-codec,96.379,1090.274,1515.833,31.481
+commons-collections,191.282,1727.967,3203.306,29.142
+jfreechart,820.500,893.525,2949.718,8.955
