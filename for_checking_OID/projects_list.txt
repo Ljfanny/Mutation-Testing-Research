@@ -1,0 +1,22 @@
+# assertj-assertions-generator
+# commons-net
+commons-cli
+# commons-csv
+commons-codec
+commons-collections
+# delight-nashorn-sandbox
+empire-db
+jimfs
+# httpcore
+# handlebars.java
+# riptide
+# guava
+# java-design-patterns
+# jooby
+# maven-dependency-plugin
+# maven-shade-plugin
+# stream-lib
+jfreechart
+JustAuth
+Mybatis-PageHelper
+sling-org-apache-sling-auth-core

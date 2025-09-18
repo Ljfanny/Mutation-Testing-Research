@@ -1,0 +1,432 @@
+--------------------------------commons-cli--------------------------------
+Default:
+Number of classes: 28
+Number of tests: 732
+Number of mutants: 881
+Number of killed mutants: 806
+Number of survived mutants: 61
+Number of pairs: 68250
+Number of passed pairs (all True across rounds): 29056
+Number of failed pairs (all False across rounds): 39194
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group:
+Number of classes: 28
+Number of tests: 732
+Number of mutants: 881
+Number of killed mutants: 805
+Number of survived mutants: 61
+Number of pairs: 68247
+Number of passed pairs (all True across rounds): 29056
+Number of failed pairs (all False across rounds): 39191
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group_errors-at-the-end:
+Number of classes: 28
+Number of tests: 732
+Number of mutants: 881
+Number of killed mutants: 805
+Number of survived mutants: 61
+Number of pairs: 68247
+Number of passed pairs (all True across rounds): 29056
+Number of failed pairs (all False across rounds): 39191
+Number of flaky pairs (mixed/None across rounds): 0
+
+By-proportions:
+Number of classes: 28
+Number of tests: 732
+Number of mutants: 881
+Number of killed mutants: 803
+Number of survived mutants: 61
+Number of pairs: 68221
+Number of passed pairs (all True across rounds): 29049
+Number of failed pairs (all False across rounds): 39172
+Number of flaky pairs (mixed/None across rounds): 0
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 32
+Number of available (stable) pairs used for ALL stats: 68218
+
+--------------------------------commons-codec--------------------------------
+Default:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3562
+Number of survived mutants: 301
+Number of pairs: 88129
+Number of passed pairs (all True across rounds): 22274
+Number of failed pairs (all False across rounds): 65777
+Number of flaky pairs (mixed/None across rounds): 78
+
+Single-group:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3562
+Number of survived mutants: 300
+Number of pairs: 88082
+Number of passed pairs (all True across rounds): 22255
+Number of failed pairs (all False across rounds): 65770
+Number of flaky pairs (mixed/None across rounds): 57
+
+Single-group_errors-at-the-end:
+Number of classes: 74
+Number of tests: 1658
+Number of mutants: 3922
+Number of killed mutants: 3562
+Number of survived mutants: 300
+Number of pairs: 88082
+Number of passed pairs (all True across rounds): 22255
+Number of failed pairs (all False across rounds): 65767
+Number of flaky pairs (mixed/None across rounds): 60
+
+By-proportions:
+Number of classes: 74
+Number of tests: 1627
+Number of mutants: 3922
+Number of killed mutants: 3491
+Number of survived mutants: 287
+Number of pairs: 85785
+Number of passed pairs (all True across rounds): 21864
+Number of failed pairs (all False across rounds): 63882
+Number of flaky pairs (mixed/None across rounds): 39
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 2493
+Number of available (stable) pairs used for ALL stats: 85581
+
+--------------------------------commons-collections--------------------------------
+Default:
+Number of classes: 461
+Number of tests: 7353
+Number of mutants: 8246
+Number of killed mutants: 6918
+Number of survived mutants: 1117
+Number of pairs: 370216
+Number of passed pairs (all True across rounds): 167635
+Number of failed pairs (all False across rounds): 202521
+Number of flaky pairs (mixed/None across rounds): 60
+
+Single-group:
+Number of classes: 461
+Number of tests: 7353
+Number of mutants: 8246
+Number of killed mutants: 6920
+Number of survived mutants: 1117
+Number of pairs: 370272
+Number of passed pairs (all True across rounds): 167311
+Number of failed pairs (all False across rounds): 202882
+Number of flaky pairs (mixed/None across rounds): 79
+
+Single-group_errors-at-the-end:
+Number of classes: 461
+Number of tests: 7353
+Number of mutants: 8246
+Number of killed mutants: 6920
+Number of survived mutants: 1117
+Number of pairs: 370238
+Number of passed pairs (all True across rounds): 167487
+Number of failed pairs (all False across rounds): 202696
+Number of flaky pairs (mixed/None across rounds): 55
+
+By-proportions:
+Number of classes: 458
+Number of tests: 7354
+Number of mutants: 8246
+Number of killed mutants: 6943
+Number of survived mutants: 1120
+Number of pairs: 370073
+Number of passed pairs (all True across rounds): 165476
+Number of failed pairs (all False across rounds): 204498
+Number of flaky pairs (mixed/None across rounds): 99
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 3789
+Number of available (stable) pairs used for ALL stats: 367238
+
+--------------------------------empire-db--------------------------------
+Default:
+Number of classes: 64
+Number of tests: 102
+Number of mutants: 2491
+Number of killed mutants: 1190
+Number of survived mutants: 1178
+Number of pairs: 11050
+Number of passed pairs (all True across rounds): 5235
+Number of failed pairs (all False across rounds): 5777
+Number of flaky pairs (mixed/None across rounds): 38
+
+Single-group:
+Number of classes: 64
+Number of tests: 102
+Number of mutants: 2491
+Number of killed mutants: 1194
+Number of survived mutants: 1172
+Number of pairs: 11051
+Number of passed pairs (all True across rounds): 5211
+Number of failed pairs (all False across rounds): 5834
+Number of flaky pairs (mixed/None across rounds): 6
+
+Single-group_errors-at-the-end:
+Number of classes: 63
+Number of tests: 102
+Number of mutants: 2491
+Number of killed mutants: 1189
+Number of survived mutants: 1174
+Number of pairs: 10955
+Number of passed pairs (all True across rounds): 5170
+Number of failed pairs (all False across rounds): 5747
+Number of flaky pairs (mixed/None across rounds): 38
+
+By-proportions:
+Number of classes: 64
+Number of tests: 102
+Number of mutants: 2491
+Number of killed mutants: 1154
+Number of survived mutants: 1144
+Number of pairs: 10493
+Number of passed pairs (all True across rounds): 5006
+Number of failed pairs (all False across rounds): 5481
+Number of flaky pairs (mixed/None across rounds): 6
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 2194
+Number of available (stable) pairs used for ALL stats: 9603
+
+--------------------------------jimfs--------------------------------
+Default:
+Number of classes: 101
+Number of tests: 460
+Number of mutants: 1786
+Number of killed mutants: 1485
+Number of survived mutants: 240
+Number of pairs: 63218
+Number of passed pairs (all True across rounds): 21446
+Number of failed pairs (all False across rounds): 41500
+Number of flaky pairs (mixed/None across rounds): 272
+
+Single-group:
+Number of classes: 101
+Number of tests: 460
+Number of mutants: 1786
+Number of killed mutants: 1497
+Number of survived mutants: 227
+Number of pairs: 63471
+Number of passed pairs (all True across rounds): 21387
+Number of failed pairs (all False across rounds): 41428
+Number of flaky pairs (mixed/None across rounds): 656
+
+Single-group_errors-at-the-end:
+Number of classes: 101
+Number of tests: 460
+Number of mutants: 1786
+Number of killed mutants: 1525
+Number of survived mutants: 198
+Number of pairs: 63215
+Number of passed pairs (all True across rounds): 18814
+Number of failed pairs (all False across rounds): 43525
+Number of flaky pairs (mixed/None across rounds): 876
+
+By-proportions:
+Number of classes: 98
+Number of tests: 460
+Number of mutants: 1786
+Number of killed mutants: 1452
+Number of survived mutants: 245
+Number of pairs: 62448
+Number of passed pairs (all True across rounds): 21472
+Number of failed pairs (all False across rounds): 40537
+Number of flaky pairs (mixed/None across rounds): 439
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 2565
+Number of available (stable) pairs used for ALL stats: 58129
+
+--------------------------------jfreechart--------------------------------
+Default:
+Number of classes: 417
+Number of tests: 2306
+Number of mutants: 20423
+Number of killed mutants: 12143
+Number of survived mutants: 8014
+Number of pairs: 342368
+Number of passed pairs (all True across rounds): 203394
+Number of failed pairs (all False across rounds): 138964
+Number of flaky pairs (mixed/None across rounds): 10
+
+Single-group:
+Number of classes: 417
+Number of tests: 2306
+Number of mutants: 20423
+Number of killed mutants: 12143
+Number of survived mutants: 8014
+Number of pairs: 342370
+Number of passed pairs (all True across rounds): 203398
+Number of failed pairs (all False across rounds): 138966
+Number of flaky pairs (mixed/None across rounds): 6
+
+Single-group_errors-at-the-end:
+Number of classes: 417
+Number of tests: 2306
+Number of mutants: 20423
+Number of killed mutants: 12145
+Number of survived mutants: 8012
+Number of pairs: 342368
+Number of passed pairs (all True across rounds): 203393
+Number of failed pairs (all False across rounds): 138971
+Number of flaky pairs (mixed/None across rounds): 4
+
+By-proportions:
+Number of classes: 417
+Number of tests: 2306
+Number of mutants: 20423
+Number of killed mutants: 12179
+Number of survived mutants: 8153
+Number of pairs: 343385
+Number of passed pairs (all True across rounds): 204253
+Number of failed pairs (all False across rounds): 139126
+Number of flaky pairs (mixed/None across rounds): 6
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 1039
+Number of available (stable) pairs used for ALL stats: 342347
+
+--------------------------------JustAuth--------------------------------
+Default:
+Number of classes: 149
+Number of tests: 46
+Number of mutants: 617
+Number of killed mutants: 304
+Number of survived mutants: 292
+Number of pairs: 1876
+Number of passed pairs (all True across rounds): 838
+Number of failed pairs (all False across rounds): 1038
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group:
+Number of classes: 149
+Number of tests: 46
+Number of mutants: 617
+Number of killed mutants: 304
+Number of survived mutants: 292
+Number of pairs: 1876
+Number of passed pairs (all True across rounds): 838
+Number of failed pairs (all False across rounds): 1038
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group_errors-at-the-end:
+Number of classes: 149
+Number of tests: 46
+Number of mutants: 617
+Number of killed mutants: 305
+Number of survived mutants: 291
+Number of pairs: 1876
+Number of passed pairs (all True across rounds): 837
+Number of failed pairs (all False across rounds): 1039
+Number of flaky pairs (mixed/None across rounds): 0
+
+By-proportions:
+Number of classes: 127
+Number of tests: 46
+Number of mutants: 617
+Number of killed mutants: 299
+Number of survived mutants: 273
+Number of pairs: 1844
+Number of passed pairs (all True across rounds): 816
+Number of failed pairs (all False across rounds): 1028
+Number of flaky pairs (mixed/None across rounds): 0
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 34
+Number of available (stable) pairs used for ALL stats: 1843
+
+--------------------------------Mybatis-PageHelper--------------------------------
+Default:
+Number of classes: 46
+Number of tests: 138
+Number of mutants: 770
+Number of killed mutants: 534
+Number of survived mutants: 236
+Number of pairs: 26221
+Number of passed pairs (all True across rounds): 15020
+Number of failed pairs (all False across rounds): 11201
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group:
+Number of classes: 46
+Number of tests: 138
+Number of mutants: 770
+Number of killed mutants: 548
+Number of survived mutants: 222
+Number of pairs: 26221
+Number of passed pairs (all True across rounds): 15730
+Number of failed pairs (all False across rounds): 10491
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group_errors-at-the-end:
+Number of classes: 46
+Number of tests: 138
+Number of mutants: 770
+Number of killed mutants: 548
+Number of survived mutants: 222
+Number of pairs: 26221
+Number of passed pairs (all True across rounds): 15730
+Number of failed pairs (all False across rounds): 10491
+Number of flaky pairs (mixed/None across rounds): 0
+
+By-proportions:
+Number of classes: 46
+Number of tests: 138
+Number of mutants: 770
+Number of killed mutants: 525
+Number of survived mutants: 245
+Number of pairs: 26221
+Number of passed pairs (all True across rounds): 15390
+Number of failed pairs (all False across rounds): 10831
+Number of flaky pairs (mixed/None across rounds): 0
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 0
+Number of available (stable) pairs used for ALL stats: 25391
+
+--------------------------------sling-org-apache-sling-auth-core--------------------------------
+Default:
+Number of classes: 16
+Number of tests: 110
+Number of mutants: 451
+Number of killed mutants: 261
+Number of survived mutants: 117
+Number of pairs: 3258
+Number of passed pairs (all True across rounds): 1594
+Number of failed pairs (all False across rounds): 1664
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group:
+Number of classes: 16
+Number of tests: 110
+Number of mutants: 451
+Number of killed mutants: 261
+Number of survived mutants: 117
+Number of pairs: 3258
+Number of passed pairs (all True across rounds): 1594
+Number of failed pairs (all False across rounds): 1664
+Number of flaky pairs (mixed/None across rounds): 0
+
+Single-group_errors-at-the-end:
+Number of classes: 16
+Number of tests: 110
+Number of mutants: 451
+Number of killed mutants: 261
+Number of survived mutants: 117
+Number of pairs: 3258
+Number of passed pairs (all True across rounds): 1594
+Number of failed pairs (all False across rounds): 1664
+Number of flaky pairs (mixed/None across rounds): 0
+
+By-proportions:
+Number of classes: 16
+Number of tests: 123
+Number of mutants: 451
+Number of killed mutants: 296
+Number of survived mutants: 123
+Number of pairs: 3437
+Number of passed pairs (all True across rounds): 1654
+Number of failed pairs (all False across rounds): 1783
+Number of flaky pairs (mixed/None across rounds): 0
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 179
+Number of available (stable) pairs used for ALL stats: 3258
+

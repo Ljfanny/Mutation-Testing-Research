@@ -1,4 +1,12 @@
-project,replacement_time,test_running_time,completion_time,mvn_test_running_time
-commons-codec,96.379,1090.274,1515.833,31.481
-commons-collections,191.266,1727.785,2950.667,29.142
-jfreechart,820.468,893.237,2415.833,8.955
+project,mvn_test_running_time,default_complete,single-group_complete,single-group_rate (vs. default),single-group*_complete,single-group*_rate (vs. default),default_total,single-group_total,single-group_rate (vs. default),single-group*_total,single-group*_rate (vs. default)
+commons-cli,6.84,216.83,230.17,1.0615,173.83,0.8017,172.69,186.63,1.0807,143.37,0.8302
+commons-codec,31.48,1515.83,2332.50,1.5388,1794.67,1.1839,1186.65,1310.06,1.1040,1123.97,0.9472
+commons-collections,29.14,2950.67,5839.00,1.9789,4017.67,1.3616,1919.05,2340.66,1.2197,2133.32,1.1117
+empire-db,6.34,907.00,904.00,0.9967,817.33,0.9011,753.59,807.02,1.0709,732.08,0.9715
+jfreechart,8.96,2415.83,2733.00,1.1313,3245.00,1.3432,1713.71,2274.41,1.3272,2737.55,1.5974
+jimfs,4.88,530.17,517.67,0.9764,507.67,0.9576,430.72,447.77,1.0396,407.97,0.9472
+JustAuth,4.64,63.00,26.00,0.4127,26.00,0.4127,19.00,17.45,0.9185,18.51,0.9742
+Mybatis-PageHelper,6.71,938.50,911.00,0.9707,911.83,0.9716,917.42,899.13,0.9801,899.72,0.9807
+sling-org-apache-sling-auth-core,6.62,181.00,172.17,0.9512,162.67,0.8987,132.56,126.10,0.9512,82.81,0.6247
+avg.,,,,1.1131,,0.9814,,,1.0769,,0.9983
+micro avg.,,,,1.4061,,1.1994,,,1.1606,,1.1427

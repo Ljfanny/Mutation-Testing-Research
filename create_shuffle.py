@@ -1,38 +1,66 @@
 import copy
 import json
 import random
+import pandas as pd
 from parse_rough_data import proj_junit_mapping
 
+proj_list = [
+    'commons-cli',
+    'commons-codec',
+    'commons-collections',
+    'empire-db',
+    'handlebars.java',
+    'jfreechart',
+    'jimfs',
+    'JustAuth',
+    'Mybatis-PageHelper',
+    'riptide',
+    'sling-org-apache-sling-auth-core',
+    # 'assertj-assertions-generator',
+    # 'commons-net',
+    # 'commons-csv',
+    # 'delight-nashorn-sandbox',
+    # 'httpcore',
+    # 'guava',
+    # 'java-design-patterns',
+    # 'jooby',
+    # 'maven-dependency-plugin',
+    # 'maven-shade-plugin',
+    # 'stream-lib'
+]
 
-def mutant_to_json(mutant, test_list, group_id, clazz_id, exec_seq, junit_version):
+
+def mutant_to_json(mutant, test_id_list, group_id, clazz_id, exec_seq, junit_version):
     test_order = []
     if junit_version == 'junit4':
-        for test in test_list:
-            paren_idx = test.find('(')
+        for test_id in test_id_list:
+            t = id_test_mapping[test_id]
+            paren_idx = t.find('(')
             i = 0
             for i in range(paren_idx, 0, -1):
-                if test[i] == '.':
+                if t[i] == '.':
                     break
             test_order.append({
-                'definingClass': test[:i],
-                'name': test
+                'definingClass': t[:i],
+                'name': t
             })
     else:
-        for test in test_list:
-            class_end_idx = test.find('[')
+        for test_id in test_id_list:
+            t = id_test_mapping[test_id]
+            class_end_idx = t.find('[')
             test_order.append({
-                'definingClass': test[:class_end_idx - 1],
-                'name': test
+                'definingClass': t[:class_end_idx - 1],
+                'name': t
             })
     return {
         'id': {
             'location': {
-                'clazz': mutant[0],
-                'method': mutant[1],
-                'methodDesc': mutant[2]
+                'clazz': mutant['clazz'],
+                'method': mutant['method'],
+                'methodDesc': mutant['methodDesc'],
             },
-            'indexes': f'[{mutant[3]}]',
-            'mutator': mutant[4]
+            'indexes': f'{mutant['indexes']}',
+            'mutator': mutant['mutator']
         },
         'testsInOrder': test_order,
         'groupId': group_id,
@@ -52,7 +80,7 @@ def create_default(p):
             mutant = id_tuple_mapping[mutant_id]
             mutant_list.append(mutant_to_json(
                 mutant=mutant,
-                test_list=coverage_mapping[mutant_id],
+                test_id_list=coverage_mapping[mutant_id],
                 group_id=group_id,
                 clazz_id=clazz_id,
                 exec_seq=exec_seq,
@@ -93,31 +121,64 @@ def create_default(p):
     #     f.write(json.dumps(mutant_list, indent=4))
 
 
+def create_by_proportion(p):
+    print('creating by_proportion: {}'.format(p))
+    df = pd.read_csv(f'{main_dir}/runtime_analysis_dir/percentage/{p}_default.csv')
+    df = df[['clazz', 'avg.']]
+    capacity = df['avg.'].max()
+    items = list(zip(df['clazz'], df['avg.']))
+    items.sort(key=lambda x: x[1], reverse=True)
+    bins = []
+    bin_sums = []
+    for clazz, weight in items:
+        placed = False
+        for i, total in enumerate(bin_sums):
+            if total + weight <= capacity:
+                bins[i].append(clazz)
+                bin_sums[i] += weight
+                placed = True
+                break
+        if not placed:
+            bins.append([clazz])
+            bin_sums.append(weight)
+    group_id = 0
+    clazz_id = 0
+    exec_seq = 0
+    mutant_list = list()
+    for clazz_arr in bins:
+        for clazz in clazz_arr:
+            mutant_id_list = clazz_ids_mapping[clazz]
+            for mutant_id in mutant_id_list:
+                mutant = id_tuple_mapping[mutant_id]
+                mutant_list.append(mutant_to_json(
+                    mutant=mutant,
+                    test_id_list=coverage_mapping[mutant_id],
+                    group_id=group_id,
+                    clazz_id=clazz_id,
+                    exec_seq=exec_seq,
+                    junit_version=proj_junit_mapping[p]
+                ))
+                exec_seq += 1
+            clazz_id += 1
+            exec_seq = 0
+        group_id += 1
+        clazz_id = 0
+    with open(f'for_checking_OID/inputs/{p}_by-proportions.json', 'w') as f:
+        f.write(json.dumps(mutant_list, indent=4))
+
+
 if __name__ == '__main__':
-    proj_list = [
-        'commons-collections',
-        'Mybatis-PageHelper',
-        'jfreechart',
-        'JustAuth',
-        'sling-org-apache-sling-auth-core'
-    ]
     rand_seeds = [42 + i for i in range(5)]
-    inputs_dir = 'for_checking_OID/inputs'
-    parsed_basis_dir = 'for_checking_OID/parsed_data/basis'
+    main_dir = 'for_checking_OID'
+    inputs_dir = f'{main_dir}/inputs'
+    parsed_basis_dir = f'{main_dir}/parsed_dir/basis'
     for proj in proj_list:
-        with open(f'{parsed_basis_dir}/id_mutant_mapping.json', 'r') as f:
-            id_tuple_mapping = {int(k): v for k, v in json.load(f).items()}
-        with open(f'{parsed_basis_dir}/id_test_mapping.json', 'r') as f:
-            id_test_mapping = {int(k): v for k, v in json.load(f).items()}
-        with open(f'{parsed_basis_dir}/default_seq.json', 'r') as f:
-            default_seq = json.load(f)
-        with open(f'{parsed_basis_dir}/coverage_mapping.json', 'r') as f:
-            coverage_mapping = {int(k): v for k, v in json.load(f).items()}
-        with open(f'{parsed_basis_dir}/clazz_ids_mapping.json', 'r') as f:
-            clazz_ids_mapping = json.load(f)
-
-
-
+        id_tuple_mapping = {int(k): v for k, v in json.load(open(f'{parsed_basis_dir}/{proj}/id_mutant_mapping.json', 'r')).items()}
+        id_test_mapping = {int(k): v for k, v in json.load(open(f'{parsed_basis_dir}/{proj}/id_test_mapping.json', 'r')).items()}
+        coverage_mapping = {int(k): v for k, v in json.load(open(f'{parsed_basis_dir}/{proj}/coverage_mapping.json', 'r')).items()}
+        default_seq = json.load(open(f'{parsed_basis_dir}/{proj}/default_seq.json', 'r'))
+        clazz_ids_mapping = json.load(open(f'{parsed_basis_dir}/{proj}/clazz_ids_mapping.json', 'r'))
+        create_by_proportion(proj)
         # clazz_id -= 1
         # cur_clazz = clazz_seq[-1]
         # for mut_id in error_arr:

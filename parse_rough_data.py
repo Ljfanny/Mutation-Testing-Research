@@ -1,515 +1,556 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Parse PIT mutation XMLs and corresponding logs into structured JSON outputs.
+
+Example:
+  python parse_rough_data.py \
+    --main-dir for_checking_OID \
+    --projects sling-org-apache-sling-auth-core \
+    --strategies by-proportions \
+    --rounds 6 \
+    --verbose
+"""
+
+from __future__ import annotations
+
+import argparse
 import json
-import os
+import logging
 import re
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict, List, Tuple, Iterable, Optional
 import xml.etree.ElementTree as ET
 
 
-proj_list = [
-    'commons-cli',
-    'commons-codec',
-    'commons-collections',
-    'empire-db',
-    'handlebars.java',
-    'jfreechart',
-    'jimfs',
-    'JustAuth',
-    'Mybatis-PageHelper',
-    'riptide',
-    'sling-org-apache-sling-auth-core',
-    # 'assertj-assertions-generator',
-    # 'commons-net',
-    # 'commons-csv',
-    # 'delight-nashorn-sandbox',
-    # 'httpcore',
-    # 'guava',
-    # 'java-design-patterns',
-    # 'jooby',
-    # 'maven-dependency-plugin',
-    # 'maven-shade-plugin',
-    # 'stream-lib'
-]
+# ------------------------------- Constants -------------------------------- #
 
-seed_list = [
-    'default',
-    'single-group',
-    'single-group_errors-at-the-end',
-    # 'single-group_random-42',
-    # 'single-group_random-43',
-    # 'single-group_random-44',
-    # 'single-group_random-45',
-    # 'single-group_random-46'
-    # 'sgl_grp',
-    # 'def_ln-freq_def',
-    # 'def_def_shuf',
-    # 'clz_clz-cvg_def',
-    # 'clz_ln-cvg_def',
-    # 'n-tst_clz-cvg_def',
-    # 'n-tst_ln-cvg_def',
-    # 'n-tst_clz-sim_def',
-    # 'n-tst_clz-diff_def',
-    # 'n-tst_clz-ext_def',
-    # 'n-tst_ln-ext_def',
-    # '01-tst_clz-cvg_def',
-    # '01-tst_ln-cvg_def'
-]
-mutant_choice = {
-    False: 'default-mutant',
-    True: 'random-mutant'
-}
-test_choice = {
-    False: 'default-test',
-    True: 'random-test'
-}
-proj_junit_mapping = {
-    'commons-codec': 'junit5',
-    'delight-nashorn-sandbox': 'junit4',
-    'jimfs': 'junit4',
-    'commons-cli': 'junit5',
-    'assertj-assertions-generator': 'junit5',
-    'commons-collections': 'junit5',
-    'commons-csv': 'junit5',
-    'commons-net': 'junit5',
-    'empire-db': 'junit4',
-    'guava': 'junit4',
-    'handlebars.java': 'junit5',
-    'httpcore': 'junit5',
-    'java-design-patterns': 'junit5',
-    'jfreechart': 'junit5',
-    'jooby': 'junit5',
-    'JustAuth': 'junit4',
-    'maven-dependency-plugin': 'junit5',
-    'maven-shade-plugin': 'junit4',
-    'Mybatis-PageHelper': 'junit4',
-    'riptide': 'junit5',
-    'sling-org-apache-sling-auth-core': 'junit4',
-    'stream-lib': 'junit4'
-}
-junit_version = ''
-test_description_pattern = ''
+KILLED = "KILLED"
+SURVIVED = "SURVIVED"
+FAIL = False    # test failed (killing test)
+PASS = True     # test passed (succeeding test)
 
-# Regex patterns
-mutant_pattern = r"\[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([^]]+)\], mutator=([^,]+)\]"
-test_description_pattern_junit4 = r"testClass=([^,]+), name=([^\]]+).*Running time: (\d+) ms"
-test_description_pattern_junit5 = r"testClass=([^,]+), name=(.*)\].*Running time: (\d+) ms"
-runtime_pattern = r"run all related tests in (\d+) ms"
-replace_time_pattern = r"replaced class with mutant in (\d+) ms"
-complete_time_pattern = r"Completed in (\d+) seconds"
-group_boundary_pattern = r"Run all (\d+) mutants in (\d+) ms"
+# indices for id_others_mapping[mutant_id] = [replacement_time_ms, running_time_ms]
+REPLACEMENT_IDX = 0
+RUNTIME_IDX = 1
 
-KILLED = 'KILLED'
-SURVIVED = 'SURVIVED'
 
-replacement_id = 0
-runtime_id = 1
-def process_block(s, rnd, blk_arr):
-    block_str = ''.join(blk_arr)
-    mutant_details = re.search(mutant_pattern, block_str)
-    if not mutant_details:
+# ------------------------------- Regexes ---------------------------------- #
+# Pre-compile regex patterns for performance and safety.
+RE_MUTANT = re.compile(
+    r"\[clazz=([^,]+), method=([^,]+), methodDesc=([^]]+)\], indexes=\[([^]]+)\], mutator=([^,]+)\]"
+)
+RE_TEST_DESC_JUNIT4 = re.compile(r"testClass=([^,]+), name=([^\]]+).*Running time: (\d+) ms")
+RE_TEST_DESC_JUNIT5 = re.compile(r"testClass=([^,]+), name=(.*)\].*Running time: (\d+) ms")
+RE_RUNTIME = re.compile(r"run all related tests in (\d+) ms")
+RE_REPLACE_TIME = re.compile(r"replaced class with mutant in (\d+) ms")
+RE_COMPLETE_SEC = re.compile(r"Completed in (\d+) seconds")
+RE_GROUP_BOUNDARY = re.compile(r"Run all (\d+) mutants in (\d+) ms")
+RE_FALLBACK_TEST_MS = re.compile(r"Test Description.*?(\d+)\s*ms", re.DOTALL)
+
+
+# ------------------------------- Dataclasses ------------------------------- #
+
+@dataclass
+class Config:
+    main_dir: Path
+    xmls_dir: Path
+    logs_dir: Path
+    outputs_dir: Path
+    basis_dir: Path
+    projects: List[str]
+    strategies: List[str]
+    rounds: int
+    proj_junit_map: Dict[str, str]
+    verbose: bool
+
+
+@dataclass
+class RunState:
+    """Per (project, strategy, round) mutable state containers."""
+    id_status_mapping: Dict[int, str]                # mutant_id -> {KILLED|SURVIVED|...}
+    id_info_mapping: Dict[int, List[Tuple[int, bool, int]]]  # mutant_id -> [(test_id, PASS/FAIL, runtime_ms)]
+    id_others_mapping: Dict[int, List[int]]          # mutant_id -> [replacement_ms, running_ms]
+    completion_time_mapping: Dict[Tuple[str, str], int]  # (strategy, round) -> seconds
+    ids_in_block: List[int]                          # temp collector for group info
+    group_info_arr: List[List[object]]               # [[time_ms, mutant_num, (ids...)]]
+
+    # Static cross-round info (filled before each run)
+    id_mutant_mapping: Dict[int, Dict[str, object]]  # mutant_id -> mutant dict
+    test_id_mapping: Dict[str, int]                  # "class.method" or junit key -> test_id
+
+
+# ------------------------------- Utilities -------------------------------- #
+
+def setup_logging(verbose: bool) -> None:
+    level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(
+        format="%(asctime)s %(levelname)s: %(message)s",
+        level=level
+    )
+
+
+def load_json(path: Path) -> object:
+    """Load a JSON file with informative errors."""
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError as e:
+        raise RuntimeError(f"Required JSON not found: {path}") from e
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Bad JSON format: {path} ({e})") from e
+
+
+def ensure_dir(p: Path) -> None:
+    p.mkdir(parents=True, exist_ok=True)
+
+
+def iter_projects(projects: List[str], projects_file: Optional[Path]) -> List[str]:
+    """Merge projects from CLI and optional file."""
+    items = list(projects)
+    if projects_file:
+        try:
+            text = projects_file.read_text(encoding="utf-8")
+            for line in text.splitlines():
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    items.append(line)
+        except FileNotFoundError as e:
+            raise RuntimeError(f"Projects file not found: {projects_file}") from e
+    # de-duplicate while preserving order
+    seen = set()
+    uniq = []
+    for x in items:
+        if x not in seen:
+            seen.add(x)
+            uniq.append(x)
+    return uniq
+
+
+def load_proj_junit_map(default_map: Dict[str, str], override_json: Optional[Path]) -> Dict[str, str]:
+    """Load the project->junit version mapping; allow override via JSON file."""
+    if override_json:
+        data = load_json(override_json)
+        if not isinstance(data, dict):
+            raise RuntimeError(f"--junit-map-file must be a JSON object: {override_json}")
+        # normalize keys to str, values to 'junit4' | 'junit5'
+        out = {}
+        for k, v in data.items():
+            vs = str(v).strip().lower()
+            if vs not in {"junit4", "junit5"}:
+                raise RuntimeError(f"Invalid JUnit version for {k}: {v} (must be 'junit4' or 'junit5')")
+            out[str(k)] = vs
+        return out
+    return default_map
+
+
+# ------------------------------- Core Logic -------------------------------- #
+
+def process_block(block_lines: Iterable[str],
+                  strategy: str,
+                  rnd: int,
+                  state: RunState,
+                  test_desc_re: re.Pattern[str],
+                  completion_time_mapping: Dict[Tuple[str, int], int]) -> None:
+    """
+    Process one 'start running ...' block: parse mutant info, timings, tests, group/complete time.
+    """
+    block_str = "".join(block_lines)
+
+    m_mut = RE_MUTANT.search(block_str)
+    if not m_mut:
         return
+
+    # Parse mutant signature from log block
     mutant = {
-        'clazz': mutant_details.group(1),
-        'method': mutant_details.group(2),
-        'methodDesc': mutant_details.group(3),
-        'indexes': [int(i.strip()) for i in mutant_details.group(4).split(',')],
-        'mutator': mutant_details.group(5)
+        "clazz": m_mut.group(1),
+        "method": m_mut.group(2),
+        "methodDesc": m_mut.group(3),
+        "indexes": [int(i.strip()) for i in m_mut.group(4).split(",") if i.strip()],
+        "mutator": m_mut.group(5),
     }
+
+    # Map mutant dict -> mutant_id using id_mutant_mapping
     mutant_id = 0
-    for k, v in id_mutant_mapping.items():
-        if mutant == v:
-            mutant_id = k
+    for mid, md in state.id_mutant_mapping.items():
+        if mutant == md:
+            mutant_id = mid
             break
-    ids.append(mutant_id)
-    id_others_mapping[mutant_id] = [0, 0]
 
-    # cur_clazz = mutant['clazz']
-    # if cur_clazz not in clazz_info_mapping.keys():
-    #     # [replacement time, running time, error count, mutant count]
-    #     clazz_info_mapping[cur_clazz] = [0, 0, 0, 0]
+    state.ids_in_block.append(mutant_id)
+    state.id_others_mapping.setdefault(mutant_id, [0, 0])
 
-    status = id_status_mapping[mutant_id]
-    # [class name, mutant id, replacement time, running time, error description (error count), (mutant count)]
-    # arr = [None, None, None, None, None, None]
-    # arr[0] = cur_clazz
-    # arr[1] = mid
+    status = state.id_status_mapping.get(mutant_id)
 
-    replacement_time = re.search(replace_time_pattern, block_str)
-    if replacement_time:
-        id_others_mapping[mutant_id][replacement_id] = int(replacement_time.group(1))
-        # id_replace_time_mapping[mid] = int(replace_time.group(1))
-        # arr[2] = id_replace_time_mapping[mid]
-        # clazz_info_mapping[cur_clazz][0] += arr[2]
-        # total_replacement_time += arr[2]
+    # Replacement time (per-mutant)
+    if m := RE_REPLACE_TIME.search(block_str):
+        state.id_others_mapping[mutant_id][REPLACEMENT_IDX] = int(m.group(1))
 
-    # Extract test descriptions
-    if status in [KILLED, SURVIVED]:
-        test_descriptions = re.findall(test_description_pattern, block_str)
-        for clz, name, runtime in test_descriptions:
-            test = f'{clz}.{name}'
-            if test not in test_id_mapping.keys():
+    # Test descriptions & per-test runtime (only for killed/survived)
+    if status in {KILLED, SURVIVED}:
+        for clz, name, rt_ms in test_desc_re.findall(block_str):
+            test_key = f"{clz}.{name}"
+            if test_key not in state.test_id_mapping:
                 continue
-            test_id = test_id_mapping[test]
-            for i, tup in enumerate(id_info_mapping[mutant_id]):
+            test_id = state.test_id_mapping[test_key]
+            # Replace the third element (runtime) for the test tuple in id_info_mapping[mutant_id]
+            for i, tup in enumerate(state.id_info_mapping.get(mutant_id, [])):
                 if test_id == tup[0]:
-                    id_info_mapping[mutant_id][i] = (tup[0], tup[1]) + (int(runtime), )
+                    state.id_info_mapping[mutant_id][i] = (tup[0], tup[1], int(rt_ms))
                     break
 
-    mutant_runtime = re.search(runtime_pattern, block_str)
-    if mutant_runtime:
-        # arr[3] = int(mutant_runtime.group(1))
-        id_others_mapping[mutant_id][runtime_id] = int(mutant_runtime.group(1))
+    # Running time of this mutant (prefer aggregated 'run all related tests'; else sum fallback)
+    if m := RE_RUNTIME.search(block_str):
+        state.id_others_mapping[mutant_id][RUNTIME_IDX] = int(m.group(1))
     else:
-        pattern = re.compile(r"Test Description.*?(\d+)\s*ms", re.DOTALL)
-        ms_arr = pattern.findall(block_str)
-        mss = 0
-        for ms in ms_arr:
-            mss += int(ms)
-        id_others_mapping[mutant_id][runtime_id] = mss
-        # arr[3] = 0
-        # for ms in ms_arr:
-        #     arr[3] += int(ms)
-        # arr[4] = status
-        # total_error_count += 1
-        # clazz_info_mapping[cur_clazz][2] += 1
+        ms_list = [int(x) for x in RE_FALLBACK_TEST_MS.findall(block_str)]
+        state.id_others_mapping[mutant_id][RUNTIME_IDX] = sum(ms_list)
 
-    # clazz_info_mapping[cur_clazz][3] += 1
-    # total_mutant_count += 1
-    # clazz_info_mapping[cur_clazz][1] += arr[3]
-    # total_runtime += arr[3]
-    # csv_arr.append(arr)
-    group_runtime = re.search(group_boundary_pattern, block_str)
-    if group_runtime:
-        # [time, mutant number, id list]
-        group_info_arr.append([int(group_runtime.group(2)), int(group_runtime.group(1)), tuple(ids)])
-        ids.clear()
-        # csv_arr.append(['Group Runtime', None, int(group_runtime.group(2)), None, None, int(group_runtime.group(1))])
+    # Group boundary info
+    if m := RE_GROUP_BOUNDARY.search(block_str):
+        group_mutants = int(m.group(1))
+        group_ms = int(m.group(2))
+        state.group_info_arr.append([group_ms, group_mutants, tuple(state.ids_in_block)])
+        state.ids_in_block.clear()
 
-    complete_time = re.search(complete_time_pattern, block_str)
-    if complete_time:
-        completion_time_mapping[(s, rnd)] = int(complete_time.group(1))
-        # complete_time_arr[rnd] = int(complete_time.group(1))
-        # csv_arr.append(['Total Runtime', None, total_replacement_time, total_runtime, total_error_count, total_mutant_count])
-        # csv_arr.append(['Complete Runtime', None, complete_time_arr[rnd], None, None, None])
+    # Completed time (whole run)
+    if m := RE_COMPLETE_SEC.search(block_str):
+        completion_time_mapping[(strategy, rnd)] = int(m.group(1))
 
 
-# Parse log
-def parse_log(p, s, rnd):
-    log_filename = f'{p}_{s}_{rnd}.log'
-    # csv_arr = list()
-    log_path = os.path.join(logs_dir, log_filename)
-    with open(log_path, 'r') as f:
-        blocks = []
+def parse_log(project: str,
+              strategy: str,
+              rnd: int,
+              logs_dir: Path,
+              state: RunState,
+              test_desc_re: re.Pattern[str],
+              completion_time_mapping: Dict[Tuple[str, int], int]) -> None:
+    """
+    Parse one log file and process its blocks.
+    """
+    log_path = logs_dir / f"{project}_{strategy}_{rnd}.log"
+    if not log_path.exists():
+        logging.warning("Log not found: %s", log_path)
+        return
+
+    with log_path.open("r", encoding="utf-8", errors="replace") as f:
+        blocks: List[str] = []
         capturing = False
         for line in f:
-            if 'start running' in line:
-                if capturing:
-                    process_block(s=s, rnd=rnd, blk_arr=blocks)
-                    capturing = False
-                if not capturing:
-                    capturing = True
-                    blocks = [line]
+            if "start running" in line:
+                if blocks:
+                    process_block(blocks, strategy, rnd, state, test_desc_re, completion_time_mapping)
+                blocks = [line]
+                capturing = True
             elif capturing:
                 blocks.append(line)
-        process_block(s=s, rnd=rnd, blk_arr=blocks)
-    # with open(f'{main_dir}/runtime_analysis_dir/{p}_{s}_{rnd}.csv', 'w', newline='', encoding='utf-8') as f:
-    #     w = csv.writer(f)
-    #     w.writerows(csv_arr)
+        # process last block if any
+        if blocks:
+            process_block(blocks, strategy, rnd, state, test_desc_re, completion_time_mapping)
 
 
-# Parse xml file
-def parse_xml(p, s, rnd):
-    xml_filename = f'{p}_{s}_{rnd}.xml'
-    xml_path = os.path.join(xmls_dir, xml_filename)
-
+def parse_xml(project: str,
+              strategy: str,
+              rnd: int,
+              xmls_dir: Path,
+              state: RunState) -> None:
+    """
+    Parse one PIT XML (mutations) to populate:
+      - id_status_mapping
+      - id_info_mapping [(test_id, PASS/FAIL, runtime_ms placeholder=0)]
+    """
+    xml_path = xmls_dir / f"{project}_{strategy}_{rnd}.xml"
     try:
         tree = ET.parse(xml_path)
     except FileNotFoundError as e:
         raise RuntimeError(f"XML file not found: {xml_path}") from e
     except ET.ParseError as e:
-        raise RuntimeError(f"Error parsing XML ({xml_path}): {e}") from e
+        raise RuntimeError(f"XML parse error in {xml_path}: {e}") from e
 
     root = tree.getroot()
     for mutation in root.findall("mutation"):
-        mutant = dict()
-        killing_tests = None
-        succeeding_tests = None
-        status = mutation.get('status')
+        mutant: Dict[str, object] = {}
+        status = mutation.get("status", "")
+
+        # Defaults for tests (maybe missing)
+        killing_tests: Iterable[str] = []
+        succeeding_tests: Iterable[str] = []
+
         for child in mutation:
             tag = child.tag
-            text = child.text.strip() if child.text and child.text.strip() else ""
-            if tag == 'mutatedClass':
-                mutant['clazz'] = text
-            elif tag == 'mutatedMethod':
-                mutant['method'] = text
-            elif tag == 'methodDescription':
-                mutant['methodDesc'] = text
-            elif tag == 'indexes':
-                values = list(
-                    int(elem.text.strip()) for elem in child.findall("*")
-                    if elem.text and elem.text.strip()
-                )
-                mutant[tag] = values
-            elif tag == 'mutator':
-                mutant['mutator'] = text
-            elif tag == "killingTests":
-                if not text:
-                    killing_tests = list()
-                else:
-                    parts = [part.strip() for part in text.split("|") if part.strip()]
-                    killing_tests = tuple(sorted(set(parts)))
-            elif tag == "succeedingTests":
-                if not text:
-                    succeeding_tests = list()
-                else:
-                    parts = [part.strip() for part in text.split("|") if part.strip()]
-                    succeeding_tests = tuple(sorted(set(parts)))
+            text = (child.text or "").strip()
 
+            if tag == "mutatedClass":
+                mutant["clazz"] = text
+            elif tag == "mutatedMethod":
+                mutant["method"] = text
+            elif tag == "methodDescription":
+                mutant["methodDesc"] = text
+            elif tag == "indexes":
+                values = []
+                for elem in child.findall("*"):
+                    if elem.text and elem.text.strip():
+                        values.append(int(elem.text.strip()))
+                mutant["indexes"] = values
+            elif tag == "mutator":
+                mutant["mutator"] = text
+            elif tag == "killingTests":
+                parts = [p.strip() for p in text.split("|") if p.strip()]
+                killing_tests = tuple(sorted(set(parts))) if parts else []
+            elif tag == "succeedingTests":
+                parts = [p.strip() for p in text.split("|") if p.strip()]
+                succeeding_tests = tuple(sorted(set(parts))) if parts else []
+
+        # Find mutant_id by exact dict match
         mutant_id = 0
-        for k, v in id_mutant_mapping.items():
-            if mutant == v:
-                mutant_id = k
+        for mid, md in state.id_mutant_mapping.items():
+            if mutant == md:
+                mutant_id = mid
                 break
-        # if status not in [KILLED, SURVIVED]:
-        #     error_set.add(mutant_id)
-        #     if mutant_id not in id_errors_mapping.keys():
-        #         id_errors_mapping[mutant_id] = ['' for _ in range(len(seed_list))]
-        #     id_errors_mapping[mid][seed_list.index(s)] = status
-        id_status_mapping[mutant_id] = status
-        id_info_mapping[mutant_id] = list()
-        test_status_info = dict()
+
+        state.id_status_mapping[mutant_id] = status
+        state.id_info_mapping[mutant_id] = []
+
+        # Merge tests; mark conflicts as -1 (ignored)
+        test_status_info: Dict[int, int] = {}  # test_id -> {0 for FAIL, 1 for PASS, -1 conflict}
+
         for t in killing_tests:
-            if t not in test_id_mapping.keys():
-                continue
-            test_id = test_id_mapping[t]
-            if test_id in test_status_info and test_status_info[test_id] != 0:
-                test_status_info[test_id] = -1
-            else:
-                test_status_info[test_id] = 0
+            if t in state.test_id_mapping:
+                tid = state.test_id_mapping[t]
+                if tid in test_status_info and test_status_info[tid] != 0:
+                    test_status_info[tid] = -1
+                else:
+                    test_status_info[tid] = 0
+
         for t in succeeding_tests:
-            if t not in test_id_mapping.keys():
-                continue
-            test_id = test_id_mapping[t]
-            if test_id in test_status_info and test_status_info[test_id] != 1:
-                test_status_info[test_id] = -1
-            else:
-                test_status_info[test_id] = 1
-        for test_id, mark in test_status_info.items():
+            if t in state.test_id_mapping:
+                tid = state.test_id_mapping[t]
+                if tid in test_status_info and test_status_info[tid] != 1:
+                    test_status_info[tid] = -1
+                else:
+                    test_status_info[tid] = 1
+
+        # Persist only consistent marks; runtime placeholder = 0
+        for tid, mark in sorted(test_status_info.items()):
             if mark == -1:
                 continue
-            id_info_mapping[mutant_id].append((test_id, FAIL if mark == 0 else PASS, 0))
-        id_info_mapping[mutant_id].sort(key=lambda x: x[0])
+            state.id_info_mapping[mutant_id].append((tid, PASS if mark == 1 else FAIL, 0))
 
 
-def output_jsons(s, rnd):
-    output_path = f'{proj_subdir}/{s}_{rnd}'
-    if not os.path.exists(output_path):
-        os.makedirs(output_path)
-    with open(f'{output_path}/id_status_mapping.json', 'w') as f:
-        json.dump(id_status_mapping, f, indent=4)
-    with open(f'{output_path}/id_info_mapping.json', 'w') as f:
-        json.dump(id_info_mapping, f, indent=4)
-    with open(f'{output_path}/id_others_mapping.json', 'w') as f:
-        json.dump(id_others_mapping, f, indent=4)
-    with open(f'{output_path}/group_info.json', 'w') as f:
-        json.dump(group_info_arr, f, indent=4)
+def write_round_outputs(output_dir: Path, strategy: str, rnd: int, state: RunState) -> None:
+    """
+    Write JSON artifacts for one (strategy, round):
+      - id_status_mapping.json
+      - id_info_mapping.json
+      - id_others_mapping.json
+      - group_info.json
+    """
+    out_subdir = output_dir / f"{strategy}_{rnd}"
+    ensure_dir(out_subdir)
+
+    (out_subdir / "id_status_mapping.json").write_text(
+        json.dumps(state.id_status_mapping, indent=4), encoding="utf-8"
+    )
+    (out_subdir / "id_info_mapping.json").write_text(
+        json.dumps(state.id_info_mapping, indent=4), encoding="utf-8"
+    )
+    (out_subdir / "id_others_mapping.json").write_text(
+        json.dumps(state.id_others_mapping, indent=4), encoding="utf-8"
+    )
+    (out_subdir / "group_info.json").write_text(
+        json.dumps(state.group_info_arr, indent=4), encoding="utf-8"
+    )
 
 
-if __name__ == '__main__':
-    round_number = 6
-    FAIL = False
-    PASS = True
-    main_dir = 'for_checking_OID'
-    xmls_dir = f'{main_dir}/xmls'
-    logs_dir = f'{main_dir}/logs'
-    outputs_dir = f'{main_dir}/parsed_dir'
-    test_description_pattern_mapping = {
-        'junit4': test_description_pattern_junit4,
-        'junit5': test_description_pattern_junit5
+def write_completion_times(project_dir: Path,
+                           completion_time_mapping: Dict[Tuple[str, int], int]) -> None:
+    """
+    Persist completion times as a list of [ [strategy, round], seconds ] for JSON stability.
+    """
+    data = [ [list(k), v] for k, v in completion_time_mapping.items() ]
+    (project_dir / "completion_time.json").write_text(
+        json.dumps(data, indent=4), encoding="utf-8"
+    )
+
+
+# ------------------------------- Main Flow -------------------------------- #
+
+def run_for_project(proj: str, cfg: Config) -> None:
+    """
+    Execute the full parse pipeline for one project across all strategies and rounds.
+    """
+    logging.info("== Project: %s ==", proj)
+
+    project_dir = cfg.outputs_dir / proj
+    ensure_dir(project_dir)
+
+    # Load mapping files produced by the "basis" phase
+    id_mutant_mapping_path = cfg.basis_dir / proj / "id_mutant_mapping.json"
+    id_test_mapping_path = cfg.basis_dir / proj / "id_test_mapping.json"
+
+    id_mutant_mapping = {int(k): v for k, v in load_json(id_mutant_mapping_path).items()}
+    id_test_mapping = {int(k): v for k, v in load_json(id_test_mapping_path).items()}
+    # Inverse mapping: test qualified name -> id
+    test_id_mapping = {v: k for k, v in id_test_mapping.items()}
+
+    # Completion time cache
+    completion_path = project_dir / "completion_time.json"
+    completion_time_mapping: Dict[Tuple[str, int], int] = {}
+    if completion_path.exists():
+        # old format compatibility: [[ [strategy, round], seconds], ...]
+        try:
+            loaded = json.loads(completion_path.read_text(encoding="utf-8"))
+            for pair, sec in loaded:
+                completion_time_mapping[(pair[0], int(pair[1]))] = int(sec)
+        except Exception:
+            logging.warning("Ignoring invalid completion_time.json (will rewrite): %s", completion_path)
+
+    # Choose test description regex by JUnit flavor
+    junit = cfg.proj_junit_map.get(proj)
+    if junit not in {"junit4", "junit5"}:
+        raise RuntimeError(
+            f"Unknown/unspecified JUnit flavor for project '{proj}'. "
+            f"Provide it via --junit-map-file or extend the default mapping."
+        )
+    test_desc_re = RE_TEST_DESC_JUNIT4 if junit == "junit4" else RE_TEST_DESC_JUNIT5
+
+    for strategy in cfg.strategies:
+        for rnd in range(cfg.rounds):
+            logging.info("Process %s | strategy=%s | round=%d", proj, strategy, rnd)
+
+            state = RunState(
+                id_status_mapping={},
+                id_info_mapping={},
+                id_others_mapping={},
+                completion_time_mapping={},  # not used directly; we pass external dict
+                ids_in_block=[],
+                group_info_arr=[],
+                id_mutant_mapping=id_mutant_mapping,
+                test_id_mapping=test_id_mapping,
+            )
+
+            # Fill from XML first (mutant statuses and per-test lists)
+            parse_xml(project=proj, strategy=strategy, rnd=rnd, xmls_dir=cfg.xmls_dir, state=state)
+
+            # Then augment with log info (timings, group info, completion)
+            parse_log(
+                project=proj,
+                strategy=strategy,
+                rnd=rnd,
+                logs_dir=cfg.logs_dir,
+                state=state,
+                test_desc_re=test_desc_re,
+                completion_time_mapping=completion_time_mapping,
+            )
+
+            # Persist per-(strategy, round) artifacts
+            write_round_outputs(project_dir, strategy, rnd, state)
+
+    # Persist completion times (across all strategies/rounds for this project)
+    write_completion_times(project_dir, completion_time_mapping)
+
+    logging.info("Done project: %s", proj)
+
+
+def build_default_junit_map() -> Dict[str, str]:
+    """
+    Default project->JUnit mapping (can be overridden via --junit-map-file).
+    """
+    return {
+        "commons-codec": "junit5",
+        "delight-nashorn-sandbox": "junit4",
+        "jimfs": "junit4",
+        "commons-cli": "junit5",
+        "assertj-assertions-generator": "junit5",
+        "commons-collections": "junit5",
+        "commons-csv": "junit5",
+        "commons-net": "junit5",
+        "empire-db": "junit4",
+        "guava": "junit4",
+        "handlebars.java": "junit5",
+        "httpcore": "junit5",
+        "java-design-patterns": "junit5",
+        "jfreechart": "junit5",
+        "jooby": "junit5",
+        "JustAuth": "junit4",
+        "maven-dependency-plugin": "junit5",
+        "maven-shade-plugin": "junit4",
+        "Mybatis-PageHelper": "junit4",
+        "riptide": "junit5",
+        "sling-org-apache-sling-auth-core": "junit4",
+        "stream-lib": "junit4",
     }
-    # cols = ['seed'] + [f'round{i}' for i in range(round_number)] + ['avg.', '/avg. default', 'T-test', 'U-test']
-    # avg_cols = [
-    #     'project',
-    #     'default_complete',
-    #     'single-group_complete',
-    #     'single-group_rate (vs. default)',
-    #     'single-group*_complete',
-    #     'single-group*_rate (vs. default)',
-    #     'default_total',
-    #     'single-group_total',
-    #     'single-group_rate (vs. default)',
-    #     'single-group*_total',
-    #     'single-group*_rate (vs. default)'
-    # ]
-    # [default complete, single group complete, single group* complete, default total, single group total, single group* total]
-    proj_avg_mapping = {proj: [0 for _ in range(6)] for proj in proj_list}
-    for proj in proj_list:
-        proj_subdir = f'{main_dir}/parsed_dir/{proj}'
-        if not os.path.exists(proj_subdir):
-            os.makedirs(proj_subdir)
-        completion_path = f'{proj_subdir}/completion_time.json'
-        completion_time_mapping = dict()
-        if os.path.exists(completion_path):
-            completion_time_mapping = {k: v for k, v in json.load(open(completion_path, 'r'))}
-        with open(f'{main_dir}/parsed_dir/basis/{proj}/id_mutant_mapping.json', 'r') as file:
-            id_mutant_mapping = {int(k): v for k, v in json.load(file).items()}
-        with open(f'{main_dir}/parsed_dir/basis/{proj}/id_test_mapping.json', 'r') as file:
-            id_test_mapping = {int(k): v for k, v in json.load(file).items()}
-        test_id_mapping = {v: k for k, v in id_test_mapping.items()}
 
-        # seed_runtime_mapping = dict()
-        # df = pd.DataFrame(None, columns=cols)
-        # def_avg = 1.0
-        # def_arr = list()
-        # error_set = set()
-        # error_df = pd.DataFrame(None, columns=['mutant id'] + seed_list + ['error count'])
-        # id_errors_mapping = dict()
 
-        for seed in seed_list:
-            junit_version = proj_junit_mapping[proj]
-            test_description_pattern = test_description_pattern_mapping[junit_version]
-            # complete_time_arr = [0 for _ in range(round_number)]
-            # seed_runtime_mapping[seed] = [0 for _ in range(round_number)]
-            # clazz_percentages_mapping = dict()
-            for r in range(round_number):
-                print(f'Process {proj} with {seed} - round: {r}')
-                id_status_mapping = dict()
-                # [test id, status, running time]
-                id_info_mapping = dict()
-                id_others_mapping = dict()
-                ids = list()
-                group_info_arr = list()
-                # clazz_info_mapping = dict()
-                # total_error_count = 0
-                # total_mutant_count = 0
-                # total_replacement_time = 0
-                # total_runtime = 0
-                parse_xml(p=proj, s=seed, rnd=r)
-                parse_log(p=proj, s=seed, rnd=r)
-                output_jsons(s=seed, rnd=r)
-                # seed_runtime_mapping[seed][r] = total_replacement_time + total_runtime
-                # with open(f'{main_dir}/runtime_analysis_dir/per_class/{proj}_{seed}_{r}.csv', 'w', newline='', encoding='utf-8') as file:
-                #     writer = csv.writer(file)
-                #     writer.writerows([[k] + v for k, v in dict(sorted(clazz_info_mapping.items(), key=lambda kv: kv[0])).items()])
-                # if seed == 'default':
-                #     for clazz, info_arr in clazz_info_mapping.items():
-                #         if clazz not in clazz_percentages_mapping.keys():
-                #             clazz_percentages_mapping[clazz] = [0 for _ in range(round_number)]
-                #         clazz_percentages_mapping[clazz][r] = (info_arr[0] + info_arr[1]) / (1000 * complete_time_arr[r])
-            with open(f'{proj_subdir}/completion_time.json', 'w') as f:
-                completion_time_arr = [(tuple(k), v) for k, v in completion_time_mapping.items()]
-                json.dump(completion_time_arr, f, indent=4)
-            # if seed == 'default':
-            #     # complete time
-            #     def_arr = complete_time_arr
-            #     def_avg = np.mean(complete_time_arr)
-            #     proj_avg_mapping[proj][0] = def_avg
-        #        df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{def_avg:.2f}', f'{1.0:.2f}', f'{1.0:.4f}', f'{1.0:.4f}']
-        #
-        #         # for percentage
-        #         percentages_arr = list()
-        #         for clazz, percentages in clazz_percentages_mapping.items():
-        #             percentages_arr.append([clazz] + percentages + [np.mean(percentages)])
-        #         percentages_arr.sort(key=lambda x: x[-1], reverse=True)
-        #         percentages_arr.insert(0, ['clazz', 'round0', 'round1', 'round2', 'round3', 'round4', 'round5', 'avg.'])
-        #         for i in range(1, len(percentages_arr)):
-        #             percentages_arr[i] = [percentages_arr[i][0]] + [f'{x:.4f}' for x in percentages_arr[i][1:]]
-        #         with open(f'{main_dir}/runtime_analysis_dir/per_class/percentage/{proj}_{seed}.csv', 'w', newline='', encoding='utf-8') as file:
-        #             writer = csv.writer(file)
-        #             writer.writerows(percentages_arr)
-        #     else:
-        #         cur_avg = np.mean(complete_time_arr)
-        #         if seed == 'single-group':
-        #             proj_avg_mapping[proj][1] = cur_avg
-        #         elif seed == 'single-group_errors-at-the-end':
-        #             proj_avg_mapping[proj][2] = cur_avg
-        #        _, t_p_value = ttest_ind(def_arr, complete_time_arr)
-        #        _, u_p_value = mannwhitneyu(def_arr, complete_time_arr)
-        #        df.loc[len(df.index)] = [seed] + complete_time_arr + [f'{cur_avg:.2f}', f'{cur_avg / def_avg:.2f}', f'{t_p_value:.4f}', f'{u_p_value:.4f}']
-        # df.to_csv(f'{main_dir}/runtime_analysis_dir/complete_runtime/{proj}.csv', sep=',', header=True, index=False)
+def parse_args() -> Config:
+    ap = argparse.ArgumentParser(
+        description="Parse mutation XML + logs into normalized JSONs (per strategy/round)."
+    )
+    ap.add_argument("--main-dir", required=True, type=Path,
+                    help="Workspace root (contains 'xmls', 'logs', 'parsed_dir', etc.)")
+    ap.add_argument("--projects", nargs="*", default=[],
+                    help="Project names (space-separated).")
+    ap.add_argument("--projects-file", type=Path,
+                    help="Optional file with one project per line (supports comments with '#').")
+    ap.add_argument("--strategies", nargs="+", required=True,
+                    help="Strategy names to process (e.g., by-proportions default ...).")
+    ap.add_argument("--rounds", type=int, default=6,
+                    help="Number of rounds per strategy (default: 6).")
+    ap.add_argument("--junit-map-file", type=Path,
+                    help="Optional JSON file overriding project->JUnit version mapping.")
+    ap.add_argument("--verbose", action="store_true",
+                    help="Enable verbose logging.")
+    args = ap.parse_args()
 
-        # proj_avg_mapping[proj][3] = np.mean(seed_runtime_mapping['default']) / 1000
-        # proj_avg_mapping[proj][4] = np.mean(seed_runtime_mapping['single-group']) / 1000
-        # proj_avg_mapping[proj][5] = np.mean(seed_runtime_mapping['single-group_errors-at-the-end']) / 1000
+    projects = iter_projects(args.projects, args.projects_file)
+    if not projects:
+        raise SystemExit("No projects specified. Use --projects or --projects-file.")
 
-        # with open(f'{main_dir}/mutant_list/erroneous/{proj}.json', 'w') as f:
-        #     f.write(json.dumps(sorted(list(error_set)), indent=4))
-        # for mutant_id, error_arr in id_errors_mapping.items():
-        #     error_cnt = 0
-        #     for e in error_arr:
-        #         if e != '':
-        #             error_cnt += 1
-        #     id_errors_mapping[mutant_id].append(error_cnt)
-        # sorted_id_errors_items = sorted(id_errors_mapping.items(), key=lambda x: x[1][-1])
-        # for mutant_id, error_arr in sorted_id_errors_items:
-        #     error_df.loc[len(error_df.index)] = [mutant_id] + error_arr
-        # error_df.to_csv(f'{main_dir}/runtime_analysis_dir/error_recorded/{proj}.csv', sep=',', header=True, index=False)
+    default_map = build_default_junit_map()
+    proj_junit_map = load_proj_junit_map(default_map, args.junit_map_file)
 
-        # for seed in seed_list:
-        #     cur_avg = np.mean(seed_runtime_mapping[seed])
-        #     seed_runtime_mapping[seed].append(f'{cur_avg:.2f}')
-        #     if seed == 'default':
-        #         def_avg = cur_avg
-        #         seed_runtime_mapping[seed].append(f'{1.0:.2f}')
-        #         seed_runtime_mapping[seed].append(f'{1.0:.4f}')
-        #         seed_runtime_mapping[seed].append(f'{1.0:.4f}')
-        #     else:
-        #         _, t_p_value = ttest_ind(seed_runtime_mapping['default'][:6], seed_runtime_mapping[seed][:6])
-        #         _, u_p_value = mannwhitneyu(seed_runtime_mapping['default'][:6], seed_runtime_mapping[seed][:6])
-        #         seed_runtime_mapping[seed].append(f'{cur_avg / def_avg:.2f}')
-        #         seed_runtime_mapping[seed].append(f'{t_p_value:.4f}')
-        #         seed_runtime_mapping[seed].append(f'{u_p_value:.4f}')
-        # with open(f'{main_dir}/runtime_analysis_dir/total_runtime/{proj}.csv', 'w', newline='', encoding='utf-8') as file:
-        #     writer = csv.writer(file)
-        #     writer.writerows([cols] + [[k] + v for k, v in seed_runtime_mapping.items()])
-    # avg_csv = list()
-    # avg_csv.append(avg_cols)
-    # avg_avg = [0, 0, 0, 0]
-    # micro_avg_matrix = [[0, 0], [0, 0], [0, 0], [0, 0]]
-    # for proj, avg_arr in proj_avg_mapping.items():
-    #     cur_rates = [
-    #         avg_arr[1] / avg_arr[0],
-    #         avg_arr[2] / avg_arr[0],
-    #         avg_arr[4] / avg_arr[3],
-    #         avg_arr[5] / avg_arr[3]
-    #     ]
-    #     cur_arr = [
-    #         proj,
-    #         f'{avg_arr[0]:.2f}',
-    #         f'{avg_arr[1]:.2f}',
-    #         f'{cur_rates[0]:.4f}',
-    #         f'{avg_arr[2]:.2f}',
-    #         f'{cur_rates[1]:.4f}',
-    #         f'{avg_arr[3]:.2f}',
-    #         f'{avg_arr[4]:.2f}',
-    #         f'{cur_rates[2]:.4f}',
-    #         f'{avg_arr[5]:.2f}',
-    #         f'{cur_rates[3]:.4f}'
-    #     ]
-    #     avg_avg[0] += cur_rates[0]
-    #     avg_avg[1] += cur_rates[1]
-    #     avg_avg[2] += cur_rates[2]
-    #     avg_avg[3] += cur_rates[3]
-    #     micro_avg_matrix[0][0] += avg_arr[1]
-    #     micro_avg_matrix[0][1] += avg_arr[0]
-    #     micro_avg_matrix[1][0] += avg_arr[2]
-    #     micro_avg_matrix[1][1] += avg_arr[0]
-    #     micro_avg_matrix[2][0] += avg_arr[4]
-    #     micro_avg_matrix[2][1] += avg_arr[3]
-    #     micro_avg_matrix[3][0] += avg_arr[5]
-    #     micro_avg_matrix[3][1] += avg_arr[3]
-    #     avg_csv.append(cur_arr)
-    # proj_cnt = len(proj_list)
-    # avg_avg[0] /= proj_cnt
-    # avg_avg[1] /= proj_cnt
-    # avg_avg[2] /= proj_cnt
-    # avg_avg[3] /= proj_cnt
-    # avg_csv.append(['avg.',
-    #                 '', '', f'{avg_avg[0]:.4f}', '', f'{avg_avg[1]:.4f}',
-    #                 '', '', f'{avg_avg[2]:.4f}', '', f'{avg_avg[3]:.4f}'])
-    # avg_csv.append(['micro avg.',
-    #                 '', '', f'{micro_avg_matrix[0][0]/micro_avg_matrix[0][1]:.4f}',
-    #                 '', f'{micro_avg_matrix[1][0]/micro_avg_matrix[1][1]:.4f}',
-    #                 '', '', f'{micro_avg_matrix[2][0]/micro_avg_matrix[2][1]:.4f}',
-    #                 '', f'{micro_avg_matrix[3][0]/micro_avg_matrix[3][1]:.4f}'])
-    # with open(f'{main_dir}/runtime_analysis_dir/avg.csv', 'w', newline='', encoding='utf-8') as file:
-    #     writer = csv.writer(file)
-    #     writer.writerows(avg_csv)
+    main_dir: Path = args.main_dir
+    xmls_dir = main_dir / "xmls"
+    logs_dir = main_dir / "logs"
+    outputs_dir = main_dir / "parsed_dir"
+    basis_dir = outputs_dir / "basis"
+
+    return Config(
+        main_dir=main_dir,
+        xmls_dir=xmls_dir,
+        logs_dir=logs_dir,
+        outputs_dir=outputs_dir,
+        basis_dir=basis_dir,
+        projects=projects,
+        strategies=args.strategies,
+        rounds=args.rounds,
+        proj_junit_map=proj_junit_map,
+        verbose=args.verbose,
+    )
+
+
+def main() -> None:
+    cfg = parse_args()
+    setup_logging(cfg.verbose)
+
+    # Basic directory checks
+    for p in [cfg.xmls_dir, cfg.logs_dir, cfg.basis_dir]:
+        if not p.exists():
+            logging.warning("Directory not found (it may be created elsewhere): %s", p)
+
+    ensure_dir(cfg.outputs_dir)
+
+    for proj in cfg.projects:
+        try:
+            run_for_project(proj, cfg)
+        except Exception as e:
+            logging.error("Project failed: %s (%s)", proj, e)
+            # Continue with other projects rather than exiting immediately.
+
+    logging.info("All done.")
+
+
+if __name__ == "__main__":
+    main()
