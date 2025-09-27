@@ -1,4 +1,0 @@
-mutant id,default,single-group,single-group_errors-at-the-end,single-group_random-42,single-group_random-43,single-group_random-44,single-group_random-45,single-group_random-46,error count
-49,,NO_COVERAGE,NO_COVERAGE,NO_COVERAGE,NO_COVERAGE,NO_COVERAGE,NO_COVERAGE,NO_COVERAGE,7
-266,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,8
-265,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,TIMED_OUT,8

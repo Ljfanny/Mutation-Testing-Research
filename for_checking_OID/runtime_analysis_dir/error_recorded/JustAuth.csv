@@ -1,5 +1,0 @@
-mutant id,default,single-group,single-group_errors-at-the-end,error count
-268,,,TIMED_OUT,1
-267,TIMED_OUT,TIMED_OUT,,2
-272,TIMED_OUT,TIMED_OUT,TIMED_OUT,3
-278,TIMED_OUT,TIMED_OUT,TIMED_OUT,3

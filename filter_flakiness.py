@@ -27,7 +27,6 @@ Example:
     --flaky-dir for_checking_OID/flaky_tables \
     --total-runtime-dir for_checking_OID/total_runtime \
     --emit-runtime \
-    --emit-significant-csv \
     --verbose
 
 """
@@ -330,10 +329,6 @@ def parse_args() -> argparse.Namespace:
                     help="Directory to write per-project total runtime CSVs (on SAFE pairs only).")
     ap.add_argument("--emit-runtime", action="store_true",
                     help="If set, compute and emit total runtime tables on SAFE pairs only.")
-    ap.add_argument("--emit-significant-csv", action="store_true",
-                    help="If set with --emit-runtime, also emit a cross-strategy significance CSV (on SAFE pairs).")
-    ap.add_argument("--significant-csv-path", type=Path, default=Path("total_runtime/significant.csv"),
-                    help="Path to write the cross-project significance CSV (on SAFE pairs).")
     ap.add_argument("--verbose", action="store_true", help="Verbose logging.")
     return ap.parse_args()
 
@@ -376,9 +371,6 @@ def main() -> None:
     ensure_dir(total_runtime_dir)
     enable_append = True  # same semantics as original 'isOK'
 
-    # Optional: cross-project significance table (SAFE pairs)
-    significant_df = pd.DataFrame(None, columns=["project", "strategy1", "strategy2", "T-test", "U-test"])
-
     for project in projects:
         logging.info("Process project: %s", project)
         append_line(info_out, f"--------------------------------{project}--------------------------------", enable_append)
@@ -418,7 +410,7 @@ def main() -> None:
         flaky_df.to_csv(flaky_out, index=False, encoding="utf-8")
         logging.info("Flaky (filtered-out) table -> %s  (rows=%d, safe_pairs=%d)", flaky_out, len(flaky_df), len(safe_pairs))
 
-        # 4) Optional: compute total runtime and significance on SAFE pairs only
+        # 4) Optional: compute total runtime on SAFE pairs only
         if args.emit_runtime and safe_pairs:
             # Build per-strategy runtime maps and per-round replacement maps
             strategy_runtime_map: Dict[str, Dict[Pair, List[int]]] = {default_strategy: def_runtime_map}

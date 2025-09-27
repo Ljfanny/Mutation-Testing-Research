@@ -1,0 +1,84 @@
+common-cli
+ID 105 -- Because the ConditionalsBoundaryMutator flips relational operators, it likely breaks a loop's exit/boundary check inside HelpFormatter.appendWrappedText so the long-line wrapping logic never progresses -- yielding an infinite loop that PIT reports as TIMED_OUT.
+
+ID 101 -- MathMutator: Replaces arithmetic ops (e.g., +→-, *→/). If this hits the code that advances indices/counters (e.g., start += chunkLen, i++), the pointer can stop advancing or move backwards, yielding an infinite loop in the wrap logic. 
+
+ID 102 -- NegateConditionalsMutator: Flips relational checks (e.g., <↔>=, ==↔!=). If it mutates the loop's exit/boundary condition (like ''stop when at end'' or ''if no wrap position, break''), the termination test is inverted and the loop never exits.
+
+
+"105": {
+        "clazz": "org.apache.commons.cli.HelpFormatter",
+        "method": "appendWrappedText",
+        "methodDesc": "(Ljava/lang/Appendable;IILjava/lang/String;)Ljava/lang/Appendable;",
+        "indexes": [
+            53
+        ],
+        "mutator": "org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator"
+    }
+PM PIT >> INFO : RANDOM LOG: Test Description [testClass=org.apache.commons.cli.bug.BugCLI162Test, name=[engine:junit-jupiter]/8:50:41 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+[class:org.apache.commons.cli.bug.BugCLI162Test]/[method:testLongLineChunkingIndentIgnored()]] Running time: 3000 ms
+
+"101": {
+        "clazz": "org.apache.commons.cli.HelpFormatter",
+        "method": "appendWrappedText",
+        "methodDesc": "(Ljava/lang/Appendable;IILjava/lang/String;)Ljava/lang/Appendable;",
+        "indexes": [
+            113
+        ],
+        "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator"
+    }
+PM PIT >> INFO : RANDOM LOG: Test Description [testClass=org.apache.commons.cli.bug.BugCLI162Test, name=[eng8:50:37 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+ine:junit-jupiter]/[class:org.apache.commons.cli.bug.BugCLI162Test]/[method:testLongLineChunkingIndentIgnored()]] Running time: 3000 ms
+
+"102": {
+        "clazz": "org.apache.commons.cli.HelpFormatter",
+        "method": "appendWrappedText",
+        "methodDesc": "(Ljava/lang/Appendable;IILjava/lang/String;)Ljava/lang/Appendable;",
+        "indexes": [
+            114
+        ],
+        "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+    }
+PM PIT >> INFO : RANDOM LOG: Test Description [testClass=org.apache.commons.cli.bug.BugCLI162Test, name=[engine:junit-jupiter]/[c8:50:48 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+lass:org.apache.commons.cli.bug.BugCLI162Test]/[method:testLongLineChunkingIndentIgnored()]] Running time: 3000 ms
+
+common-codec
+
+Both mutants time out because IncrementsMutator flips local increments/decrements (e.g., index++ → index--). In DoubleMetaphone.doubleMetaphone(...) and in the helper handleGH(...), the algorithm advances through the string by updating an index and returning the next position; if that increment is mutated to a decrement (or otherwise broken), the scanner stops making forward progress (or moves backward), so the loop never terminates and PIT reports TIMED_OUT.
+
+"2067": {
+        "clazz": "org.apache.commons.codec.language.DoubleMetaphone",
+        "method": "doubleMetaphone",
+        "methodDesc": "(Ljava/lang/String;Z)Ljava/lang/String;",
+        "indexes": [
+            476
+        ],
+        "mutator": "org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator"
+    }
+PM PIT >> INFO : RANDOM LOG: Test Description [testClass=org.apache.commons.codec.language.DoubleMetaphoneTest, name=[engine:junit-jupiter]/[class:org.apache.commons.codec.language.DoubleMetaphoneTest]/[method:testIsDoubleMetaphoneEqualExtended3()]] Running time: 3009 ms
+5:30:40 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+
+"2236": {
+        "clazz": "org.apache.commons.codec.language.DoubleMetaphone",
+        "method": "handleGH",
+        "methodDesc": "(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I",
+        "indexes": [
+            137
+        ],
+        "mutator": "org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator"
+    }
+INFO : RANDOM LOG: Test Description [testClass=org.apache.commons.codec.language.DoubleMetaphoneTest, name=[engine:junit-jupiter]/[class:org.apache.commons.codec.language.DoubleMetaphoneTest]/[method:testIsDoubleMetaphoneEqualWithMATCHES()]] Running time: 3004 ms
+5:30:55 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+
+
+"3330": {
+        "clazz": "org.apache.commons.codec.binary.Base64",
+        "method": "encode",
+        "methodDesc": "([BIILorg/apache/commons/codec/binary/BaseNCodec$Context;)V",
+        "indexes": [
+            329
+        ],
+        "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator"
+    }
+PM PIT >> WARNING : Minion exited abnormally due to MEMORY_ERROR
+
