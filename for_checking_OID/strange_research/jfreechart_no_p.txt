@@ -1,0 +1,6 @@
+[ignored pairs with -1] 0
+[pairs evaluated] 342346
+[single > default] count=35103, proportion=0.103
+[single < default] count=162617, proportion=0.475
+[single == default] count=144626, proportion=0.422
+[overall single - default] mean=-0.3520, median=0.0000

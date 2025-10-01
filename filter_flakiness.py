@@ -288,18 +288,6 @@ def compute_total_runtime_per_round(
     for pair in safe_pairs:
         total += np.array(runtime_map[pair], dtype=float)
 
-    # Add replacement time once per mutant
-    seen = set()
-    for pair in safe_pairs:
-        m_id = str(pair[0])
-        if m_id in seen:
-            continue
-        seen.add(m_id)
-        for rnd in range(rounds):
-            repl_map = repl_map_by_round[rnd]
-            if m_id in repl_map:
-                total[rnd] += float(repl_map[m_id])
-
     return total
 
 
@@ -369,7 +357,7 @@ def main() -> None:
     total_runtime_dir: Path = args.total_runtime_dir
     ensure_dir(flaky_dir)
     ensure_dir(total_runtime_dir)
-    enable_append = True  # same semantics as original 'isOK'
+    enable_append = False  # same semantics as original 'isOK'
 
     for project in projects:
         logging.info("Process project: %s", project)
@@ -403,6 +391,12 @@ def main() -> None:
         flaky_df, safe_pairs, none_num = filter_flaky_pairs(
             all_strategy_status, id_mutant_mapping, id_test_mapping, default_strategy
         )
+
+        out_subdir = parsed_dir / project
+        (out_subdir / "stable_pairs.json").write_text(
+            json.dumps(safe_pairs, indent=4), encoding="utf-8"
+        )
+
         append_line(info_out, f"Number of pairs flagged as flaky due to 'None' in any strategy: {none_num}", enable_append)
         append_line(info_out, f"Number of available (stable) pairs used for ALL stats: {len(safe_pairs)}\n", enable_append)
 

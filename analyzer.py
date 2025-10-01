@@ -8,6 +8,7 @@ import numpy as np
 import ast
 import csv
 
+from dask.rewrite import strategies
 from scipy.stats import ttest_ind, ttest_rel, mannwhitneyu
 from parse_rough_data import REPLACEMENT_IDX, RUNTIME_IDX
 
@@ -34,6 +35,14 @@ proj_list = [
     # 'maven-dependency-plugin',
     # 'maven-shade-plugin',
     # 'stream-lib'
+]
+
+strategy_list = [
+    "default",
+    "single-group",
+    "single-group_errors-at-the-end",
+    "by-proportions",
+    "double"
 ]
 
 
@@ -283,21 +292,19 @@ def analyze_cause_of_error():
         print("mutator_cnt_dict =", pformat(mutator_cnt_dict, sort_dicts=True), file=f)
 
 
-def compare_each_pair_vs_default(proj: str, alpha=0.05, eps=1e-12):
+def compare_each_pair_vs_default(proj: str, is_p: bool, alpha=0.05, eps=1e-12):
     pair_arrays_dict = dict()
-    base_dir = f'{parsed_dir}/basis'
-    with open(f"{base_dir}/{proj}/coverage_mapping.json", 'r', encoding='utf-8') as f:
-        coverage_mapping = json.load(f)
+    with open(f"{parsed_dir}/{proj}/stable_pairs.json", 'r', encoding='utf-8') as f:
+        stable_pairs_arr = json.load(f)
     TEST_ID_IDX = 0
     RUNTIME_IDX = 2
     DEF_ARR_IDX = 0
     SGL_ARR_IDX = 1
-    for mut_id, test_id_arr in coverage_mapping.items():
-        for test_id in test_id_arr:
-            pair_arrays_dict[(mut_id, test_id)] = [
-                [-1 for _ in range(round_number)],
-                [-1 for _ in range(round_number)]
-            ]
+    for pair in stable_pairs_arr:
+        pair_arrays_dict[(str(pair[0]), pair[1])] = [
+            [-1 for _ in range(round_number)],
+            [-1 for _ in range(round_number)]
+        ]
     for rnd in range(round_number):
         with open(f"{parsed_dir}/{proj}/default_{rnd}/id_info_mapping.json", 'r', encoding='utf-8') as f:
             def_info_mapping = json.load(f)
@@ -320,6 +327,7 @@ def compare_each_pair_vs_default(proj: str, alpha=0.05, eps=1e-12):
     missing_cnt = 0
     cnt_single_gt_def_sig = 0  # mean_s > mean_d & p < alpha
     cnt_single_lt_def_sig = 0  # mean_s < mean_d & p < alpha
+    cnt_single_eq_def_sig = 0
 
     all_diffs = []
 
@@ -346,31 +354,84 @@ def compare_each_pair_vs_default(proj: str, alpha=0.05, eps=1e-12):
         mean_d = float(np.mean(d))
         diff = mean_s - mean_d
 
-        if diff > 0 and p < alpha:
-            cnt_single_gt_def_sig += 1
-        if diff < 0 and p < alpha:
-            cnt_single_lt_def_sig += 1
+        if is_p:
+            if diff > 0 and p < alpha:
+                cnt_single_gt_def_sig += 1
+            elif diff < 0 and p < alpha:
+                cnt_single_lt_def_sig += 1
+            else:
+                cnt_single_eq_def_sig += 1
+        else:
+            if diff > 0:
+                cnt_single_gt_def_sig += 1
+            elif diff < 0:
+                cnt_single_lt_def_sig += 1
+            else:
+                cnt_single_eq_def_sig += 1
 
         all_diffs.extend((s - d).tolist())
 
     prop_gt = (cnt_single_gt_def_sig / total_pairs) if total_pairs else 0.0
     prop_lt = (cnt_single_lt_def_sig / total_pairs) if total_pairs else 0.0
+    prop_eq = (cnt_single_eq_def_sig / total_pairs) if total_pairs else 0.0
 
     out_dir = Path(f"{main_dir}/strange_research")
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    with open(f"{out_dir}/{proj}.txt", "w", encoding="utf-8") as f:
+    if is_p:
+        out_name = f"{proj}.txt"
+    else:
+        out_name = f"{proj}_no_p.txt"
+
+    with open(f"{out_dir}/{out_name}", "w", encoding="utf-8") as f:
         print(f"[ignored pairs with -1] {missing_cnt}", file=f)
         print(f"[pairs evaluated] {total_pairs}", file=f)
-        print(f"[single > default & p < {alpha}] count={cnt_single_gt_def_sig}, proportion={prop_gt:.3f}", file=f)
-        print(f"[single < default & p < {alpha}] count={cnt_single_lt_def_sig}, proportion={prop_lt:.3f}", file=f)
+        if is_p:
+            print(f"[single > default & p < {alpha}] count={cnt_single_gt_def_sig}, proportion={prop_gt:.3f}", file=f)
+            print(f"[single < default & p < {alpha}] count={cnt_single_lt_def_sig}, proportion={prop_lt:.3f}", file=f)
+        else:
+            print(f"[single > default] count={cnt_single_gt_def_sig}, proportion={prop_gt:.3f}", file=f)
+            print(f"[single < default] count={cnt_single_lt_def_sig}, proportion={prop_lt:.3f}", file=f)
+        print(f"[single == default] count={cnt_single_eq_def_sig}, proportion={prop_eq:.3f}", file=f)
         if all_diffs:
             mean_diff = float(np.mean(all_diffs))
             med_diff = float(np.median(all_diffs))
             print(f"[overall single - default] mean={mean_diff:.4f}, median={med_diff:.4f}", file=f)
 
 
-
+def sum_up_mutant_runtimes():
+    cols = (
+        ["strategy"] + [f"round{rnd}" for rnd in range(round_number)] +
+        ["avg.", "/avg. default", "T-test vs. default", "U-test vs. default"]
+    )
+    for proj in proj_list:
+        def_runtime_arr = []
+        def_avg = 0.0
+        df = pd.DataFrame(None, columns=cols)
+        for strategy in strategy_list:
+            cur_runtime_arr = []
+            for rnd in range(round_number):
+                with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_others_mapping.json", 'r', encoding='utf-8') as f:
+                    others_mapping = json.load(f)
+                cur_runtime = 0.0
+                for _, others in others_mapping.items():
+                    cur_runtime += others[REPLACEMENT_IDX] + others[RUNTIME_IDX]
+                cur_runtime_arr.append(cur_runtime)
+            cur_avg = float(np.mean(cur_runtime_arr))
+            if strategy == "default":
+                def_runtime_arr = cur_runtime_arr
+                def_avg = cur_avg
+                df.loc[len(df.index)] = (["default"] + def_runtime_arr +
+                                         [f"{cur_avg:.2f}", f"{1.0:.4f}", f"{1.0:.4f}", f"{1.0:.4f}"])
+                continue
+            ratio = (cur_avg / def_avg) if def_avg > 0 else float("inf")
+            _, p_t = ttest_ind(cur_runtime_arr, def_runtime_arr)
+            _, p_u = mannwhitneyu(cur_runtime_arr, def_runtime_arr)
+            df.loc[len(df.index)] = ([strategy] + cur_runtime_arr
+                    + [f"{cur_avg:.2f}", f"{ratio:.4f}", f"{p_t:.4f}", f"{p_u:.4f}"]
+            )
+        out_csv = f"{main_dir}/total_runtime/{proj}_TOT.csv"
+        df.to_csv(out_csv, index=False, encoding="utf-8")
 
 
 if __name__ == '__main__':
@@ -380,4 +441,7 @@ if __name__ == '__main__':
     # create_csv_vs_mvn_test_including_avg()
     # compare_between_single_group_and_default_without_errors()
     # analyze_cause_of_error()
-    compare_each_pair_vs_default(proj="jfreechart")
+    for proj in proj_list:
+        compare_each_pair_vs_default(proj=proj, is_p=True)
+        compare_each_pair_vs_default(proj=proj, is_p=False)
+    # sum_up_mutant_runtimes()

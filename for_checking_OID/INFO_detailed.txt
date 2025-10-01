@@ -43,6 +43,17 @@ Number of passed pairs (all True across rounds): 29049
 Number of failed pairs (all False across rounds): 39172
 Number of flaky pairs (mixed/None across rounds): 0
 
+Double:
+Number of classes: 28
+Number of tests: 732
+Number of mutants: 881
+Number of killed mutants: 803
+Number of survived mutants: 61
+Number of pairs: 68221
+Number of passed pairs (all True across rounds): 29049
+Number of failed pairs (all False across rounds): 39172
+Number of flaky pairs (mixed/None across rounds): 0
+
 Number of pairs flagged as flaky due to 'None' in any strategy: 32
 Number of available (stable) pairs used for ALL stats: 68218
 
@@ -90,6 +101,17 @@ Number of pairs: 85785
 Number of passed pairs (all True across rounds): 21864
 Number of failed pairs (all False across rounds): 63882
 Number of flaky pairs (mixed/None across rounds): 39
+
+Double:
+Number of classes: 74
+Number of tests: 1627
+Number of mutants: 3922
+Number of killed mutants: 3491
+Number of survived mutants: 287
+Number of pairs: 85785
+Number of passed pairs (all True across rounds): 21859
+Number of failed pairs (all False across rounds): 63883
+Number of flaky pairs (mixed/None across rounds): 43
 
 Number of pairs flagged as flaky due to 'None' in any strategy: 2493
 Number of available (stable) pairs used for ALL stats: 85581
@@ -139,8 +161,19 @@ Number of passed pairs (all True across rounds): 165476
 Number of failed pairs (all False across rounds): 204498
 Number of flaky pairs (mixed/None across rounds): 99
 
-Number of pairs flagged as flaky due to 'None' in any strategy: 3789
-Number of available (stable) pairs used for ALL stats: 367238
+Double:
+Number of classes: 461
+Number of tests: 7354
+Number of mutants: 8246
+Number of killed mutants: 6946
+Number of survived mutants: 1119
+Number of pairs: 370052
+Number of passed pairs (all True across rounds): 165953
+Number of failed pairs (all False across rounds): 204027
+Number of flaky pairs (mixed/None across rounds): 72
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 3791
+Number of available (stable) pairs used for ALL stats: 367212
 
 --------------------------------empire-db--------------------------------
 Default:
@@ -187,8 +220,19 @@ Number of passed pairs (all True across rounds): 5006
 Number of failed pairs (all False across rounds): 5481
 Number of flaky pairs (mixed/None across rounds): 6
 
-Number of pairs flagged as flaky due to 'None' in any strategy: 2194
-Number of available (stable) pairs used for ALL stats: 9603
+Double:
+Number of classes: 64
+Number of tests: 102
+Number of mutants: 2491
+Number of killed mutants: 1154
+Number of survived mutants: 1146
+Number of pairs: 10554
+Number of passed pairs (all True across rounds): 5080
+Number of failed pairs (all False across rounds): 5469
+Number of flaky pairs (mixed/None across rounds): 5
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 2894
+Number of available (stable) pairs used for ALL stats: 9133
 
 --------------------------------jimfs--------------------------------
 Default:
@@ -235,8 +279,19 @@ Number of passed pairs (all True across rounds): 21472
 Number of failed pairs (all False across rounds): 40537
 Number of flaky pairs (mixed/None across rounds): 439
 
-Number of pairs flagged as flaky due to 'None' in any strategy: 2565
-Number of available (stable) pairs used for ALL stats: 58129
+Double:
+Number of classes: 101
+Number of tests: 460
+Number of mutants: 1786
+Number of killed mutants: 1473
+Number of survived mutants: 230
+Number of pairs: 62594
+Number of passed pairs (all True across rounds): 21141
+Number of failed pairs (all False across rounds): 41403
+Number of flaky pairs (mixed/None across rounds): 50
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 2684
+Number of available (stable) pairs used for ALL stats: 57942
 
 --------------------------------jfreechart--------------------------------
 Default:
@@ -283,8 +338,19 @@ Number of passed pairs (all True across rounds): 204253
 Number of failed pairs (all False across rounds): 139126
 Number of flaky pairs (mixed/None across rounds): 6
 
+Double:
+Number of classes: 417
+Number of tests: 2306
+Number of mutants: 20423
+Number of killed mutants: 12179
+Number of survived mutants: 8153
+Number of pairs: 343387
+Number of passed pairs (all True across rounds): 204256
+Number of failed pairs (all False across rounds): 139123
+Number of flaky pairs (mixed/None across rounds): 8
+
 Number of pairs flagged as flaky due to 'None' in any strategy: 1039
-Number of available (stable) pairs used for ALL stats: 342347
+Number of available (stable) pairs used for ALL stats: 342346
 
 --------------------------------JustAuth--------------------------------
 Default:
@@ -331,8 +397,19 @@ Number of passed pairs (all True across rounds): 816
 Number of failed pairs (all False across rounds): 1028
 Number of flaky pairs (mixed/None across rounds): 0
 
-Number of pairs flagged as flaky due to 'None' in any strategy: 34
-Number of available (stable) pairs used for ALL stats: 1843
+Double:
+Number of classes: 149
+Number of tests: 46
+Number of mutants: 617
+Number of killed mutants: 323
+Number of survived mutants: 291
+Number of pairs: 1928
+Number of passed pairs (all True across rounds): 839
+Number of failed pairs (all False across rounds): 1089
+Number of flaky pairs (mixed/None across rounds): 0
+
+Number of pairs flagged as flaky due to 'None' in any strategy: 87
+Number of available (stable) pairs used for ALL stats: 1842
 
 --------------------------------Mybatis-PageHelper--------------------------------
 Default:
@@ -379,8 +456,19 @@ Number of passed pairs (all True across rounds): 15390
 Number of failed pairs (all False across rounds): 10831
 Number of flaky pairs (mixed/None across rounds): 0
 
+Double:
+Number of classes: 46
+Number of tests: 138
+Number of mutants: 770
+Number of killed mutants: 530
+Number of survived mutants: 240
+Number of pairs: 26221
+Number of passed pairs (all True across rounds): 15056
+Number of failed pairs (all False across rounds): 11165
+Number of flaky pairs (mixed/None across rounds): 0
+
 Number of pairs flagged as flaky due to 'None' in any strategy: 0
-Number of available (stable) pairs used for ALL stats: 25391
+Number of available (stable) pairs used for ALL stats: 25319
 
 --------------------------------sling-org-apache-sling-auth-core--------------------------------
 Default:
@@ -427,6 +515,17 @@ Number of passed pairs (all True across rounds): 1654
 Number of failed pairs (all False across rounds): 1783
 Number of flaky pairs (mixed/None across rounds): 0
 
+Double:
+Number of classes: 16
+Number of tests: 123
+Number of mutants: 451
+Number of killed mutants: 295
+Number of survived mutants: 124
+Number of pairs: 3437
+Number of passed pairs (all True across rounds): 1655
+Number of failed pairs (all False across rounds): 1782
+Number of flaky pairs (mixed/None across rounds): 0
+
 Number of pairs flagged as flaky due to 'None' in any strategy: 179
-Number of available (stable) pairs used for ALL stats: 3258
+Number of available (stable) pairs used for ALL stats: 3257
 

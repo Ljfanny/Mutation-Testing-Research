@@ -2,7 +2,8 @@ import copy
 import json
 import random
 import pandas as pd
-from parse_rough_data import proj_junit_mapping
+from parse_rough_data import build_default_junit_map
+
 
 proj_list = [
     'commons-cli',
@@ -69,14 +70,42 @@ def mutant_to_json(mutant, test_id_list, group_id, clazz_id, exec_seq, junit_ver
     }
 
 
-def create_default(p):
+# def create_default(p):
+#     group_id = 0
+#     clazz_id = 0
+#     exec_seq = 0
+#     mutant_list = list()
+#     for clazz in default_seq:
+#         group = clazz_ids_mapping[clazz]
+#         for mutant_id in group:
+#             mutant = id_tuple_mapping[mutant_id]
+#             mutant_list.append(mutant_to_json(
+#                 mutant=mutant,
+#                 test_id_list=coverage_mapping[mutant_id],
+#                 group_id=group_id,
+#                 clazz_id=clazz_id,
+#                 exec_seq=exec_seq,
+#                 junit_version=proj_junit_mapping[p]
+#             ))
+#             exec_seq += 1
+#             break
+#         group_id += 1
+#         exec_seq = 0
+#     with open(f'for_checking_OID/inputs/{p}_default.json', 'w') as f:
+#         f.write(json.dumps(mutant_list, indent=4))
+
+
+def create_double(p):
     group_id = 0
     clazz_id = 0
     exec_seq = 0
     mutant_list = list()
+    proj_junit_mapping = build_default_junit_map()
     for clazz in default_seq:
         group = clazz_ids_mapping[clazz]
-        for mutant_id in group:
+        mid = int(len(group) / 2)
+        is_refresh = False
+        for i, mutant_id in enumerate(group):
             mutant = id_tuple_mapping[mutant_id]
             mutant_list.append(mutant_to_json(
                 mutant=mutant,
@@ -87,10 +116,13 @@ def create_default(p):
                 junit_version=proj_junit_mapping[p]
             ))
             exec_seq += 1
-            break
+            if exec_seq >= mid and not is_refresh:
+                group_id += 1
+                exec_seq = 0
+                is_refresh = True
         group_id += 1
         exec_seq = 0
-    with open(f'for_checking_OID/inputs/{p}_default.json', 'w') as f:
+    with open(f'for_checking_OID/inputs/{p}_double.json', 'w') as f:
         f.write(json.dumps(mutant_list, indent=4))
 
 
@@ -178,7 +210,11 @@ if __name__ == '__main__':
         coverage_mapping = {int(k): v for k, v in json.load(open(f'{parsed_basis_dir}/{proj}/coverage_mapping.json', 'r')).items()}
         default_seq = json.load(open(f'{parsed_basis_dir}/{proj}/default_seq.json', 'r'))
         clazz_ids_mapping = json.load(open(f'{parsed_basis_dir}/{proj}/clazz_ids_mapping.json', 'r'))
-        create_by_proportion(proj)
+
+        create_double(proj)
+
+        # create_by_proportion(proj)
+
         # clazz_id -= 1
         # cur_clazz = clazz_seq[-1]
         # for mut_id in error_arr:
