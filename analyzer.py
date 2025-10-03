@@ -8,7 +8,6 @@ import numpy as np
 import ast
 import csv
 
-from dask.rewrite import strategies
 from scipy.stats import ttest_ind, ttest_rel, mannwhitneyu
 from parse_rough_data import REPLACEMENT_IDX, RUNTIME_IDX
 
@@ -399,37 +398,59 @@ def compare_each_pair_vs_default(proj: str, is_p: bool, alpha=0.05, eps=1e-12):
             print(f"[overall single - default] mean={mean_diff:.4f}, median={med_diff:.4f}", file=f)
 
 
-def sum_up_mutant_runtimes():
+def analyze_runtime():
+    sub_cols = []
+    sub_len = 7
+    for rnd in range(round_number):
+        sub_cols += [f"{rnd}-stable_pairs", f"{rnd}-stable_ratio",
+                     f"{rnd}-all_pairs", f"{rnd}-all_ratio",
+                     f"{rnd}-replacement", f"{rnd}-replacement_ratio",
+                     f"{rnd}-complement"]
+    STABLE_IDX = 0
+    ALL_IDX = 2
+    REPLACE_IDX = 4
     cols = (
-        ["strategy"] + [f"round{rnd}" for rnd in range(round_number)] +
-        ["avg.", "/avg. default", "T-test vs. default", "U-test vs. default"]
+        ["strategy"] + sub_cols + ["avg.", "/avg. default", "T-test vs. default", "U-test vs. default"]
     )
     for proj in proj_list:
-        def_runtime_arr = []
-        def_avg = 0.0
+        with open(f"{parsed_dir}/{proj}/completion_time.json", 'r', encoding='utf-8') as f:
+            complement_dict = {tuple(i[0]): i[1] for i in json.load(f)}
+        with open(f"{parsed_dir}/{proj}/stable_pairs.json", 'r', encoding='utf-8') as f:
+            safe_pairs = json.load(f)
+        def_runtime_arr = [complement_dict[("default", i)] * 1000 for i in range(round_number)]
+        def_avg = float(np.mean(def_runtime_arr))
         df = pd.DataFrame(None, columns=cols)
         for strategy in strategy_list:
-            cur_runtime_arr = []
+            cur_arr = [[0, "", 0, "", 0, "", 0] for _ in range(round_number)]
             for rnd in range(round_number):
+                cur_complement = complement_dict[(strategy, rnd)] * 1000
+                with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_info_mapping.json", 'r', encoding='utf-8') as f:
+                    info_mapping = json.load(f)
                 with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_others_mapping.json", 'r', encoding='utf-8') as f:
                     others_mapping = json.load(f)
-                cur_runtime = 0.0
+                for pair in safe_pairs:
+                    mut_id = str(pair[0])
+                    for item in info_mapping[mut_id]:
+                        if item[0] == pair[1]:
+                            cur_arr[rnd][STABLE_IDX] += item[2]
                 for _, others in others_mapping.items():
-                    cur_runtime += others[REPLACEMENT_IDX] + others[RUNTIME_IDX]
-                cur_runtime_arr.append(cur_runtime)
+                    cur_arr[rnd][REPLACE_IDX] += others[REPLACEMENT_IDX]
+                    cur_arr[rnd][ALL_IDX] += others[RUNTIME_IDX]
+                cur_arr[rnd][STABLE_IDX + 1] = f"{cur_arr[rnd][STABLE_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][ALL_IDX + 1] = f"{cur_arr[rnd][ALL_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][REPLACE_IDX + 1] = f"{cur_arr[rnd][REPLACE_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][-1] = cur_complement
+            cur_runtime_arr = [complement_dict[(strategy, i)] * 1000 for i in range(round_number)]
             cur_avg = float(np.mean(cur_runtime_arr))
             if strategy == "default":
-                def_runtime_arr = cur_runtime_arr
-                def_avg = cur_avg
-                df.loc[len(df.index)] = (["default"] + def_runtime_arr +
+                df.loc[len(df.index)] = (["default"] + [i for r in cur_arr for i in r] +
                                          [f"{cur_avg:.2f}", f"{1.0:.4f}", f"{1.0:.4f}", f"{1.0:.4f}"])
                 continue
             ratio = (cur_avg / def_avg) if def_avg > 0 else float("inf")
             _, p_t = ttest_ind(cur_runtime_arr, def_runtime_arr)
             _, p_u = mannwhitneyu(cur_runtime_arr, def_runtime_arr)
-            df.loc[len(df.index)] = ([strategy] + cur_runtime_arr
-                    + [f"{cur_avg:.2f}", f"{ratio:.4f}", f"{p_t:.4f}", f"{p_u:.4f}"]
-            )
+            df.loc[len(df.index)] = ([strategy] + [i for r in cur_arr for i in r] +
+                                     [f"{cur_avg:.2f}", f"{ratio:.4f}", f"{p_t:.4f}", f"{p_u:.4f}"])
         out_csv = f"{main_dir}/total_runtime/{proj}_TOT.csv"
         df.to_csv(out_csv, index=False, encoding="utf-8")
 
@@ -441,7 +462,7 @@ if __name__ == '__main__':
     # create_csv_vs_mvn_test_including_avg()
     # compare_between_single_group_and_default_without_errors()
     # analyze_cause_of_error()
-    for proj in proj_list:
-        compare_each_pair_vs_default(proj=proj, is_p=True)
-        compare_each_pair_vs_default(proj=proj, is_p=False)
-    # sum_up_mutant_runtimes()
+    # for proj in proj_list:
+    #     compare_each_pair_vs_default(proj=proj, is_p=True)
+    #     compare_each_pair_vs_default(proj=proj, is_p=False)
+    analyze_runtime()
