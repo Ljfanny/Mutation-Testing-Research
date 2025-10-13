@@ -400,15 +400,17 @@ def compare_each_pair_vs_default(proj: str, is_p: bool, alpha=0.05, eps=1e-12):
 
 def analyze_runtime():
     sub_cols = []
-    sub_len = 7
+    sub_len = 9
     for rnd in range(round_number):
         sub_cols += [f"{rnd}-stable_pairs", f"{rnd}-stable_ratio",
                      f"{rnd}-all_pairs", f"{rnd}-all_ratio",
                      f"{rnd}-replacement", f"{rnd}-replacement_ratio",
+                     f"{rnd}-others", f"{rnd}-others_ratio",
                      f"{rnd}-complement"]
     STABLE_IDX = 0
     ALL_IDX = 2
     REPLACE_IDX = 4
+    OTHERS_IDX = 6
     cols = (
         ["strategy"] + sub_cols + ["avg.", "/avg. default", "T-test vs. default", "U-test vs. default"]
     )
@@ -421,7 +423,7 @@ def analyze_runtime():
         def_avg = float(np.mean(def_runtime_arr))
         df = pd.DataFrame(None, columns=cols)
         for strategy in strategy_list:
-            cur_arr = [[0, "", 0, "", 0, "", 0] for _ in range(round_number)]
+            cur_arr = [[0, "", 0, "", 0, "", 0, "", 0] for _ in range(round_number)]
             for rnd in range(round_number):
                 cur_complement = complement_dict[(strategy, rnd)] * 1000
                 with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_info_mapping.json", 'r', encoding='utf-8') as f:
@@ -440,6 +442,8 @@ def analyze_runtime():
                 cur_arr[rnd][ALL_IDX + 1] = f"{cur_arr[rnd][ALL_IDX] / cur_complement:.4f}"
                 cur_arr[rnd][REPLACE_IDX + 1] = f"{cur_arr[rnd][REPLACE_IDX] / cur_complement:.4f}"
                 cur_arr[rnd][-1] = cur_complement
+                cur_arr[rnd][OTHERS_IDX] = cur_complement - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][ALL_IDX]
+                cur_arr[rnd][OTHERS_IDX + 1] = f"{cur_arr[rnd][OTHERS_IDX] / cur_complement:.4f}"
             cur_runtime_arr = [complement_dict[(strategy, i)] * 1000 for i in range(round_number)]
             cur_avg = float(np.mean(cur_runtime_arr))
             if strategy == "default":
