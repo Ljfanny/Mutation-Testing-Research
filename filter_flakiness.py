@@ -19,7 +19,7 @@ Outputs:
 
 Example:
   python filter_flakiness.py \
-    --parsed-dir for_checking_OID/temp_outputs \
+    --parsed-dir for_checking_OID/parsed_dir \
     --projects commons-cli commons-codec jimfs \
     --strategies default single-group single-group_errors-at-the-end by-proportions \
     --rounds 6 \

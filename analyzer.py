@@ -398,23 +398,151 @@ def compare_each_pair_vs_default(proj: str, is_p: bool, alpha=0.05, eps=1e-12):
             print(f"[overall single - default] mean={mean_diff:.4f}, median={med_diff:.4f}", file=f)
 
 
-def analyze_runtime():
+# def analyze_runtime():
+#     sub_cols = []
+#     sub_len = 9
+#     for rnd in range(round_number):
+#         sub_cols += [f"{rnd}-stable_pairs", f"{rnd}-stable_ratio",
+#                      f"{rnd}-all_pairs", f"{rnd}-all_ratio",
+#                      f"{rnd}-replacement", f"{rnd}-replacement_ratio",
+#                      f"{rnd}-others", f"{rnd}-others_ratio",
+#                      f"{rnd}-complement"]
+#     STABLE_IDX = 0
+#     ALL_IDX = 2
+#     REPLACE_IDX = 4
+#     OTHERS_IDX = 6
+#     cols = (
+#         ["strategy"] + sub_cols + ["avg.", "/avg. default", "T-test vs. default", "U-test vs. default"]
+#     )
+#     for proj in proj_list:
+#         with open(f"{parsed_dir}/{proj}/completion_time.json", 'r', encoding='utf-8') as f:
+#             complement_dict = {tuple(i[0]): i[1] for i in json.load(f)}
+#         with open(f"{parsed_dir}/{proj}/stable_pairs.json", 'r', encoding='utf-8') as f:
+#             safe_pairs = json.load(f)
+#         def_runtime_arr = [complement_dict[("default", i)] * 1000 for i in range(round_number)]
+#         def_avg = float(np.mean(def_runtime_arr))
+#         df = pd.DataFrame(None, columns=cols)
+#         for strategy in strategy_list:
+#             cur_arr = [[0, "", 0, "", 0, "", 0, "", 0] for _ in range(round_number)]
+#             for rnd in range(round_number):
+#                 cur_complement = complement_dict[(strategy, rnd)] * 1000
+#                 with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_info_mapping.json", 'r', encoding='utf-8') as f:
+#                     info_mapping = json.load(f)
+#                 with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_others_mapping.json", 'r', encoding='utf-8') as f:
+#                     others_mapping = json.load(f)
+#                 for pair in safe_pairs:
+#                     mut_id = str(pair[0])
+#                     for item in info_mapping[mut_id]:
+#                         if item[0] == pair[1]:
+#                             cur_arr[rnd][STABLE_IDX] += item[2]
+#                 for _, others in others_mapping.items():
+#                     cur_arr[rnd][REPLACE_IDX] += others[REPLACEMENT_IDX]
+#                     cur_arr[rnd][ALL_IDX] += others[RUNTIME_IDX]
+#                 cur_arr[rnd][STABLE_IDX + 1] = f"{cur_arr[rnd][STABLE_IDX] / cur_complement:.4f}"
+#                 cur_arr[rnd][ALL_IDX + 1] = f"{cur_arr[rnd][ALL_IDX] / cur_complement:.4f}"
+#                 cur_arr[rnd][REPLACE_IDX + 1] = f"{cur_arr[rnd][REPLACE_IDX] / cur_complement:.4f}"
+#                 cur_arr[rnd][-1] = cur_complement
+#                 cur_arr[rnd][OTHERS_IDX] = cur_complement - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][ALL_IDX]
+#                 cur_arr[rnd][OTHERS_IDX + 1] = f"{cur_arr[rnd][OTHERS_IDX] / cur_complement:.4f}"
+#             cur_runtime_arr = [complement_dict[(strategy, i)] * 1000 for i in range(round_number)]
+#             cur_avg = float(np.mean(cur_runtime_arr))
+#             if strategy == "default":
+#                 df.loc[len(df.index)] = (["default"] + [i for r in cur_arr for i in r] +
+#                                          [f"{cur_avg:.2f}", f"{1.0:.4f}", f"{1.0:.4f}", f"{1.0:.4f}"])
+#                 continue
+#             ratio = (cur_avg / def_avg) if def_avg > 0 else float("inf")
+#             _, p_t = ttest_ind(cur_runtime_arr, def_runtime_arr)
+#             _, p_u = mannwhitneyu(cur_runtime_arr, def_runtime_arr)
+#             df.loc[len(df.index)] = ([strategy] + [i for r in cur_arr for i in r] +
+#                                      [f"{cur_avg:.2f}", f"{ratio:.4f}", f"{p_t:.4f}", f"{p_u:.4f}"])
+#         out_csv = f"{main_dir}/total_runtime/{proj}_TOT.csv"
+#         df.to_csv(out_csv, index=False, encoding="utf-8")
+#
+
+import re
+START_RE = re.compile(r'Process started at\s+(\d+)\s*ns', re.IGNORECASE)
+EXIT_RE = re.compile(r'Exited.*?\s+at\s+(\d+)\s*ns', re.IGNORECASE)
+def new_try():
+    def sum_process_times(logfile):
+        must_close = False
+        if isinstance(logfile, (str, Path)):
+            logfile = open(logfile, "r", encoding="utf-8", errors="ignore")
+            must_close = True
+
+        total_runtime = 0
+        total_gap = 0
+        num_starts = 0
+        num_exits = 0
+
+        current_start = None
+        pending_exit = None
+
+        try:
+            for line in logfile:
+                s = START_RE.search(line)
+                if s:
+                    t = int(s.group(1))
+                    num_starts += 1
+
+                    if pending_exit is not None:
+                        gap = t - pending_exit
+                        if gap > 0:
+                            total_gap += gap
+                        pending_exit = None
+
+                    current_start = t
+                    continue
+
+                e = EXIT_RE.search(line)
+                if e:
+                    t = int(e.group(1))
+                    num_exits += 1
+
+                    if current_start is not None:
+                        dur = t - current_start
+                        if dur > 0:
+                            total_runtime += dur
+                        current_start = None
+
+                    pending_exit = t
+                    continue
+        finally:
+            if must_close:
+                logfile.close()
+
+        return {
+            "total_runtime_ns": total_runtime,
+            "total_gap_ns": total_gap,
+            "num_starts": num_starts,
+            "num_exits": num_exits
+        }
+
+    proj_arr = [
+        "empire-db",
+        # "commons-collections"
+    ]
     sub_cols = []
-    sub_len = 9
     for rnd in range(round_number):
-        sub_cols += [f"{rnd}-stable_pairs", f"{rnd}-stable_ratio",
-                     f"{rnd}-all_pairs", f"{rnd}-all_ratio",
-                     f"{rnd}-replacement", f"{rnd}-replacement_ratio",
-                     f"{rnd}-others", f"{rnd}-others_ratio",
-                     f"{rnd}-complement"]
+        sub_cols += [
+            f"{rnd}-stable_num", f"{rnd}-stable_pairs", f"{rnd}-stable_ratio",
+            f"{rnd}-OK_num", f"{rnd}-OK_mutants", f"{rnd}-OK_ratio",
+            f"{rnd}-all_num", f"{rnd}-all_pairs", f"{rnd}-all_ratio",
+            f"{rnd}-replacement", f"{rnd}-replacement_ratio",
+            f"{rnd}-others", f"{rnd}-others_ratio",
+            f"{rnd}-start2end", f"{rnd}-start2end_ratio",
+            f"{rnd}-end2start", f"{rnd}-end2start_ratio",
+            f"{rnd}-complement"]
     STABLE_IDX = 0
-    ALL_IDX = 2
-    REPLACE_IDX = 4
-    OTHERS_IDX = 6
+    OK_IDX = 3
+    ALL_IDX = 6
+    REPLACE_IDX = 9
+    OTHERS_IDX = 11
+    START2END_IDX = 13
+    END2START_IDX = 15
     cols = (
-        ["strategy"] + sub_cols + ["avg.", "/avg. default", "T-test vs. default", "U-test vs. default"]
+            ["strategy"] + sub_cols + ["avg.", "/avg. default", "T-test vs. default", "U-test vs. default"]
     )
-    for proj in proj_list:
+    for proj in proj_arr:
         with open(f"{parsed_dir}/{proj}/completion_time.json", 'r', encoding='utf-8') as f:
             complement_dict = {tuple(i[0]): i[1] for i in json.load(f)}
         with open(f"{parsed_dir}/{proj}/stable_pairs.json", 'r', encoding='utf-8') as f:
@@ -423,27 +551,50 @@ def analyze_runtime():
         def_avg = float(np.mean(def_runtime_arr))
         df = pd.DataFrame(None, columns=cols)
         for strategy in strategy_list:
-            cur_arr = [[0, "", 0, "", 0, "", 0, "", 0] for _ in range(round_number)]
+            cur_arr = [[0, 0, "",
+                        0, 0, "",
+                        0, 0, "",
+                        0, "",
+                        0, "",
+                        0, "",
+                        0, "",
+                        0] for _ in range(round_number)]
             for rnd in range(round_number):
                 cur_complement = complement_dict[(strategy, rnd)] * 1000
+                # -------------------- NEW --------------------
                 with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_info_mapping.json", 'r', encoding='utf-8') as f:
                     info_mapping = json.load(f)
+                with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_status_mapping.json", 'r', encoding='utf-8') as f:
+                    status_mapping = json.load(f)
                 with open(f"{parsed_dir}/{proj}/{strategy}_{rnd}/id_others_mapping.json", 'r', encoding='utf-8') as f:
                     others_mapping = json.load(f)
                 for pair in safe_pairs:
                     mut_id = str(pair[0])
                     for item in info_mapping[mut_id]:
                         if item[0] == pair[1]:
-                            cur_arr[rnd][STABLE_IDX] += item[2]
-                for _, others in others_mapping.items():
+                            cur_arr[rnd][STABLE_IDX] += 1
+                            cur_arr[rnd][STABLE_IDX + 1] += item[2]
+                cur_arr[rnd][ALL_IDX] = len(others_mapping)
+                for mut_id, others in others_mapping.items():
                     cur_arr[rnd][REPLACE_IDX] += others[REPLACEMENT_IDX]
-                    cur_arr[rnd][ALL_IDX] += others[RUNTIME_IDX]
-                cur_arr[rnd][STABLE_IDX + 1] = f"{cur_arr[rnd][STABLE_IDX] / cur_complement:.4f}"
-                cur_arr[rnd][ALL_IDX + 1] = f"{cur_arr[rnd][ALL_IDX] / cur_complement:.4f}"
+                    cur_arr[rnd][ALL_IDX + 1] += others[RUNTIME_IDX]
+                    if status_mapping[mut_id] in ["KILLED", "SURVIVED"]:
+                        cur_arr[rnd][OK_IDX] += 1
+                        cur_arr[rnd][OK_IDX + 1] += others[RUNTIME_IDX]
+                cur_arr[rnd][STABLE_IDX + 2] = f"{cur_arr[rnd][STABLE_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][OK_IDX + 2] = f"{cur_arr[rnd][OK_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][ALL_IDX + 2] = f"{cur_arr[rnd][ALL_IDX] / cur_complement:.4f}"
                 cur_arr[rnd][REPLACE_IDX + 1] = f"{cur_arr[rnd][REPLACE_IDX] / cur_complement:.4f}"
-                cur_arr[rnd][-1] = cur_complement
                 cur_arr[rnd][OTHERS_IDX] = cur_complement - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][ALL_IDX]
                 cur_arr[rnd][OTHERS_IDX + 1] = f"{cur_arr[rnd][OTHERS_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][-1] = cur_complement
+
+                proc_mapping = sum_process_times(f"{main_dir}/logs/{proj}_{strategy}_{rnd}.log")
+                cur_arr[rnd][START2END_IDX] = round(proc_mapping["total_runtime_ns"] / 1e6, 2)
+                cur_arr[rnd][START2END_IDX + 1] = f"{cur_arr[rnd][START2END_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][END2START_IDX] = round(proc_mapping["total_gap_ns"] / 1e6, 2)
+                cur_arr[rnd][END2START_IDX + 1] = f"{cur_arr[rnd][END2START_IDX] / cur_complement :.4f}"
+
             cur_runtime_arr = [complement_dict[(strategy, i)] * 1000 for i in range(round_number)]
             cur_avg = float(np.mean(cur_runtime_arr))
             if strategy == "default":
@@ -455,7 +606,7 @@ def analyze_runtime():
             _, p_u = mannwhitneyu(cur_runtime_arr, def_runtime_arr)
             df.loc[len(df.index)] = ([strategy] + [i for r in cur_arr for i in r] +
                                      [f"{cur_avg:.2f}", f"{ratio:.4f}", f"{p_t:.4f}", f"{p_u:.4f}"])
-        out_csv = f"{main_dir}/total_runtime/{proj}_TOT.csv"
+        out_csv = f"{main_dir}/total_runtime/{proj}_NEW.csv"
         df.to_csv(out_csv, index=False, encoding="utf-8")
 
 
@@ -469,4 +620,5 @@ if __name__ == '__main__':
     # for proj in proj_list:
     #     compare_each_pair_vs_default(proj=proj, is_p=True)
     #     compare_each_pair_vs_default(proj=proj, is_p=False)
-    analyze_runtime()
+    # analyze_runtime()
+    new_try()

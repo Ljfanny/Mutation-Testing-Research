@@ -13,8 +13,6 @@ Example:
     --verbose
 """
 
-from __future__ import annotations
-
 import argparse
 import json
 import logging
@@ -29,8 +27,8 @@ import xml.etree.ElementTree as ET
 
 KILLED = "KILLED"
 SURVIVED = "SURVIVED"
-FAIL = False    # test failed (killing test)
-PASS = True     # test passed (succeeding test)
+FAIL = False
+PASS = True
 
 # indices for id_others_mapping[mutant_id] = [replacement_time_ms, running_time_ms]
 REPLACEMENT_IDX = 0
