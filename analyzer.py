@@ -585,9 +585,9 @@ def new_try():
                     if status_mapping[mut_id] in ["KILLED", "SURVIVED"]:
                         cur_arr[rnd][OK_IDX] += 1
                         cur_arr[rnd][OK_IDX + 1] += others[RUNTIME_IDX]
-                cur_arr[rnd][STABLE_IDX + 2] = f"{cur_arr[rnd][STABLE_IDX] / cur_complement:.4f}"
-                cur_arr[rnd][OK_IDX + 2] = f"{cur_arr[rnd][OK_IDX] / cur_complement:.4f}"
-                cur_arr[rnd][ALL_IDX + 2] = f"{cur_arr[rnd][ALL_IDX] / cur_complement:.4f}"
+                cur_arr[rnd][STABLE_IDX + 2] = f"{cur_arr[rnd][STABLE_IDX + 1] / cur_complement:.4f}"
+                cur_arr[rnd][OK_IDX + 2] = f"{cur_arr[rnd][OK_IDX + 1] / cur_complement:.4f}"
+                cur_arr[rnd][ALL_IDX + 2] = f"{cur_arr[rnd][ALL_IDX + 1] / cur_complement:.4f}"
                 cur_arr[rnd][REPLACE_IDX + 1] = f"{cur_arr[rnd][REPLACE_IDX] / cur_complement:.4f}"
                 cur_arr[rnd][OTHERS_IDX] = cur_complement - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][ALL_IDX]
                 cur_arr[rnd][OTHERS_IDX + 1] = f"{cur_arr[rnd][OTHERS_IDX] / cur_complement:.4f}"
