@@ -521,6 +521,10 @@ def new_try():
         "empire-db",
         # "commons-collections"
     ]
+    strategy_arr = [
+        "default",
+        "single-group"
+    ]
     sub_cols = []
     for rnd in range(round_number):
         sub_cols += [
@@ -550,7 +554,7 @@ def new_try():
         def_runtime_arr = [complement_dict[("default", i)] * 1000 for i in range(round_number)]
         def_avg = float(np.mean(def_runtime_arr))
         df = pd.DataFrame(None, columns=cols)
-        for strategy in strategy_list:
+        for strategy in strategy_arr:
             cur_arr = [[0, 0, "",
                         0, 0, "",
                         0, 0, "",
