@@ -548,9 +548,9 @@ def new_try():
             f"{rnd}-all_num", f"{rnd}-all_pairs", f"{rnd}-all_ratio",
             f"{rnd}-replacement", f"{rnd}-replacement_ratio",
             f"{rnd}-others", f"{rnd}-others_ratio",
-            f"{rnd}-start2end-end2end", f"{rnd}-start2end-end2end_ratio",
+            f"{rnd}-start2end", f"{rnd}-start2end_ratio",
             # f"{rnd}-end2start", f"{rnd}-end2start_ratio",
-            f"{rnd}-complement"]
+            f"{rnd}-completed"]
     STABLE_IDX = 0
     OK_IDX = 3
     ALL_IDX = 6
@@ -604,15 +604,17 @@ def new_try():
                 cur_arr[rnd][OK_IDX + 2] = f"{cur_arr[rnd][OK_IDX + 1] / cur_complement:.4f}"
                 cur_arr[rnd][ALL_IDX + 2] = f"{cur_arr[rnd][ALL_IDX + 1] / cur_complement:.4f}"
                 cur_arr[rnd][REPLACE_IDX + 1] = f"{cur_arr[rnd][REPLACE_IDX] / cur_complement:.4f}"
-                cur_arr[rnd][OTHERS_IDX] = cur_complement - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][ALL_IDX]
-                cur_arr[rnd][OTHERS_IDX + 1] = f"{cur_arr[rnd][OTHERS_IDX] / cur_complement:.4f}"
                 cur_arr[rnd][-1] = cur_complement
 
                 proc_mapping = sum_process_times(f"{main_dir}/logs/{proj}_{strategy}_{rnd}.log")
-                cur_arr[rnd][START2END_IDX] = round(proc_mapping["total_runtime_ns"] / 1e6, 2)
+                cur_arr[rnd][START2END_IDX] = round(
+                    (proc_mapping["total_runtime_ns"] + proc_mapping["total_gap_ns"]) / 1e6, 2)
                 cur_arr[rnd][START2END_IDX + 1] = f"{cur_arr[rnd][START2END_IDX] / cur_complement:.4f}"
                 # cur_arr[rnd][END2START_IDX] = round(proc_mapping["total_gap_ns"] / 1e6, 2)
                 # cur_arr[rnd][END2START_IDX + 1] = f"{cur_arr[rnd][END2START_IDX] / cur_complement :.4f}"
+                cur_arr[rnd][OTHERS_IDX] = round(
+                    cur_arr[rnd][START2END_IDX] - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][OK_IDX],2)
+                cur_arr[rnd][OTHERS_IDX + 1] = f"{cur_arr[rnd][OTHERS_IDX] / cur_complement:.4f}"
 
             cur_runtime_arr = [complement_dict[(strategy, i)] * 1000 for i in range(round_number)]
             cur_avg = float(np.mean(cur_runtime_arr))
