@@ -613,7 +613,7 @@ def new_try():
                 # cur_arr[rnd][END2START_IDX] = round(proc_mapping["total_gap_ns"] / 1e6, 2)
                 # cur_arr[rnd][END2START_IDX + 1] = f"{cur_arr[rnd][END2START_IDX] / cur_complement :.4f}"
                 cur_arr[rnd][OTHERS_IDX] = round(
-                    cur_arr[rnd][START2END_IDX] - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][OK_IDX],2)
+                    cur_arr[rnd][START2END_IDX] - cur_arr[rnd][REPLACE_IDX] - cur_arr[rnd][OK_IDX + 1],2)
                 cur_arr[rnd][OTHERS_IDX + 1] = f"{cur_arr[rnd][OTHERS_IDX] / cur_complement:.4f}"
 
             cur_runtime_arr = [complement_dict[(strategy, i)] * 1000 for i in range(round_number)]
