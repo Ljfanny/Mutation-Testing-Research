@@ -477,6 +477,9 @@ def new_try():
         current_start = None
         pending_exit = None
 
+        last_event = None
+        last_exit_time = None
+
         try:
             for line in logfile:
                 s = START_RE.search(line)
@@ -491,6 +494,7 @@ def new_try():
                         pending_exit = None
 
                     current_start = t
+                    last_event = 'START'
                     continue
 
                 e = EXIT_RE.search(line)
@@ -503,8 +507,14 @@ def new_try():
                         if dur > 0:
                             total_runtime += dur
                         current_start = None
+                    elif last_event == 'EXIT' and last_exit_time is not None:
+                        dur = t - last_exit_time
+                        if dur > 0:
+                            total_runtime += dur
 
                     pending_exit = t
+                    last_event = 'EXIT'
+                    last_exit_time = t
                     continue
         finally:
             if must_close:
@@ -518,7 +528,7 @@ def new_try():
         }
 
     proj_arr = [
-        # "empire-db",
+        "empire-db",
         "commons-codec",
         "commons-collections",
         "jfreechart",
@@ -538,8 +548,8 @@ def new_try():
             f"{rnd}-all_num", f"{rnd}-all_pairs", f"{rnd}-all_ratio",
             f"{rnd}-replacement", f"{rnd}-replacement_ratio",
             f"{rnd}-others", f"{rnd}-others_ratio",
-            f"{rnd}-start2end", f"{rnd}-start2end_ratio",
-            f"{rnd}-end2start", f"{rnd}-end2start_ratio",
+            f"{rnd}-start2end-end2end", f"{rnd}-start2end-end2end_ratio",
+            # f"{rnd}-end2start", f"{rnd}-end2start_ratio",
             f"{rnd}-complement"]
     STABLE_IDX = 0
     OK_IDX = 3
@@ -566,7 +576,7 @@ def new_try():
                         0, "",
                         0, "",
                         0, "",
-                        0, "",
+                        # 0, "",
                         0] for _ in range(round_number)]
             for rnd in range(round_number):
                 cur_complement = complement_dict[(strategy, rnd)] * 1000
@@ -601,8 +611,8 @@ def new_try():
                 proc_mapping = sum_process_times(f"{main_dir}/logs/{proj}_{strategy}_{rnd}.log")
                 cur_arr[rnd][START2END_IDX] = round(proc_mapping["total_runtime_ns"] / 1e6, 2)
                 cur_arr[rnd][START2END_IDX + 1] = f"{cur_arr[rnd][START2END_IDX] / cur_complement:.4f}"
-                cur_arr[rnd][END2START_IDX] = round(proc_mapping["total_gap_ns"] / 1e6, 2)
-                cur_arr[rnd][END2START_IDX + 1] = f"{cur_arr[rnd][END2START_IDX] / cur_complement :.4f}"
+                # cur_arr[rnd][END2START_IDX] = round(proc_mapping["total_gap_ns"] / 1e6, 2)
+                # cur_arr[rnd][END2START_IDX + 1] = f"{cur_arr[rnd][END2START_IDX] / cur_complement :.4f}"
 
             cur_runtime_arr = [complement_dict[(strategy, i)] * 1000 for i in range(round_number)]
             cur_avg = float(np.mean(cur_runtime_arr))
