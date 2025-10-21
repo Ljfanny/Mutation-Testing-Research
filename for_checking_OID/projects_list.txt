@@ -1,12 +1,12 @@
 # assertj-assertions-generator
 # commons-net
-commons-cli
+# commons-cli
 # commons-csv
 commons-codec
 commons-collections
 # delight-nashorn-sandbox
-empire-db
-jimfs
+# empire-db
+# jimfs
 # httpcore
 # handlebars.java
 # riptide

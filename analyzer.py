@@ -518,8 +518,13 @@ def new_try():
         }
 
     proj_arr = [
-        "empire-db",
-        # "commons-collections"
+        # "empire-db",
+        "commons-codec",
+        "commons-collections",
+        "jfreechart",
+        "JustAuth",
+        "Mybatis-PageHelper",
+        "sling-org-apache-sling-auth-core"
     ]
     strategy_arr = [
         "default",
